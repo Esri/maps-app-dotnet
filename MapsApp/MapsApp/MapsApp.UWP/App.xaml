@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="MapsApp.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MapsApp.UWP"
+    RequestedTheme="Light">
+
+</Application>
