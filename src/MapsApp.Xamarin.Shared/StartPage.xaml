@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MapsApp;assembly=MapsApp;"
+             xmlns:utils="clr-namespace:MapsApp.Utils"
+             x:Class="MapsApp.StartPage"
+             xmlns:esri="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+             xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.UI;assembly=Esri.ArcGISRuntime"
+             xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
+             xmlns:converters="clr-namespace:MapsApp.Shared.Converters"
+             xmlns:controls="clr-namespace:MapsApp.Controls;"
+             xmlns:ext="clr-namespace:MapsApp.Extensions"
+             xmlns:viewModels="clr-namespace:MapsApp.Shared.ViewModels;">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <viewModels:MapViewModel x:Key="MapViewModel" />
+            <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
+            <converters:NumberToBoolConverter x:Key="NumberToBoolConverter"/>
+            <OnPlatform x:Key="startImage" 
+                      x:TypeArguments="ImageSource"
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.Start72.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.Start36.png}" 
+                      WinPhone="{ext:ImageResource MapsApp.UWP.Images.Start72.png}" />
+            <OnPlatform x:Key="endImage" 
+                      x:TypeArguments="ImageSource"
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.End72.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.End72.png}" 
+                      WinPhone="{ext:ImageResource MapsApp.UWP.Images.End72.png}" />
+            <OnPlatform x:Key="getDirectionsImage" 
+                      x:TypeArguments="ImageSource"
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.directions1.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.directions2.png}" 
+                      WinPhone="{ext:ImageResource MapsApp.UWP.Images.directions2.png}" />
+            <OnPlatform x:Key="cancelImage" 
+                      x:TypeArguments="ImageSource"
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.cancel1.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.cancel2.png}" 
+                      WinPhone="{ext:ImageResource MapsApp.UWP.Images.cancel2.png}" />
+            <OnPlatform x:Key="compassImage" 
+                      x:TypeArguments="ImageSource"
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.Compass36.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.Compass72.png}" 
+                      WinPhone="{ext:ImageResource MapsApp.UWP.Images.Compass72.png}" />
+            <OnPlatform x:Key="gpsImage" 
+                      x:TypeArguments="ImageSource"
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.GPSon22.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.GPSon66.png}" 
+                      WinPhone="{ext:ImageResource MapsApp.UWP.Images.GPSon66.png}" />
+            <OnPlatform x:Key="basemapImage" 
+                      x:TypeArguments="ImageSource"
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.Basemap30.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.Basemap60.png}" 
+                      WinPhone="{ext:ImageResource MapsApp.UWP.Images.Basemap60.png}" />
+            <OnPlatform x:Key="menuImage" 
+                      x:TypeArguments="ImageSource"
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.BurgerButton30.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.BurgerButton60.png}" 
+                      WinPhone="{ext:ImageResource MapsApp.UWP.Images.BurgerButton60.png}" />
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0"/>
+    </ContentPage.Padding>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- MapView Control -->
+        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
+                        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
+            <esri:MapView.GraphicsOverlays>
+                <esriUI:GraphicsOverlay Id="PlacesOverlay"/>
+            </esri:MapView.GraphicsOverlays>
+            <utils:GeoViewExtensions.ViewpointController>
+                <!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI-->
+                <utils:ViewpointController 
+                    Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" >
+                </utils:ViewpointController>
+            </utils:GeoViewExtensions.ViewpointController>
+        </esri:MapView>
+
+         <!--Autocomplete Control--> 
+        <controls:AutoCompleteView Placeholder="Address or Place"
+                                   Text="{Binding SearchText, Mode=TwoWay}"
+                                   Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
+                                   SearchCommand ="{Binding SearchCommand}"   
+                                   SelectedItem ="{Binding SelectedSearchItem, Mode=TwoWay}"
+                                   SearchBackgroundColor="White"
+                                   SuggestionBackgroundColor="White"
+                                   ShowSearchButton="false"
+                                   BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"
+                                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        </controls:AutoCompleteView>
+
+        <!-- Search Result Banner -->
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                     BackgroundColor="White" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding IsTopBannerVisible}">
+
+            <Image x:Name="PinImage" Source="{StaticResource endImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
+
+
+            <Label Text="{Binding Place.Label}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+            <Image x:Name="DirectionsImage" Source="{StaticResource getDirectionsImage}" VerticalOptions="Center" HorizontalOptions="End"/>
+
+
+            <Image x:Name="CloseImage" Source="{StaticResource cancelImage}" VerticalOptions="Center" HorizontalOptions="End">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding CancelLocationSearchCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+
+        <!--Compass Button-->
+        <Image x:Name="CompassImage" Source="{StaticResource compassImage}" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Margin="0,0,20,0" 
+               BindingContext="{x:Reference MapView}" IsVisible="{Binding Path=MapRotation, Converter={StaticResource NumberToBoolConverter}}">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer 
+            Tapped="ResetMapRotation"
+            NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+
+
+        <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100">
+            
+            <!-- GPS Button -->
+            <Image HorizontalOptions="Center" Source="{StaticResource gpsImage}" VerticalOptions="Center" BindingContext ="{Binding Source={StaticResource MapViewModel}}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            
+            <!-- TODO: Uncomment when ready to implement basemap switcher and menu-->
+            <!--<BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
+
+             --><!--Basemap Button--><!--
+            <Image Source="{StaticResource basemapImage}" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
+            
+             --><!--Menu Button--><!--
+            <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+        </StackLayout>
+    </Grid>
+</ContentPage>

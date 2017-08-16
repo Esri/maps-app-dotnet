@@ -1,0 +1,52 @@
+﻿<Window x:Class="MapsApp.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+        xmlns:viewModels="clr-namespace:MapsApp.Shared.ViewModels"
+        xmlns:utils="clr-namespace:MapsApp.Utils"
+        mc:Ignorable="d"
+        Title="Maps App" Height="350" Width="525">
+    <Window.Resources>
+        <ResourceDictionary>
+            <viewModels:MapViewModel x:Key="MapViewModel" />
+            <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
+            <!--<converters:NumberToBoolConverter x:Key="NumberToBoolConverter"/>-->
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- MapView Control -->
+        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
+                          Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
+            <!--<utils:GeoViewExtensions.ViewpointController>
+                --><!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI--><!--
+                <utils:ViewpointController 
+                    Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" >
+                </utils:ViewpointController>
+            </utils:GeoViewExtensions.ViewpointController>-->
+        </esri:MapView>
+
+
+        <!-- Compass Button --><!--
+        <Image x:Name="CompassImage" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,20,0" 
+                   Source="pack://application:,,,/MapsApp.WPF;component/Images/iOS8_NorthCompass72-1.png" 
+                   Height="60" Width="60" RenderTransformOrigin=".5,.5" MouseDown="ResetMapRotation"/>
+
+        --><!-- Current Location Button --><!--
+        <Image Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,20,0" 
+                   Source="pack://application:,,,/MapsApp.WPF;component/Images/iOS8_Toolbar_GPSon66.png" 
+                   MouseDown="MoveToCurrentLocation" Height="60" Width="60"/>-->
+    </Grid>
+</Window>
