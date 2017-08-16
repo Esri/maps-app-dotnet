@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MapsApp"
+             x:Class="MapsApp.StartPage"
+             xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
+             xmlns:mapping="clr-namespace:Esri.ArcGISRuntime.Mapping;assembly=Esri.ArcGISRuntime">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <esriUI:MapView x:Name="MapView"  Map="{Binding Path=Map}"  VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="3" />
+  
+
+            <!-- Compass Button -->
+            <Image x:Name="CompassImage" Grid.Row="0" Grid.Column="1"  VerticalOptions="Start" HorizontalOptions="End" Margin="0,0,20,0">
+                <Image.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <OnPlatform.iOS>
+                            <FileImageSource File="Compass36.png"/>
+                        </OnPlatform.iOS>
+                        <OnPlatform.Android>
+                            <FileImageSource File="Compass36.png"/>
+                        </OnPlatform.Android>
+                        <OnPlatform.WinPhone>
+                            <FileImageSource File="Images/Compass72.png"/>
+                        </OnPlatform.WinPhone>
+                    </OnPlatform>
+                </Image.Source>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                Tapped="ResetMapRotation"
+                NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!-- Current Location Button -->
+        <Image VerticalOptions="End" HorizontalOptions="End" Grid.Row="2" Grid.Column="1" Margin="0,0,20,0">
+            <Image.Source>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <OnPlatform.iOS>
+                        <FileImageSource File="GPS30.png"/>
+                    </OnPlatform.iOS>
+                    <OnPlatform.Android>
+                        <FileImageSource File="GPS30.png"/>
+                    </OnPlatform.Android>
+                    <OnPlatform.WinPhone>
+                        <FileImageSource File="Images/GPS60.png"/>
+                    </OnPlatform.WinPhone>
+                </OnPlatform>
+            </Image.Source>
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                Tapped="MoveToCurrentLocation"
+                NumberOfTapsRequired="1" />
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+</ContentPage>
