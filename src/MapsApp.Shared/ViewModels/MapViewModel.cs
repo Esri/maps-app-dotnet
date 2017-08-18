@@ -18,18 +18,21 @@ namespace MapsApp.Shared.ViewModels
 {
     using Esri.ArcGISRuntime.Location;
     using Esri.ArcGISRuntime.Mapping;
+    using Esri.ArcGISRuntime.Portal;
     using MapsApp.Shared.Commands;
+    using System.Threading.Tasks;
     using System.Windows.Input;
 
     /// <summary>
     /// View Model handling logic for the Map
     /// </summary>
-    class MapViewModel : BaseViewModel
+    public class MapViewModel : BaseViewModel
     {
         private Map _map = new Map(Basemap.CreateTopographicVector());
         private Viewpoint _areaOfInterest;
         private LocationDataSource _locationDataSource;
         private Location _lastLocation;
+
         private ICommand _moveToCurrentLocationCommand;
 
         /// <summary>
@@ -94,6 +97,8 @@ namespace MapsApp.Shared.ViewModels
                 }
             }
         }
+
+     
 
         /// <summary>
         /// Gets the command to search using the locator

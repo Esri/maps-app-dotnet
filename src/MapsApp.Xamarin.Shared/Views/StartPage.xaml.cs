@@ -147,12 +147,13 @@ namespace MapsApp
         // Load basemap page, reuse viewmodel so the initial loading happens only once
         private async void LoadBasemapControl(object sender, EventArgs e)
         {
+            var mapViewModel = Resources["MapViewModel"] as MapViewModel;
             if (basemapViewModel == null)
             {
                 basemapViewModel = new BasemapsViewModel();
             }
 
-            await Navigation.PushAsync(new BasemapPage(basemapViewModel));
+            await Navigation.PushAsync(new BasemapPage(basemapViewModel, mapViewModel));
         }
     }
 }

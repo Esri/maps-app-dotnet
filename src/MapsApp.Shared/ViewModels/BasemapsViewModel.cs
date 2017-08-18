@@ -1,4 +1,5 @@
-﻿using Esri.ArcGISRuntime.Portal;
+﻿using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Portal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,15 +11,9 @@ namespace MapsApp.Shared.ViewModels
     public class BasemapsViewModel : BaseViewModel
     {
         private IEnumerable<PortalItem> _basemaps;
+        private PortalItem _selectedBasemap;
 
-        private string _myText;
-        public string MyText
-        {
-            get { return _myText; }
-            set { _myText = value;
-                OnPropertyChanged();
-            }
-        }
+        public MapViewModel MapViewModel { get; set; }
 
         public BasemapsViewModel()
         {
@@ -44,6 +39,22 @@ namespace MapsApp.Shared.ViewModels
                 }
             }
         }
+
+        public PortalItem SelectedBasemap
+        {
+            get { return this._selectedBasemap; }
+            set
+            {
+                if (_selectedBasemap != value && value != null)
+                {
+                    _selectedBasemap = value;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    LoadNewMap();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                }
+            }
+        }
+
         private async Task LoadPortal()
         {
             try
@@ -61,15 +72,14 @@ namespace MapsApp.Shared.ViewModels
         private async Task LoadMaps(ArcGISPortal portal)
         {
             var items = await portal.GetBasemapsAsync();
-            Basemaps = items.Select(b => b.Item).OfType<PortalItem>();
-            foreach (var x in Basemaps)
-            {
-                //x.Thumbnail;
-                //x.Title;
-                //x.Description;
-                
-            }
-           
+            Basemaps = items.Select(b => b.Item).OfType<PortalItem>();        
+        }
+
+        private async Task LoadNewMap()
+        {
+            var newMap = new Map(SelectedBasemap);
+            await newMap.LoadAsync();
+            this.MapViewModel.Map = newMap;
         }
     }
 }

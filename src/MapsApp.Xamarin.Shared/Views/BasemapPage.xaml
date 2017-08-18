@@ -4,14 +4,9 @@
              xmlns:viewModels="clr-namespace:MapsApp.Shared.ViewModels;"
              x:Class="MapsApp.BasemapPage"
              Title="Switch Basemap">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <viewModels:MapViewModel x:Key="MapViewModel" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <Grid>
-        <ListView ItemsSource="{Binding Basemaps}" SelectedItem="{Binding}"
-            CachingStrategy="RecycleElement">
+        <ListView x:Name="BasemapListView" ItemsSource="{Binding Basemaps}" SelectedItem="{Binding SelectedBasemap}"
+            CachingStrategy="RecycleElement" ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ImageCell ImageSource="{Binding ThumbnailUri}" Text="{Binding Title}" Detail="{Binding Snippet}">
