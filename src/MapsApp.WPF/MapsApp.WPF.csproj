@@ -100,8 +100,41 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\iOS8_NorthCompass72-1.png" />
-    <Resource Include="Images\iOS8_Toolbar_GPSon66.png" />
+    <Content Include="Images\Basemap60.png" />
+    <Resource Include="Images\search_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\BurgerButton60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\cancel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Compass72.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\directions2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\End72.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\GPSon66.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\iOS8_MapPin_BlueCircle72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\iOS8_MapPin_YellowCircle72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Start72.png" />
   </ItemGroup>
   <Import Project="..\MapsApp.Shared\MapsApp.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

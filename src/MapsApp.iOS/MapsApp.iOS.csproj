@@ -202,27 +202,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iOS8_NorthCompass72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iOS8_TabBar_BurgerButton30s_d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iOS8_TabBar_ChooseBasemap30.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iOS8_Toolbar_GPSon22.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\End.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\ic_action_cancel-2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\iOS8_TabBar_OpenDirections30.png" />
-  </ItemGroup>
   <Import Project="..\MapsApp.Xamarin.Shared\MapsApp.projitems" Label="Shared" Condition="Exists('..\MapsApp.Xamarin.Shared\MapsApp.projitems')" />
   <Import Project="..\MapsApp.Shared\MapsApp.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

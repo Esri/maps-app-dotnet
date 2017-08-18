@@ -13,7 +13,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\AutoCompleteView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DependencyProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ImageResourceExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DependencyPropertyChangedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PropertyMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>

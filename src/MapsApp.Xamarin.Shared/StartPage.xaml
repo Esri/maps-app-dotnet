@@ -16,11 +16,11 @@
         <ResourceDictionary>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
-            <converters:NumberToBoolConverter x:Key="NumberToBoolConverter"/>
+            <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <OnPlatform x:Key="startImage" 
                       x:TypeArguments="ImageSource"
                       iOS="{ext:ImageResource MapsApp.iOS.Images.Start72.png}" 
-                      Android="{ext:ImageResource MapsApp.Droid.Images.Start36.png}" 
+                      Android="{ext:ImageResource MapsApp.Droid.Images.Start72.png}" 
                       WinPhone="{ext:ImageResource MapsApp.UWP.Images.Start72.png}" />
             <OnPlatform x:Key="endImage" 
                       x:TypeArguments="ImageSource"
@@ -29,32 +29,32 @@
                       WinPhone="{ext:ImageResource MapsApp.UWP.Images.End72.png}" />
             <OnPlatform x:Key="getDirectionsImage" 
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource MapsApp.iOS.Images.directions1.png}" 
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.directions2.png}" 
                       Android="{ext:ImageResource MapsApp.Droid.Images.directions2.png}" 
                       WinPhone="{ext:ImageResource MapsApp.UWP.Images.directions2.png}" />
             <OnPlatform x:Key="cancelImage" 
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource MapsApp.iOS.Images.cancel1.png}" 
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.cancel2.png}" 
                       Android="{ext:ImageResource MapsApp.Droid.Images.cancel2.png}" 
                       WinPhone="{ext:ImageResource MapsApp.UWP.Images.cancel2.png}" />
             <OnPlatform x:Key="compassImage" 
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource MapsApp.iOS.Images.Compass36.png}" 
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.Compass72.png}" 
                       Android="{ext:ImageResource MapsApp.Droid.Images.Compass72.png}" 
                       WinPhone="{ext:ImageResource MapsApp.UWP.Images.Compass72.png}" />
             <OnPlatform x:Key="gpsImage" 
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource MapsApp.iOS.Images.GPSon22.png}" 
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.GPSon66.png}" 
                       Android="{ext:ImageResource MapsApp.Droid.Images.GPSon66.png}" 
                       WinPhone="{ext:ImageResource MapsApp.UWP.Images.GPSon66.png}" />
             <OnPlatform x:Key="basemapImage" 
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource MapsApp.iOS.Images.Basemap30.png}" 
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.Basemap60.png}" 
                       Android="{ext:ImageResource MapsApp.Droid.Images.Basemap60.png}" 
                       WinPhone="{ext:ImageResource MapsApp.UWP.Images.Basemap60.png}" />
             <OnPlatform x:Key="menuImage" 
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource MapsApp.iOS.Images.BurgerButton30.png}" 
+                      iOS="{ext:ImageResource MapsApp.iOS.Images.BurgerButton60.png}" 
                       Android="{ext:ImageResource MapsApp.Droid.Images.BurgerButton60.png}" 
                       WinPhone="{ext:ImageResource MapsApp.UWP.Images.BurgerButton60.png}" />
 
@@ -122,7 +122,7 @@
 
         <!--Compass Button-->
         <Image x:Name="CompassImage" Source="{StaticResource compassImage}" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Margin="0,0,20,0" 
-               BindingContext="{x:Reference MapView}" IsVisible="{Binding Path=MapRotation, Converter={StaticResource NumberToBoolConverter}}">
+               BindingContext="{x:Reference MapView}" IsVisible="{Binding Path=MapRotation, Converter={StaticResource NumberToVisibilityConverter}}">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer 
             Tapped="ResetMapRotation"

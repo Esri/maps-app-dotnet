@@ -16,42 +16,101 @@
 
 namespace MapsApp.WPF
 {
+    using Esri.ArcGISRuntime.Symbology;
+    using Esri.ArcGISRuntime.UI;
+    using MapsApp.Shared.ViewModels;
     using System.Windows;
+    using System.Windows.Media;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            //this.MapView.LocationDisplay.IsEnabled = true;
-            //this.MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
-            //this.MapView.LocationDisplay.InitialZoomScale = 1500;
-            //this.MapView.ViewpointChanged += MapView_ViewpointChanged;
+
+            var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            geocodeViewModel.PropertyChanged += (o, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(GeocodeViewModel.Place):
+                        {
+                            var place = geocodeViewModel.Place;
+                            if (place == null)
+                                return;
+
+                            var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
+                            graphicsOverlay?.Graphics.Clear();
+
+                            // create map pin and add it to the map
+                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp.WPF;component/Images/End72.png")));
+                            var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
+                            graphicsOverlay?.Graphics.Add(graphic);
+
+                            break;
+                        }
+
+                    case nameof(GeocodeViewModel.AreaOfInterest):
+                        {
+                            // rotate the image around its center
+                            RotateTransform rotateTransform = new RotateTransform(360 - this.MapView.MapRotation, CompassImage.Height * 0.5, CompassImage.Width * 0.5);
+                            CompassImage.RenderTransform = rotateTransform;
+                            break;
+                        }
+
+                    case nameof(GeocodeViewModel.IsTopBannerVisible):
+                        {
+                            // clear map pin when user clears search
+                            if (geocodeViewModel.IsTopBannerVisible == false)
+                            {
+                                var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
+                                graphicsOverlay?.Graphics.Clear();
+                            }
+                            break;
+                        }
+
+                    case nameof(GeocodeViewModel.ErrorMessage):
+                        {
+                            // display error message from viewmodel
+                            MessageBox.Show(geocodeViewModel.ErrorMessage, "Error", MessageBoxButton.OK);
+                            break;
+                        }
+                }
+            };
+
+            // start location services
+            var mapViewModel = Resources["MapViewModel"] as MapViewModel;
+            MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
+            MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
+            MapView.LocationDisplay.IsEnabled = true;
+
+            // change viewpoint to current location
+            mapViewModel.PropertyChanged += (o, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(mapViewModel.AreaOfInterest):
+                        {
+                            geocodeViewModel.AreaOfInterest = mapViewModel.AreaOfInterest;
+                            break;
+                        }
+                }
+            };
         }
 
-        //private void MapView_ViewpointChanged(object sender, EventArgs e)
-        //{
-        //    CompassImage.RenderTransform = new RotateTransform(360 - this.MapView.MapRotation);
-        //}
-
-
-        ///// <summary>
-        ///// Event handler for user tapping the Current Location button
-        ///// </summary>
-        ///// <param name="sender">Sender control.</param>
-        ///// <param name="e">Event args</param>
-        //private void MoveToCurrentLocation(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        //{
-        //    this.MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Off;
-        //    this.MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
-        //    this.MapView.LocationDisplay.IsEnabled = true;
-        //}
-
-        //private async void ResetMapRotation(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        //{
-        //    await this.MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
-        //}
+        /// <summary>
+        /// Resets map rotation to North up
+        /// </summary>
+        private async void ResetMapRotation(object sender, RoutedEventArgs e)
+        {
+            await this.MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
+        }
     }
 }

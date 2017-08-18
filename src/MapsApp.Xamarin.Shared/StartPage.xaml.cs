@@ -85,7 +85,6 @@ namespace MapsApp
                                 // Display error message 
                                 DisplayAlert("Error", ex.ToString(), "OK");
                             }
-
                             break;
                         }
 
@@ -112,7 +111,6 @@ namespace MapsApp
                             break;
                         }
                 }
-
             };
 
             // start location services
@@ -133,7 +131,6 @@ namespace MapsApp
                         }
                 }
             };
-
         }
 
         /// <summary>

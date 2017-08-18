@@ -1,27 +1,52 @@
-﻿using Esri.ArcGISRuntime.Xamarin.Forms;
-using Xamarin.Forms;
-
-namespace MapsApp.Utils
+﻿namespace MapsApp.Utils
 {
+
+#if __IOS__ || __ANDROID__ || NETFX_CORE
+    using Esri.ArcGISRuntime.Internal;
+    using DependencyObject = Xamarin.Forms.BindableObject;
+    using DependencyProperty = Xamarin.Forms.BindableProperty;
+    using BindingFramework = Esri.ArcGISRuntime.Internal;
+    using Esri.ArcGISRuntime.Xamarin.Forms;
+#else
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Media;
+    using BindingFramework = System.Windows;
+    using Esri.ArcGISRuntime.UI.Controls;
+#endif
+
+    /// <summary>
+    /// Extends GeoView with ViewPoint Controller property
+    /// </summary>
     public static class GeoViewExtensions
     {
-        public static readonly BindableProperty ViewpointControllerProperty =
-            BindableProperty.CreateAttached("ViewpointController", typeof(ViewpointController), typeof(GeoView), null,
-                BindingMode.TwoWay, null, OnViewpointControllerChanged);
+        /// <summary>
+        /// Creates a ViewpointControllerProperty property
+        /// </summary>
+        public static readonly DependencyProperty ViewpointControllerProperty =
+            BindingFramework.DependencyProperty.Register("ViewpointController", typeof(ViewpointController), typeof(GeoView), new PropertyMetadata(null, OnViewpointControllerChanged));
 
-
-        private static void OnViewpointControllerChanged(BindableObject bindable, object oldValue, object newValue)
+        /// <summary>
+        /// Invoked when the  ViewpointControllerProperty's value has changed
+        /// </summary>
+        private static void OnViewpointControllerChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (newValue is ViewpointController)
-                ((ViewpointController)newValue).SetGeoView(bindable as GeoView);
+            if (e.NewValue is ViewpointController)
+                ((ViewpointController)e.NewValue).SetGeoView(d as GeoView);
         }
 
-        public static ViewpointController GetViewpointController(BindableObject geoView)
+        /// <summary>
+        /// ViewpointControllerProperty getter method
+        /// </summary>
+        public static ViewpointController GetViewpointController(DependencyObject geoView)
         {
             return (geoView as GeoView)?.GetValue(ViewpointControllerProperty) as ViewpointController;
         }
 
-        public static void SetViewpointController(BindableObject geoView, ViewpointController ViewpointController)
+        /// <summary>
+        /// ViewpointControllerProperty setter method
+        /// </summary>
+        public static void SetViewpointController(DependencyObject geoView, ViewpointController ViewpointController)
         {
             (geoView as GeoView)?.SetValue(ViewpointControllerProperty, ViewpointController);
         }

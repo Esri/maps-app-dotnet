@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
         xmlns:viewModels="clr-namespace:MapsApp.Shared.ViewModels"
+        xmlns:converters="clr-namespace:MapsApp.Shared.Converters"
         xmlns:utils="clr-namespace:MapsApp.Utils"
         mc:Ignorable="d"
-        Title="Maps App" Height="350" Width="525">
+        Title="Maps App" >
     <Window.Resources>
         <ResourceDictionary>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
-            <!--<converters:NumberToBoolConverter x:Key="NumberToBoolConverter"/>-->
+            <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -30,23 +31,46 @@
         <!-- MapView Control -->
         <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
                           Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
-            <!--<utils:GeoViewExtensions.ViewpointController>
-                --><!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI--><!--
+            <esri:MapView.GraphicsOverlays>
+                <esri:GraphicsOverlay Id="PlacesOverlay"/>
+            </esri:MapView.GraphicsOverlays>
+            <utils:GeoViewExtensions.ViewpointController>
+                <!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI-->
                 <utils:ViewpointController 
                     Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" >
                 </utils:ViewpointController>
-            </utils:GeoViewExtensions.ViewpointController>-->
+            </utils:GeoViewExtensions.ViewpointController>
         </esri:MapView>
+        
+        <!-- List of suggestions from geocoder -->
+        <ListView DataContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" 
+                  Grid.Column="0" Grid.Row="0" Margin="0,36,0,0" FontSize="15"
+                      Width="500" HorizontalAlignment="Left" Visibility="{Binding SuggestionsList.Count, Converter={StaticResource NumberToVisibilityConverter}}"/>
 
+        <!-- Search Panel -->
+        <StackPanel x:Name="SearchPanel" Orientation="Vertical" DataContext="{StaticResource GeocodeViewModel}" Grid.Column="0" Grid.Row="0">
+            <!-- Search Box and Button-->
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="SearchTextBox" Width="500" Height="40"
+                                 BorderThickness="1" FontSize="20" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Width="40" Height="40" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchText}">
+                    <Image  Source="pack://application:,,,/MapsApp.WPF;component/Images/search_32.png" />
+                </Button>
+            </StackPanel>
+        </StackPanel>
+       
+        <!--Compass Button-->
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,100,20,0" DataContext="{Binding ElementName=MapView}" Visibility="{Binding Path=MapRotation, Converter={StaticResource NumberToVisibilityConverter}}">
+            <Hyperlink Click="ResetMapRotation"  TextDecorations="{x:Null}">
+                <Image x:Name="CompassImage" Source="pack://application:,,,/MapsApp.WPF;component/Images/Compass72.png" Height="60" Width="60"/>
+            </Hyperlink>
+        </TextBlock>
 
-        <!-- Compass Button --><!--
-        <Image x:Name="CompassImage" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,20,0" 
-                   Source="pack://application:,,,/MapsApp.WPF;component/Images/iOS8_NorthCompass72-1.png" 
-                   Height="60" Width="60" RenderTransformOrigin=".5,.5" MouseDown="ResetMapRotation"/>
-
-        --><!-- Current Location Button --><!--
-        <Image Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,20,0" 
-                   Source="pack://application:,,,/MapsApp.WPF;component/Images/iOS8_Toolbar_GPSon66.png" 
-                   MouseDown="MoveToCurrentLocation" Height="60" Width="60"/>-->
+        <!--Current Location Button-->
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,20,100">
+            <Hyperlink Command="{Binding MoveToCurrentLocationCommand, Source={StaticResource MapViewModel}}" TextDecorations="{x:Null}">
+                <Image Source="pack://application:,,,/MapsApp.WPF;component/Images/GPSon66.png" Height="60" Width="60"/>
+            </Hyperlink>
+        </TextBlock>
     </Grid>
 </Window>

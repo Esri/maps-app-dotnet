@@ -18,7 +18,6 @@ namespace MapsApp.Shared.ViewModels
 {
     using System;
     using System.Collections.ObjectModel;
-    using System.Diagnostics;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Input;
@@ -295,6 +294,7 @@ namespace MapsApp.Shared.ViewModels
         /// <returns>Location that best matches the search string</returns>
         private async Task GetSearchedLocationAsync(string geocodeAddress)
         {
+            this.SuggestionsList.Clear();
             try
             {
                 var geocodeParameters = new GeocodeParameters

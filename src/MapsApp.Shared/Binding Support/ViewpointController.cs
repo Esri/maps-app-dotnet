@@ -1,23 +1,46 @@
-﻿using Esri.ArcGISRuntime.Location;
-using Esri.ArcGISRuntime.Mapping;
-using Esri.ArcGISRuntime.UI;
-using System;
-using Esri.ArcGISRuntime.Xamarin.Forms;
-using Xamarin.Forms;
-
-namespace MapsApp.Utils
+﻿namespace MapsApp.Utils
 {
-    public class ViewpointController : BindableObject
+    using Esri.ArcGISRuntime.Mapping;
+    using System;
+
+#if __ANDROID__ || __IOS__ || NETFX_CORE
+    using DependencyObject = Xamarin.Forms.BindableObject;
+    using DependencyProperty = Xamarin.Forms.BindableProperty;
+    using BindingFramework = Esri.ArcGISRuntime.Internal;
+    using Esri.ArcGISRuntime.Internal;
+    using Esri.ArcGISRuntime.Xamarin.Forms;
+#else
+    using System.Windows;
+    using Esri.ArcGISRuntime.UI.Controls;
+    using BindingFramework = System.Windows;
+#endif
+
+    /// <summary>
+    /// Provides members for creating a Viewpoint Controller
+    /// </summary>
+    public class ViewpointController : DependencyObject
     {
-        public ViewpointController() { }
 
         private WeakReference<GeoView> _geoViewWeakRef;
+        bool _isGeoViewViewpointChangedEventFiring = false;
+        bool _isOnViewpointChangedExecuting = false;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewpointController"/> class.
+        /// </summary>
+        public ViewpointController() { }
+        
+        /// <summary>
+        /// GeoView setter
+        /// </summary>
         internal void SetGeoView(GeoView geoView)
         {
-            GeoView = geoView;
+            this.GeoView = geoView;
         }
 
+        /// <summary>
+        /// Gets or sets the GeoView
+        /// </summary>
         private GeoView GeoView
         {
             get
@@ -36,12 +59,13 @@ namespace MapsApp.Utils
                 else
                     _geoViewWeakRef.SetTarget(value);
 
-                // TODO: Change to weak event handler
                 value.ViewpointChanged += GeoView_ViewpointChanged;
             }
         }
 
-        bool _isGeoViewViewpointChangedEventFiring = false;
+        /// <summary>
+        /// Invoked when the  GeoView's ViewPoint value has changed
+        /// </summary>
         private void GeoView_ViewpointChanged(object sender, EventArgs e)
         {
             if (!_isOnViewpointChangedExecuting)
@@ -52,45 +76,33 @@ namespace MapsApp.Utils
             }
         }
 
+        /// <summary>
+        /// Creates a ViewpointController property
+        /// </summary>
+        public static readonly DependencyProperty ViewpointProperty = BindingFramework.DependencyProperty.Register(
+            "Viewpoint", typeof(Viewpoint), typeof(ViewpointController), new PropertyMetadata(null, OnViewpointChanged));
 
-        public static readonly BindableProperty ViewpointProperty = BindableProperty.Create(
-            "Viewpoint", typeof(Viewpoint), typeof(ViewpointController), null, BindingMode.OneWay,
-            null, OnViewpointChanged);
 
-        //public static readonly BindableProperty LocationDisplayProperty = BindableProperty.Create("LocationDisplay", typeof(LocationDisplay), typeof(ViewpointController), null, BindingMode.OneWay, null, OnLocationDisplayChanged);
-
-        //private static void OnLocationDisplayChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    if (newValue is Location)
-        //    {
-        //        var mapView = (bindable as ViewpointController).GeoView as MapView;
-        //        mapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
-        //        //mapView.LocationDisplay.InitialZoomScale = 1500;
-        //    }
-        //}
-
-        bool _isOnViewpointChangedExecuting = false;
-        private async static void OnViewpointChanged(BindableObject bindable, object oldValue, object newValue)
+        /// <summary>
+        /// Invoked when the  ViewPoint value has changed
+        /// </summary>
+        private async static void OnViewpointChanged(DependencyObject bindable, DependencyPropertyChangedEventArgs e)
         {
-            if (newValue is Viewpoint && !(bindable as ViewpointController)._isGeoViewViewpointChangedEventFiring)
+            if (e.NewValue is Viewpoint && !(bindable as ViewpointController)._isGeoViewViewpointChangedEventFiring)
             {
                 (bindable as ViewpointController)._isOnViewpointChangedExecuting = true;
-                await (bindable as ViewpointController)?.GeoView?.SetViewpointAsync((Viewpoint)newValue);
+                await (bindable as ViewpointController)?.GeoView?.SetViewpointAsync((Viewpoint)e.NewValue);
                 (bindable as ViewpointController)._isOnViewpointChangedExecuting = false;
             }
         }
 
+        /// <summary>
+        /// Gets or sets the Viewpoint property
+        /// </summary>
         public Viewpoint Viewpoint
         {
             get { return GeoView?.GetCurrentViewpoint(ViewpointType.CenterAndScale); }
             set { SetValue(ViewpointProperty, value); }
         }
-
-        //public LocationDisplay LocationDisplay
-        //{
-        //    get { return ((MapView)GeoView).LocationDisplay; }
-        //    set { SetValue(LocationDisplayProperty, value); }
-        //}
-
     }
 }
