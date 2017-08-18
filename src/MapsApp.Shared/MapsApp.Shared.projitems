@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Binding Support\ViewpointController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\DelegateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NumberToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BasemapsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GeocodeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MapViewModel.cs" />

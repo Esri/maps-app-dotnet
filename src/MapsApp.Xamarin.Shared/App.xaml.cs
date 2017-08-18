@@ -10,8 +10,9 @@ namespace MapsApp
 		{
 			InitializeComponent();
 
-            MainPage = new MapsApp.StartPage();
-		}
+            MainPage = new NavigationPage(new MapsApp.StartPage());
+            NavigationPage.SetHasNavigationBar(MainPage, false);
+        }
 
 		protected override void OnStart ()
 		{

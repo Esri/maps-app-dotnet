@@ -17,16 +17,26 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ImageResourceExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DependencyPropertyChangedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PropertyMetadata.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)StartPage.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Views\BasemapPage.xaml.cs">
+      <DependentUpon>BasemapPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)StartPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\StartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\BasemapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

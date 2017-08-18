@@ -10,7 +10,8 @@
              xmlns:converters="clr-namespace:MapsApp.Shared.Converters"
              xmlns:controls="clr-namespace:MapsApp.Controls;"
              xmlns:ext="clr-namespace:MapsApp.Extensions"
-             xmlns:viewModels="clr-namespace:MapsApp.Shared.ViewModels;">
+             xmlns:viewModels="clr-namespace:MapsApp.Shared.ViewModels;"
+             NavigationPage.HasNavigationBar="false">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -141,14 +142,20 @@
             </Image>
             
             <!-- TODO: Uncomment when ready to implement basemap switcher and menu-->
-            <!--<BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
-
-             --><!--Basemap Button--><!--
-            <Image Source="{StaticResource basemapImage}" HorizontalOptions="Center" VerticalOptions="Center"/>
-
             <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
+
+            <!--Basemap Button-->
+            <Image Source="{StaticResource basemapImage}" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer 
+            Tapped="LoadBasemapControl"
+            NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!--<BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>-->
             
-             --><!--Menu Button--><!--
+            <!--Menu Button--><!--
             <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center"/>-->
         </StackLayout>
     </Grid>

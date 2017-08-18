@@ -26,6 +26,9 @@ namespace MapsApp
 
     public partial class StartPage : ContentPage
 	{
+
+        private BasemapsViewModel basemapViewModel;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="StartPage"/> class.
         /// </summary>
@@ -139,6 +142,17 @@ namespace MapsApp
         private async void ResetMapRotation(object sender, EventArgs e)
         {
             await this.MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
+        }
+
+        // Load basemap page, reuse viewmodel so the initial loading happens only once
+        private async void LoadBasemapControl(object sender, EventArgs e)
+        {
+            if (basemapViewModel == null)
+            {
+                basemapViewModel = new BasemapsViewModel();
+            }
+
+            await Navigation.PushAsync(new BasemapPage(basemapViewModel));
         }
     }
 }

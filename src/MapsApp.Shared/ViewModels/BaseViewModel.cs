@@ -23,7 +23,7 @@ namespace MapsApp.Shared.ViewModels
     /// <summary>
     /// Base View Model that all View Models inherit
     /// </summary>
-    abstract class BaseViewModel : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         /// <summary>
         /// Raises the <see cref="MapViewModel.PropertyChanged" /> event
