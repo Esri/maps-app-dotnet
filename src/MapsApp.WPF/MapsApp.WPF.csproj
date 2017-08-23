@@ -100,14 +100,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Basemap60.png" />
+    <Content Include="Images\Basemap60.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Images\search_32.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\BurgerButton60.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\cancel2.png" />
+    <Content Include="Images\cancel2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Compass72.png">
@@ -135,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Start72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="..\MapsApp.Shared\MapsApp.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -91,6 +91,10 @@ namespace MapsApp.WPF
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
             MapView.LocationDisplay.IsEnabled = true;
 
+            // set mapviewmodel
+            var basemapViewModel = Resources["BasemapsViewModel"] as BasemapsViewModel;
+            basemapViewModel.MapViewModel = mapViewModel;
+
             // change viewpoint to current location
             mapViewModel.PropertyChanged += (o, e) =>
             {
@@ -111,6 +115,20 @@ namespace MapsApp.WPF
         private async void ResetMapRotation(object sender, RoutedEventArgs e)
         {
             await this.MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Turns on basemap switcher when button is pushed
+        /// </summary>
+        private void OpenBasemapSwitcher(object sender, RoutedEventArgs e)
+        {
+            BasemapSwitcher.Visibility = Visibility.Visible;
+            
+        }
+
+        private void HideBasemapSwitcher(object sender, RoutedEventArgs e)
+        {
+            BasemapSwitcher.Visibility = Visibility.Collapsed;
         }
     }
 }
