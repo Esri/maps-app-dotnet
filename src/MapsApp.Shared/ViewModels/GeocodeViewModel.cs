@@ -24,6 +24,7 @@ namespace MapsApp.Shared.ViewModels
     using Esri.ArcGISRuntime.Mapping;
     using Esri.ArcGISRuntime.Tasks.Geocoding;
     using MapsApp.Shared.Commands;
+    using System.Diagnostics;
 
     /// <summary>
     /// View Model handling logic for the Geocoder
@@ -39,6 +40,7 @@ namespace MapsApp.Shared.ViewModels
         private bool _isTopBannerVisible;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
+        private ICommand _reverseGeocodeCommand;
         private ObservableCollection<string> _suggestionsList;
 
         /// <summary>
@@ -225,6 +227,18 @@ namespace MapsApp.Shared.ViewModels
                     {
                         this.SearchText = string.Empty;
                         this.IsTopBannerVisible = false;
+                    }));
+            }
+        }
+
+        public ICommand ReverseGeocodeCommand
+        {
+            get
+            {
+                return this._reverseGeocodeCommand ?? (this._reverseGeocodeCommand = new DelegateCommand(
+                    (x) =>
+                    {
+                        Debug.WriteLine(x?.ToString());
                     }));
             }
         }

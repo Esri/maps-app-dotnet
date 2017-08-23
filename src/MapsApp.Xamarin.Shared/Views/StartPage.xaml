@@ -11,6 +11,7 @@
              xmlns:controls="clr-namespace:MapsApp.Controls;"
              xmlns:ext="clr-namespace:MapsApp.Extensions"
              xmlns:viewModels="clr-namespace:MapsApp.Shared.ViewModels;"
+             xmlns:behaviors="clr-namespace:EventToCommandBehavior"
              NavigationPage.HasNavigationBar="false">
 
     <ContentPage.Resources>
@@ -77,8 +78,8 @@
         </Grid.RowDefinitions>
 
         <!-- MapView Control -->
-        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
-                        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
+        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}" GeoViewHolding="GeoViewHoldingEvent"
+                        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" >
             <esri:MapView.GraphicsOverlays>
                 <esriUI:GraphicsOverlay Id="PlacesOverlay"/>
             </esri:MapView.GraphicsOverlays>
@@ -88,6 +89,10 @@
                     Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" >
                 </utils:ViewpointController>
             </utils:GeoViewExtensions.ViewpointController>
+            <!--<esri:MapView.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="GeoViewHolding" Command="{Binding ReverseGeocodeCommand}" 
+                                                  BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"/>
+            </esri:MapView.Behaviors>-->
         </esri:MapView>
 
          <!--Autocomplete Control--> 
@@ -105,7 +110,11 @@
 
         <!-- Search Result Banner -->
         <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
-                     BackgroundColor="White" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding IsTopBannerVisible}">
+                     BackgroundColor="White" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding IsTopBannerVisible}" >
+            <!--<StackLayout.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="Focused" Command="{Binding ReverseGeocodeCommand}" 
+                                                  BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"/>
+            </StackLayout.Behaviors>-->
 
             <Image x:Name="PinImage" Source="{StaticResource endImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
 

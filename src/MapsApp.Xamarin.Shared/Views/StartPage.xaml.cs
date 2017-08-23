@@ -16,16 +16,20 @@
 
 namespace MapsApp
 {
+    using Esri.ArcGISRuntime.Mapping;
     using Esri.ArcGISRuntime.Symbology;
+    using Esri.ArcGISRuntime.Tasks.Geocoding;
     using Esri.ArcGISRuntime.UI;
+    using Esri.ArcGISRuntime.Xamarin.Forms;
     using MapsApp.Shared.ViewModels;
     using System;
     using System.IO;
+    using System.Linq;
     using System.Reflection;
     using Xamarin.Forms;
 
     public partial class StartPage : ContentPage
-	{
+    {
 
         private BasemapsViewModel basemapViewModel;
 
@@ -33,8 +37,8 @@ namespace MapsApp
         /// Initializes a new instance of the <see cref="StartPage"/> class.
         /// </summary>
         public StartPage()
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
@@ -154,6 +158,23 @@ namespace MapsApp
             }
 
             await Navigation.PushAsync(new BasemapPage(basemapViewModel, mapViewModel));
+        }
+
+        private async void GeoViewHoldingEvent(object sender, GeoViewInputEventArgs e)
+        {
+            var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            var matches = await geocodeViewModel.Locator.ReverseGeocodeAsync(e.Location);
+            geocodeViewModel.Place = matches.First();
+
+            // Select located feature on map
+            if (geocodeViewModel.Place != null)
+            {
+                geocodeViewModel.IsTopBannerVisible = true;
+
+                // Set viewpoint to the feature's extent
+                geocodeViewModel.AreaOfInterest = geocodeViewModel.Place.Extent != null ? new Viewpoint(geocodeViewModel.Place.Extent) :
+                    new Viewpoint(geocodeViewModel.Place.DisplayLocation, 4000);
+            }
         }
     }
 }
