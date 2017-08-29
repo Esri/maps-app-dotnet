@@ -19,7 +19,7 @@ namespace MapsApp.UWP
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             LoadApplication(new MapsApp.App());
         }

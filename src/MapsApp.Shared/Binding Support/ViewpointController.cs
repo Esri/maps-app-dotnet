@@ -35,7 +35,7 @@
         /// </summary>
         internal void SetGeoView(GeoView geoView)
         {
-            this.GeoView = geoView;
+            GeoView = geoView;
         }
 
         /// <summary>

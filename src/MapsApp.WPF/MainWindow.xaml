@@ -8,11 +8,11 @@
         xmlns:converters="clr-namespace:MapsApp.Shared.Converters"
         xmlns:utils="clr-namespace:MapsApp.Utils"
         mc:Ignorable="d"
-        Title="Maps App" >
+        Title="Maps App">
     <Window.Resources>
         <ResourceDictionary>
-            <viewModels:MapViewModel x:Key="MapViewModel" />
-            <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
+            <viewModels:MapViewModel x:Key="MapViewModel"/>
+            <viewModels:GeocodeViewModel x:Key="GeocodeViewModel"/>
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
         </ResourceDictionary>
     </Window.Resources>
@@ -37,7 +37,7 @@
             <utils:GeoViewExtensions.ViewpointController>
                 <!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI-->
                 <utils:ViewpointController 
-                    Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" >
+                    Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}">
                 </utils:ViewpointController>
             </utils:GeoViewExtensions.ViewpointController>
         </esri:MapView>
