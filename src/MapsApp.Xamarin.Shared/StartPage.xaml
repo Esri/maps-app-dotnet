@@ -130,7 +130,6 @@
             </Image.GestureRecognizers>
         </Image>
 
-
         <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100">
             
             <!-- GPS Button -->
@@ -139,17 +138,6 @@
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
-            
-            <!-- TODO: Uncomment when ready to implement basemap switcher and menu-->
-            <!--<BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
-
-             --><!--Basemap Button--><!--
-            <Image Source="{StaticResource basemapImage}" HorizontalOptions="Center" VerticalOptions="Center"/>
-
-            <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
-            
-             --><!--Menu Button--><!--
-            <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center"/>-->
         </StackLayout>
     </Grid>
 </ContentPage>

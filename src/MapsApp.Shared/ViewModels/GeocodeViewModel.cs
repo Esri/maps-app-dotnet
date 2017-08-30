@@ -77,7 +77,10 @@ namespace MapsApp.Shared.ViewModels
         /// </summary>
         public string SearchText
         {
-            get => _searchText;
+            get
+            {
+                return _searchText;
+            }
 
             set
             {
@@ -103,7 +106,10 @@ namespace MapsApp.Shared.ViewModels
         /// </summary>
         public string SelectedSearchItem
         {
-            get => _selectedSuggestion;
+            get
+            {
+               return _selectedSuggestion;
+            }
             
             set
             {
@@ -116,6 +122,7 @@ namespace MapsApp.Shared.ViewModels
                     // Disable unawaited async warning
                     GetSearchedLocationAsync(_selectedSuggestion);
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    OnPropertyChanged();
 
                 }
             }
@@ -126,7 +133,10 @@ namespace MapsApp.Shared.ViewModels
         /// </summary>
         public ObservableCollection<string> SuggestionsList
         {
-            get => _suggestionsList;
+            get
+            {
+                return _suggestionsList;
+            }
 
             set
             {
@@ -143,7 +153,11 @@ namespace MapsApp.Shared.ViewModels
         /// </summary>
         public Viewpoint AreaOfInterest
         {
-            get => _areaOfInterest; 
+            get
+            {
+                return _areaOfInterest;
+            }
+
             set
             {
                 if (_areaOfInterest != value)
