@@ -17,6 +17,7 @@
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
+            <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <OnPlatform x:Key="startImage" 
                       x:TypeArguments="ImageSource"
                       iOS="{ext:ImageResource MapsApp.iOS.Images.Start72.png}" 
@@ -122,7 +123,8 @@
 
         <!--Compass Button-->
         <Image x:Name="CompassImage" Source="{StaticResource compassImage}" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Margin="0,0,20,0" 
-               BindingContext="{x:Reference MapView}" IsVisible="{Binding Path=MapRotation, Converter={StaticResource NumberToVisibilityConverter}}">
+               BindingContext="{x:Reference MapView}" IsVisible="{Binding Path=MapRotation, Converter={StaticResource NumberToVisibilityConverter}}" 
+               Rotation="{Binding MapRotation, Converter={StaticResource SubtractFromConverter}}">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer 
             Tapped="ResetMapRotation"

@@ -35,13 +35,6 @@ namespace MapsApp.WPF
         {
             InitializeComponent();
 
-            MapView.ViewpointChanged += (o, e) =>
-            {
-                // rotate the image around its center
-                RotateTransform rotateTransform = new RotateTransform(360 - MapView.MapRotation, CompassImage.Height * 0.5, CompassImage.Width * 0.5);
-                CompassImage.RenderTransform = rotateTransform;
-            };
-
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
@@ -103,8 +96,6 @@ namespace MapsApp.WPF
                 }
             };
         }
-
-
 
         /// <summary>
         /// Resets map rotation to North up

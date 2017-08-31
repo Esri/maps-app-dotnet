@@ -14,6 +14,7 @@
             <viewModels:MapViewModel x:Key="MapViewModel"/>
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel"/>
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
+            <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -62,7 +63,14 @@
         <!--Compass Button-->
         <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,100,20,0" DataContext="{Binding ElementName=MapView}" Visibility="{Binding Path=MapRotation, Converter={StaticResource NumberToVisibilityConverter}}">
             <Hyperlink Click="ResetMapRotation"  TextDecorations="{x:Null}">
-                <Image x:Name="CompassImage" Source="pack://application:,,,/MapsApp.WPF;component/Images/Compass72.png" Height="60" Width="60"/>
+                <Image x:Name="CompassImage" Source="pack://application:,,,/MapsApp.WPF;component/Images/Compass72.png" Height="60" Width="60">
+                    <Image.RenderTransform>
+                        <RotateTransform  Angle="{Binding MapRotation,
+                                 ElementName=MapView,
+                                 Converter={StaticResource SubtractFromConverter},
+                                 ConverterParameter=360}" CenterX="30" CenterY="30" />
+                    </Image.RenderTransform>
+                </Image>
             </Hyperlink>
         </TextBlock>
 

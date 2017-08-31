@@ -33,12 +33,6 @@ namespace MapsApp
         public StartPage()
 		{
 			InitializeComponent();
-            
-            MapView.ViewpointChanged += (o, e) =>
-            {
-                // rotate the image around its center
-                CompassImage.Rotation = 360 - MapView.MapRotation;
-            };
 
             PictureMarkerSymbol mapPin = CreateMapPin();
 
