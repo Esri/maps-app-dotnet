@@ -1,20 +1,20 @@
-﻿namespace MapsApp.Utils
-{
-    using Esri.ArcGISRuntime.Mapping;
-    using System;
+﻿using Esri.ArcGISRuntime.Mapping;
+using System;
 
 #if __ANDROID__ || __IOS__ || NETFX_CORE
-    using DependencyObject = Xamarin.Forms.BindableObject;
-    using DependencyProperty = Xamarin.Forms.BindableProperty;
-    using BindingFramework = Esri.ArcGISRuntime.Internal;
-    using Esri.ArcGISRuntime.Internal;
-    using Esri.ArcGISRuntime.Xamarin.Forms;
+using DependencyObject = Xamarin.Forms.BindableObject;
+using DependencyProperty = Xamarin.Forms.BindableProperty;
+using BindingFramework = Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers;
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers;
+using Esri.ArcGISRuntime.Xamarin.Forms;
 #else
     using System.Windows;
     using Esri.ArcGISRuntime.UI.Controls;
     using BindingFramework = System.Windows;
 #endif
 
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
+{
     /// <summary>
     /// Provides members for creating a Viewpoint Controller
     /// </summary>

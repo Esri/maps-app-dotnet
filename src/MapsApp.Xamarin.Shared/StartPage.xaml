@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MapsApp;assembly=MapsApp;"
-             xmlns:utils="clr-namespace:MapsApp.Utils"
-             x:Class="MapsApp.StartPage"
+             xmlns:local="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin"
+             xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
+             x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.StartPage"
              xmlns:esri="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
              xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.UI;assembly=Esri.ArcGISRuntime"
              xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
-             xmlns:converters="clr-namespace:MapsApp.Shared.Converters"
-             xmlns:controls="clr-namespace:MapsApp.Controls;"
-             xmlns:ext="clr-namespace:MapsApp.Extensions"
-             xmlns:viewModels="clr-namespace:MapsApp.Shared.ViewModels;">
+             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
+             xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls"
+             xmlns:ext="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Extensions"
+             xmlns:viewModels="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels">
 
     <ContentPage.Resources>
         <ResourceDictionary>

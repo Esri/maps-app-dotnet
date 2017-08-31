@@ -13,15 +13,13 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
+using Esri.ArcGISRuntime.Symbology;
+using Esri.ArcGISRuntime.UI;
+using System.Windows;
 
-namespace MapsApp.WPF
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 {
-    using System.Windows;
-    using System.Windows.Media;
-    using Esri.ArcGISRuntime.Symbology;
-    using Esri.ArcGISRuntime.UI;
-    using MapsApp.Shared.ViewModels;
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -50,7 +48,7 @@ namespace MapsApp.WPF
                             graphicsOverlay?.Graphics.Clear();
 
                             // create map pin and add it to the map
-                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp.WPF;component/Images/End72.png")));
+                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
                             var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
 

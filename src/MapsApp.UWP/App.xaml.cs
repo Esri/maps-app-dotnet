@@ -1,23 +1,14 @@
 ﻿using Esri.ArcGISRuntime.Xamarin.Forms;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using XamarinForms = global::Xamarin.Forms;
 
-namespace MapsApp.UWP
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -51,7 +42,7 @@ namespace MapsApp.UWP
 
             Frame rootFrame = Window.Current.Content as Frame;
 
-            Xamarin.Forms.Forms.Init(e, new Assembly[] { typeof(MapView).GetTypeInfo().Assembly });
+            XamarinForms.Forms.Init(e, new Assembly[] { typeof(MapView).GetTypeInfo().Assembly });
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -62,7 +53,7 @@ namespace MapsApp.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
+                XamarinForms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

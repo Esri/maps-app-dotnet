@@ -17,13 +17,13 @@
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.UI;
-using MapsApp.Shared.ViewModels;
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
 using System;
 using System.IO;
 using System.Reflection;
 using Xamarin.Forms;
 
-namespace MapsApp
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
     public partial class StartPage : ContentPage
 	{

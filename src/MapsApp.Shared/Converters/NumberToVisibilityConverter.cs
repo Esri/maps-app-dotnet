@@ -13,18 +13,17 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
-
-namespace MapsApp.Shared.Converters
-{
-    using System;
-    using System.Globalization;
+using System;
+using System.Globalization;
 #if __ANDROID__ || __IOS__ || NETFX_CORE
-    using IValueConverter = Xamarin.Forms.IValueConverter;
+using IValueConverter = Xamarin.Forms.IValueConverter;
 #else
 using System.Windows.Data;
 using System.Windows;
 #endif
 
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
+{
     /// <summary>
     /// Converts number to control visibility
     /// </summary>

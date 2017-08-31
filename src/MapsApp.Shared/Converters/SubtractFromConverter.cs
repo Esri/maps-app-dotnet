@@ -22,7 +22,7 @@ using System.Windows.Data;
 using System.Windows;
 #endif
 
-namespace MapsApp.Shared.Converters
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
 {
     /// <summary>
     /// Subtracts parameter value from the control value

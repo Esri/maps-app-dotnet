@@ -13,19 +13,18 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
+using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Tasks.Geocoding;
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
+using Esri.ArcGISRuntime.Geometry;
 
-namespace MapsApp.Shared.ViewModels
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
-    using System;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Windows.Input;
-    using Esri.ArcGISRuntime.Mapping;
-    using Esri.ArcGISRuntime.Tasks.Geocoding;
-    using MapsApp.Shared.Commands;
-    using Esri.ArcGISRuntime.Geometry;
-
     /// <summary>
     /// View Model handling logic for the Geocoder
     /// </summary>

@@ -40,7 +40,7 @@ using System.Reflection;
 using Xamarin.Forms;
 using System.Diagnostics;
 
-namespace MapsApp.Controls
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls
 {
     /// <summary>
     /// Define the AutoCompleteView control.

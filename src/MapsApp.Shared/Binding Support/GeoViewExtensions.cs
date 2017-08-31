@@ -1,12 +1,9 @@
-﻿namespace MapsApp.Utils
-{
-
-#if __IOS__ || __ANDROID__ || NETFX_CORE
-    using Esri.ArcGISRuntime.Internal;
-    using DependencyObject = Xamarin.Forms.BindableObject;
-    using DependencyProperty = Xamarin.Forms.BindableProperty;
-    using BindingFramework = Esri.ArcGISRuntime.Internal;
-    using Esri.ArcGISRuntime.Xamarin.Forms;
+﻿#if __IOS__ || __ANDROID__ || NETFX_CORE
+using DependencyObject = Xamarin.Forms.BindableObject;
+using DependencyProperty = Xamarin.Forms.BindableProperty;
+using BindingFramework = Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers;
+using Esri.ArcGISRuntime.Xamarin.Forms;
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers;
 #else
     using System.Windows;
     using System.Windows.Controls;
@@ -15,6 +12,8 @@
     using Esri.ArcGISRuntime.UI.Controls;
 #endif
 
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
+{
     /// <summary>
     /// Extends GeoView with ViewPoint Controller property
     /// </summary>

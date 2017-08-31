@@ -13,14 +13,13 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
+using Esri.ArcGISRuntime.Location;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
+using System.Windows.Input;
 
-namespace MapsApp.Shared.ViewModels
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
-    using Esri.ArcGISRuntime.Location;
-    using Esri.ArcGISRuntime.Mapping;
-    using MapsApp.Shared.Commands;
-    using System.Windows.Input;
-
     /// <summary>
     /// View Model handling logic for the Map
     /// </summary>
@@ -30,7 +29,7 @@ namespace MapsApp.Shared.ViewModels
         private Map _map = new Map(Basemap.CreateTopographicVector());
         private Viewpoint _areaOfInterest;
         private LocationDataSource _locationDataSource;
-        private Location _lastLocation;
+        private Location.Location _lastLocation;
         private ICommand _moveToCurrentLocationCommand;
         
         /// <summary>

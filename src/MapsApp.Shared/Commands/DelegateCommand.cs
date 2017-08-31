@@ -13,12 +13,11 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
+using System;
+using System.Windows.Input;
 
-namespace MapsApp.Shared.Commands
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands
 {
-    using System;
-    using System.Windows.Input;
-
     /// <summary>
     /// Generic delegate command
     /// </summary>

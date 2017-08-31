@@ -13,13 +13,11 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
-// <author>Mara Stoica</author>
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-namespace MapsApp.Shared.ViewModels
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
-
     /// <summary>
     /// Base View Model that all View Models inherit
     /// </summary>

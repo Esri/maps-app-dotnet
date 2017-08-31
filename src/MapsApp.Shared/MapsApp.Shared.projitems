@@ -52,4 +52,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Esri.ArcGISRuntime.ExampleApps.ruleset" />
+  </ItemGroup>
 </Project>

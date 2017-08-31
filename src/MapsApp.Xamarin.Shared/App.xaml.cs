@@ -1,7 +1,7 @@
 ﻿
 using Xamarin.Forms;
 
-namespace MapsApp
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
 
     public partial class App : Application
@@ -10,7 +10,7 @@ namespace MapsApp
 		{
 			InitializeComponent();
 
-            MainPage = new MapsApp.StartPage();
+            MainPage = new Xamarin.StartPage();
 		}
 
 		protected override void OnStart ()
