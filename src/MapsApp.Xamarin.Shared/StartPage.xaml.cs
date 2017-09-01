@@ -43,14 +43,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                 {
                     case nameof(GeocodeViewModel.Place):
                         {
+                            var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
+                            graphicsOverlay?.Graphics.Clear();
+
                             GeocodeResult place = geocodeViewModel.Place;
                             if (place == null)
                             {
                                 return;
-                            }
-
-                            var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
-                            graphicsOverlay?.Graphics.Clear();
+                            }                           
 
                             var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
@@ -58,16 +58,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             break;
                         }
 
-                    case nameof(GeocodeViewModel.IsTopBannerVisible):
-                        {
-                            // clear map pin when user clears search
-                            if (geocodeViewModel.IsTopBannerVisible == false)
-                            {
-                                var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
-                                graphicsOverlay?.Graphics.Clear();
-                            }
-                            break;
-                        }
                     case nameof(GeocodeViewModel.ErrorMessage):
                         {
                             // display error message from viewmodel

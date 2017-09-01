@@ -36,7 +36,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _errorMessage;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
-        private bool _isTopBannerVisible;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
         private ObservableCollection<string> _suggestionsList;
@@ -184,22 +183,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the visibility of the top banner
-        /// </summary>
-        public bool IsTopBannerVisible
-        {
-            get
-            {
-                return _isTopBannerVisible;
-            }
-            set
-            {
-                _isTopBannerVisible = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
         /// Gets or sets the error message to be shown to the user
         /// </summary>
         public string ErrorMessage
@@ -241,7 +224,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     (x) =>
                     {
                         SearchText = string.Empty;
-                        IsTopBannerVisible = false;
+                        Place = null;
                     }));
             }
         }
@@ -309,8 +292,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 // Select located feature on map
                 if (Place != null)
                 {
-                    IsTopBannerVisible = true;
-
                     // Set viewpoint to the feature's extent
                     AreaOfInterest = Place.Extent != null ? new Viewpoint(Place.Extent) :
                         new Viewpoint(Place.DisplayLocation, 4000);

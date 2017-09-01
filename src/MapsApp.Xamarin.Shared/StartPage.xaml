@@ -18,6 +18,7 @@
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
+            <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
             <OnPlatform x:Key="startImage" 
                       x:TypeArguments="ImageSource"
                       iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Start72.png}" 
@@ -105,7 +106,7 @@
 
         <!-- Search Result Banner -->
         <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
-                     BackgroundColor="White" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding IsTopBannerVisible}">
+                     BackgroundColor="White" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
 
             <Image x:Name="PinImage" Source="{StaticResource endImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
 
