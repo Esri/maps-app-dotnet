@@ -118,13 +118,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                 switch (Device.RuntimePlatform)
                 {
                     case Device.iOS:
-                        imagePath = "MapsApp.iOS.Images.End72.png";
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.End72.png";
                         break;
                     case Device.Android:
-                        imagePath = "MapsApp.Droid.Images.End72.png";
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.End72.png";
                         break;
                     case Device.Windows:
-                        imagePath = "MapsApp.UWP.Images.End72.png";
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.End72.png";
                         break;
                 }
 

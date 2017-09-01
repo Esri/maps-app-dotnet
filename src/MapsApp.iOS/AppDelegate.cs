@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 
-namespace Esri.ArcGISRuntime.ExampleApps.iOS
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -19,7 +19,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init ();
-			LoadApplication (new MapsApp.App ());
+			LoadApplication (new Xamarin.App ());
 
 			return base.FinishedLaunching (app, options);
 		}
