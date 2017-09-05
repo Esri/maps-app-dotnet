@@ -35,12 +35,13 @@
             <esri:MapView.GraphicsOverlays>
                 <esri:GraphicsOverlay Id="PlacesOverlay"/>
             </esri:MapView.GraphicsOverlays>
-            <utils:GeoViewExtensions.ViewpointController>
+            <utils:GeoViewExtensions.ViewpointControllerCollection>
                 <!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI-->
                 <utils:ViewpointController 
-                    Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}">
-                </utils:ViewpointController>
-            </utils:GeoViewExtensions.ViewpointController>
+                    Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
+                <utils:ViewpointController 
+                    Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}"/>
+            </utils:GeoViewExtensions.ViewpointControllerCollection>
         </esri:MapView>
         
          <!--List of suggestions from geocoder--> 

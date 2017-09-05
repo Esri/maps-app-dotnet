@@ -83,12 +83,13 @@
             <esri:MapView.GraphicsOverlays>
                 <esriUI:GraphicsOverlay Id="PlacesOverlay"/>
             </esri:MapView.GraphicsOverlays>
-            <utils:GeoViewExtensions.ViewpointController>
-                <!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI-->
+            <utils:GeoViewExtensions.ViewpointControllerCollection>
+                <!--Viewpoint controllers for synchronizing MapView's viewpoint with the view-model's AOI-->
                 <utils:ViewpointController 
-                    Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" >
-                </utils:ViewpointController>
-            </utils:GeoViewExtensions.ViewpointController>
+                    Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" />
+                <utils:ViewpointController 
+                    Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}" />
+            </utils:GeoViewExtensions.ViewpointControllerCollection>
         </esri:MapView>
 
          <!--Autocomplete Control--> 

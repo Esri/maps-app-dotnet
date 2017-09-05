@@ -40,29 +40,21 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 {
                     case nameof(GeocodeViewModel.Place):
                         {
-                            var place = geocodeViewModel.Place;
-                            if (place == null)
-                                return;
-
                             var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
                             graphicsOverlay?.Graphics.Clear();
+
+                            var place = geocodeViewModel.Place;
+
+                            if (place == null)
+                            {
+                                return;
+                            }
 
                             // create map pin and add it to the map
                             var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
                             var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
 
-                            break;
-                        }
-
-                    case nameof(GeocodeViewModel.IsTopBannerVisible):
-                        {
-                            // clear map pin when user clears search
-                            if (geocodeViewModel.IsTopBannerVisible == false)
-                            {
-                                var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
-                                graphicsOverlay?.Graphics.Clear();
-                            }
                             break;
                         }
 
@@ -80,19 +72,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
             MapView.LocationDisplay.IsEnabled = true;
-
-            // change viewpoint to current location
-            mapViewModel.PropertyChanged += (o, e) =>
-            {
-                switch (e.PropertyName)
-                {
-                    case nameof(mapViewModel.AreaOfInterest):
-                        {
-                            geocodeViewModel.AreaOfInterest = mapViewModel.AreaOfInterest;
-                            break;
-                        }
-                }
-            };
         }
 
         /// <summary>

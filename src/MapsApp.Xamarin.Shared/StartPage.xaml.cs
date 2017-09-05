@@ -73,18 +73,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
             MapView.LocationDisplay.IsEnabled = true;
 
-            // change viewpoint to current location
-            mapViewModel.PropertyChanged += (o, e) =>
-            {
-                switch (e.PropertyName)
-                {
-                    case nameof(mapViewModel.AreaOfInterest):
-                        {
-                            geocodeViewModel.AreaOfInterest = mapViewModel.AreaOfInterest;
-                            break;
-                        }
-                }
-            };
+            //// change viewpoint to current location
+            //mapViewModel.PropertyChanged += (o, e) =>
+            //{
+            //    switch (e.PropertyName)
+            //    {
+            //        case nameof(mapViewModel.AreaOfInterest):
+            //            {
+            //                geocodeViewModel.AreaOfInterest = mapViewModel.AreaOfInterest;
+            //                break;
+            //            }
+            //    }
+            //};
         }
 
         /// <summary>
