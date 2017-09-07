@@ -77,8 +77,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
-
-
         /// <summary>
         /// Gets or sets the current area of interest
         /// </summary>

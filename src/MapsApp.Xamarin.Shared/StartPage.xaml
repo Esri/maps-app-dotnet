@@ -84,11 +84,11 @@
                 <esriUI:GraphicsOverlay Id="PlacesOverlay"/>
             </esri:MapView.GraphicsOverlays>
             <utils:GeoViewExtensions.ViewpointControllerCollection>
-                <!--Viewpoint controllers for synchronizing MapView's viewpoint with the view-model's AOI-->
-                <utils:ViewpointController 
-                    Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" />
-                <utils:ViewpointController 
-                    Viewpoint="{Binding Path = AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}" />
+                <!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI-->
+                <utils:ViewpointControllerCollection>
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}" />
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" />
+                </utils:ViewpointControllerCollection>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
         </esri:MapView>
 
@@ -125,7 +125,7 @@
 
         <!--Compass Button-->
         <Image x:Name="CompassImage" Source="{StaticResource compassImage}" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Margin="0,0,20,0" 
-               BindingContext="{x:Reference MapView}" IsVisible="{Binding Path=MapRotation, Converter={StaticResource NumberToVisibilityConverter}}" 
+               BindingContext="{x:Reference MapView}" IsVisible="{Binding MapRotation, Converter={StaticResource NumberToVisibilityConverter}}" 
                Rotation="{Binding MapRotation, Converter={StaticResource SubtractFromConverter}}">
             <Image.GestureRecognizers>
                 <TapGestureRecognizer 
