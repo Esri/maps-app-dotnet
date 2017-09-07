@@ -73,11 +73,19 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
             MapView.LocationDisplay.IsEnabled = true;
 
-            // set mapviewmodel
+            // Change map when user selects a new basemap
             var basemapViewModel = Resources["BasemapsViewModel"] as BasemapsViewModel;
-            basemapViewModel.MapViewModel = mapViewModel;
-
-          
+            basemapViewModel.PropertyChanged += (s, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(BasemapsViewModel.Map):
+                        {
+                            mapViewModel.Map = basemapViewModel.Map;
+                            break;
+                        }
+                }
+            };
         }
 
         /// <summary>
@@ -97,6 +105,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             
         }
 
+        /// <summary>
+        /// Turns off basemap switcher whwn user hits the X 
+        /// </summary>
         private void HideBasemapSwitcher(object sender, RoutedEventArgs e)
         {
             BasemapSwitcher.Visibility = Visibility.Collapsed;

@@ -132,13 +132,24 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         // Load basemap page, reuse viewmodel so the initial loading happens only once
         private async void LoadBasemapControl(object sender, EventArgs e)
         {
-            var mapViewModel = Resources["MapViewModel"] as MapViewModel;
             if (basemapViewModel == null)
             {
                 basemapViewModel = new BasemapsViewModel();
+                // Change map when user selects a new basemap
+                basemapViewModel.PropertyChanged += (s, ea) =>
+                {
+                    switch (ea.PropertyName)
+                    {
+                        case nameof(BasemapsViewModel.Map):
+                            {
+                                (Resources["MapViewModel"] as MapViewModel).Map = basemapViewModel.Map;
+                                break;
+                            }
+                    }
+                };
             }
 
-            await Navigation.PushAsync(new BasemapPage(basemapViewModel, mapViewModel));
+            await Navigation.PushAsync(new BasemapPage { BindingContext = basemapViewModel });
         }
     }
 }
