@@ -102,7 +102,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         private void OpenBasemapSwitcher(object sender, RoutedEventArgs e)
         {
             BasemapSwitcher.Visibility = Visibility.Visible;
-            
         }
 
         /// <summary>

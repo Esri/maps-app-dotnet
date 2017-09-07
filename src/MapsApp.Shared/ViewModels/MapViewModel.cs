@@ -95,8 +95,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
-     
-
         /// <summary>
         /// Gets the command to search using the locator
         /// </summary>

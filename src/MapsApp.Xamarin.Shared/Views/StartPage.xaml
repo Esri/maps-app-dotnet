@@ -114,7 +114,7 @@
 
 
             <Label Text="{Binding Place.Label}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-            <!--<Image x:Name="DirectionsImage" Source="{StaticResource getDirectionsImage}" VerticalOptions="Center" HorizontalOptions="End"/>-->
+            <Image x:Name="DirectionsImage" Source="{StaticResource getDirectionsImage}" VerticalOptions="Center" HorizontalOptions="End"/>
 
 
             <Image x:Name="CloseImage" Source="{StaticResource cancelImage}" VerticalOptions="Center" HorizontalOptions="End">
@@ -143,6 +143,7 @@
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
+            
             <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
 
             <!--Basemap Button-->
@@ -154,10 +155,10 @@
                 </Image.GestureRecognizers>
             </Image>
 
-            <!--<BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>-->
+            <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
             
-            <!--Menu Button--><!--
-            <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+            <!--Menu Button-->
+            <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center"/>
         </StackLayout>
     </Grid>
 </ContentPage>

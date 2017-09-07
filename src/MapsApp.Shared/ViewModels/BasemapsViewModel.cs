@@ -31,6 +31,15 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private PortalItem _selectedBasemap;
         private Map _map;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasemapsViewModel"/> class.
+        /// </summary>
+        public BasemapsViewModel()
+        {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            LoadPortal();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+        }
 
         /// <summary>
         /// Gets or sets the map
@@ -48,17 +57,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 OnPropertyChanged();
             }
         }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BasemapsViewModel"/> class.
-        /// </summary>
-        public BasemapsViewModel()
-        {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            LoadPortal();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-        }
-
 
         /// <summary>
         /// Property holding the list of basemaps to be added to the UI
@@ -117,7 +115,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private async Task LoadMaps(ArcGISPortal portal)
         {
             var items = await portal.GetBasemapsAsync();
-            Basemaps = items.Select(b => b.Item).OfType<PortalItem>();        
+            Basemaps = items?.Select(b => b.Item).OfType<PortalItem>();        
         }
 
         /// <summary>
