@@ -1,10 +1,9 @@
-﻿
-namespace MapsApp.Extensions
-{
-    using System;
-    using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
+﻿using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Extensions
+{
     [ContentProperty("Source")]
     public class ImageResourceExtension : IMarkupExtension
     {

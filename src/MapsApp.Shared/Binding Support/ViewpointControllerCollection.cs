@@ -12,26 +12,27 @@
 //  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
-//  ******************************************************************************/
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
 {
     /// <summary>
-    /// Base View Model that all View Models inherit
+    /// Provides members for creating a collection of ViewpointControllers
     /// </summary>
-    public abstract class BaseViewModel : INotifyPropertyChanged
+    public class ViewpointControllerCollection : ObservableCollection<ViewpointController>
     {
         /// <summary>
-        /// Raises the <see cref="MapViewModel.PropertyChanged" /> event
+        /// Initializes a new instance of the <see cref="ViewpointControllerCollection"/> class.
         /// </summary>
-        /// <param name="propertyName">The name of the property that has changed</param>
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public ViewpointControllerCollection() : base()
+        { }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewpointControllerCollection"/> class.
+        /// </summary>
+        public ViewpointControllerCollection(IEnumerable<ViewpointController> collection) : base(collection)
+        { }
     }
 }

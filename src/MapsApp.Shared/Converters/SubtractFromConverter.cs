@@ -13,25 +13,30 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System;
+using System.Globalization;
+#if __ANDROID__ || __IOS__ || NETFX_CORE
+using IValueConverter = Xamarin.Forms.IValueConverter;
+#else
+using System.Windows.Data;
+using System.Windows;
+#endif
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
 {
     /// <summary>
-    /// Base View Model that all View Models inherit
+    /// Subtracts parameter value from the control value
     /// </summary>
-    public abstract class BaseViewModel : INotifyPropertyChanged
+    class SubtractFromConverter : IValueConverter
     {
-        /// <summary>
-        /// Raises the <see cref="MapViewModel.PropertyChanged" /> event
-        /// </summary>
-        /// <param name="propertyName">The name of the property that has changed</param>
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return Convert.ToDouble(parameter) - Convert.ToDouble(value);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

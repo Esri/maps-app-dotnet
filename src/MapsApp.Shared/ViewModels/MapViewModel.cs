@@ -1,49 +1,48 @@
-﻿// <copyright file="MapViewModel.cs" company="Esri">
-//      Copyright (c) 2017 Esri. All rights reserved.
-//
-//      Licensed under the Apache License, Version 2.0 (the "License");
-//      you may not use this file except in compliance with the License.
-//      You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-//      Unless required by applicable law or agreed to in writing, software
-//      distributed under the License is distributed on an "AS IS" BASIS,
-//      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//      See the License for the specific language governing permissions and
-//      limitations under the License.
-// </copyright>
+﻿// /*******************************************************************************
+//  * Copyright 2017 Esri
+//  *
+//  *  Licensed under the Apache License, Version 2.0 (the "License");
+//  *  you may not use this file except in compliance with the License.
+//  *  You may obtain a copy of the License at
+//  *
+//  *  http://www.apache.org/licenses/LICENSE-2.0
+//  *
+//  *   Unless required by applicable law or agreed to in writing, software
+//  *   distributed under the License is distributed on an "AS IS" BASIS,
+//  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  *   See the License for the specific language governing permissions and
+//  *   limitations under the License.
+//  ******************************************************************************/
+using Esri.ArcGISRuntime.Location;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Portal;
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
-namespace MapsApp.Shared.ViewModels
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
-    using Esri.ArcGISRuntime.Location;
-    using Esri.ArcGISRuntime.Mapping;
-    using Esri.ArcGISRuntime.Portal;
-    using MapsApp.Shared.Commands;
-    using System.Threading.Tasks;
-    using System.Windows.Input;
-
     /// <summary>
     /// View Model handling logic for the Map
     /// </summary>
     public class MapViewModel : BaseViewModel
     {
+        private const int DefaultZoomScale = 4000;
         private Map _map = new Map(Basemap.CreateTopographicVector());
         private Viewpoint _areaOfInterest;
         private LocationDataSource _locationDataSource;
-        private Location _lastLocation;
-
+        private Location.Location _lastLocation;
         private ICommand _moveToCurrentLocationCommand;
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="MapViewModel"/> class.
         /// </summary>
         public MapViewModel()
         {
-            this.LocationDataSource = new SystemLocationDataSource();
+            LocationDataSource = new SystemLocationDataSource();
             LocationDataSource.LocationChanged += (s, l) =>
             {
-                this._lastLocation = l;
+                _lastLocation = l;
             };
         }
 
@@ -54,13 +53,13 @@ namespace MapsApp.Shared.ViewModels
         {
             get
             {
-                return this._map;
+                return _map;
             }
 
             set
             {
-                this._map = value;
-                this.OnPropertyChanged();
+                _map = value;
+                OnPropertyChanged();
             }
         }
 
@@ -69,31 +68,29 @@ namespace MapsApp.Shared.ViewModels
         /// </summary>
         public LocationDataSource LocationDataSource
         {
-            get { return this._locationDataSource; }
+            get { return _locationDataSource; }
             set
             {
-                if (this._locationDataSource != value)
+                if (_locationDataSource != value)
                 {
-                    this._locationDataSource = value;
-                    this.OnPropertyChanged();
+                    _locationDataSource = value;
+                    OnPropertyChanged();
                 }
             }
         }
-
-
 
         /// <summary>
         /// Gets or sets the current area of interest
         /// </summary>
         public Viewpoint AreaOfInterest
         {
-            get { return this._areaOfInterest; }
+            get { return _areaOfInterest; }
             set
             {
-                if (this._areaOfInterest != value)
+                if (_areaOfInterest != value)
                 {
-                    this._areaOfInterest = value;
-                    this.OnPropertyChanged();
+                    _areaOfInterest = value;
+                    OnPropertyChanged();
                 }
             }
         }
@@ -107,15 +104,12 @@ namespace MapsApp.Shared.ViewModels
         {
             get
             {
-                return this._moveToCurrentLocationCommand ?? (this._moveToCurrentLocationCommand = new DelegateCommand(
+                return _moveToCurrentLocationCommand ?? (_moveToCurrentLocationCommand = new DelegateCommand(
                     (x) =>
                     {
                         // Set viewpoint to the user's current location
-                        if (this._lastLocation != null)
-                        {
-                            this.AreaOfInterest = this._lastLocation.Position.Extent != null ? new Viewpoint(this._lastLocation.Position.Extent) :
-                                new Viewpoint(this._lastLocation.Position, 4000);
-                        }
+                        AreaOfInterest = _lastLocation?.Position?.Extent != null ? new Viewpoint(_lastLocation.Position.Extent) :
+                            new Viewpoint(_lastLocation.Position, DefaultZoomScale);
                     }));
             }
         }

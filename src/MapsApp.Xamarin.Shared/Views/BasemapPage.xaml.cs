@@ -1,8 +1,8 @@
-﻿using MapsApp.Shared.ViewModels;
+﻿using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MapsApp
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BasemapPage : ContentPage

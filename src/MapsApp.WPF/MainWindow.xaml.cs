@@ -1,27 +1,25 @@
-﻿// <copyright file="StartPage.cs" company="Esri">
-//      Copyright (c) 2017 Esri. All rights reserved.
-//
-//      Licensed under the Apache License, Version 2.0 (the "License");
-//      you may not use this file except in compliance with the License.
-//      You may obtain a copy of the License at
-//
-//      http://www.apache.org/licenses/LICENSE-2.0
-//
-//      Unless required by applicable law or agreed to in writing, software
-//      distributed under the License is distributed on an "AS IS" BASIS,
-//      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//      See the License for the specific language governing permissions and
-//      limitations under the License.
-// </copyright>
+﻿// /*******************************************************************************
+//  * Copyright 2017 Esri
+//  *
+//  *  Licensed under the Apache License, Version 2.0 (the "License");
+//  *  you may not use this file except in compliance with the License.
+//  *  You may obtain a copy of the License at
+//  *
+//  *  http://www.apache.org/licenses/LICENSE-2.0
+//  *
+//  *   Unless required by applicable law or agreed to in writing, software
+//  *   distributed under the License is distributed on an "AS IS" BASIS,
+//  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  *   See the License for the specific language governing permissions and
+//  *   limitations under the License.
+//  ******************************************************************************/
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
+using Esri.ArcGISRuntime.Symbology;
+using Esri.ArcGISRuntime.UI;
+using System.Windows;
 
-namespace MapsApp.WPF
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 {
-    using Esri.ArcGISRuntime.Symbology;
-    using Esri.ArcGISRuntime.UI;
-    using MapsApp.Shared.ViewModels;
-    using System.Windows;
-    using System.Windows.Media;
-
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -42,37 +40,21 @@ namespace MapsApp.WPF
                 {
                     case nameof(GeocodeViewModel.Place):
                         {
-                            var place = geocodeViewModel.Place;
-                            if (place == null)
-                                return;
-
                             var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
                             graphicsOverlay?.Graphics.Clear();
 
+                            var place = geocodeViewModel.Place;
+
+                            if (place == null)
+                            {
+                                return;
+                            }
+
                             // create map pin and add it to the map
-                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp.WPF;component/Images/End72.png")));
+                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
                             var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
 
-                            break;
-                        }
-
-                    case nameof(GeocodeViewModel.AreaOfInterest):
-                        {
-                            // rotate the image around its center
-                            RotateTransform rotateTransform = new RotateTransform(360 - this.MapView.MapRotation, CompassImage.Height * 0.5, CompassImage.Width * 0.5);
-                            CompassImage.RenderTransform = rotateTransform;
-                            break;
-                        }
-
-                    case nameof(GeocodeViewModel.IsTopBannerVisible):
-                        {
-                            // clear map pin when user clears search
-                            if (geocodeViewModel.IsTopBannerVisible == false)
-                            {
-                                var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
-                                graphicsOverlay?.Graphics.Clear();
-                            }
                             break;
                         }
 
@@ -95,18 +77,7 @@ namespace MapsApp.WPF
             var basemapViewModel = Resources["BasemapsViewModel"] as BasemapsViewModel;
             basemapViewModel.MapViewModel = mapViewModel;
 
-            // change viewpoint to current location
-            mapViewModel.PropertyChanged += (o, e) =>
-            {
-                switch (e.PropertyName)
-                {
-                    case nameof(mapViewModel.AreaOfInterest):
-                        {
-                            geocodeViewModel.AreaOfInterest = mapViewModel.AreaOfInterest;
-                            break;
-                        }
-                }
-            };
+          
         }
 
         /// <summary>
@@ -114,7 +85,7 @@ namespace MapsApp.WPF
         /// </summary>
         private async void ResetMapRotation(object sender, RoutedEventArgs e)
         {
-            await this.MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
+            await MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
         }
 
         /// <summary>

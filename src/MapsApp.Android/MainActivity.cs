@@ -1,15 +1,10 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 
-namespace MapsApp.Droid
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 {
-	[Activity (Label = "MapsApp", Icon = "@drawable/icon", Theme="@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity (Label = "MapsApp", Icon = "@drawable/icon", Theme="@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -20,7 +15,7 @@ namespace MapsApp.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-			LoadApplication (new MapsApp.App ());
+			LoadApplication (new Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.App ());
 		}
 	}
 }

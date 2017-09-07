@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MapsApp.Shared.ViewModels
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
     public class BasemapsViewModel : BaseViewModel
     {
