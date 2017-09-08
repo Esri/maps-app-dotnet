@@ -14,18 +14,18 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-namespace MapsApp.Shared.ViewModels
-{
-    using System;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Windows.Input;
-    using Esri.ArcGISRuntime.Mapping;
-    using Esri.ArcGISRuntime.Tasks.Geocoding;
-    using MapsApp.Shared.Commands;
-    using Esri.ArcGISRuntime.Geometry;
+using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Tasks.Geocoding;
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
+using Esri.ArcGISRuntime.Geometry;
 
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
+{
     /// <summary>
     /// View Model handling logic for the Geocoder
     /// </summary>
@@ -37,7 +37,6 @@ namespace MapsApp.Shared.ViewModels
         private string _errorMessage;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
-        private bool _isTopBannerVisible;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
         private ObservableCollection<string> _suggestionsList;
@@ -69,7 +68,7 @@ namespace MapsApp.Shared.ViewModels
 
         /// <summary>
         /// Gets the geocoder for the map
-        /// </summary>yea
+        /// </summary>
         internal LocatorTask Locator { get; set; }
 
         /// <summary>
@@ -185,22 +184,6 @@ namespace MapsApp.Shared.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the visibility of the top banner
-        /// </summary>
-        public bool IsTopBannerVisible
-        {
-            get
-            {
-                return _isTopBannerVisible;
-            }
-            set
-            {
-                _isTopBannerVisible = value;
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
         /// Gets or sets the error message to be shown to the user
         /// </summary>
         public string ErrorMessage
@@ -242,7 +225,7 @@ namespace MapsApp.Shared.ViewModels
                     (x) =>
                     {
                         SearchText = string.Empty;
-                        IsTopBannerVisible = false;
+                        Place = null;
                     }));
             }
         }
@@ -306,8 +289,6 @@ namespace MapsApp.Shared.ViewModels
                 // Select located feature on map
                 if (Place != null)
                 {
-                    IsTopBannerVisible = true;
-
                     // Set viewpoint to the feature's extent
                     AreaOfInterest = Place.Extent != null ? new Viewpoint(Place.Extent) :
                         new Viewpoint(Place.DisplayLocation, 4000);

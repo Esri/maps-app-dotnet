@@ -2,12 +2,12 @@
 using System.Reflection;
 using Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.Internal
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers
 {
-	/// <summary>
-	/// Provides members for registering BindableProperty instances
-	/// </summary>
-	internal class DependencyProperty
+    /// <summary>
+    /// Provides members for registering BindableProperty instances
+    /// </summary>
+    internal class DependencyProperty
 	{
 		/// <summary>
 		/// Registers a BindableProperty for the specified type

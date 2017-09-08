@@ -6,14 +6,17 @@
     <SharedGUID>2c2a9421-c9c7-4a51-aae3-216f7e05d8d8</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>MapsApp.Shared</Import_RootNamespace>
+    <Import_RootNamespace>Esri.ArcGISRuntime.ExampleApps.MapsApp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Binding Support\GeoViewExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Binding Support\ViewpointController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Binding Support\ViewpointControllerCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\DelegateCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\NullToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NumberToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BasemapsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\SubtractFromConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GeocodeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MapViewModel.cs" />
@@ -51,5 +54,8 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\GPSon66.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Esri.ArcGISRuntime.ExampleApps.ruleset" />
   </ItemGroup>
 </Project>

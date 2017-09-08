@@ -13,27 +13,30 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
-using Xamarin.Forms;
+using System;
+using System.Globalization;
+#if __ANDROID__ || __IOS__ || NETFX_CORE
+using IValueConverter = Xamarin.Forms.IValueConverter;
+#else
+using System.Windows.Data;
+using System.Windows;
+#endif
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
 {
-    public partial class BasemapPage : ContentPage
+    /// <summary>
+    /// Subtracts parameter value from the control value
+    /// </summary>
+    class SubtractFromConverter : IValueConverter
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BasemapPage"/> class.
-        /// </summary>
-        public BasemapPage()
+        object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            InitializeComponent();
+            return Convert.ToDouble(parameter) - Convert.ToDouble(value);
         }
 
-        /// <summary>
-        /// Event handler for user tapping a basemap item
-        /// </summary>
-        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            //  Navigate back to map when user selects a basemap
-            await Navigation.PopAsync();
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,7 +6,7 @@
     <SharedGUID>c0e5c9c0-53d2-4eed-b36e-d7a8db55e1d1</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>MapsApp</Import_RootNamespace>
+    <Import_RootNamespace>Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">

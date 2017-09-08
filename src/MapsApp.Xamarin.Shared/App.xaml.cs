@@ -1,16 +1,16 @@
 ﻿
 using Xamarin.Forms;
 
-namespace MapsApp
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
 
     public partial class App : Application
 	{
-		public App ()
-		{
-			InitializeComponent();
+        public App()
+        {
+            InitializeComponent();
 
-            MainPage = new NavigationPage(new MapsApp.StartPage());
+            MainPage = new NavigationPage(new Xamarin.StartPage());
             NavigationPage.SetHasNavigationBar(MainPage, false);
         }
 

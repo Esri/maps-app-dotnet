@@ -12,28 +12,27 @@
 //  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
-//  ******************************************************************************/
-using Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
 {
-    public partial class BasemapPage : ContentPage
+    /// <summary>
+    /// Provides members for creating a collection of ViewpointControllers
+    /// </summary>
+    public class ViewpointControllerCollection : ObservableCollection<ViewpointController>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BasemapPage"/> class.
+        /// Initializes a new instance of the <see cref="ViewpointControllerCollection"/> class.
         /// </summary>
-        public BasemapPage()
-        {
-            InitializeComponent();
-        }
+        public ViewpointControllerCollection() : base()
+        { }
 
         /// <summary>
-        /// Event handler for user tapping a basemap item
+        /// Initializes a new instance of the <see cref="ViewpointControllerCollection"/> class.
         /// </summary>
-        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            //  Navigate back to map when user selects a basemap
-            await Navigation.PopAsync();
-        }
+        public ViewpointControllerCollection(IEnumerable<ViewpointController> collection) : base(collection)
+        { }
     }
 }

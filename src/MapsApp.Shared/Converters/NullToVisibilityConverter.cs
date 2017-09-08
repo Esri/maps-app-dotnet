@@ -23,21 +23,19 @@ using System.Windows;
 #endif
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
-{
-    /// <summary>
-    /// Converts number to control visibility
-    /// </summary>
-    class NumberToVisibilityConverter : IValueConverter
+{ /// <summary>
+  /// Converts null to control visibility
+  /// </summary>
+    class NullToVisibilityConverter : IValueConverter
     {
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
 
-                var number = System.Convert.ToDouble(value, culture);
-
+            //if value is null, control is not visible
 #if __ANDROID__ || __IOS__ || NETFX_CORE
-                return (number == 0) ? false : true;
+            return (value == null) ? false : true;
 #else
-                return (number == 0) ? Visibility.Collapsed : Visibility.Visible;
+            return (value == null) ? Visibility.Collapsed : Visibility.Visible;
 #endif
         }
 

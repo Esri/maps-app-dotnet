@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("MapsApp.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource", IsApplication=true)]
 
-namespace MapsApp.Droid
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 {
 	
 	
@@ -26,7 +26,7 @@ namespace MapsApp.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MapsApp.Droid.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarSize;
 		}
 		
 		public partial class Animation
