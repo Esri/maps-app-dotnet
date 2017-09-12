@@ -7,6 +7,7 @@
         xmlns:viewModels="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels"
         xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="Maps App">
     <Window.Resources>
@@ -35,6 +36,11 @@
          <!--MapView Control-->
         <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
                           Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="GeoViewTapped">
+                    <i:InvokeCommandAction Command="{Binding ReverseGeocodeCommand, Source={StaticResource GeocodeViewModel}}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <esri:MapView.GraphicsOverlays>
                 <esri:GraphicsOverlay Id="PlacesOverlay"/>
             </esri:MapView.GraphicsOverlays>

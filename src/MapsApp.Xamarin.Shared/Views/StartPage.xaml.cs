@@ -14,7 +14,6 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.UI;
@@ -24,7 +23,6 @@ using System;
 using System.IO;
 using System.Reflection;
 using Xamarin.Forms;
-using System.Linq;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
@@ -152,21 +150,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             }
 
             await Navigation.PushAsync(new BasemapPage { BindingContext = basemapViewModel });
-        }
-
-        private async void GeoViewHoldingEvent(object sender, GeoViewInputEventArgs e)
-        {
-            var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
-            var matches = await geocodeViewModel.Locator.ReverseGeocodeAsync(e.Location);
-            geocodeViewModel.Place = matches.First();
-
-            // Select located feature on map
-            if (geocodeViewModel.Place != null)
-            {
-                // Set viewpoint to the feature's extent
-                geocodeViewModel.AreaOfInterest = geocodeViewModel.Place.Extent != null ? new Viewpoint(geocodeViewModel.Place.Extent) :
-                    new Viewpoint(geocodeViewModel.Place.DisplayLocation, 4000);
-            }
         }
     }
 }

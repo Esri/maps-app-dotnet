@@ -1,12 +1,18 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace EventToCommandBehavior
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Behaviors
 {
+    /// <summary>
+    /// Base behavior class 
+    /// </summary>
     public class BehaviorBase<T> : Behavior<T> where T : BindableObject
     {
         public T AssociatedObject { get; private set; }
 
+        /// <summary>
+        /// Attaches the associated object
+        /// </summary>
         protected override void OnAttachedTo(T bindable)
         {
             base.OnAttachedTo(bindable);
@@ -20,6 +26,9 @@ namespace EventToCommandBehavior
             bindable.BindingContextChanged += OnBindingContextChanged;
         }
 
+        /// <summary>
+        /// Removes the associated object 
+        /// </summary>
         protected override void OnDetachingFrom(T bindable)
         {
             base.OnDetachingFrom(bindable);
@@ -27,11 +36,17 @@ namespace EventToCommandBehavior
             AssociatedObject = null;
         }
 
+        /// <summary>
+        /// Executed when the binding context for the behavior changes
+        /// </summary>
         void OnBindingContextChanged(object sender, EventArgs e)
         {
             OnBindingContextChanged();
         }
 
+        /// <summary>
+        /// Sets the new binding context
+        /// </summary>
         protected override void OnBindingContextChanged()
         {
             base.OnBindingContextChanged();

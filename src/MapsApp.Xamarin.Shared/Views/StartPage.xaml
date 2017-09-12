@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.StartPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin"
              xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
-             x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.StartPage"
              xmlns:esri="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
              xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.UI;assembly=Esri.ArcGISRuntime"
              xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"             
@@ -11,6 +11,7 @@
              xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls"
              xmlns:ext="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Extensions"
              xmlns:viewModels="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels"
+             xmlns:behaviors="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Behaviors"
              NavigationPage.HasNavigationBar="false">
 
     <ContentPage.Resources>
@@ -20,6 +21,7 @@
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+            <converters:EventArgsToLocationConverter x:Key="EventArgsToLocationConverter"/>
             <OnPlatform x:Key="startImage" 
                       x:TypeArguments="ImageSource"
                       iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Start72.png}" 
@@ -79,7 +81,7 @@
         </Grid.RowDefinitions>
 
         <!-- MapView Control -->
-        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}" GeoViewHolding="GeoViewHoldingEvent"
+        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}" 
                         VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" >
             <esri:MapView.GraphicsOverlays>
                 <esriUI:GraphicsOverlay Id="PlacesOverlay"/>
@@ -91,19 +93,23 @@
                     <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" />
                 </utils:ViewpointControllerCollection>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
+            <esri:MapView.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="GeoViewHolding" Command="{Binding ReverseGeocodeCommand, Source={StaticResource GeocodeViewModel}}" Converter="{StaticResource EventArgsToLocationConverter}"/>
+            </esri:MapView.Behaviors>
         </esri:MapView>
 
-         <!--Autocomplete Control--> 
+        <!--Autocomplete Control--> 
         <controls:AutoCompleteView Placeholder="Address or Place"
                                    Text="{Binding SearchText, Mode=TwoWay}"
                                    Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
-                                   SearchCommand ="{Binding SearchCommand}"   
+                                   SearchCommand ="{Binding SearchCommand}"
                                    SelectedItem ="{Binding SelectedSearchItem, Mode=TwoWay}"
                                    SearchBackgroundColor="White"
                                    SuggestionBackgroundColor="White"
                                    ShowSearchButton="false"
                                    BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"
-                                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Margin="10">
         </controls:AutoCompleteView>
 
         <!-- Search Result Banner -->
@@ -135,10 +141,10 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100">
+        <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100" BackgroundColor="White">
             
             <!-- GPS Button -->
-            <Image HorizontalOptions="Center" Source="{StaticResource gpsImage}" VerticalOptions="Center" BindingContext ="{Binding Source={StaticResource MapViewModel}}">
+            <Image HorizontalOptions="Center"  VerticalOptions="Center" Source="{StaticResource gpsImage}" BindingContext ="{Binding Source={StaticResource MapViewModel}}" Margin="5,5,5,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
                 </Image.GestureRecognizers>
@@ -158,7 +164,7 @@
             <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
             
             <!--Menu Button-->
-            <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,5"/>
         </StackLayout>
     </Grid>
 </ContentPage>

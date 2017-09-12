@@ -11,6 +11,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ImageCell ImageSource="{Binding ThumbnailUri}" Text="{Binding Title}" Detail="{Binding Snippet}">
+                        
                     </ImageCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

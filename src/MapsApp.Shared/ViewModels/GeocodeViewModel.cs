@@ -14,15 +14,15 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
+using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Tasks.Geocoding;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Esri.ArcGISRuntime.Mapping;
-using Esri.ArcGISRuntime.Tasks.Geocoding;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
-using Esri.ArcGISRuntime.Geometry;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
@@ -31,6 +31,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     /// </summary>
     class GeocodeViewModel : BaseViewModel
     {
+        private const int DefaultZoomScale = 4000;
         private const string GeocodeServiceUrl = @"https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
         private string _searchText;
         private string _selectedSuggestion;
@@ -39,6 +40,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private GeocodeResult _place;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
+        private ICommand _reverseGeocodeCommand;
         private ObservableCollection<string> _suggestionsList;
 
         /// <summary>
@@ -178,6 +180,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_place != value)
                 {
                     _place = value;
+                    ZoomToPlace();
                     OnPropertyChanged();
                 }
             }
@@ -210,6 +213,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     async (x) =>
                     {
                         await GetSearchedLocationAsync((string)x);
+                    }));
+            }
+        }
+
+        // Gets the command to perform reverse geocoding using the locator
+        public ICommand ReverseGeocodeCommand
+        {
+            get
+            {
+                return _reverseGeocodeCommand ?? (_reverseGeocodeCommand = new DelegateCommand(
+                    async (x) =>
+                    {
+                        if (x != null)
+                        {
+                            await GetReverseGeocoderLocationAsync((MapPoint)x);
+                        }
                     }));
             }
         }
@@ -285,18 +304,33 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 {
                     ErrorMessage = "Unable to load geocoder";
                 }
-
-                // Select located feature on map
-                if (Place != null)
-                {
-                    // Set viewpoint to the feature's extent
-                    AreaOfInterest = Place.Extent != null ? new Viewpoint(Place.Extent) :
-                        new Viewpoint(Place.DisplayLocation, 4000);
-                }
             }
             catch (Exception ex)
             {
                 ErrorMessage = ex.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Use the locator to perform a reverse geocode operation, returning the place that the user tapped on inside the map
+        /// </summary>
+        private async Task GetReverseGeocoderLocationAsync(MapPoint location)
+        {
+            var matches = await Locator.ReverseGeocodeAsync(location);
+            Place = matches.First();
+        }
+
+        /// <summary>
+        /// Zoom to the location inside the Place property
+        /// </summary>
+        private void ZoomToPlace()
+        {
+            // Select located feature on map
+            if (Place != null)
+            {
+                // Set viewpoint to the feature's extent
+                AreaOfInterest = Place.Extent != null ? new Viewpoint(Place.Extent) :
+                    new Viewpoint(Place.DisplayLocation, DefaultZoomScale);
             }
         }
     }
