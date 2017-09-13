@@ -8,6 +8,7 @@
         xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF"
         mc:Ignorable="d"
         Title="Maps App">
     <Window.Resources>
@@ -18,6 +19,7 @@
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
+            <converters:EventArgsToLocationConverter x:Key="EventArgsToLocationConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -37,8 +39,10 @@
         <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
                           Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4">
             <i:Interaction.Triggers>
-                <i:EventTrigger EventName="GeoViewTapped">
-                    <i:InvokeCommandAction Command="{Binding ReverseGeocodeCommand, Source={StaticResource GeocodeViewModel}}" />
+                <i:EventTrigger EventName="GeoViewHolding">
+                    <local:InteractiveCommand Command="{Binding ReverseGeocodeCommand, Source={StaticResource GeocodeViewModel}}" 
+                                              CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=InvokeParameter}"
+                                              Converter="{StaticResource EventArgsToLocationConverter}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <esri:MapView.GraphicsOverlays>
