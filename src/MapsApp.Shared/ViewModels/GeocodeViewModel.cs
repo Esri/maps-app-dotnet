@@ -98,6 +98,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                         GetLocationSuggestionsAsync(_searchText);
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     }
+                    else
+                    {
+                        SuggestionsList = null;
+                    }
                 }
             }
         }
@@ -141,11 +145,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
             set
             {
-                if (value != null)
-                {
-                    _suggestionsList = value;
-                    OnPropertyChanged();
-                }
+                _suggestionsList = value;
+                OnPropertyChanged();
             }
         }
 
@@ -286,7 +287,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <returns>Location that best matches the search string</returns>
         private async Task GetSearchedLocationAsync(string geocodeAddress)
         {
-            SuggestionsList.Clear();
+            //SuggestionsList.Clear();
+            SearchText = string.Empty;
+
             try
             {
                 // Locate the searched feature
@@ -295,6 +298,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     var geocodeParameters = new GeocodeParameters
                     {
                         MaxResults = 1,
+                        
                         PreferredSearchLocation = AreaOfInterest?.TargetGeometry as MapPoint,
                     };
                     var matches = await Locator.GeocodeAsync(geocodeAddress, geocodeParameters);

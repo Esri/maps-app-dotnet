@@ -5,6 +5,9 @@ using System.Windows.Interactivity;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 {
+    /// <summary>
+    /// Command used to pass event args from event in xaml
+    /// </summary>
     public class InteractiveCommand : TriggerAction<DependencyObject>
     {    
 
@@ -15,57 +18,21 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         public static readonly DependencyProperty CommandProperty = DependencyProperty.Register(
             "Command", typeof(ICommand), typeof(InteractiveCommand), null);
 
-
-        public static readonly DependencyProperty InvokeParameterProperty = DependencyProperty.Register(
-            "InvokeParameter", typeof(object), typeof(InteractiveCommand), null);
-
         public static readonly DependencyProperty InputConverterProperty = DependencyProperty.Register(
             "Converter", typeof(IValueConverter), typeof(InteractiveCommand), null);
 
-
-
-        private string commandName;
-
-        public object InvokeParameter
-        {
-            get
-            {
-                return this.GetValue(InvokeParameterProperty);
-            }
-            set
-            {
-                this.SetValue(InvokeParameterProperty, value);
-            }
-        }
-
-
+        /// <summary>
+        /// Gets or sets the command to be executed
+        /// </summary>
         public ICommand Command
         {
-            get
-            {
-                return (ICommand)this.GetValue(CommandProperty);
-            }
-            set
-            {
-                this.SetValue(CommandProperty, value);
-            }
+            get{ return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
         }
 
-        public string CommandName
-        {
-            get
-            {
-                return this.commandName;
-            }
-            set
-            {
-                if (this.CommandName != value)
-                {
-                    this.commandName = value;
-                }
-            }
-        }
-
+        /// <summary>
+        /// Gets or sets the parameter that will be passed to the command
+        /// </summary>
         public object CommandParameter
         {
             get{ return GetValue(CommandParameterProperty); }
@@ -81,8 +48,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             set { SetValue(InputConverterProperty, value); }
         }
 
-        public object Sender { get; set; }
-
+        /// <summary>
+        /// When the event fires, the command is executed and event args parameter passed through
+        /// </summary>
         protected override void Invoke(object parameter)
         {
             if (Command == null)
@@ -90,22 +58,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 return;
             }
 
-            if (parameter != null)
-            {
-                InvokeParameter = parameter;
-            }
+            object resolvedParameter;
 
             if (Converter != null)
             {
-                InvokeParameter = Converter.Convert(parameter, typeof(object), null, null);
+                resolvedParameter = Converter.Convert(parameter, typeof(object), null, null);
             }
-            
-            if (this.AssociatedObject != null)
+            else
             {
-                ICommand command = Command;
-                if (command.CanExecute(this.CommandParameter))
+                resolvedParameter = parameter;
+            }
+
+            if (AssociatedObject != null)
+            {
+                if (Command.CanExecute(resolvedParameter))
                 {
-                    command.Execute(this.CommandParameter);
+                    Command.Execute(resolvedParameter);
                 }
             }
         }

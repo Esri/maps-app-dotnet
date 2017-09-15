@@ -15,6 +15,7 @@
 //  ******************************************************************************/
 using System;
 using System.Globalization;
+using System.Collections.ObjectModel;
 #if __ANDROID__ || __IOS__ || NETFX_CORE
 using IValueConverter = Xamarin.Forms.IValueConverter;
 #else
@@ -31,14 +32,25 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
     {
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            double number;
+            if (value == null)
+                value = 0;
 
-                var number = System.Convert.ToDouble(value, culture);
+            if (value is ObservableCollection<string>)
+            {
+                number = ((ObservableCollection<string>)value).Count;
+            }
+            else
+            {
+                number = System.Convert.ToDouble(value, culture);
+            }
 
 #if __ANDROID__ || __IOS__ || NETFX_CORE
                 return (number == 0) ? false : true;
 #else
                 return (number == 0) ? Visibility.Collapsed : Visibility.Visible;
 #endif
+            
         }
 
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
