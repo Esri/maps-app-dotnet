@@ -111,5 +111,21 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         {
             BasemapSwitcher.Visibility = Visibility.Collapsed;
         }
+
+        /// <summary>
+        /// Closes the settings panel when the user hits the x
+        /// </summary>
+        private void ExitSettings(object sender, RoutedEventArgs e)
+        {
+            SettingsPanel.Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Opens the settings panel when the user hits the menu button
+        /// </summary>
+        private void OpenSettings(object sender, RoutedEventArgs e)
+        {
+            SettingsPanel.Visibility = Visibility.Visible;
+        }
     }
 }

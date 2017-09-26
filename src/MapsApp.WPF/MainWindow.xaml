@@ -9,10 +9,12 @@
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF"
+        xmlns:security="clr-namespace:Esri.ArcGISRuntime.Security;assembly=Esri.ArcGISRuntime"
         mc:Ignorable="d"
         Title="Maps App">
     <Window.Resources>
         <ResourceDictionary>
+            <viewModels:AuthViewModel x:Key="AuthViewModel"/>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
             <viewModels:BasemapsViewModel x:Key="BasemapsViewModel" />
@@ -84,26 +86,97 @@
         </StackPanel>
 
         <!-- Search Result Panel -->
-        <StackPanel Orientation="Vertical" Width="450" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" DataContext="{StaticResource GeocodeViewModel}"
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+            <StackPanel Orientation="Vertical" Width="450"  DataContext="{StaticResource GeocodeViewModel}"
                     Margin="0,0,0,15" Visibility="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
-            <StackPanel.Effect>
-                <DropShadowEffect Opacity=".5"></DropShadowEffect>
-            </StackPanel.Effect>
+                <StackPanel.Effect>
+                    <DropShadowEffect Opacity=".5"></DropShadowEffect>
+                </StackPanel.Effect>
 
-            <StackPanel Orientation="Horizontal" Width="520" Background="#dfdfdf" Margin="0,15,0,0">
-                <Button Background="#dfdfdf" BorderThickness="0" Width="50" Height="50">
-                    <Image  Source="pack://application:,,,/MapsApp;component/Images/End72.png"  />
-                </Button>
-                <TextBlock Text="{Binding Place.Label}" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center"/>
-                <Button Background="#0079c1" BorderThickness="0" Width="60" Height="60">
-                    <Image  Source="pack://application:,,,/MapsApp;component/Images/directions2.png"  />
-                </Button>
-                <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding CancelLocationSearchCommand}">
-                    <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png"  />
-                </Button>
+                <StackPanel Orientation="Horizontal" Width="520" Background="#dfdfdf" Margin="0,15,0,0">
+                    <Button Background="#dfdfdf" BorderThickness="0" Width="50" Height="50">
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/End72.png"  />
+                    </Button>
+                    <TextBlock Text="{Binding Place.Label}" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    <Button Background="#0079c1" BorderThickness="0" Width="60" Height="60">
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/directions2.png"  />
+                    </Button>
+                    <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding CancelLocationSearchCommand}">
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png"  />
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Settings Panel -->
+            <StackPanel  Visibility="Collapsed" x:Name="SettingsPanel" Orientation="Vertical" Width="450" 
+                     DataContext="{StaticResource GeocodeViewModel}" Margin="0,0,0,15" Background="White" >
+                <StackPanel.Effect>
+                    <DropShadowEffect Opacity=".5"></DropShadowEffect>
+                </StackPanel.Effect>
+
+                <StackPanel Orientation="Horizontal" Width="450" Margin="10">
+                    <TextBlock Text="Maps App Settings" FontSize="30" Width="390"/>
+                    <Button Background="White" BorderThickness="0" Click="ExitSettings">
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png" />
+                    </Button>
+                </StackPanel>
+
+                <Separator/>
+
+                <!-- User info Panel -->
+                <StackPanel Orientation="Vertical" DataContext="{StaticResource AuthViewModel}" Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
+                    <Image Source="{Binding AuthenticatedUser.ThumbnailUri}" Height="100" Width="100"/>
+                    <TextBlock Text="{Binding AuthenticatedUser.FullName}" FontSize="20" HorizontalAlignment="Center"/>
+                    <Separator/>
+                </StackPanel>
+
+                <!-- Change Basemap button -->
+                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5">
+                    <Button Background="White" BorderThickness="0" Height="50" Click="OpenBasemapSwitcher" >
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Basemap60.png"  />
+                            <TextBlock Text="Change Basemap" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!-- Open User Maps button -->
+                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}" 
+                        Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
+                    <Button Background="White" BorderThickness="0" Height="50">
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Folder.png"  Width="50" Height="50"/>
+                            <TextBlock Text="Open User Maps (TODO)" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+
+                <!-- Sign In button -->
+                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}"
+                        Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Inverse}">
+                    <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LoginCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/SignIn.png"  />
+                            <TextBlock Text="Sign In" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!-- Sign Out button -->
+                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}" 
+                        Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
+                    <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LogoutCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/SignIn.png" />
+                            <TextBlock Text="Sign Out" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+
             </StackPanel>
         </StackPanel>
-
 
         <!-- List of suggestions from geocoder -->
         <ListView DataContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}"  Grid.Row="1" Grid.Column="0"
@@ -118,11 +191,9 @@
             <StackPanel.Effect>
                 <DropShadowEffect Opacity=".5"></DropShadowEffect>
             </StackPanel.Effect>
-            <TextBlock Opacity=".7">
-                <Hyperlink TextDecorations="{x:Null}">
-                    <Image Source="pack://application:,,,/MapsApp;component/Images/BurgerButton60.png" Height="60" Width="60"/>
-                </Hyperlink>
-            </TextBlock>
+            <Button Background="White" Opacity=".7" Click="OpenSettings">
+                <Image Source="pack://application:,,,/MapsApp;component/Images/BurgerButton60.png" Height="60" Width="60"/>
+            </Button>
             <TextBox x:Name="SearchTextBox" Width="350" Height="20" VerticalAlignment="Center"
                                 BorderThickness="0" FontSize="18" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Width="40" Height="40" Background="White" BorderThickness="0" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchText}" Margin="0,0,15,0">
@@ -149,13 +220,6 @@
             <TextBlock>
             <Hyperlink Command="{Binding MoveToCurrentLocationCommand, Source={StaticResource MapViewModel}}" TextDecorations="{x:Null}">
                 <Image Source="pack://application:,,,/MapsApp;component/Images/GPSon66.png" Height="60" Width="60"/>
-            </Hyperlink>
-            </TextBlock>
-
-            <!-- Basemaps Button -->
-            <TextBlock>
-            <Hyperlink Click="OpenBasemapSwitcher"  TextDecorations="{x:Null}">
-                <Image Source="pack://application:,,,/MapsApp;component/Images/Basemap60.png" Height="60" Width="60"/>
             </Hyperlink>
             </TextBlock>
         </StackPanel>

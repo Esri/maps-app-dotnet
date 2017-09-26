@@ -100,7 +100,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         {
             try
             {
-                var portal = await ArcGISPortal.CreateAsync();
+                var portal = await ArcGISPortal.CreateAsync(new Uri("http://runtime.maps.arcgis.com/sharing/rest"));
                 await LoadMaps(portal);
             }
             catch (Exception ex)
