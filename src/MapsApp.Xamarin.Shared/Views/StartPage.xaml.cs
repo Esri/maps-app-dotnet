@@ -142,7 +142,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                     {
                         case nameof(BasemapsViewModel.Map):
                             {
-                                (Resources["MapViewModel"] as MapViewModel).Map = basemapViewModel.Map;
+                                // Set the viewpoint of the new map to be the same as the old map
+                                // Otherwise map is being reset to the world view
+                                var mapViewModel = (Resources["MapViewModel"] as MapViewModel);
+                                var currentViewpoint = mapViewModel.AreaOfInterest;
+                                basemapViewModel.Map.InitialViewpoint = currentViewpoint;
+                                mapViewModel.Map = basemapViewModel.Map;
                                 break;
                             }
                     }

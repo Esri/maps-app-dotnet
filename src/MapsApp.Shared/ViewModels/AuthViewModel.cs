@@ -31,12 +31,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private ICommand _logoutCommand;
         private PortalUser _authenticatedUser;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthViewModel"/> class.
+        /// </summary>
         public AuthViewModel()
         {
             // Set up authentication manager to handle logins
             UpdateAuthenticationManager();
         }
 
+        /// <summary>
+        /// Gets or sets the authenticated user for the Portal instance provided
+        /// </summary>
         public PortalUser AuthenticatedUser
         {
             get { return _authenticatedUser; }
@@ -97,50 +103,46 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         // ChallengeHandler function that will be called whenever access to a secured resource is attempted
         public async Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
         {
-            Credential credential = null;
-
             try
             {
                 // IOAuthAuthorizeHandler will challenge the user for OAuth credentials
-                credential = await AuthenticationManager.Current.GenerateCredentialAsync(info.ServiceUri);
+                return await AuthenticationManager.Current.GenerateCredentialAsync(info.ServiceUri);
             }
-            catch (Exception ex)
+            catch
             {
-                // Exception will be reported in calling function
-                throw (ex);
+                return null;
             }
-
-            return credential;
         }
 
+        /// <summary>
+        /// Set up singleton instance of Authentication manager
+        /// </summary>
         private void UpdateAuthenticationManager()
         {
             // Define the server information for ArcGIS Online
-            ServerInfo portalServerInfo = new ServerInfo();
-
-            // ArcGIS Online URI
-            portalServerInfo.ServerUri = new Uri(Configuration.ArcGISOnlineUrl);
-
-            // Type of token authentication to use
-            portalServerInfo.TokenAuthenticationType = TokenAuthenticationType.OAuthImplicit;
-
-            // Define the OAuth information
-            OAuthClientInfo oAuthInfo = new OAuthClientInfo
+            var portalServerInfo = new ServerInfo
             {
-                ClientId = Configuration.AppClientID,
-                RedirectUri = new Uri(Configuration.RedirectURL)
+                ServerUri = new Uri(Configuration.ArcGISOnlineUrl),
+                TokenAuthenticationType = TokenAuthenticationType.OAuthImplicit,
+                OAuthClientInfo = new OAuthClientInfo
+                {
+                    ClientId = Configuration.AppClientID,
+                    RedirectUri = new Uri(Configuration.RedirectURL)
+                },
             };
-            portalServerInfo.OAuthClientInfo = oAuthInfo;
 
             try
             {
                 // Register the ArcGIS Online server information with the AuthenticationManager
                 AuthenticationManager.Current.RegisterServer(portalServerInfo);
 
-                //#if __ANDROID__ || __IOS__
+#if __ANDROID__ || __IOS__ || NETFX_CORE
                 //            thisAuthenticationManager.OAuthAuthorizeHandler = this;
-                //            // Use the OAuthAuthorize class in this project to create a new web view to show the login UI
+                //            
+#else
+                // Use the OAuthAuthorize class to create a new web view to show the login UI
                 AuthenticationManager.Current.OAuthAuthorizeHandler = new WPF.Views.OAuthAuthorize();
+#endif
 
                 // Create a new ChallengeHandler that uses a method in this class to challenge for credentials
                 AuthenticationManager.Current.ChallengeHandler = new ChallengeHandler(CreateCredentialAsync);
@@ -150,9 +152,5 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 Debug.WriteLine(ex.ToString());
             }
         }
-
-
     }
-
-
 }

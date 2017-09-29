@@ -63,6 +63,8 @@
                       Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.BurgerButton60.png}" 
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.BurgerButton60.png}" />
 
+
+
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Padding>
@@ -98,22 +100,42 @@
             </esri:MapView.Behaviors>
         </esri:MapView>
 
-        <!--Autocomplete Control--> 
-        <controls:AutoCompleteView Placeholder="Address or Place"
-                                   Text="{Binding SearchText, Mode=TwoWay}"
-                                   Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
-                                   SearchCommand ="{Binding SearchCommand}"
-                                   SelectedItem ="{Binding SelectedSearchItem, Mode=TwoWay}"
-                                   SearchBackgroundColor="White"
-                                   SuggestionBackgroundColor="White"
-                                   ShowSearchButton="false"
-                                   BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"
-                                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                                   Margin="10">
-        </controls:AutoCompleteView>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!--Menu Button-->
+            <Image Source="{StaticResource menuImage}" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White" />
+
+            <!--Autocomplete Control-->
+            <BoxView Grid.Column="1" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="1" Color="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <controls:AutoCompleteView Placeholder="Address or Place"
+                                       Text="{Binding SearchText, Mode=TwoWay}"
+                                       Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
+                                       SearchCommand ="{Binding SearchCommand}"
+                                       SelectedItem ="{Binding SelectedSearchItem, Mode=TwoWay}"
+                                       ShowSearchButton="false"
+                                       BackgroundColor="White"
+                                       SuggestionBackgroundColor="White"
+                                       WidthRequest="500"                              
+                                       HorizontalOptions="Start" VerticalOptions="CenterAndExpand"
+                                       BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"
+                                       Grid.Column="1"
+                                       Grid.Row="0"
+                                       Grid.RowSpan="2"
+                                       ></controls:AutoCompleteView>
+                  
+        </Grid>
 
         <!-- Search Result Banner -->
-        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+        <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
                      BackgroundColor="White" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
 
             <Image x:Name="PinImage" Source="{StaticResource endImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
@@ -163,8 +185,7 @@
 
             <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
             
-            <!--Menu Button-->
-            <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,5"/>
+            
         </StackLayout>
     </Grid>
 </ContentPage>

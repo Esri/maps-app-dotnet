@@ -81,6 +81,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 {
                     case nameof(BasemapsViewModel.Map):
                         {
+                            // Set the viewpoint of the new map to be the same as the old map
+                            // Otherwise map is being reset to the world view
+                            var currentViewpoint = mapViewModel.AreaOfInterest;
+                            basemapViewModel.Map.InitialViewpoint = currentViewpoint;
                             mapViewModel.Map = basemapViewModel.Map;
                             break;
                         }
