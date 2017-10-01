@@ -14,7 +14,6 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Portal;
 using System;
@@ -39,23 +38,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             LoadPortal();
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-        }
-
-        /// <summary>
-        /// Gets or sets the map
-        /// </summary>
-        public Map Map
-        {
-            get
-            {
-                return _map;
-            }
-
-            set
-            {
-                _map = value;
-                OnPropertyChanged();
-            }
         }
 
         /// <summary>
@@ -85,9 +67,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_selectedBasemap != value && value != null)
                 {
                     _selectedBasemap = value;
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                    LoadNewMap();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     OnPropertyChanged();
                 }
             }
@@ -116,16 +95,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         {
             var items = await portal.GetBasemapsAsync();
             Basemaps = items?.Select(b => b.Item).OfType<PortalItem>();        
-        }
-
-        /// <summary>
-        /// Create map after user selects a basemap
-        /// </summary>
-        private async Task LoadNewMap()
-        {
-            var newMap = new Map(SelectedBasemap);
-            await newMap.LoadAsync();
-            Map = newMap;
         }
     }
 }

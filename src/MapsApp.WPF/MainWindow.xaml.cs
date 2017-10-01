@@ -14,6 +14,7 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
+using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using System.Windows;
@@ -75,17 +76,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 
             // Change map when user selects a new basemap
             var basemapViewModel = Resources["BasemapsViewModel"] as BasemapsViewModel;
-            basemapViewModel.PropertyChanged += (s, e) =>
+            basemapViewModel.PropertyChanged += async (s, e) =>
             {
                 switch (e.PropertyName)
                 {
-                    case nameof(BasemapsViewModel.Map):
+                    case nameof(BasemapsViewModel.SelectedBasemap):
                         {
+							var newMap = new Map(basemapViewModel.SelectedBasemap);
+
                             // Set the viewpoint of the new map to be the same as the old map
                             // Otherwise map is being reset to the world view
                             var currentViewpoint = mapViewModel.AreaOfInterest;
-                            basemapViewModel.Map.InitialViewpoint = currentViewpoint;
-                            mapViewModel.Map = basemapViewModel.Map;
+                            newMap.InitialViewpoint = currentViewpoint;
+							
+							// Load the new map
+                            await newMap.LoadAsync();
+                            mapViewModel.Map = newMap;
                             break;
                         }
                 }

@@ -23,6 +23,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using Xamarin.Forms;
+using Esri.ArcGISRuntime.Mapping;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
@@ -36,6 +37,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         public StartPage()
         {
             InitializeComponent();
+            InitializeBasemapSwitcher();
 
             PictureMarkerSymbol mapPin = CreateMapPin();
 
@@ -53,7 +55,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             if (place == null)
                             {
                                 return;
-                            }                           
+                            }
 
                             var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
@@ -75,6 +77,35 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
             MapView.LocationDisplay.IsEnabled = true;
+        }
+
+        private void InitializeBasemapSwitcher()
+        {
+            if (basemapViewModel == null)
+            {
+                basemapViewModel = new BasemapsViewModel();
+                // Change map when user selects a new basemap
+                basemapViewModel.PropertyChanged += async (s, ea) =>
+                {
+                    switch (ea.PropertyName)
+                    {
+                        case nameof(BasemapsViewModel.SelectedBasemap):
+                            {
+                                // Set the viewpoint of the new map to be the same as the old map
+                                // Otherwise map is being reset to the world view
+                                var mapViewModel = Resources["MapViewModel"] as MapViewModel;
+                                var currentViewpoint = mapViewModel.AreaOfInterest;                             
+                                var newMap = new Map(basemapViewModel.SelectedBasemap);
+                                newMap.InitialViewpoint = currentViewpoint;
+
+                                //Load new map
+                                await newMap.LoadAsync();
+                                mapViewModel.Map = newMap;
+                                break;
+                            }
+                    }
+                };
+            }
         }
 
         /// <summary>
@@ -132,27 +163,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         // Load basemap page, reuse viewmodel so the initial loading happens only once
         private async void LoadBasemapControl(object sender, EventArgs e)
         {
-            if (basemapViewModel == null)
-            {
-                basemapViewModel = new BasemapsViewModel();
-                // Change map when user selects a new basemap
-                basemapViewModel.PropertyChanged += (s, ea) =>
-                {
-                    switch (ea.PropertyName)
-                    {
-                        case nameof(BasemapsViewModel.Map):
-                            {
-                                // Set the viewpoint of the new map to be the same as the old map
-                                // Otherwise map is being reset to the world view
-                                var mapViewModel = (Resources["MapViewModel"] as MapViewModel);
-                                var currentViewpoint = mapViewModel.AreaOfInterest;
-                                basemapViewModel.Map.InitialViewpoint = currentViewpoint;
-                                mapViewModel.Map = basemapViewModel.Map;
-                                break;
-                            }
-                    }
-                };
-            }
             await Navigation.PushAsync(new BasemapPage { BindingContext = basemapViewModel });
         }
 
