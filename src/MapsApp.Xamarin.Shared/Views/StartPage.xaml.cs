@@ -153,8 +153,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                     }
                 };
             }
-
             await Navigation.PushAsync(new BasemapPage { BindingContext = basemapViewModel });
+        }
+
+        /// <summary>
+        /// Opens the settings panel when it is closed
+        /// Closes the settings panel when it is open
+        /// </summary>
+        private void OpenCloseSettings(object sender, EventArgs e)
+        {
+            SettingsPanel.IsVisible = (SettingsPanel.IsVisible == true) ? false : true;
         }
     }
 }

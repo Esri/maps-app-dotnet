@@ -31,7 +31,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         /// </summary>
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>

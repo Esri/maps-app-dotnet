@@ -27,8 +27,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
     class AuthViewModel : BaseViewModel
     {
-        private ICommand _loginCommand;
-        private ICommand _logoutCommand;
+        private ICommand _logInOutCommand;
         private PortalUser _authenticatedUser;
 
         /// <summary>
@@ -54,20 +53,31 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets the command to login the user to Portal
+        /// Gets the command to login or log out the user
         /// </summary>
-        public ICommand LoginCommand
+        public ICommand LogInOutCommand
         {
             get
             {
-                return _loginCommand ?? (_loginCommand = new DelegateCommand(
+                return _logInOutCommand ?? (_logInOutCommand = new DelegateCommand(
                     async (x) =>
                     {
                         try
                         {
-                            var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
-                            var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
-                            AuthenticatedUser = portal.User;
+                            if (AuthenticatedUser == null)
+                            {
+                                var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
+                                var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
+                                AuthenticatedUser = portal.User;
+                            }
+                            else
+                            {
+                                foreach (var credential in AuthenticationManager.Current.Credentials)
+                                {
+                                    AuthenticationManager.Current.RemoveCredential(credential);
+                                }
+                                AuthenticatedUser = null;
+                            }
                         }
                         catch
                         {
@@ -77,28 +87,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     }));
             }
-        }
-
-        /// <summary>
-        /// Gets the command to log user out of Portal
-        /// </summary>
-        public ICommand LogoutCommand
-        {
-            get
-            {
-                return _logoutCommand ?? (_logoutCommand = new DelegateCommand(
-                    (x) =>
-                    {
-                        foreach (var credential in AuthenticationManager.Current.Credentials)
-                        {
-                            AuthenticationManager.Current.RemoveCredential(credential);
-                        }
-                        AuthenticatedUser = null;
-                    }));
-            }
-        }
-
-        
+        } 
 
         // ChallengeHandler function that will be called whenever access to a secured resource is attempted
         public async Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
@@ -136,11 +125,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 // Register the ArcGIS Online server information with the AuthenticationManager
                 AuthenticationManager.Current.RegisterServer(portalServerInfo);
 
-#if __ANDROID__ || __IOS__ || NETFX_CORE
-                //            thisAuthenticationManager.OAuthAuthorizeHandler = this;
-                //            
-#else
-                // Use the OAuthAuthorize class to create a new web view to show the login UI
+#if WPF
+                // In WPF, use the OAuthAuthorize class to create a new web view to show the login UI
                 AuthenticationManager.Current.OAuthAuthorizeHandler = new WPF.Views.OAuthAuthorize();
 #endif
 

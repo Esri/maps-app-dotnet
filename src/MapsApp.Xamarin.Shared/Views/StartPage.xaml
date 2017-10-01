@@ -18,10 +18,12 @@
         <ResourceDictionary>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
+            <viewModels:AuthViewModel x:Key="AuthViewModel"/>
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
             <converters:EventArgsToLocationConverter x:Key="EventArgsToLocationConverter"/>
+            <converters:NullToTextConverter x:Key="NullToTextConverter"/>
             <OnPlatform x:Key="startImage" 
                       x:TypeArguments="ImageSource"
                       iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Start72.png}" 
@@ -100,8 +102,10 @@
             </esri:MapView.Behaviors>
         </esri:MapView>
 
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+        <!-- Search and Menu -->
+        <Grid Grid.Row="0" Grid.Column="0" Margin="5">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -112,10 +116,15 @@
             </Grid.RowDefinitions>
             
             <!--Menu Button-->
-            <Image Source="{StaticResource menuImage}" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White" />
+            <Image Source="{StaticResource menuImage}" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
+                </Image.GestureRecognizers>
+            </Image>
+                   
 
             <!--Autocomplete Control-->
-            <BoxView Grid.Column="1" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="1" Color="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <BoxView Grid.Column="1" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="3" Color="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
             <controls:AutoCompleteView Placeholder="Address or Place"
                                        Text="{Binding SearchText, Mode=TwoWay}"
                                        Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
@@ -131,7 +140,32 @@
                                        Grid.Row="0"
                                        Grid.RowSpan="2"
                                        ></controls:AutoCompleteView>
-                  
+
+            <!-- Menu Items-->
+            <StackLayout x:Name="SettingsPanel" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="False"
+                         BindingContext ="{Binding Source={StaticResource AuthViewModel}}" BackgroundColor="White">
+                <Image x:Name="CloseMenuImage" Source="{StaticResource cancelImage}" VerticalOptions="Start" HorizontalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <StackLayout Orientation="Vertical" IsVisible="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
+                    <Image Source="{Binding AuthenticatedUser.ThumbnailUri}"/>
+                    <Label Text="{Binding AuthenticatedUser.FullName}"/>
+                </StackLayout>
+                <TableView Intent="Settings">
+                        <TableRoot>
+                            <TableSection Title="Settings">
+                                <ImageCell Text="Change Basemap" ImageSource="{StaticResource basemapImage}"/>
+                                <ImageCell Text="Open User Maps (TODO)" ImageSource="{StaticResource cancelImage}"
+                                    IsEnabled="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}"/>
+                            <ImageCell ImageSource="{StaticResource cancelImage}" Command="{Binding LogInOutCommand}"
+                                    Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+
         </Grid>
 
         <!-- Search Result Banner -->

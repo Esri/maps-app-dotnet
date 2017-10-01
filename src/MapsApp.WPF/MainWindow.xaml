@@ -23,6 +23,7 @@
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:EventArgsToLocationConverter x:Key="EventArgsToLocationConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+            <converters:NullToTextConverter x:Key="NullToTextConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -85,8 +86,9 @@
             </ListView>
         </StackPanel>
 
-        <!-- Search Result Panel -->
+        <!-- Left panel -->
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+            <!-- Search Result Panel -->
             <StackPanel Orientation="Vertical" Width="450"  DataContext="{StaticResource GeocodeViewModel}"
                     Margin="0,0,0,15" Visibility="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
                 <StackPanel.Effect>
@@ -141,7 +143,7 @@
                 </StackPanel>
 
                 <!-- Open User Maps button -->
-                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}" 
+                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}"
                         Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
                     <Button Background="White" BorderThickness="0" Height="50">
                         <StackPanel Orientation="Horizontal">
@@ -153,28 +155,15 @@
                 </StackPanel>
 
                 <!-- Sign In button -->
-                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}"
-                        Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Inverse}">
-                    <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LoginCommand}">
+                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}">
+                    <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LogInOutCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image  Source="pack://application:,,,/MapsApp;component/Images/SignIn.png"  />
-                            <TextBlock Text="Sign In" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
+                            <TextBlock Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}" 
+                                       Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
-
-                <!-- Sign Out button -->
-                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}" 
-                        Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
-                    <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LogoutCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/SignIn.png" />
-                            <TextBlock Text="Sign Out" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
-                        </StackPanel>
-                    </Button>
-
-                </StackPanel>
-
             </StackPanel>
         </StackPanel>
 
@@ -215,14 +204,13 @@
             </Hyperlink>
         </TextBlock>
 
+        <!--Current Location Button-->
         <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="2" Margin="0,0,20,100" VerticalAlignment="Bottom">
-            <!--Current Location Button-->
             <TextBlock>
             <Hyperlink Command="{Binding MoveToCurrentLocationCommand, Source={StaticResource MapViewModel}}" TextDecorations="{x:Null}">
                 <Image Source="pack://application:,,,/MapsApp;component/Images/GPSon66.png" Height="60" Width="60"/>
             </Hyperlink>
             </TextBlock>
         </StackPanel>
-
     </Grid>
 </Window>
