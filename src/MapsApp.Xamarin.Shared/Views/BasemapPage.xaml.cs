@@ -13,25 +13,27 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
-    /// <summary>
-    /// Base View Model that all View Models inherit
-    /// </summary>
-    public abstract class BaseViewModel : INotifyPropertyChanged
+    public partial class BasemapPage : ContentPage
     {
         /// <summary>
-        /// Raises the <see cref="MapViewModel.PropertyChanged" /> event
+        /// Initializes a new instance of the <see cref="BasemapPage"/> class.
         /// </summary>
-        /// <param name="propertyName">The name of the property that has changed</param>
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public BasemapPage()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            InitializeComponent();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        /// <summary>
+        /// Event handler for user tapping a basemap item
+        /// </summary>
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            //  Navigate back to map when user selects a basemap
+            await Navigation.PopAsync();
+        }
     }
 }

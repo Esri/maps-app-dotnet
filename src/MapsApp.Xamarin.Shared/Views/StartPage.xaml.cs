@@ -22,17 +22,22 @@ using System;
 using System.IO;
 using System.Reflection;
 using Xamarin.Forms;
+using Esri.ArcGISRuntime.Mapping;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
     public partial class StartPage : ContentPage
 	{
+
+        private BasemapsViewModel basemapViewModel;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="StartPage"/> class.
         /// </summary>
         public StartPage()
-		{
-			InitializeComponent();
+        {
+            InitializeComponent();
+            InitializeBasemapSwitcher();
 
             PictureMarkerSymbol mapPin = CreateMapPin();
 
@@ -50,7 +55,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             if (place == null)
                             {
                                 return;
-                            }                           
+                            }
 
                             var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
@@ -72,6 +77,28 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
             MapView.LocationDisplay.IsEnabled = true;
+        }
+
+        private void InitializeBasemapSwitcher()
+        {
+            if (basemapViewModel == null)
+            {
+                basemapViewModel = new BasemapsViewModel();
+                // Change map when user selects a new basemap
+                basemapViewModel.PropertyChanged += async (s, ea) =>
+                {
+                    switch (ea.PropertyName)
+                    {
+                        case nameof(BasemapsViewModel.SelectedBasemap):
+                            {
+                                var newMap = new Map(basemapViewModel.SelectedBasemap);
+                                await newMap.LoadAsync();
+                                (Resources["MapViewModel"] as MapViewModel).Map = newMap;
+                                break;
+                            }
+                    }
+                };
+            }
         }
 
         /// <summary>
@@ -124,6 +151,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                 DisplayAlert("Error", ex.ToString(), "OK");
                 return null;
             }
+        }
+
+        // Load basemap page, reuse viewmodel so the initial loading happens only once
+        private async void LoadBasemapControl(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BasemapPage { BindingContext = basemapViewModel });
         }
     }
 }

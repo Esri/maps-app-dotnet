@@ -14,6 +14,7 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
+using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using System.Windows;
@@ -72,6 +73,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
             MapView.LocationDisplay.IsEnabled = true;
+
+            // Change map when user selects a new basemap
+            var basemapViewModel = Resources["BasemapsViewModel"] as BasemapsViewModel;
+            basemapViewModel.PropertyChanged += async (s, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(BasemapsViewModel.SelectedBasemap):
+                        {
+                            var newMap = new Map(basemapViewModel.SelectedBasemap);
+                            await newMap.LoadAsync();
+                            mapViewModel.Map = newMap;
+                            break;
+                        }
+                }
+            };
         }
 
         /// <summary>
@@ -80,6 +97,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         private async void ResetMapRotation(object sender, RoutedEventArgs e)
         {
             await MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Turns on basemap switcher when button is pushed
+        /// </summary>
+        private void OpenBasemapSwitcher(object sender, RoutedEventArgs e)
+        {
+            BasemapSwitcher.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Turns off basemap switcher whwn user hits the X 
+        /// </summary>
+        private void HideBasemapSwitcher(object sender, RoutedEventArgs e)
+        {
+            BasemapSwitcher.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -15,7 +15,9 @@
 //  ******************************************************************************/
 using Esri.ArcGISRuntime.Location;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Portal;
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
@@ -23,7 +25,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     /// <summary>
     /// View Model handling logic for the Map
     /// </summary>
-    class MapViewModel : BaseViewModel
+    public class MapViewModel : BaseViewModel
     {
         private const int DefaultZoomScale = 4000;
         private Map _map = new Map(Basemap.CreateTopographicVector());
