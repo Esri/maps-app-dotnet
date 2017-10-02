@@ -165,8 +165,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         /// </summary>
         private void OpenUserItemSwitcher(object sender, RoutedEventArgs e)
         {
-            // Set the AuthViewModel which will trigger the refresh of the User Items
-            (Resources["UserItemsViewModel"] as UserItemsViewModel).AuthViewModel = Resources["AuthViewModel"] as AuthViewModel;
             UserItemsSwitcher.Visibility = Visibility.Visible;
         }
 

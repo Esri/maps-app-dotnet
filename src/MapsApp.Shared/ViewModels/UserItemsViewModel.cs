@@ -14,12 +14,14 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.Portal;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
@@ -27,7 +29,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     {
         private ObservableCollection<PortalItem> _userItems;
         private PortalItem _selectedUserItem;
-        private AuthViewModel _authViewModel;
+        private ICommand _loadUserItemsCommand;
+        private ICommand _discardUserItemsCommand;
         // TODO: Figure out what are all the item types that should be supported
         // Portal item types that should be displayed
         private static readonly ICollection<PortalItemType> validUserItemTypes = 
@@ -38,7 +41,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         public UserItemsViewModel()
         {
-            
         }
 
         /// <summary>
@@ -54,25 +56,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     _selectedUserItem = value;
                     OnPropertyChanged();
                 }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the AuthViewModel instance to keep track of authenticated users and log on/off events
-        /// </summary>
-        public AuthViewModel AuthViewModel
-        {
-            get
-            {
-                return _authViewModel;
-            }
-            set
-            {
-                    _authViewModel = value;
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                    LoadPortal();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                    OnPropertyChanged();
             }
         }
 
@@ -93,19 +76,46 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
+        /// Gets the command to load maps for the authenticated user
+        /// </summary>
+        public ICommand LoadUserItemsCommand
+        {
+            get
+            {
+                return _loadUserItemsCommand ?? (_loadUserItemsCommand = new DelegateCommand(
+                    async (x) =>
+                    {
+                        await LoadUserItems();
+                    }));
+            }
+        }
+
+        /// <summary>
+        /// Gets the command to clear maps for the authenticated user
+        /// </summary>
+        public ICommand DiscardUserItemsCommand
+        {
+            get
+            {
+                return _discardUserItemsCommand ?? (_discardUserItemsCommand = new DelegateCommand(
+                    (x) =>
+                    {
+                        UserItems = null;
+                    }));
+            }
+        }
+
+        /// <summary>
         /// Loads the user specified portal instance
         /// </summary>
         private async Task LoadPortal()
         {
             try
             {
-                if (AuthViewModel.AuthenticatedUser == null)
+                if (AuthViewModel.Instance.AuthenticatedUser == null)
                 {
-                    UserItems = null;
-                    await AuthViewModel.TriggerUserLogin();
+                    await AuthViewModel.Instance.TriggerUserLogin();
                 }
-
-                await LoadUserItems(AuthViewModel.AuthenticatedUser.Portal);
             }
             catch (Exception ex)
             {
@@ -116,13 +126,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Loads user maps from Portal
         /// </summary>
-        private async Task LoadUserItems(ArcGISPortal portal)
-        {          
-            var portalUser = portal.User as PortalUser;
+        public async Task LoadUserItems()
+        {
+            await LoadPortal();
+            var portalUser = AuthViewModel.Instance.AuthenticatedUser.Portal.User as PortalUser;
             var userContent = await portalUser.GetContentAsync();
 
             UserItems = new ObservableCollection<PortalItem>();
-
             foreach (var item in userContent.Items)
             {
                 if (validUserItemTypes.Contains(item.Type))

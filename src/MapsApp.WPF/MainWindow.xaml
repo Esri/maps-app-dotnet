@@ -88,13 +88,14 @@
         </StackPanel>
         
         <!-- User Items Picker -->
-        <StackPanel Background="White" Orientation="Vertical" x:Name="UserItemsSwitcher" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Visibility="Collapsed">
+        <StackPanel Background="White" Orientation="Vertical" x:Name="UserItemsSwitcher" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" DataContext="{StaticResource UserItemsViewModel}" 
+                    Visibility="{Binding UserItems, Converter={StaticResource NullToVisibilityConverter}}">
             <TextBlock HorizontalAlignment="Right">
-                    <Hyperlink  TextDecorations="{x:Null}" Click="HideUserItemSwitcher">
+                    <Hyperlink  TextDecorations="{x:Null}" Command="{Binding Source={StaticResource UserItemsViewModel}, Path=DiscardUserItemsCommand}">
                         <Image Source="pack://application:,,,/MapsApp;component/Images/cancel2.png" Height="40" Width="40"/>
                     </Hyperlink>
             </TextBlock>
-            <ListView  DataContext="{StaticResource UserItemsViewModel}"  ItemsSource="{Binding UserItems}" SelectedItem="{Binding SelectedUserItem}">
+            <ListView  ItemsSource="{Binding UserItems}" SelectedItem="{Binding SelectedUserItem}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical" Width="200" VerticalAlignment="Top">
@@ -173,10 +174,10 @@
                 <!-- Open User Maps button -->
                 <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}"
                         Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
-                    <Button Background="White" BorderThickness="0" Height="50" Click="OpenUserItemSwitcher">
+                    <Button Background="White" BorderThickness="0" Height="50" Command="{Binding Source={StaticResource UserItemsViewModel}, Path=LoadUserItemsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image  Source="pack://application:,,,/MapsApp;component/Images/Folder.png"  Width="50" Height="50"/>
-                            <TextBlock Text="Open User Maps (TODO)" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
+                            <TextBlock Text="Open User Maps" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
                         </StackPanel>
                     </Button>
 

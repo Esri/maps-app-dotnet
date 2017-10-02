@@ -156,7 +156,7 @@
                         <TableRoot>
                             <TableSection Title="Settings">
                                 <ImageCell Text="Change Basemap" ImageSource="{StaticResource basemapImage}" Tapped="LoadBasemapControl"/>
-                                <ImageCell Text="Open User Maps (TODO)" ImageSource="{StaticResource cancelImage}" Tapped="LoadUserItems"
+                                <ImageCell Text="Open User Maps" ImageSource="{StaticResource cancelImage}" Tapped="LoadUserItems"
                                     IsEnabled="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}"/>
                             <ImageCell ImageSource="{StaticResource cancelImage}" Command="{Binding LogInOutCommand}"
                                     Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}"/>
