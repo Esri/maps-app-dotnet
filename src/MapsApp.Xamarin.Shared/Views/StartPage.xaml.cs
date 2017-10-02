@@ -29,7 +29,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
     public partial class StartPage : ContentPage
     {
-        private BasemapsViewModel basemapViewModel;
+        private BasemapsViewModel _basemapViewModel;
+        private UserItemsViewModel _userItemsViewModel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StartPage"/> class.
@@ -79,13 +80,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             MapView.LocationDisplay.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Initialize basemaps and basemap switching functionality
+        /// </summary>
         private void InitializeBasemapSwitcher()
         {
-            if (basemapViewModel == null)
+            if (_basemapViewModel == null)
             {
-                basemapViewModel = new BasemapsViewModel();
+                _basemapViewModel = new BasemapsViewModel();
                 // Change map when user selects a new basemap
-                basemapViewModel.PropertyChanged += async (s, ea) =>
+                _basemapViewModel.PropertyChanged += async (s, ea) =>
                 {
                     switch (ea.PropertyName)
                     {
@@ -95,7 +99,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 // Otherwise map is being reset to the world view
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
                                 var currentViewpoint = mapViewModel.AreaOfInterest;                             
-                                var newMap = new Map(basemapViewModel.SelectedBasemap);
+                                var newMap = new Map(_basemapViewModel.SelectedBasemap);
                                 newMap.InitialViewpoint = currentViewpoint;
 
                                 //Load new map
@@ -163,7 +167,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         // Load basemap page, reuse viewmodel so the initial loading happens only once
         private async void LoadBasemapControl(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BasemapPage { BindingContext = basemapViewModel });
+            await Navigation.PushAsync(new BasemapPage { BindingContext = _basemapViewModel });
         }
 
         /// <summary>
@@ -173,6 +177,46 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         private void OpenCloseSettings(object sender, EventArgs e)
         {
             SettingsPanel.IsVisible = (SettingsPanel.IsVisible == true) ? false : true;
+        }
+
+        /// <summary>
+        /// Loads the AuthUserItemsPage and changes map when user selects an item
+        /// </summary>
+        private async void LoadUserItems(object sender, EventArgs e)
+        {
+            if (_userItemsViewModel == null)
+            {
+                _userItemsViewModel = new UserItemsViewModel(Resources["AuthViewModel"] as AuthViewModel);
+
+                // Change map when user selects a new user item
+                _userItemsViewModel.PropertyChanged += async (s, ea) =>
+                {
+                    switch (ea.PropertyName)
+                    {
+                        case nameof(UserItemsViewModel.SelectedUserItem):
+                            {
+                                // Set the viewpoint of the new map to be the same as the old map
+                                // Otherwise map is being reset to the world view
+                                var mapViewModel = Resources["MapViewModel"] as MapViewModel;
+                                var currentViewpoint = mapViewModel.AreaOfInterest;
+                                var newMap = new Map(_userItemsViewModel.SelectedUserItem);
+                                newMap.InitialViewpoint = currentViewpoint;
+
+                                //Load new map
+                                await newMap.LoadAsync();
+                                mapViewModel.Map = newMap;
+                                break;
+                            }
+                    }
+                };
+            }
+            else
+            {
+                _userItemsViewModel.AuthViewModel = Resources["AuthViewModel"] as AuthViewModel;
+            }
+
+            // Load the AuthUserItemsPage
+            await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });
         }
     }
 }

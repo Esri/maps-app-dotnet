@@ -156,8 +156,8 @@
                 <TableView Intent="Settings">
                         <TableRoot>
                             <TableSection Title="Settings">
-                                <ImageCell Text="Change Basemap" ImageSource="{StaticResource basemapImage}"/>
-                                <ImageCell Text="Open User Maps (TODO)" ImageSource="{StaticResource cancelImage}"
+                                <ImageCell Text="Change Basemap" ImageSource="{StaticResource basemapImage}" Tapped="LoadBasemapControl"/>
+                                <ImageCell Text="Open User Maps (TODO)" ImageSource="{StaticResource cancelImage}" Tapped="LoadUserItems"
                                     IsEnabled="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}"/>
                             <ImageCell ImageSource="{StaticResource cancelImage}" Command="{Binding LogInOutCommand}"
                                     Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}"/>
@@ -205,21 +205,6 @@
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
-            
-            <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
-
-            <!--Basemap Button-->
-            <Image Source="{StaticResource basemapImage}" HorizontalOptions="Center" VerticalOptions="Center">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer 
-            Tapped="LoadBasemapControl"
-            NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
-            </Image>
-
-            <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
-            
-            
         </StackLayout>
     </Grid>
 </ContentPage>

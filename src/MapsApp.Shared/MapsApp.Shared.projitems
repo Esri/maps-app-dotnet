@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GeocodeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MapViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserItemsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Start36.png" />

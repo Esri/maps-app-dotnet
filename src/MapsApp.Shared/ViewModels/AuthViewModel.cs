@@ -28,7 +28,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     class AuthViewModel : BaseViewModel
     {
         private ICommand _logInOutCommand;
-        private PortalUser _authenticatedUser;
+        private  PortalUser _authenticatedUser;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthViewModel"/> class.
@@ -66,9 +66,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                         {
                             if (AuthenticatedUser == null)
                             {
-                                var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
-                                var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
-                                AuthenticatedUser = portal.User;
+                                await TriggerUserLogin();
                             }
                             else
                             {
@@ -87,7 +85,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     }));
             }
-        } 
+        }
+
+        public async Task TriggerUserLogin()
+        {
+            var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
+            var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
+            AuthenticatedUser = portal.User;
+        }
 
         // ChallengeHandler function that will be called whenever access to a secured resource is attempted
         public async Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)

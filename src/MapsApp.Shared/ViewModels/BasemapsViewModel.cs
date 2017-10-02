@@ -14,7 +14,6 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Portal;
 using System;
 using System.Collections.Generic;
@@ -28,7 +27,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     {
         private IEnumerable<PortalItem> _basemaps;
         private PortalItem _selectedBasemap;
-        private Map _map;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BasemapsViewModel"/> class.
@@ -79,7 +77,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         {
             try
             {
-                var portal = await ArcGISPortal.CreateAsync(new Uri("http://runtime.maps.arcgis.com/sharing/rest"));
+                var portal = await ArcGISPortal.CreateAsync();
                 await LoadMaps(portal);
             }
             catch (Exception ex)
