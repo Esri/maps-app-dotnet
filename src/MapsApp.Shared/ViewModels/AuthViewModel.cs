@@ -29,14 +29,26 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     {
         private ICommand _logInOutCommand;
         private PortalUser _authenticatedUser;
+        private static AuthViewModel _instance;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthViewModel"/> class.
         /// </summary>
-        public AuthViewModel()
+        private AuthViewModel()
         {
             // Set up authentication manager to handle logins
             UpdateAuthenticationManager();
+        }
+
+        /// <summary>
+        /// Gets the instance of the AuthViewModel singleton
+        /// </summary>
+        public static AuthViewModel Instance
+        {
+            get
+            {
+                return _instance ?? (_instance = new AuthViewModel());
+            }
         }
 
         /// <summary>
