@@ -186,7 +186,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         {
             if (_userItemsViewModel == null)
             {
-                _userItemsViewModel = new UserItemsViewModel(Resources["AuthViewModel"] as AuthViewModel);
+                _userItemsViewModel = new UserItemsViewModel();
 
                 // Change map when user selects a new user item
                 _userItemsViewModel.PropertyChanged += async (s, ea) =>
@@ -210,13 +210,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                     }
                 };
             }
-            else
-            {
-                _userItemsViewModel.AuthViewModel = Resources["AuthViewModel"] as AuthViewModel;
-            }
 
             // Load the AuthUserItemsPage
             await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });
+            _userItemsViewModel.AuthViewModel = Resources["AuthViewModel"] as AuthViewModel;
         }
     }
 }

@@ -18,6 +18,7 @@
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
             <viewModels:BasemapsViewModel x:Key="BasemapsViewModel" />
+            <viewModels:UserItemsViewModel x:Key="UserItemsViewModel"/>
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
@@ -75,6 +76,7 @@
                             <Image Stretch="UniformToFill"  Source="{Binding ThumbnailUri}" />
                             <TextBlock Margin="5,10,5,0" VerticalAlignment="Center" Text="{Binding Title}"  FontSize="15" LineHeight="26"
                                               FontWeight="DemiBold"/>
+                            <!--<TextBlock Margin="5,10,5,10" Text="{Binding Snippet}" FontSize="12" LineHeight="20" TextWrapping="Wrap" />-->
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -85,6 +87,33 @@
                 </ItemsControl.ItemsPanel>
             </ListView>
         </StackPanel>
+        
+        <!-- User Items Picker -->
+        <StackPanel Background="White" Orientation="Vertical" x:Name="UserItemsSwitcher" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Visibility="Collapsed">
+            <TextBlock HorizontalAlignment="Right">
+                    <Hyperlink  TextDecorations="{x:Null}" Click="HideUserItemSwitcher">
+                        <Image Source="pack://application:,,,/MapsApp;component/Images/cancel2.png" Height="40" Width="40"/>
+                    </Hyperlink>
+            </TextBlock>
+            <ListView  DataContext="{StaticResource UserItemsViewModel}"  ItemsSource="{Binding UserItems}" SelectedItem="{Binding SelectedUserItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Width="200" VerticalAlignment="Top">
+                            <Image Stretch="UniformToFill"  Source="{Binding ThumbnailUri}" />
+                            <TextBlock Margin="5,10,5,0" VerticalAlignment="Center" Text="{Binding Title}"  FontSize="15" LineHeight="26"
+                                              FontWeight="DemiBold"/>
+                            <!--<TextBlock Margin="5,10,5,10" Text="{Binding Snippet}" FontSize="12" LineHeight="20" TextWrapping="Wrap" />-->
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ListView>
+        </StackPanel>
+
 
         <!-- Left panel -->
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
@@ -145,7 +174,7 @@
                 <!-- Open User Maps button -->
                 <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}"
                         Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
-                    <Button Background="White" BorderThickness="0" Height="50">
+                    <Button Background="White" BorderThickness="0" Height="50" Click="OpenUserItemSwitcher">
                         <StackPanel Orientation="Horizontal">
                             <Image  Source="pack://application:,,,/MapsApp;component/Images/Folder.png"  Width="50" Height="50"/>
                             <TextBlock Text="Open User Maps (TODO)" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
@@ -154,7 +183,7 @@
 
                 </StackPanel>
 
-                <!-- Sign In button -->
+                <!-- Sign In/Out button -->
                 <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}">
                     <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LogInOutCommand}">
                         <StackPanel Orientation="Horizontal">

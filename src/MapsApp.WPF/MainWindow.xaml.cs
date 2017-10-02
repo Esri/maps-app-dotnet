@@ -26,7 +26,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
         /// </summary>
@@ -96,6 +95,29 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                         }
                 }
             };
+
+            // Change user item when user selects a new one
+            var userItemsViewModel = Resources["UserItemsViewModel"] as UserItemsViewModel;
+            userItemsViewModel.PropertyChanged += async (s, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(UserItemsViewModel.SelectedUserItem):
+                        {
+                            var newMap = new Map(userItemsViewModel.SelectedUserItem);
+
+                            // Set the viewpoint of the new map to be the same as the old map
+                            // Otherwise map is being reset to the world view
+                            var currentViewpoint = mapViewModel.AreaOfInterest;
+                            newMap.InitialViewpoint = currentViewpoint;
+
+                            // Load the new map
+                            await newMap.LoadAsync();
+                            mapViewModel.Map = newMap;
+                            break;
+                        }
+                }
+            };
         }
 
         /// <summary>
@@ -136,6 +158,24 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         private void OpenSettings(object sender, RoutedEventArgs e)
         {
             SettingsPanel.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Turns on user items switcher when button is pushed
+        /// </summary>
+        private void OpenUserItemSwitcher(object sender, RoutedEventArgs e)
+        {
+            // Set the AuthViewModel which will trigger the refresh of the User Items
+            (Resources["UserItemsViewModel"] as UserItemsViewModel).AuthViewModel = Resources["AuthViewModel"] as AuthViewModel;
+            UserItemsSwitcher.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Turns off user items switcher whwn user hits the X 
+        /// </summary>
+        private void HideUserItemSwitcher(object sender, RoutedEventArgs e)
+        {
+            UserItemsSwitcher.Visibility = Visibility.Collapsed;
         }
     }
 }

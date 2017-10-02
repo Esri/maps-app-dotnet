@@ -36,10 +36,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Initializes a new instance of the <see cref="UserItemsViewModel"/> class.
         /// </summary>
-        public UserItemsViewModel(AuthViewModel authViewModel)
+        public UserItemsViewModel()
         {
-            this.AuthViewModel = authViewModel;
-            _userItems = new ObservableCollection<PortalItem>();
+            
         }
 
         /// <summary>
@@ -115,14 +114,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Loads basemaps from Portal
+        /// Loads user maps from Portal
         /// </summary>
         private async Task LoadUserItems(ArcGISPortal portal)
         {          
             var portalUser = portal.User as PortalUser;
             var userContent = await portalUser.GetContentAsync();
 
-            foreach(var item in userContent.Items)
+            UserItems = new ObservableCollection<PortalItem>();
+
+            foreach (var item in userContent.Items)
             {
                 if (validUserItemTypes.Contains(item.Type))
                     UserItems.Add(item);
