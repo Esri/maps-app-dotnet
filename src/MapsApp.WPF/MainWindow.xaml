@@ -14,7 +14,6 @@
         Title="Maps App">
     <Window.Resources>
         <ResourceDictionary>
-            <viewModels:AuthViewModel x:Key="AuthViewModel"/>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
             <viewModels:BasemapsViewModel x:Key="BasemapsViewModel" />
@@ -155,7 +154,7 @@
                 <Separator/>
 
                 <!-- User info Panel -->
-                <StackPanel Orientation="Vertical" DataContext="{StaticResource AuthViewModel}" Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
+                <StackPanel Orientation="Vertical" DataContext="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}" Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
                     <Image Source="{Binding AuthenticatedUser.ThumbnailUri}" Height="100" Width="100"/>
                     <TextBlock Text="{Binding AuthenticatedUser.FullName}" FontSize="20" HorizontalAlignment="Center"/>
                     <Separator/>
@@ -172,7 +171,7 @@
                 </StackPanel>
 
                 <!-- Open User Maps button -->
-                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}"
+                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}"
                         Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
                     <Button Background="White" BorderThickness="0" Height="50" Click="OpenUserItemSwitcher">
                         <StackPanel Orientation="Horizontal">
@@ -184,7 +183,7 @@
                 </StackPanel>
 
                 <!-- Sign In/Out button -->
-                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{StaticResource AuthViewModel}">
+                <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}">
                     <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LogInOutCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Image  Source="pack://application:,,,/MapsApp;component/Images/SignIn.png"  />

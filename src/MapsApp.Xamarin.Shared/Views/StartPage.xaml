@@ -18,7 +18,6 @@
         <ResourceDictionary>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
-            <viewModels:AuthViewModel x:Key="AuthViewModel"/>
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
@@ -143,7 +142,7 @@
 
             <!-- Menu Items-->
             <StackLayout x:Name="SettingsPanel" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="False"
-                         BindingContext ="{Binding Source={StaticResource AuthViewModel}}" BackgroundColor="White">
+                         BindingContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}" BackgroundColor="White">
                 <Image x:Name="CloseMenuImage" Source="{StaticResource cancelImage}" VerticalOptions="Start" HorizontalOptions="End">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
