@@ -19,12 +19,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers
     static class Configuration
     {
         // URL of the server to authenticate with (ArcGIS Online)
-        public const string ArcGISOnlineUrl = "https://www.arcgis.com/sharing/rest";
+        public const string ArcGISOnlineUrl = @"https://www.arcgis.com/sharing/rest";
 
         // Client ID for the app registered with the server (Portal Maps)
         public const string AppClientID = "YourAppClientID";
 
         // Redirect URL after a successful authorization (configured for the Portal Maps application)
-        public const string RedirectURL = "https://developers.arcgis.com";
+        public const string RedirectURL = @"https://developers.arcgis.com";
+
+        // Url used for the geocode service
+        public const string GeocodeUrl = @"https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer";
+
+        // Url used for the routing service
+        public const string RouteUrl = @"https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World";
     }
 }
