@@ -18,6 +18,7 @@ using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using System.Windows;
+using System.Linq;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 {
@@ -34,6 +35,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             InitializeComponent();            
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            var routingViewModel = Resources["RoutingViewModel"] as RoutingViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
                 switch (e.PropertyName)
@@ -62,6 +64,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                         {
                             // display error message from viewmodel
                             MessageBox.Show(geocodeViewModel.ErrorMessage, "Error", MessageBoxButton.OK);
+                            break;
+                        }
+                    case nameof(GeocodeViewModel.FromPlace):
+                        {
+                            routingViewModel.FromPlace = geocodeViewModel.FromPlace;
+                            break;
+                        }
+                    case nameof(GeocodeViewModel.ToPlace):
+                        {
+                            routingViewModel.ToPlace = geocodeViewModel.ToPlace;
                             break;
                         }
                 }
@@ -114,6 +126,37 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                             // Load the new map
                             await newMap.LoadAsync();
                             mapViewModel.Map = newMap;
+                            break;
+                        }
+                }
+            };
+
+            routingViewModel.PropertyChanged += async (s, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(RoutingViewModel.Route):
+                        {
+                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
+                            graphicsOverlay?.Graphics?.Clear();
+
+                            if (routingViewModel.FromPlace == null || routingViewModel.ToPlace == null || routingViewModel.Route == null)
+                            {
+                                return;
+                            }
+
+                            // Add route to map
+                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault().RouteGeometry);
+                            graphicsOverlay?.Graphics.Add(routeGraphic);
+
+                            // Add start and end locations to the map
+                            var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Start72.png")));
+                            var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
+                            var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, fromMapPin);
+                            var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, toMapPin);
+                            graphicsOverlay?.Graphics.Add(fromGraphic);
+                            graphicsOverlay?.Graphics.Add(toGraphic);
+
                             break;
                         }
                 }
@@ -174,6 +217,67 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         private void HideUserItemSwitcher(object sender, RoutedEventArgs e)
         {
             UserItemsSwitcher.Visibility = Visibility.Collapsed;
+        }
+
+        private async void ShowRoutingPanel(object sender, RoutedEventArgs e)
+        {
+            var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
+                   
+            // Set the to and from locations and text boxes
+            var matches = await geocodeViewModel.Locator.ReverseGeocodeAsync(MapView.LocationDisplay.Location.Position);
+            geocodeViewModel.FromPlace = matches.First();
+            geocodeViewModel.ToPlace = geocodeViewModel.Place;
+
+            // clear the Place to hide the search result
+            geocodeViewModel.Place = null;
+        }
+
+        /// <summary>
+        /// Display suggestions only when the text box is in focus
+        /// </summary>
+        private void FromLocationTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            FromLocationSuggestionsList.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Hide suggestions when text box loses focus
+        /// </summary>
+        private void FromLocationTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            FromLocationSuggestionsList.Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Display suggestions only when the text box is in focus
+        /// </summary>
+        private void SearchTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchSuggestionsList.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Hide suggestions when text box loses focus
+        /// </summary>
+        private void SearchTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            SearchSuggestionsList.Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Display suggestions only when the text box is in focus
+        /// </summary>
+        private void ToLocationTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            ToLocationSuggestionsList.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Hide suggestions when text box loses focus
+        /// </summary>
+        private void ToLocationTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            ToLocationSuggestionsList.Visibility = Visibility.Collapsed;
         }
     }
 }

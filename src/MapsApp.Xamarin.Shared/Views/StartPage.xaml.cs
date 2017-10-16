@@ -210,7 +210,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                     }
                 };
             
-
             // Load the AuthUserItemsPage
             await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });
         }

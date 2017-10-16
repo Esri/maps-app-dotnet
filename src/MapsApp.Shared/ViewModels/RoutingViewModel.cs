@@ -16,7 +16,7 @@
 
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
-using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
 using System;
@@ -30,141 +30,149 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
     class RoutingViewModel : BaseViewModel
     {
-        private ICommand _triggerRouteCommand;
-        private string _startLocation;
-        private string _endLocation;
+        private GeocodeResult _fromPlace;
+        private GeocodeResult _toPlace;
+        private RouteResult _route;
+        private Viewpoint _areaOfInterest;
+        private ICommand _clearRouteCommand;
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="RoutingViewModel"/> class.
         /// </summary>
         public RoutingViewModel()
         {
-            Initialize();
+            
         }
 
-        private async void Initialize()
+        /// <summary>
+        /// Gets or sets the end location for the route
+        /// </summary>
+        public GeocodeResult FromPlace
         {
-            try
+            get { return _fromPlace; }
+            set
             {
-                // Load locator 
-                Locator = await LocatorTask.CreateAsync(new Uri(Configuration.GeocodeUrl));
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.ToString());
+                if (_fromPlace != value)
+                {
+                    _fromPlace = value;
+                    GetRouteAsync();
+                    OnPropertyChanged();
+                }
             }
         }
 
-        public ICommand TriggerRouteCommand
+        /// <summary>
+        /// Gets or sets the end location for the route
+        /// </summary>
+        public GeocodeResult ToPlace
+        {
+            get { return _toPlace; }
+            set
+            {
+                if (_toPlace != value)
+                {
+                    _toPlace = value;
+                    GetRouteAsync();
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the route 
+        /// </summary>
+        public RouteResult Route
+        {
+            get { return _route; }
+            set
+            {
+                if (_route != value)
+                {
+                    _route = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the current area of interest
+        /// </summary>
+        public Viewpoint AreaOfInterest
         {
             get
             {
-                return _triggerRouteCommand ?? (_triggerRouteCommand = new DelegateCommand(
-                    async (X) =>
+                return _areaOfInterest;
+            }
+
+            set
+            {
+                if (_areaOfInterest != value)
+                {
+                    _areaOfInterest = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the command to cancel the location search and clear the pin off the map
+        /// </summary>
+        public ICommand ClearRouteCommand
+        {
+            get
+            {
+                return _clearRouteCommand ?? (_clearRouteCommand = new DelegateCommand(
+                    (x) =>
                     {
-                        await LoadRoutingService();
+                        Route = null;
                     }));
             }
         }
 
         /// <summary>
-        /// Gets or sets the end location for the route
+        /// Gets the router for the map
         /// </summary>
-        public string EndLocation
+        internal RouteTask Router { get; set; }
+
+
+        private async Task GetRouteAsync()
         {
-            get { return _endLocation; }
-            set
+            if (Router == null)
             {
-                if (_endLocation != value)
+                try
                 {
-                    _endLocation = value;
-                    OnPropertyChanged();
+                    Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                    return;
                 }
             }
-        }
-
-        /// <summary>
-        /// Gets or sets the end location for the route
-        /// </summary>
-        public string StartLocation
-        {
-            get { return _startLocation; }
-            set
-            {
-                if (_startLocation != value)
-                {
-                    _startLocation = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets the geocoder for the map
-        /// </summary>
-        internal LocatorTask Locator { get; set; }
-
-        private async Task<MapPoint> GetMapPointForAddress(string address)
-        {
-            try
-            {
-                // Locate the searched feature
-                if (Locator != null)
-                {
-                    var geocodeParameters = new GeocodeParameters
-                    {
-                        MaxResults = 1
-                    };
-                    var matches = await Locator.GeocodeAsync(address, geocodeParameters);
-                    return matches?.FirstOrDefault()?.DisplayLocation;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
-
-
-        private async Task LoadRoutingService()
-        { 
-            var routeTask = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
-
             // set the route parameters
-            var routeParams = await routeTask.CreateDefaultParametersAsync();
+            var routeParams = await Router.CreateDefaultParametersAsync();
             routeParams.ReturnDirections = true;
-            routeParams.ReturnRoutes = true;
-
-            // set the route stops
-            var start = new Stop (await GetMapPointForAddress(StartLocation));
-            var end = new Stop (await GetMapPointForAddress(EndLocation));
+            routeParams.ReturnRoutes = true;            
 
             // add route stops as parameters
-            routeParams.SetStops(new List<Stop>() { start, end });
+            if (FromPlace != null && ToPlace != null)
+            {
+                try
+                {
+                    routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
+                                                            new Stop(ToPlace.RouteLocation) });
 
-            var route = await routeTask.SolveRouteAsync(routeParams);
+                    Route = await Router.SolveRouteAsync(routeParams);
+
+                    // Set viewpoint to the route's extent
+                    AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault().RouteGeometry);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                }
+            }
+
         }
-
-        ///// <summary>
-        ///// Loads the user specified portal instance
-        ///// </summary>
-        //private async Task LoadPortal()
-        //{
-        //    try
-        //    {
-        //        if (AuthViewModel.Instance.AuthenticatedUser == null)
-        //        {
-        //            await AuthViewModel.Instance.TriggerUserLogin();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Debug.WriteLine("Unable to connect to Portal. " + ex.ToString());
-        //    }
-        //}
     }
 }
