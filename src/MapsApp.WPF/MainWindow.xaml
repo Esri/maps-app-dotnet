@@ -8,9 +8,7 @@
         xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         xmlns:local="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF"
-        xmlns:security="clr-namespace:Esri.ArcGISRuntime.Security;assembly=Esri.ArcGISRuntime"
         xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
         mc:Ignorable="d"
         Title="Maps App">
@@ -87,7 +85,6 @@
                             <Image Stretch="UniformToFill"  Source="{Binding ThumbnailUri}" />
                             <TextBlock Margin="5,10,5,0" VerticalAlignment="Center" Text="{Binding Title}"  FontSize="15" LineHeight="26"
                                               FontWeight="DemiBold"/>
-                            <!--<TextBlock Margin="5,10,5,10" Text="{Binding Snippet}" FontSize="12" LineHeight="20" TextWrapping="Wrap" />-->
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -114,7 +111,6 @@
                             <Image Stretch="UniformToFill"  Source="{Binding ThumbnailUri}" />
                             <TextBlock Margin="5,10,5,0" VerticalAlignment="Center" Text="{Binding Title}"  FontSize="15" LineHeight="26"
                                               FontWeight="DemiBold"/>
-                            <!--<TextBlock Margin="5,10,5,10" Text="{Binding Snippet}" FontSize="12" LineHeight="20" TextWrapping="Wrap" />-->
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -152,43 +148,37 @@
             
             <!-- Route Panel -->
             <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Width="450"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RoutingViewModel}}" 
-                        Background="#dfdfdf" Margin="0,0,0,15" DataContext="{StaticResource GeocodeViewModel}">
+                        Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}">
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"/>
                 </StackPanel.Effect>
-                <StackPanel Background="#0079c1">
-                    <TextBlock Text="Directions" FontSize="20" Margin="15,5,0,5" />
-                </StackPanel>
 
-                <StackPanel Orientation="Horizontal"  Margin="15,10,0,0">
-                    <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal"  >
+                    <StackPanel Orientation="Vertical" Margin="15,15,0,0">
                         <!-- From location text box -->
-                        <TextBox x:Name="FromLocationTextBox" Text="{Binding FromSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" VerticalAlignment="Center" 
-                                 Width="330" Margin="0,0,0,5" GotFocus="FromLocationTextBox_GotFocus" LostFocus="FromLocationTextBox_LostFocus">
-                        </TextBox>
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Start72.png" Height="40" Margin="0,0,10,5"/>
+                            <TextBox x:Name="FromLocationTextBox" Text="{Binding FromSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" VerticalAlignment="Center" 
+                                 Width="330" Margin="0,0,0,5" GotFocus="FromLocationTextBox_GotFocus" LostFocus="FromLocationTextBox_LostFocus" TextWrapping="Wrap"/>
+                        </StackPanel>
                         <!-- To location text box -->
-                        <TextBox x:Name="ToLocationTextBox" Text="{Binding ToSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" TextWrapping="Wrap" 
+                        <StackPanel Orientation="Horizontal">
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/End72.png" Height="40" Margin="0,0,10,0"/>
+                            <TextBox x:Name="ToLocationTextBox" Text="{Binding ToSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" TextWrapping="Wrap" 
                                  VerticalAlignment="Center" Width="330" GotFocus="ToLocationTextBox_GotFocus" LostFocus="ToLocationTextBox_LostFocus"/>
+                        </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Button Background="#dfdfdf" BorderThickness="0" Width="60" Height="60">
-                            <Image Source="pack://application:,,,/MapsApp;component/Images/directions2.png" />
-                        </Button>
-                        <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding ClearRouteCommand, Source={StaticResource RoutingViewModel}}">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png" />
-                        </Button>
-                    </StackPanel>
+                    <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding ClearRouteCommand, Source={StaticResource RoutingViewModel}}" VerticalAlignment="Top" Margin="20,5,0,0">
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png"/>
+                    </Button>
                 </StackPanel>
                 <StackPanel Width="240" Margin="0,10,0,10">
-                    <Button Content="Route" FontSize="20" Background="#0079c1" HorizontalAlignment="Right" BorderThickness="0" Padding="10,5,10,5"
+                    <Button Content="Turn by Turn" FontSize="20" Background="#0079c1" HorizontalAlignment="Right" BorderThickness="0" Padding="10,5,10,5"
                             Command="{Binding Source={StaticResource RoutingViewModel}, Path=TriggerRouteCommand}"/>
                 </StackPanel>
-
-
-
-
+                <!-- Suggestions box for From location -->
                 <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding Source={StaticResource GeocodeViewModel}, 
-                    Path=SelectedFromSuggestion}" Margin="15, 0, 0, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
+                    Path=SelectedFromSuggestion}" Margin="5, 0, 5, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
                     <ListView.Effect>
                         <DropShadowEffect Opacity=".5"></DropShadowEffect>
                     </ListView.Effect>
@@ -200,10 +190,10 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-
+                <!-- Suggestions box for To location -->
                 <ListView x:Name="ToLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding Source={StaticResource GeocodeViewModel}, 
                     Path=SelectedToSuggestion}" 
-                          Margin="15, 0, 0, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
+                          Margin="5, 0, 5, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
                     <ListView.Effect>
                         <DropShadowEffect Opacity=".5"></DropShadowEffect>
                     </ListView.Effect>
