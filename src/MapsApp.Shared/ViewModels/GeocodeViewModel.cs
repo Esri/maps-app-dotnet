@@ -71,7 +71,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Gets the geocoder for the map
         /// </summary>
-        internal LocatorTask Locator { get; set; }
+        private LocatorTask Locator { get; set; }
 
         /// <summary>
         /// Gets or sets the search text the user has entered
@@ -181,7 +181,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_place != value)
                 {
                     _place = value;
-                    ZoomToPlace();
+
+                    // Set viewpoint to the feature's extent
+                    AreaOfInterest = Place != null ? (Place.Extent != null ? new Viewpoint(Place.Extent) :
+                        new Viewpoint(Place.DisplayLocation, DefaultZoomScale)) : AreaOfInterest;
+
                     OnPropertyChanged();
                 }
             }
@@ -226,9 +230,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 return _reverseGeocodeCommand ?? (_reverseGeocodeCommand = new DelegateCommand(
                     async (x) =>
                     {
-                        if (x != null)
+                        if (x is MapPoint)
                         {
-                            await GetReverseGeocoderLocationAsync((MapPoint)x);
+                            await GetReverseGeocodedLocationAsync((MapPoint)x);
                         }
                     }));
             }
@@ -287,7 +291,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <returns>Location that best matches the search string</returns>
         private async Task GetSearchedLocationAsync(string geocodeAddress)
         {
-            //SuggestionsList.Clear();
             SearchText = string.Empty;
 
             try
@@ -318,24 +321,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Use the locator to perform a reverse geocode operation, returning the place that the user tapped on inside the map
         /// </summary>
-        private async Task GetReverseGeocoderLocationAsync(MapPoint location)
+        private async Task GetReverseGeocodedLocationAsync(MapPoint location)
         {
             var matches = await Locator.ReverseGeocodeAsync(location);
             Place = matches.First();
-        }
-
-        /// <summary>
-        /// Zoom to the location inside the Place property
-        /// </summary>
-        private void ZoomToPlace()
-        {
-            // Select located feature on map
-            if (Place != null)
-            {
-                // Set viewpoint to the feature's extent
-                AreaOfInterest = Place.Extent != null ? new Viewpoint(Place.Extent) :
-                    new Viewpoint(Place.DisplayLocation, DefaultZoomScale);
-            }
         }
     }
 }
