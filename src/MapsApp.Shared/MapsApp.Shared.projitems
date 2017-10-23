@@ -10,10 +10,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Binding Support\GeoViewExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Binding Support\HoldingLocationController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Binding Support\ViewpointController.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Binding Support\ViewpointControllerCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\DelegateCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Converters\EventArgsToLocationConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NullToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NumberToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BasemapsViewModel.cs" />

@@ -6,7 +6,7 @@
              xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
              xmlns:esri="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
              xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.UI;assembly=Esri.ArcGISRuntime"
-             xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"             
+             xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
              xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
              xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls"
              xmlns:ext="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Extensions"
@@ -21,46 +21,45 @@
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
-            <converters:EventArgsToLocationConverter x:Key="EventArgsToLocationConverter"/>
-            <OnPlatform x:Key="startImage" 
+            <OnPlatform x:Key="startImage"
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Start72.png}" 
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Start72.png}" 
+                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Start72.png}"
+                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Start72.png}"
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.Start72.png}" />
-            <OnPlatform x:Key="endImage" 
+            <OnPlatform x:Key="endImage"
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.End72.png}" 
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.End72.png}" 
+                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.End72.png}"
+                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.End72.png}"
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.End72.png}" />
-            <OnPlatform x:Key="getDirectionsImage" 
+            <OnPlatform x:Key="getDirectionsImage"
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.directions2.png}" 
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.directions2.png}" 
+                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.directions2.png}"
+                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.directions2.png}"
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.directions2.png}" />
-            <OnPlatform x:Key="cancelImage" 
+            <OnPlatform x:Key="cancelImage"
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.cancel2.png}" 
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.cancel2.png}" 
+                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.cancel2.png}"
+                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.cancel2.png}"
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.cancel2.png}" />
-            <OnPlatform x:Key="compassImage" 
+            <OnPlatform x:Key="compassImage"
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Compass72.png}" 
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Compass72.png}" 
+                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Compass72.png}"
+                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Compass72.png}"
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.Compass72.png}" />
-            <OnPlatform x:Key="gpsImage" 
+            <OnPlatform x:Key="gpsImage"
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.GPSon66.png}" 
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.GPSon66.png}" 
+                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.GPSon66.png}"
+                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.GPSon66.png}"
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.GPSon66.png}" />
-            <OnPlatform x:Key="basemapImage" 
+            <OnPlatform x:Key="basemapImage"
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Basemap60.png}" 
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Basemap60.png}" 
+                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Basemap60.png}"
+                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Basemap60.png}"
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.Basemap60.png}" />
-            <OnPlatform x:Key="menuImage" 
+            <OnPlatform x:Key="menuImage"
                       x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.BurgerButton60.png}" 
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.BurgerButton60.png}" 
+                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.BurgerButton60.png}"
+                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.BurgerButton60.png}"
                       WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.BurgerButton60.png}" />
 
         </ResourceDictionary>
@@ -81,7 +80,7 @@
         </Grid.RowDefinitions>
 
         <!-- MapView Control -->
-        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}" 
+        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
                         VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" >
             <esri:MapView.GraphicsOverlays>
                 <esriUI:GraphicsOverlay Id="PlacesOverlay"/>
@@ -93,12 +92,12 @@
                     <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" />
                 </utils:ViewpointControllerCollection>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
-            <esri:MapView.Behaviors>
-                <behaviors:EventToCommandBehavior EventName="GeoViewHolding" Command="{Binding ReverseGeocodeCommand, Source={StaticResource GeocodeViewModel}}" Converter="{StaticResource EventArgsToLocationConverter}"/>
-            </esri:MapView.Behaviors>
+            <utils:GeoViewExtensions.HoldingLocationController>
+                <utils:HoldingLocationController HoldingLocation="{Binding HoldingLocation, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
+            </utils:GeoViewExtensions.HoldingLocationController>
         </esri:MapView>
 
-        <!--Autocomplete Control--> 
+        <!--Autocomplete Control-->
         <controls:AutoCompleteView Placeholder="Address or Place"
                                    Text="{Binding SearchText, Mode=TwoWay}"
                                    Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
@@ -113,7 +112,7 @@
         </controls:AutoCompleteView>
 
         <!-- Search Result Banner -->
-        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                      BackgroundColor="White" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
 
             <Image x:Name="PinImage" Source="{StaticResource endImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
@@ -131,38 +130,36 @@
         </StackLayout>
 
         <!--Compass Button-->
-        <Image x:Name="CompassImage" Source="{StaticResource compassImage}" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Margin="0,0,20,0" 
-               BindingContext="{x:Reference MapView}" IsVisible="{Binding MapRotation, Converter={StaticResource NumberToVisibilityConverter}}" 
+        <Image x:Name="CompassImage" Source="{StaticResource compassImage}" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Margin="0,0,20,0"
+               BindingContext="{x:Reference MapView}" IsVisible="{Binding MapRotation, Converter={StaticResource NumberToVisibilityConverter}}"
                Rotation="{Binding MapRotation, Converter={StaticResource SubtractFromConverter}}">
             <Image.GestureRecognizers>
-                <TapGestureRecognizer 
+                <TapGestureRecognizer
             Tapped="ResetMapRotation"
             NumberOfTapsRequired="1" />
             </Image.GestureRecognizers>
         </Image>
 
         <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100" BackgroundColor="White">
-            
+
             <!-- GPS Button -->
             <Image HorizontalOptions="Center"  VerticalOptions="Center" Source="{StaticResource gpsImage}" BindingContext ="{Binding Source={StaticResource MapViewModel}}" Margin="5,5,5,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
-            
             <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
 
             <!--Basemap Button-->
             <Image Source="{StaticResource basemapImage}" HorizontalOptions="Center" VerticalOptions="Center">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer 
+                    <TapGestureRecognizer
             Tapped="LoadBasemapControl"
             NumberOfTapsRequired="1" />
                 </Image.GestureRecognizers>
             </Image>
-
             <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
-            
+
             <!--Menu Button-->
             <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,5"/>
         </StackLayout>

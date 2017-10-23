@@ -36,6 +36,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _searchText;
         private string _selectedSuggestion;
         private string _errorMessage;
+        private MapPoint _holdingLocation;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
         private ICommand _searchCommand;
@@ -58,14 +59,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         {
             try
             {
-                // Load locator 
+                // Load locator
                 Locator = await LocatorTask.CreateAsync(new Uri(GeocodeServiceUrl));
             }
             catch (Exception ex)
             {
                 ErrorMessage = ex.ToString();
             }
-            
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                return _selectedSuggestion;
             }
-            
+
             set
             {
                 if (_selectedSuggestion != value && value != null)
@@ -202,6 +202,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_errorMessage != value && value != null)
                 {
                     _errorMessage = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public MapPoint HoldingLocation
+        {
+            get { return _holdingLocation; }
+            set
+            {
+                if (_holdingLocation != value)
+                {
+                    _holdingLocation = value;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    GetReverseGeocodedLocationAsync(_holdingLocation);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     OnPropertyChanged();
                 }
             }
@@ -301,7 +317,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     var geocodeParameters = new GeocodeParameters
                     {
                         MaxResults = 1,
-                        
                         PreferredSearchLocation = AreaOfInterest?.TargetGeometry as MapPoint,
                     };
                     var matches = await Locator.GeocodeAsync(geocodeAddress, geocodeParameters);
