@@ -22,6 +22,7 @@ using Esri.ArcGISRuntime.Tasks.Geocoding;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -450,7 +451,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <returns>Location that best matches the search string</returns>
         public async Task GetSearchedLocationAsync(string geocodeAddress, string sender)
         {
-            //SuggestionsList.Clear();
             SearchText = string.Empty;
 
             try
@@ -467,7 +467,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     var matches = await Locator.GeocodeAsync(geocodeAddress, geocodeParameters);
 
                     // set it into the appropriate property
+#if NETFX_CORE
+                    this.GetType().GetTypeInfo().GetDeclaredProperty(sender).SetValue(this, matches.FirstOrDefault());
+#else
                     this.GetType().GetProperty(sender).SetValue(this, matches.FirstOrDefault());
+#endif
                 }
                 else
                 {

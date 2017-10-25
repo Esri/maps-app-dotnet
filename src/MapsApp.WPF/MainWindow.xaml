@@ -95,7 +95,7 @@
                 </ItemsControl.ItemsPanel>
             </ListView>
         </StackPanel>
-        
+
         <!-- User Items Picker -->
         <StackPanel Background="White" Orientation="Vertical" x:Name="UserItemsSwitcher" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" DataContext="{StaticResource UserItemsViewModel}" 
                     Visibility="{Binding UserItems, Converter={StaticResource NullToVisibilityConverter}}">
@@ -145,7 +145,7 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-            
+
             <!-- Route Panel -->
             <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Width="450"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RoutingViewModel}}" 
                         Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}">
@@ -173,8 +173,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Width="240" Margin="0,10,0,10">
-                    <Button Content="Turn by Turn" FontSize="20" Background="#0079c1" HorizontalAlignment="Right" BorderThickness="0" Padding="10,5,10,5"
-                            Command="{Binding Source={StaticResource RoutingViewModel}, Path=TriggerRouteCommand}"/>
+                    <Button Content="Turn by Turn" FontSize="20" Background="#0079c1" HorizontalAlignment="Right" BorderThickness="0" Padding="10,5,10,5"/>
                 </StackPanel>
                 <!-- Suggestions box for From location -->
                 <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding Source={StaticResource GeocodeViewModel}, 
@@ -205,8 +204,6 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
-                    
-                    
             </StackPanel>
 
             <!-- Settings Panel -->

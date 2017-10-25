@@ -24,6 +24,7 @@ using System.IO;
 using System.Reflection;
 using Xamarin.Forms;
 using Esri.ArcGISRuntime.Mapping;
+using System.Linq;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
@@ -43,6 +44,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             PictureMarkerSymbol mapPin = CreateMapPin();
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            var routingViewModel = Resources["RoutingViewModel"] as RoutingViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
                 switch (e.PropertyName)
@@ -68,6 +70,47 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                         {
                             // display error message from viewmodel
                             DisplayAlert("Error", geocodeViewModel.ErrorMessage, "OK");
+                            break;
+                        }
+                    case nameof(GeocodeViewModel.FromPlace):
+                        {
+                            routingViewModel.FromPlace = geocodeViewModel.FromPlace;
+                            break;
+                        }
+                    case nameof(GeocodeViewModel.ToPlace):
+                        {
+                            routingViewModel.ToPlace = geocodeViewModel.ToPlace;
+                            break;
+                        }
+                }
+            };
+
+            routingViewModel.PropertyChanged += async (s, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(RoutingViewModel.Route):
+                        {
+                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
+                            graphicsOverlay?.Graphics?.Clear();
+
+                            if (routingViewModel.FromPlace == null || routingViewModel.ToPlace == null || routingViewModel.Route == null)
+                            {
+                                return;
+                            }
+
+                            // Add route to map
+                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault().RouteGeometry);
+                            graphicsOverlay?.Graphics.Add(routeGraphic);
+
+                            // Add start and end locations to the map
+                            //var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Start72.png")));
+                            //var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
+                            var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, mapPin);
+                            var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, mapPin);
+                            graphicsOverlay?.Graphics.Add(fromGraphic);
+                            graphicsOverlay?.Graphics.Add(toGraphic);
+
                             break;
                         }
                 }
@@ -212,6 +255,19 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             
             // Load the AuthUserItemsPage
             await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });
+        }
+
+        private async void ShowRoutingPanel(object sender, EventArgs e)
+        {
+            var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
+
+            // Set the to and from locations and text boxes
+            var matches = await geocodeViewModel.Locator.ReverseGeocodeAsync(MapView.LocationDisplay.Location.Position);
+            geocodeViewModel.FromPlace = matches.First();
+            geocodeViewModel.ToPlace = geocodeViewModel.Place;
+
+            // clear the Place to hide the search result
+            geocodeViewModel.Place = null;
         }
     }
 }

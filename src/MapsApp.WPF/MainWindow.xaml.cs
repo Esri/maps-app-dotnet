@@ -32,7 +32,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         /// </summary>
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
             var routingViewModel = Resources["RoutingViewModel"] as RoutingViewModel;
@@ -99,7 +99,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                             // Otherwise map is being reset to the world view
                             var currentViewpoint = mapViewModel.AreaOfInterest;
                             newMap.InitialViewpoint = currentViewpoint;
-							
+
 							// Load the new map
                             await newMap.LoadAsync();
                             mapViewModel.Map = newMap;
@@ -222,7 +222,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         private async void ShowRoutingPanel(object sender, RoutedEventArgs e)
         {
             var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
-                   
+
             // Set the to and from locations and text boxes
             var matches = await geocodeViewModel.Locator.ReverseGeocodeAsync(MapView.LocationDisplay.Location.Position);
             geocodeViewModel.FromPlace = matches.First();
