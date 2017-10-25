@@ -864,7 +864,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls
         /// <param name="show">if set to <c>true</c> [show].</param>
         private void ShowHideListbox(bool show)
         {
-            _lstSuggestions.IsVisible = show;
+            if (show && !_entText.IsFocused)
+                _lstSuggestions.IsVisible = false;
+            else
+                _lstSuggestions.IsVisible = show;
         }
     }
 }

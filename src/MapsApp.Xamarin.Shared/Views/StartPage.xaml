@@ -98,8 +98,9 @@
             <utils:GeoViewExtensions.ViewpointControllerCollection>
                 <!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI-->
                 <utils:ViewpointControllerCollection>
-                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}" />
-                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" />
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}"/>
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource RoutingViewModel}}"/>
                 </utils:ViewpointControllerCollection>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
             <esri:MapView.Behaviors>
@@ -143,13 +144,36 @@
                                        Grid.Column="1"
                                        Grid.Row="0"
                                        Grid.RowSpan="2"
-                                       IsVisible="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Inverse, Source={StaticResource RoutingViewModel}}"
+                                       IsVisible="{Binding ToPlace, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Inverse, Source={StaticResource GeocodeViewModel}}"
                                        ></controls:AutoCompleteView>
 
             <!-- Route Banner -->
             <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                     BackgroundColor="White" IsVisible="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RoutingViewModel}}">
-                <Image Source="{StaticResource endImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
+                     BackgroundColor="White" IsVisible="{Binding ToPlace, Converter={StaticResource NullToVisibilityConverter}}" BindingContext="{StaticResource GeocodeViewModel}">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{StaticResource startImage}" VerticalOptions="Start" HorizontalOptions="Start" Margin="5"/>
+                    <controls:AutoCompleteView Text="{Binding FromSearchText, Mode=TwoWay}"
+                                               Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
+                                               SelectedItem ="{Binding SelectedFromSuggestion, Mode=TwoWay}"
+                                               ShowSearchButton="false"
+                                               BackgroundColor="White"
+                                               Grid.Column="1"
+                                               Grid.Row="0"
+                                               Grid.RowSpan="2"
+                                               SuggestionBackgroundColor="White"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="{StaticResource endImage}" VerticalOptions="Start" HorizontalOptions="Start" Margin="5"/>
+                    <controls:AutoCompleteView Text="{Binding ToSearchText, Mode=TwoWay}"
+                                               Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
+                                               SelectedItem ="{Binding SelectedToSuggestion, Mode=TwoWay}"
+                                               ShowSearchButton="false"
+                                               BackgroundColor="White"
+                                               Grid.Column="1"
+                                               Grid.Row="0"
+                                               Grid.RowSpan="2"
+                                               SuggestionBackgroundColor="White"/>
+                </StackLayout>
             </StackLayout>
 
             <!-- Menu Items-->
@@ -191,7 +215,6 @@
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ShowRoutingPanel"/>
                 </Image.GestureRecognizers>
             </Image>
-
 
             <Image x:Name="CloseImage" Source="{StaticResource cancelImage}" VerticalOptions="Center" HorizontalOptions="End">
                 <Image.GestureRecognizers>

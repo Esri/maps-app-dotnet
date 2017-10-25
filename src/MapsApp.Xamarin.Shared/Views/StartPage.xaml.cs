@@ -141,7 +141,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 // Set the viewpoint of the new map to be the same as the old map
                                 // Otherwise map is being reset to the world view
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
-                                var currentViewpoint = mapViewModel.AreaOfInterest;                             
+                                var currentViewpoint = mapViewModel.AreaOfInterest;
                                 var newMap = new Map(_basemapViewModel.SelectedBasemap);
                                 newMap.InitialViewpoint = currentViewpoint;
 
