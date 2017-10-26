@@ -41,7 +41,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             InitializeComponent();
             InitializeBasemapSwitcher();
 
-            PictureMarkerSymbol mapPin = CreateMapPin();
+            PictureMarkerSymbol redMapPin = CreateRedMapPin();
+            PictureMarkerSymbol greenMapPin = CreateGreenMapPin();
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
             var routingViewModel = Resources["RoutingViewModel"] as RoutingViewModel;
@@ -60,7 +61,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 return;
                             }
 
-                            var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
+                            var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, redMapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
 
                             break;
@@ -106,8 +107,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             // Add start and end locations to the map
                             //var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Start72.png")));
                             //var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
-                            var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, mapPin);
-                            var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, mapPin);
+                            var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, greenMapPin);
+                            var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, redMapPin);
                             graphicsOverlay?.Graphics.Add(fromGraphic);
                             graphicsOverlay?.Graphics.Add(toGraphic);
 
@@ -166,7 +167,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         /// <summary>
         /// Create map pin based on platform
         /// </summary>
-        private PictureMarkerSymbol CreateMapPin()
+        private PictureMarkerSymbol CreateRedMapPin()
         {
             try
             {
@@ -205,10 +206,52 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                 DisplayAlert("Error", ex.ToString(), "OK");
                 return null;
             }
+
+
         }
 
-        // Load basemap page, reuse viewmodel so the initial loading happens only once
-        private async void LoadBasemapControl(object sender, EventArgs e)
+        private PictureMarkerSymbol CreateGreenMapPin()
+        {
+            try
+            {
+                Assembly assembly = typeof(StartPage).GetTypeInfo().Assembly;
+
+                string imagePath = null;
+                switch (Device.RuntimePlatform)
+                {
+                    case Device.iOS:
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Start72.png";
+                        break;
+                    case Device.Android:
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Start72.png";
+                        break;
+                    case Device.Windows:
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.Start72.png";
+                        break;
+                }
+
+                using (Stream stream = assembly.GetManifestResourceStream(imagePath))
+                {
+                    long length = stream.Length;
+                    var imageData = new byte[length];
+                    stream.Read(imageData, 0, (int)length);
+
+                    if (imageData != null)
+                    {
+                        return new PictureMarkerSymbol(new RuntimeImage(imageData));
+                    }
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Display error message 
+                DisplayAlert("Error", ex.ToString(), "OK");
+                return null;
+            }
+        }
+            // Load basemap page, reuse viewmodel so the initial loading happens only once
+            private async void LoadBasemapControl(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BasemapPage { BindingContext = _basemapViewModel });
         }
@@ -268,6 +311,34 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;
+        }
+
+        private void SearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            SearchSuggestionsList.IsVisible = true;
+        }
+
+        private void SearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            SearchSuggestionsList.IsVisible = false;
+        }
+        private void FromLocationSearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            //FromLocationSuggestionsList.IsVisible = true;
+        }
+
+        private void FromLocationSearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            //FromLocationSuggestionsList.IsVisible = false;
+        }
+        private void ToLocationSearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            //ToLocationSuggestionsList.IsVisible = true;
+        }
+
+        private void ToLocationSearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            //ToLocationSuggestionsList.IsVisible = false;
         }
     }
 }

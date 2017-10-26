@@ -16,6 +16,7 @@
 
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
+using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
@@ -164,8 +165,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     Route = await Router.SolveRouteAsync(routeParams);
 
+                    //Get extent of the route and buffer it
+                    var routeExtent = Route.Routes.FirstOrDefault().RouteGeometry.Extent;
+                    var bufferedExtent = GeometryEngine.Buffer(routeExtent, routeExtent.Height * 0.2);
+
                     // Set viewpoint to the route's extent
-                    AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault().RouteGeometry);
+                    AreaOfInterest = new Viewpoint(bufferedExtent);
                 }
                 catch (Exception ex)
                 {

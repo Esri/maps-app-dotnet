@@ -22,7 +22,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers
         public const string ArcGISOnlineUrl = @"https://www.arcgis.com/sharing/rest";
 
         // Client ID for the app registered with the server (Portal Maps)
-        public const string AppClientID = "YourClientID";
+        public const string AppClientID = "2Gh53JRzkPtOENQq";
 
         // Redirect URL after a successful authorization (configured for the Portal Maps application)
         public const string RedirectURL = @"https://developers.arcgis.com";
