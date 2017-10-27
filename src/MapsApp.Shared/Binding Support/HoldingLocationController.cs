@@ -12,14 +12,15 @@
 //  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
+//  ******************************************************************************/
 
-using Esri.ArcGISRuntime.Mapping;
 using System;
+using Esri.ArcGISRuntime.Geometry;
+
 #if __ANDROID__ || __IOS__ || NETFX_CORE
 using DependencyObject = Xamarin.Forms.BindableObject;
 using DependencyProperty = Xamarin.Forms.BindableProperty;
 using BindingFramework = Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers;
 using Esri.ArcGISRuntime.Xamarin.Forms;
 #else
     using System.Windows;
@@ -27,21 +28,21 @@ using Esri.ArcGISRuntime.Xamarin.Forms;
     using BindingFramework = System.Windows;
 #endif
 
+/// <summary>
+/// Provides members for creating a HoldingLocation Controller
+/// </summary>
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
 {
-    /// <summary>
-    /// Provides members for creating a Viewpoint Controller
-    /// </summary>
-    public class ViewpointController : DependencyObject
+    public class HoldingLocationController : DependencyObject
     {
         private WeakReference<GeoView> _geoViewWeakRef;
-        bool _isGeoViewViewpointChangedEventFiring = false;
-        bool _isOnViewpointChangedExecuting = false;
+        bool _isGeoViewHoldingEventFiring = false;
+        bool _isOnHoldingLocationChangedExecuting = false;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ViewpointController"/> class.
+        /// Initializes a new instance of the <see cref="HoldingLocationController"/> class.
         /// </summary>
-        public ViewpointController() { }
+        public HoldingLocationController() { }
 
         /// <summary>
         /// GeoView setter
@@ -65,56 +66,44 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
             set
             {
                 if (GeoView != null)
-                    GeoView.ViewpointChanged -= GeoView_ViewpointChanged;
+                    GeoView.GeoViewHolding -= GeoView_GeoViewHolding;
 
                 if (_geoViewWeakRef == null)
                     _geoViewWeakRef = new WeakReference<GeoView>(value);
                 else
                     _geoViewWeakRef.SetTarget(value);
 
-                value.ViewpointChanged += GeoView_ViewpointChanged;
+                value.GeoViewHolding += GeoView_GeoViewHolding;
             }
         }
 
         /// <summary>
-        /// Invoked when the  GeoView's ViewPoint value has changed
+        /// Invoked when the GeoViewHolding event fires
         /// </summary>
-        private void GeoView_ViewpointChanged(object sender, EventArgs e)
+        private void GeoView_GeoViewHolding(object sender, GeoViewInputEventArgs e)
         {
-            if (!_isOnViewpointChangedExecuting)
+            if (!_isOnHoldingLocationChangedExecuting)
             {
-                _isGeoViewViewpointChangedEventFiring = true;
-                Viewpoint = (sender as GeoView)?.GetCurrentViewpoint(ViewpointType.CenterAndScale);
-                _isGeoViewViewpointChangedEventFiring = false;
+                _isGeoViewHoldingEventFiring = true;
+                // get the Location the user is holding from the event args
+                HoldingLocation = e.Location;
+                _isGeoViewHoldingEventFiring = false;
             }
         }
 
         /// <summary>
-        /// Creates a ViewpointController property
+        /// Creates a HoldingLocation property
         /// </summary>
-        public static readonly DependencyProperty ViewpointProperty = BindingFramework.DependencyProperty.Register(
-            "Viewpoint", typeof(Viewpoint), typeof(ViewpointController), new PropertyMetadata(null, OnViewpointChanged));
+        public static readonly DependencyProperty HoldingLocationProperty = BindingFramework.DependencyProperty.Register(
+            "HoldingLocation", typeof(MapPoint), typeof(HoldingLocationController),null);
 
         /// <summary>
-        /// Invoked when the  ViewPoint value has changed
+        /// Gets or sets the HoldingLocation property
         /// </summary>
-        private async static void OnViewpointChanged(DependencyObject bindable, DependencyPropertyChangedEventArgs e)
+        public MapPoint HoldingLocation
         {
-            if (e.NewValue is Viewpoint && !(bindable as ViewpointController)._isGeoViewViewpointChangedEventFiring)
-            {
-                (bindable as ViewpointController)._isOnViewpointChangedExecuting = true;
-                await (bindable as ViewpointController)?.GeoView?.SetViewpointAsync((Viewpoint)e.NewValue);
-                (bindable as ViewpointController)._isOnViewpointChangedExecuting = false;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the Viewpoint property
-        /// </summary>
-        public Viewpoint Viewpoint
-        {
-            get { return GeoView?.GetCurrentViewpoint(ViewpointType.CenterAndScale); }
-            set { SetValue(ViewpointProperty, value); }
+            get { return (MapPoint)GetValue(HoldingLocationProperty); }
+            set { SetValue(HoldingLocationProperty, value); }
         }
     }
 }

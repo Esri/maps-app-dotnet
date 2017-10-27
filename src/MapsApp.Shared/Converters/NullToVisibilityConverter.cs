@@ -41,7 +41,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
 
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
     }
 }

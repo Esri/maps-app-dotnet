@@ -18,6 +18,7 @@ using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.UI;
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
+using Esri.ArcGISRuntime.Xamarin.Forms;
 using System;
 using System.IO;
 using System.Reflection;
@@ -27,8 +28,7 @@ using Esri.ArcGISRuntime.Mapping;
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
     public partial class StartPage : ContentPage
-	{
-
+    {
         private BasemapsViewModel basemapViewModel;
 
         /// <summary>

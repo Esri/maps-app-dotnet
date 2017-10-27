@@ -7,6 +7,8 @@
         xmlns:viewModels="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels"
         xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF"
         mc:Ignorable="d"
         Title="Maps App">
     <Window.Resources>
@@ -17,6 +19,7 @@
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
+            <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -40,11 +43,14 @@
             </esri:MapView.GraphicsOverlays>
             <utils:GeoViewExtensions.ViewpointControllerCollection>
                 <!--Viewpoint controllers for synchronizing MapView's viewpoint with the view-model's AOI-->
-                <utils:ViewpointController 
+                <utils:ViewpointController
                     Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
-                <utils:ViewpointController 
+                <utils:ViewpointController
                     Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}"/>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
+            <utils:GeoViewExtensions.HoldingLocationController>
+                <utils:HoldingLocationController HoldingLocation="{Binding ReverseGeocodeInputLocation, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
+            </utils:GeoViewExtensions.HoldingLocationController>
         </esri:MapView>
 
         <!-- Basemaps Picker -->
@@ -55,41 +61,70 @@
                     </Hyperlink>
             </TextBlock>
             <ListView  DataContext="{StaticResource BasemapsViewModel}"  ItemsSource="{Binding Basemaps}" SelectedItem="{Binding SelectedBasemap}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical" Width="200" VerticalAlignment="Top">
-                        <Image Stretch="UniformToFill"  Source="{Binding ThumbnailUri}" />
-                        <TextBlock Margin="5,10,5,0" VerticalAlignment="Center" Text="{Binding Title}"  FontSize="15" LineHeight="26"
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Width="200" VerticalAlignment="Top">
+                            <Image Stretch="UniformToFill"  Source="{Binding ThumbnailUri}" />
+                            <TextBlock Margin="5,10,5,0" VerticalAlignment="Center" Text="{Binding Title}"  FontSize="15" LineHeight="26"
                                               FontWeight="DemiBold"/>
-                        <!--<TextBlock Margin="5,10,5,10" Text="{Binding Snippet}" FontSize="12" LineHeight="20" TextWrapping="Wrap" />-->
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ListView>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ListView>
         </StackPanel>
 
-        <!-- List of suggestions from geocoder -->
-        <ListView DataContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" 
-                  Grid.Column="1" Grid.Row="0" Margin="0,36,0,0" FontSize="15"
-                      Width="500" HorizontalAlignment="Left" Visibility="{Binding SuggestionsList.Count, Converter={StaticResource NumberToVisibilityConverter}}"/>
+        <!-- Search Result Panel -->
+        <StackPanel Orientation="Vertical" Width="450" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" DataContext="{StaticResource GeocodeViewModel}"
+                    Margin="0,0,0,15" Visibility="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackPanel.Effect>
+                <DropShadowEffect Opacity=".5"></DropShadowEffect>
+            </StackPanel.Effect>
 
-        <!-- Search Panel -->
-        <StackPanel x:Name="SearchPanel" Orientation="Vertical" DataContext="{StaticResource GeocodeViewModel}" Grid.Column="1" Grid.Row="0">
-            <!-- Search Box and Button-->
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="SearchTextBox" Width="500" Height="40"
-                                 BorderThickness="1" FontSize="20" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Width="40" Height="40" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchText}">
-                    <Image  Source="pack://application:,,,/MapsApp;component/Images/search_32.png" />
+            <StackPanel Orientation="Horizontal" Width="520" Background="#dfdfdf" Margin="0,15,0,0">
+                <Button Background="#dfdfdf" BorderThickness="0" Width="50" Height="50">
+                    <Image  Source="pack://application:,,,/MapsApp;component/Images/End72.png"  />
+                </Button>
+                <TextBlock Text="{Binding Place.Label}" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                <Button Background="#0079c1" BorderThickness="0" Width="60" Height="60">
+                    <Image  Source="pack://application:,,,/MapsApp;component/Images/directions2.png"  />
+                </Button>
+                <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding CancelLocationSearchCommand}">
+                    <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png"  />
                 </Button>
             </StackPanel>
         </StackPanel>
-       
+
+
+        <!-- List of suggestions from geocoder -->
+        <ListView DataContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}"  Grid.Row="1" Grid.Column="0"
+                  Margin="15, 0, 0, 0"  FontSize="15" Width="465" HorizontalAlignment="Left" Visibility="{Binding SuggestionsList,  UpdateSourceTrigger=PropertyChanged,  Converter={StaticResource NumberToVisibilityConverter}}">
+            <ListView.Effect>
+                <DropShadowEffect Opacity=".5"></DropShadowEffect>
+            </ListView.Effect>
+        </ListView>
+
+        <!-- Search Box and Button-->
+        <StackPanel Orientation="Horizontal" Background="White" Margin="15, 15, 15, 0" DataContext="{StaticResource GeocodeViewModel}" Grid.Row="0" Grid.Column="0">
+            <StackPanel.Effect>
+                <DropShadowEffect Opacity=".5"></DropShadowEffect>
+            </StackPanel.Effect>
+            <TextBlock Opacity=".7">
+                <Hyperlink TextDecorations="{x:Null}">
+                    <Image Source="pack://application:,,,/MapsApp;component/Images/BurgerButton60.png" Height="60" Width="60"/>
+                </Hyperlink>
+            </TextBlock>
+            <TextBox x:Name="SearchTextBox" Width="350" Height="20" VerticalAlignment="Center"
+                                BorderThickness="0" FontSize="18" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Width="40" Height="40" Background="White" BorderThickness="0" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchText}" Margin="0,0,15,0">
+                <Image  Source="pack://application:,,,/MapsApp;component/Images/search_32.png"  />
+            </Button>
+        </StackPanel>
+
         <!--Compass Button-->
         <TextBlock Grid.Row="1" Grid.Column="2" Margin="0,100,20,0" DataContext="{Binding ElementName=MapView}" Visibility="{Binding MapRotation, Converter={StaticResource NumberToVisibilityConverter}}">
             <Hyperlink Click="ResetMapRotation"  TextDecorations="{x:Null}">
@@ -119,5 +154,6 @@
             </Hyperlink>
             </TextBlock>
         </StackPanel>
+
     </Grid>
 </Window>
