@@ -36,12 +36,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _searchText;
         private string _selectedSuggestion;
         private string _errorMessage;
-        private MapPoint _holdingLocation;
+        private MapPoint _reverseGeocodeInputLocation;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
-        private ICommand _reverseGeocodeCommand;
         private ObservableCollection<string> _suggestionsList;
 
         /// <summary>
@@ -207,16 +206,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
-        public MapPoint HoldingLocation
+        public MapPoint ReverseGeocodeInputLocation
         {
-            get { return _holdingLocation; }
+            get { return _reverseGeocodeInputLocation; }
             set
             {
-                if (_holdingLocation != value)
+                if (_reverseGeocodeInputLocation != value)
                 {
-                    _holdingLocation = value;
+                    _reverseGeocodeInputLocation = value;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                    GetReverseGeocodedLocationAsync(_holdingLocation);
+                    GetReverseGeocodedLocationAsync(_reverseGeocodeInputLocation);
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     OnPropertyChanged();
                 }
@@ -234,22 +233,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     async (x) =>
                     {
                         await GetSearchedLocationAsync((string)x);
-                    }));
-            }
-        }
-
-        // Gets the command to perform reverse geocoding using the locator
-        public ICommand ReverseGeocodeCommand
-        {
-            get
-            {
-                return _reverseGeocodeCommand ?? (_reverseGeocodeCommand = new DelegateCommand(
-                    async (x) =>
-                    {
-                        if (x is MapPoint)
-                        {
-                            await GetReverseGeocodedLocationAsync((MapPoint)x);
-                        }
                     }));
             }
         }

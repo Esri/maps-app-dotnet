@@ -49,7 +49,7 @@
                     Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}"/>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
             <utils:GeoViewExtensions.HoldingLocationController>
-                <utils:HoldingLocationController HoldingLocation="{Binding HoldingLocation, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
+                <utils:HoldingLocationController HoldingLocation="{Binding ReverseGeocodeInputLocation, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
             </utils:GeoViewExtensions.HoldingLocationController>
         </esri:MapView>
 
