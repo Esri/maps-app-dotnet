@@ -16,6 +16,8 @@
 using System;
 using System.Globalization;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Linq;
 #if __ANDROID__ || __IOS__ || NETFX_CORE
 using IValueConverter = Xamarin.Forms.IValueConverter;
 #else
@@ -36,13 +38,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
             if (value == null)
                 value = 0;
 
-            if (value is ObservableCollection<string>)
+            if (value is IEnumerable<string>)
             {
-                number = ((ObservableCollection<string>)value).Count;
+                number = ((IEnumerable<string>)value).Count();
             }
             else
             {
-                number = System.Convert.ToDouble(value, culture);
+                number = Convert.ToDouble(value, culture);
             }
 
 #if __ANDROID__ || __IOS__ || NETFX_CORE
@@ -55,7 +57,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
 
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
     }
 }

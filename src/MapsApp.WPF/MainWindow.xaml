@@ -21,7 +21,6 @@
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
-            <converters:EventArgsToLocationConverter x:Key="EventArgsToLocationConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
             <converters:NullToTextConverter x:Key="NullToTextConverter"/>
         </ResourceDictionary>
@@ -42,23 +41,19 @@
          <!--MapView Control-->
         <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
                           Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="GeoViewHolding">
-                    <local:InteractiveCommand Command="{Binding ReverseGeocodeCommand, Source={StaticResource GeocodeViewModel}}" 
-                                              CommandParameter="{Binding RelativeSource={RelativeSource Self}}"
-                                              Converter="{StaticResource EventArgsToLocationConverter}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
             <esri:MapView.GraphicsOverlays>
                 <esri:GraphicsOverlay Id="PlacesOverlay"/>
             </esri:MapView.GraphicsOverlays>
             <utils:GeoViewExtensions.ViewpointControllerCollection>
                 <!--Viewpoint controllers for synchronizing MapView's viewpoint with the view-model's AOI-->
-                <utils:ViewpointController 
+                <utils:ViewpointController
                     Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
-                <utils:ViewpointController 
+                <utils:ViewpointController
                     Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}"/>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
+            <utils:GeoViewExtensions.HoldingLocationController>
+                <utils:HoldingLocationController HoldingLocation="{Binding ReverseGeocodeInputLocation, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
+            </utils:GeoViewExtensions.HoldingLocationController>
         </esri:MapView>
 
         <!-- Basemaps Picker -->
@@ -203,7 +198,7 @@
                 <DropShadowEffect Opacity=".5"></DropShadowEffect>
             </ListView.Effect>
         </ListView>
-        
+
         <!-- Search Box and Button-->
         <StackPanel Orientation="Horizontal" Background="White" Margin="15, 15, 15, 0" DataContext="{StaticResource GeocodeViewModel}" Grid.Row="0" Grid.Column="0">
             <StackPanel.Effect>
@@ -218,7 +213,7 @@
                 <Image  Source="pack://application:,,,/MapsApp;component/Images/search_32.png"  />
             </Button>
         </StackPanel>
-        
+
         <!--Compass Button-->
         <TextBlock Grid.Row="1" Grid.Column="2" Margin="0,100,20,0" DataContext="{Binding ElementName=MapView}" Visibility="{Binding MapRotation, Converter={StaticResource NumberToVisibilityConverter}}">
             <Hyperlink Click="ResetMapRotation"  TextDecorations="{x:Null}">
