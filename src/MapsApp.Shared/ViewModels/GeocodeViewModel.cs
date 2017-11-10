@@ -41,13 +41,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _selectedFromSuggestion;
         private string _selectedToSuggestion;
         private string _errorMessage;
+        private MapPoint _reverseGeocodeInputLocation;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
         private GeocodeResult _fromPlace;
         private GeocodeResult _toPlace;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
-        private ICommand _reverseGeocodeCommand;
         private ICommand _setSelectedStartLocationCommand;
         private ObservableCollection<string> _suggestionsList;
 
@@ -66,14 +66,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         {
             try
             {
-                // Load locator 
+                // Load locator
                 Locator = await LocatorTask.CreateAsync(new Uri(Configuration.GeocodeUrl));
             }
             catch (Exception ex)
             {
                 ErrorMessage = ex.ToString();
             }
-            
         }
 
         /// <summary>
@@ -190,7 +189,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                return _selectedSuggestion;
             }
-            
+
             set
             {
                 if (_selectedSuggestion != value && value != null)
@@ -273,7 +272,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_place != value)
                 {
                     _place = value;
-                    ZoomToPlace();
+
+                    // Set viewpoint to the feature's extent
+                    AreaOfInterest = Place != null ? (Place.Extent != null ? new Viewpoint(Place.Extent) :
+                        new Viewpoint(Place.DisplayLocation, DefaultZoomScale)) : AreaOfInterest;
+
                     OnPropertyChanged();
                 }
             }
@@ -367,6 +370,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
+        public MapPoint ReverseGeocodeInputLocation
+        {
+            get { return _reverseGeocodeInputLocation; }
+            set
+            {
+                if (_reverseGeocodeInputLocation != value)
+                {
+                    _reverseGeocodeInputLocation = value;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    GetReverseGeocodedLocationAsync(_reverseGeocodeInputLocation);
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         /// <summary>
         /// Gets the command to search using the locator
         /// </summary>
@@ -378,22 +397,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     async (x) =>
                     {
                         await GetSearchedLocationAsync((string)x, nameof(Place));
-                    }));
-            }
-        }
-
-        // Gets the command to perform reverse geocoding using the locator
-        public ICommand ReverseGeocodeCommand
-        {
-            get
-            {
-                return _reverseGeocodeCommand ?? (_reverseGeocodeCommand = new DelegateCommand(
-                    async (x) =>
-                    {
-                        if (x != null)
-                        {
-                            await GetReverseGeocoderLocationAsync((MapPoint)x);
-                        }
                     }));
             }
         }
@@ -461,7 +464,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     var geocodeParameters = new GeocodeParameters
                     {
                         MaxResults = 1,
-                        
                         PreferredSearchLocation = AreaOfInterest?.TargetGeometry as MapPoint,
                     };
                     var matches = await Locator.GeocodeAsync(geocodeAddress, geocodeParameters);
@@ -487,24 +489,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Use the locator to perform a reverse geocode operation, returning the place that the user tapped on inside the map
         /// </summary>
-        private async Task GetReverseGeocoderLocationAsync(MapPoint location)
+        private async Task GetReverseGeocodedLocationAsync(MapPoint location)
         {
             var matches = await Locator.ReverseGeocodeAsync(location);
             Place = matches.First();
-        }
-
-        /// <summary>
-        /// Zoom to the location inside the Place property
-        /// </summary>
-        private void ZoomToPlace()
-        {
-            // Select located feature on map
-            if (Place != null)
-            {
-                // Set viewpoint to the feature's extent
-                AreaOfInterest = Place.Extent != null ? new Viewpoint(Place.Extent) :
-                    new Viewpoint(Place.DisplayLocation, DefaultZoomScale);
-            }
         }
     }
 }

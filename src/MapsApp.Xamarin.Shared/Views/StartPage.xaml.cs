@@ -181,7 +181,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                     case Device.Android:
                         imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.End72.png";
                         break;
-                    case Device.Windows:
+                    case Device.UWP:
                         imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.End72.png";
                         break;
                 }
@@ -252,7 +252,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             }
                     }
                 };
-            
+
             // Load the AuthUserItemsPage
             await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });
         }

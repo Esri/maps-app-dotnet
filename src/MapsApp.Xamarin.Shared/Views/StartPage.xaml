@@ -22,7 +22,6 @@
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
-            <converters:EventArgsToLocationConverter x:Key="EventArgsToLocationConverter"/>
             <converters:NullToTextConverter x:Key="NullToTextConverter"/>
             <OnPlatform x:Key="startImage"
                       x:TypeArguments="ImageSource"
@@ -103,9 +102,9 @@
                     <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource RoutingViewModel}}"/>
                 </utils:ViewpointControllerCollection>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
-            <esri:MapView.Behaviors>
-                <behaviors:EventToCommandBehavior EventName="GeoViewHolding" Command="{Binding ReverseGeocodeCommand, Source={StaticResource GeocodeViewModel}}" Converter="{StaticResource EventArgsToLocationConverter}"/>
-            </esri:MapView.Behaviors>
+            <utils:GeoViewExtensions.HoldingLocationController>
+                <utils:HoldingLocationController HoldingLocation="{Binding ReverseGeocodeInputLocation, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
+            </utils:GeoViewExtensions.HoldingLocationController>
         </esri:MapView>
 
         <!-- Search and Menu -->

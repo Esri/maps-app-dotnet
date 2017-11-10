@@ -28,17 +28,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
 {/// <summary>
  /// Converts event args from event to MapPoint
  /// </summary>
-    class EventArgsToLocationConverter : IValueConverter
+    class GeoViewInputEventArgsToLocationConverter : IValueConverter
     {
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // get the Location from the event args
-            return (value == null) ? null : ((GeoViewInputEventArgs)value).Location;
+            return (value is GeoViewInputEventArgs) ? ((GeoViewInputEventArgs)value).Location : null;
         }
 
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
     }
 }
