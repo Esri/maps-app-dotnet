@@ -101,9 +101,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
         public async Task TriggerUserLogin()
         {
-            var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
-            var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
-            AuthenticatedUser = portal.User;
+            try
+            {
+                var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
+                AuthenticationManager.Current.AddCredential(credential);
+                var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
+                AuthenticatedUser = portal.User;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
 
         // ChallengeHandler function that will be called whenever access to a secured resource is attempted

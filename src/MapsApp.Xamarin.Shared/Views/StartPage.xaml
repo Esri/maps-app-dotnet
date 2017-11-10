@@ -20,6 +20,7 @@
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
+            <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
             <converters:NullToTextConverter x:Key="NullToTextConverter"/>
             <OnPlatform x:Key="startImage" 
                       x:TypeArguments="ImageSource"
