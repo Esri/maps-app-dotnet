@@ -30,11 +30,28 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
     class RoutingViewModel : BaseViewModel
     {
+        private bool _isBusy;
         private GeocodeResult _fromPlace;
         private GeocodeResult _toPlace;
         private RouteResult _route;
         private Viewpoint _areaOfInterest;
         private ICommand _clearRouteCommand;
+
+        /// <summary>
+        /// Gets or sets the property indicating whether the app is busy processing
+        /// </summary>
+        public bool IsBusy
+        {
+            get
+            {
+                return _isBusy;
+            }
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged();
+            }
+        }
 
         /// <summary>
         /// Gets or sets the end location for the route
@@ -131,6 +148,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         private async Task GetRouteAsync()
         {
+            IsBusy = true;
+
             if (Router == null)
             {
                 try
@@ -166,6 +185,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     Debug.WriteLine(ex.ToString());
                 }
             }
+
+            IsBusy = false;
         }
     }
 }

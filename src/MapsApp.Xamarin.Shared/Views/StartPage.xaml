@@ -107,6 +107,7 @@
             </utils:GeoViewExtensions.HoldingLocationController>
         </esri:MapView>
 
+
         <!-- Search and Menu -->
         <!--<Grid Grid.Row="0" Grid.Column="0" Margin="5" ColumnSpacing="0" RowSpacing="0">
             <Grid.ColumnDefinitions>
@@ -236,16 +237,21 @@
             </Image.GestureRecognizers>
         </Image>
 
+        <!-- GPS Button -->
         <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100">
-
-
-            <!-- GPS Button -->
-
             <Image HorizontalOptions="Center"  VerticalOptions="Center" Source="{StaticResource gpsImage}" BindingContext ="{Binding Source={StaticResource MapViewModel}}" Margin="5,5,5,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
+        </StackLayout>
+
+        <!-- Activity indicator for routing operation -->
+        <StackLayout BackgroundColor="Gray" Opacity="0.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" IsVisible="{Binding IsBusy, Source={StaticResource RoutingViewModel}}">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label Text="Loading Requested Route" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Medium"/>
+                <ActivityIndicator IsRunning="True"/>
+            </StackLayout>
         </StackLayout>
     </Grid>
 </ContentPage>
