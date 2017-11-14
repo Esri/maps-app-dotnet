@@ -84,7 +84,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
             if (!_isOnViewpointChangedExecuting)
             {
                 _isGeoViewViewpointChangedEventFiring = true;
-                Viewpoint = (sender as GeoView)?.GetCurrentViewpoint(ViewpointType.CenterAndScale);
+                try
+                {
+                    Viewpoint = (sender as GeoView)?.GetCurrentViewpoint(ViewpointType.CenterAndScale);
+                }
+                // if unable to get the viewpoint, don't do anything
+                catch { }
                 _isGeoViewViewpointChangedEventFiring = false;
             }
         }

@@ -78,7 +78,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                         {
                             if (AuthenticatedUser == null)
                             {
-                                await TriggerUserLogin();
+                                await SignIntoPortal().ConfigureAwait(false);
                             }
                             else
                             {
@@ -99,31 +99,31 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
-        public async Task TriggerUserLogin()
+        // ChallengeHandler function that will be called whenever access to a secured resource is attempted
+        public Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
         {
-            try
-            {
-                var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
-                AuthenticationManager.Current.AddCredential(credential);
-                var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
-                AuthenticatedUser = portal.User;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
+            return SignIntoPortal();
         }
 
-        // ChallengeHandler function that will be called whenever access to a secured resource is attempted
-        public async Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
+        /// <summary>
+        /// Signs user into Portal and updates the AuthenticatedUser property
+        /// </summary>
+        private async Task<Credential> SignIntoPortal()
         {
             try
             {
                 // IOAuthAuthorizeHandler will challenge the user for OAuth credentials
-                return await AuthenticationManager.Current.GenerateCredentialAsync(info.ServiceUri);
+                var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl)).ConfigureAwait(false);
+                AuthenticationManager.Current.AddCredential(credential);
+
+                // Create connection to Portal and provide credential
+                var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential).ConfigureAwait(false);
+                AuthenticatedUser = portal.User;
+                return credential;
             }
-            catch
+            catch (Exception ex)
             {
+                Debug.WriteLine(ex.ToString());
                 return null;
             }
         }

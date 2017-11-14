@@ -85,7 +85,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                 }
             };
 
-            routingViewModel.PropertyChanged += async (s, e) =>
+            routingViewModel.PropertyChanged += (s, e) =>
             {
                 switch (e.PropertyName)
                 {
@@ -100,12 +100,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             }
 
                             // Add route to map
-                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault().RouteGeometry);
+                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
                             graphicsOverlay?.Graphics.Add(routeGraphic);
 
                             // Add start and end locations to the map
-                            //var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Start72.png")));
-                            //var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
                             var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, mapPin);
                             var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, mapPin);
                             graphicsOverlay?.Graphics.Add(fromGraphic);
@@ -142,8 +140,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 // Otherwise map is being reset to the world view
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
                                 var currentViewpoint = mapViewModel.AreaOfInterest;
-                                var newMap = new Map(_basemapViewModel.SelectedBasemap);
-                                newMap.InitialViewpoint = currentViewpoint;
+                                var newMap = new Map(_basemapViewModel.SelectedBasemap)
+                                {
+                                    InitialViewpoint = currentViewpoint
+                                };
 
                                 //Load new map
                                 await newMap.LoadAsync();
@@ -210,7 +210,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         // Load basemap page, reuse viewmodel so the initial loading happens only once
         private async void LoadBasemapControl(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BasemapPage { BindingContext = _basemapViewModel });
+            await Navigation.PushAsync(new BasemapPage { BindingContext = _basemapViewModel }).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -219,7 +219,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         /// </summary>
         private void OpenCloseSettings(object sender, EventArgs e)
         {
-            SettingsPanel.IsVisible = (SettingsPanel.IsVisible == true) ? false : true;
+            SettingsPanel.IsVisible = (!SettingsPanel.IsVisible);
         }
 
         /// <summary>
@@ -227,7 +227,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         /// </summary>
         private async void LoadUserItems(object sender, EventArgs e)
         {
-
             _userItemsViewModel = new UserItemsViewModel();
             await _userItemsViewModel.LoadUserItems();
 
@@ -242,11 +241,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 // Otherwise map is being reset to the world view
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
                                 var currentViewpoint = mapViewModel.AreaOfInterest;
-                                var newMap = new Map(_userItemsViewModel.SelectedUserItem);
-                                newMap.InitialViewpoint = currentViewpoint;
+                                var newMap = new Map(_userItemsViewModel.SelectedUserItem)
+                                {
+                                    InitialViewpoint = currentViewpoint
+                                };
 
                                 //Load new map
-                                await newMap.LoadAsync();
+                                await newMap.LoadAsync().ConfigureAwait(false);
                                 mapViewModel.Map = newMap;
                                 break;
                             }
@@ -268,6 +269,34 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;
+        }
+
+        private void SearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            SearchSuggestionsList.IsVisible = true;
+        }
+
+        private void SearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            SearchSuggestionsList.IsVisible = false;
+        }
+        private void FromLocationSearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            //FromLocationSuggestionsList.IsVisible = true;
+        }
+
+        private void FromLocationSearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            //FromLocationSuggestionsList.IsVisible = false;
+        }
+        private void ToLocationSearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            //ToLocationSuggestionsList.IsVisible = true;
+        }
+
+        private void ToLocationSearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            //ToLocationSuggestionsList.IsVisible = false;
         }
     }
 }

@@ -37,14 +37,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private ICommand _clearRouteCommand;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RoutingViewModel"/> class.
-        /// </summary>
-        public RoutingViewModel()
-        {
-            
-        }
-
-        /// <summary>
         /// Gets or sets the end location for the route
         /// </summary>
         public GeocodeResult FromPlace
@@ -134,14 +126,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         internal RouteTask Router { get; set; }
 
-
+        /// <summary>
+        /// Generates route from the geocoded locations
+        /// </summary>
         private async Task GetRouteAsync()
         {
             if (Router == null)
             {
                 try
                 {
-                    Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
+                    Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl)).ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
@@ -150,9 +144,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 }
             }
             // set the route parameters
-            var routeParams = await Router.CreateDefaultParametersAsync();
+            var routeParams = await Router.CreateDefaultParametersAsync().ConfigureAwait(false);
             routeParams.ReturnDirections = true;
-            routeParams.ReturnRoutes = true;            
+            routeParams.ReturnRoutes = true;
 
             // add route stops as parameters
             if (FromPlace != null && ToPlace != null)
@@ -162,17 +156,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
                                                             new Stop(ToPlace.RouteLocation) });
 
-                    Route = await Router.SolveRouteAsync(routeParams);
+                    Route = await Router.SolveRouteAsync(routeParams).ConfigureAwait(false);
 
                     // Set viewpoint to the route's extent
-                    AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault().RouteGeometry);
+                    AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault()?.RouteGeometry);
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.ToString());
                 }
             }
-
         }
     }
 }

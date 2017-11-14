@@ -69,10 +69,10 @@
         <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0"/>
     </ContentPage.Padding>
 
-    <Grid>
+    <Grid ColumnSpacing="0" RowSpacing="0" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -83,7 +83,7 @@
 
         <!-- MapView Control -->
         <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
-                        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" >
+                         Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" >
             <esri:MapView.GraphicsOverlays>
                 <esriUI:GraphicsOverlay Id="PlacesOverlay"/>
                 <esriUI:GraphicsOverlay Id="RouteOverlay">
@@ -108,7 +108,7 @@
         </esri:MapView>
 
         <!-- Search and Menu -->
-        <Grid Grid.Row="0" Grid.Column="0" Margin="5">
+        <!--<Grid Grid.Row="0" Grid.Column="0" Margin="5" ColumnSpacing="0" RowSpacing="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -118,89 +118,92 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>-->
+
+        <!--Menu Button-->
+        <Image Source="{StaticResource menuImage}" Grid.Column="0" Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Start" BackgroundColor="White">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+
+        <!-- Search Panel -->
+        <BoxView Grid.Column="1" Grid.Row="0" Color="White" HorizontalOptions="FillAndExpand"/>
+        <SearchBar Placeholder="Address or Place" Text="{Binding SearchText, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                       Grid.Column="1" Grid.Row="0" BindingContext="{StaticResource GeocodeViewModel}" SearchCommand="{Binding SearchCommand}"
+                       Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Margin="0,0,10,0"/>
+        <ListView x:Name="SearchSuggestionsList" BindingContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}"
+                      HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" IsVisible="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Label Text="{Binding}" FontSize="Medium" BackgroundColor="White"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Routing Panel -->
+        <Grid IsVisible="{Binding Route, Converter={StaticResource NullToVisibilityConverter},
+                Source={StaticResource RoutingViewModel}}" BindingContext="{StaticResource GeocodeViewModel}" Grid.Column="1" Grid.Row="0" BackgroundColor="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <!--Menu Button-->
-            <Image Source="{StaticResource menuImage}" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
-                </Image.GestureRecognizers>
-            </Image>
+            <Image Source="{StaticResource startImage}" HeightRequest="40" VerticalOptions="Start" HorizontalOptions="Start" Margin="5" Grid.Column="0" Grid.Row="0"/>
+            <Image Source="{StaticResource endImage}" HeightRequest="40" VerticalOptions="Start" HorizontalOptions="Start" Margin="5" Grid.Column="0" Grid.Row="1"/>
+            <Entry x:Name="FromLocationTextBox" Text="{Binding FromSearchText, Mode=TwoWay}" Focused="FromLocationSearchBar_Focused"
+                                   Unfocused="FromLocationSearchBar_Unfocused" HorizontalOptions="FillAndExpand" Grid.Column="1" Grid.Row="0"/>
+            <Entry x:Name="ToLocationTextBox" Text="{Binding ToSearchText, Mode=TwoWay}" Focused="ToLocationSearchBar_Focused"
+                                   Unfocused="ToLocationSearchBar_Unfocused" Grid.Column="1" Grid.Row="1"/>
+            <Button Command="{Binding ClearRouteCommand, Source={StaticResource RoutingViewModel}}" Text="Clear" Grid.Column="2" Grid.Row="0"/>
 
-            <!--Autocomplete Control-->
-            <BoxView Grid.Column="1" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="3" Color="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-            <controls:AutoCompleteView Placeholder="Address or Place"
-                                       Text="{Binding SearchText, Mode=TwoWay}"
-                                       Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
-                                       SearchCommand ="{Binding SearchCommand}"
-                                       SelectedItem ="{Binding SelectedSearchItem, Mode=TwoWay}"
-                                       ShowSearchButton="false"
-                                       BackgroundColor="White"
-                                       SuggestionBackgroundColor="White"
-                                       WidthRequest="500"
-                                       HorizontalOptions="Start" VerticalOptions="CenterAndExpand"
-                                       BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"
-                                       Grid.Column="1"
-                                       Grid.Row="0"
-                                       Grid.RowSpan="2"
-                                       IsVisible="{Binding ToPlace, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Inverse, Source={StaticResource GeocodeViewModel}}"
-                                       ></controls:AutoCompleteView>
+        </Grid>
 
-            <!-- Route Banner -->
-            <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0" Grid.RowSpan="1" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                     BackgroundColor="White" IsVisible="{Binding ToPlace, Converter={StaticResource NullToVisibilityConverter}}" BindingContext="{StaticResource GeocodeViewModel}">
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="{StaticResource startImage}" VerticalOptions="Start" HorizontalOptions="Start" Margin="5"/>
-                    <controls:AutoCompleteView Text="{Binding FromSearchText, Mode=TwoWay}"
-                                               Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
-                                               SelectedItem ="{Binding SelectedFromSuggestion, Mode=TwoWay}"
-                                               ShowSearchButton="false"
-                                               BackgroundColor="White"
-                                               Grid.Column="1"
-                                               Grid.Row="0"
-                                               Grid.RowSpan="2"
-                                               SuggestionBackgroundColor="White"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="{StaticResource endImage}" VerticalOptions="Start" HorizontalOptions="Start" Margin="5"/>
-                    <controls:AutoCompleteView Text="{Binding ToSearchText, Mode=TwoWay}"
-                                               Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
-                                               SelectedItem ="{Binding SelectedToSuggestion, Mode=TwoWay}"
-                                               ShowSearchButton="false"
-                                               BackgroundColor="White"
-                                               Grid.Column="1"
-                                               Grid.Row="0"
-                                               Grid.RowSpan="2"
-                                               SuggestionBackgroundColor="White"/>
-                </StackLayout>
-            </StackLayout>
+        <!-- Menu Items-->
+        <StackLayout x:Name="SettingsPanel" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="False"
+                         BindingContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <!-- Menu Items-->
-            <StackLayout x:Name="SettingsPanel" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="False"
-                         BindingContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}" BackgroundColor="White">
-                <Image x:Name="CloseMenuImage" Source="{StaticResource cancelImage}" VerticalOptions="Start" HorizontalOptions="End">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
-                    </Image.GestureRecognizers>
-                </Image>
-                <StackLayout Orientation="Vertical" IsVisible="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
-                    <Image Source="{Binding AuthenticatedUser.ThumbnailUri}"/>
-                    <Label Text="{Binding AuthenticatedUser.FullName}"/>
-                </StackLayout>
-                <TableView Intent="Settings">
+                <StackLayout HorizontalOptions="Start" Grid.Column="0" BackgroundColor="White">
+                    <Image x:Name="CloseMenuImage" Source="{StaticResource cancelImage}" VerticalOptions="Start" HorizontalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <StackLayout Orientation="Vertical" IsVisible="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
+                        <Image Source="{Binding AuthenticatedUser.ThumbnailUri}"/>
+                        <Label Text="{Binding AuthenticatedUser.FullName}"/>
+                    </StackLayout>
+
+                    <TableView WidthRequest="300">
                         <TableRoot>
                             <TableSection Title="Settings">
                                 <ImageCell Text="Change Basemap" ImageSource="{StaticResource basemapImage}" Tapped="LoadBasemapControl"/>
                                 <ImageCell Text="Open User Maps" ImageSource="{StaticResource cancelImage}" Tapped="LoadUserItems"
                                     IsEnabled="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}"/>
-                            <ImageCell ImageSource="{StaticResource cancelImage}" Command="{Binding LogInOutCommand}"
+                                <ImageCell ImageSource="{StaticResource cancelImage}" Command="{Binding LogInOutCommand}"
                                     Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}"/>
                             </TableSection>
                         </TableRoot>
                     </TableView>
                 </StackLayout>
-
-        </Grid>
+            </Grid>
+        </StackLayout>
 
         <!-- Search Result Banner -->
         <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
@@ -209,7 +212,7 @@
             <Image x:Name="PinImage" Source="{StaticResource endImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
 
             <Label Text="{Binding Place.Label}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-            <Image x:Name="DirectionsImage" Source="{StaticResource getDirectionsImage}" VerticalOptions="Center" HorizontalOptions="End">
+            <Image x:Name="DirectionsImage" Source="{StaticResource getDirectionsImage}" VerticalOptions="Center" HorizontalOptions="End" BackgroundColor="#0079c1">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ShowRoutingPanel"/>
                 </Image.GestureRecognizers>
@@ -233,9 +236,11 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100" BackgroundColor="White">
+        <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100">
+
 
             <!-- GPS Button -->
+
             <Image HorizontalOptions="Center"  VerticalOptions="Center" Source="{StaticResource gpsImage}" BindingContext ="{Binding Source={StaticResource MapViewModel}}" Margin="5,5,5,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
