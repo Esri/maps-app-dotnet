@@ -146,7 +146,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                             }
 
                             // Add route to map
-                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault().RouteGeometry);
+                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
                             graphicsOverlay?.Graphics.Add(routeGraphic);
 
                             // Add start and end locations to the map
@@ -168,7 +168,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         /// </summary>
         private async void ResetMapRotation(object sender, RoutedEventArgs e)
         {
-            await MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
+            await MapView.SetViewpointRotationAsync(0);
         }
 
         /// <summary>

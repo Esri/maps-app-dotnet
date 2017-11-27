@@ -154,7 +154,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                 try
                 {
-                    Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl)).ConfigureAwait(false);
+                    Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
                 }
                 catch (Exception ex)
                 {
@@ -163,7 +163,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 }
             }
             // set the route parameters
-            var routeParams = await Router.CreateDefaultParametersAsync().ConfigureAwait(false);
+            var routeParams = await Router.CreateDefaultParametersAsync();
             routeParams.ReturnDirections = true;
             routeParams.ReturnRoutes = true;
 
@@ -175,7 +175,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
                                                             new Stop(ToPlace.RouteLocation) });
 
-                    Route = await Router.SolveRouteAsync(routeParams).ConfigureAwait(false);
+                    Route = await Router.SolveRouteAsync(routeParams);
 
                     // Set viewpoint to the route's extent
                     AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault()?.RouteGeometry);
@@ -185,7 +185,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     Debug.WriteLine(ex.ToString());
                 }
             }
-
             IsBusy = false;
         }
     }

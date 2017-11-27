@@ -67,7 +67,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             try
             {
                 // Load locator
-                Locator = await LocatorTask.CreateAsync(new Uri(Configuration.GeocodeUrl)).ConfigureAwait(false);
+                Locator = await LocatorTask.CreateAsync(new Uri(Configuration.GeocodeUrl));
             }
             catch (Exception ex)
             {
@@ -396,7 +396,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 return _searchCommand ?? (_searchCommand = new DelegateCommand(
                     async (x) =>
                     {
-                        await GetSearchedLocationAsync((string)x, nameof(Place)).ConfigureAwait(false);
+                        await GetSearchedLocationAsync((string)x, nameof(Place));
                     }));
             }
         }
@@ -491,7 +491,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         private async Task GetReverseGeocodedLocationAsync(MapPoint location)
         {
-            var matches = await Locator.ReverseGeocodeAsync(location).ConfigureAwait(false);
+            var matches = await Locator.ReverseGeocodeAsync(location);
             Place = matches.First();
         }
     }

@@ -78,7 +78,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                         {
                             if (AuthenticatedUser == null)
                             {
-                                await SignIntoPortal().ConfigureAwait(false);
+                                await SignIntoPortal();
                             }
                             else
                             {
@@ -113,11 +113,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             try
             {
                 // IOAuthAuthorizeHandler will challenge the user for OAuth credentials
-                var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl)).ConfigureAwait(false);
+                var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
                 AuthenticationManager.Current.AddCredential(credential);
 
                 // Create connection to Portal and provide credential
-                var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential).ConfigureAwait(false);
+                var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
                 AuthenticatedUser = portal.User;
                 return credential;
             }

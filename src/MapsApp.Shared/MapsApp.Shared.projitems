@@ -28,38 +28,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserItemsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Start36.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\start.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Start72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\iOS8_MapPin_BlueCircle36_d.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\iOS8_MapPin_BlueCircle72.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\End36.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\End72.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\iOS8_MapPin_YellowCircle36_d.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\iOS8_MapPin_YellowCircle72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\cancel1.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\cancel2.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\directions2.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\directions1.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\BurgerButton30.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\BurgerButton60.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Basemap30.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Basemap60.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Compass36.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\Compass72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\GPSon22.png" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\GPSon66.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\end.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Esri.ArcGISRuntime.ExampleApps.ruleset" />
