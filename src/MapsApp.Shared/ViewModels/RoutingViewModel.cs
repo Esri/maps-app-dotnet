@@ -66,7 +66,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_fromPlace != value)
                 {
                     _fromPlace = value;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     GetRouteAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     OnPropertyChanged();
                 }
             }
@@ -83,7 +85,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_toPlace != value)
                 {
                     _toPlace = value;
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     GetRouteAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     OnPropertyChanged();
                 }
             }
@@ -125,6 +129,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the turn by turn directions for the returned route
+        /// </summary>
         public IReadOnlyList<DirectionManeuver> DirectionManeuvers
         {
             get
@@ -192,7 +199,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 {
                     routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
                                                             new Stop(ToPlace.RouteLocation) });
-
                     Route = await Router.SolveRouteAsync(routeParams);
 
                     // Set viewpoint to the route's extent
@@ -200,10 +206,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     // Set turn by turn directions
                     DirectionManeuvers = Route.Routes.FirstOrDefault()?.DirectionManeuvers;
-                    var x = DirectionManeuvers[0].DirectionText;
-                    var y = DirectionManeuvers[0];
-                    var z = DirectionManeuvers[0].ManeuverType;
-
                 }
                 catch (Exception ex)
                 {

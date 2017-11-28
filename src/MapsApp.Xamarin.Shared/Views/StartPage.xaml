@@ -96,24 +96,24 @@
         <!-- Routing Panel -->
         <StackLayout Orientation="Vertical" IsVisible="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RoutingViewModel}}" 
                      BindingContext="{StaticResource GeocodeViewModel}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White" Margin="10, 10, 10, 0">
-
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <StackLayout Orientation="Horizontal">
-                        <Image Source="startpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5"/>
-                        <Entry x:Name="FromLocationTextBox" Text="{Binding FromSearchText, Mode=TwoWay}" Focused="FromLocationSearchBar_Focused"
-                                       Unfocused="FromLocationSearchBar_Unfocused" HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>
-
-                    <StackLayout Orientation="Horizontal">
-                        <Image Source="endpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5"/>
-                        <Entry x:Name="ToLocationTextBox" Text="{Binding ToSearchText, Mode=TwoWay}" Focused="ToLocationSearchBar_Focused"
-                                           Unfocused="ToLocationSearchBar_Unfocused" HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                    <Image Source="startpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5"/>
+                    <Entry x:Name="FromLocationTextBox" Text="{Binding FromSearchText, Mode=TwoWay}" Focused="FromLocationSearchBar_Focused"
+                                    Unfocused="FromLocationSearchBar_Unfocused" HorizontalOptions="FillAndExpand"/>
+                    <Image Source="close.png" VerticalOptions="Start" HorizontalOptions="End" Margin="5">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClearRouteCommand, Source={StaticResource RoutingViewModel}}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
-                <Image Source="close.png" VerticalOptions="Start" HorizontalOptions="End" Margin="5">
+
+            <StackLayout Orientation="Horizontal">
+                <Image Source="endpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5"/>
+                <Entry x:Name="ToLocationTextBox" Text="{Binding ToSearchText, Mode=TwoWay}" Focused="ToLocationSearchBar_Focused"
+                                        Unfocused="ToLocationSearchBar_Unfocused" HorizontalOptions="FillAndExpand"/>
+                <Image Source="directionmaneuvers.png" VerticalOptions="Start" HorizontalOptions="End" Margin="5" BackgroundColor="#0079c1">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClearRouteCommand, Source={StaticResource RoutingViewModel}}"/>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="LoadDirectionsControl"/>
                     </Image.GestureRecognizers>
                 </Image>
             </StackLayout>

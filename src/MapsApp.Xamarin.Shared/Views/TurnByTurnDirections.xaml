@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.TurnByTurnDirections"
+             Title="Directions">
+    <Grid>
+        <!-- List of basemaps for the user to select from -->
+        <ListView x:Name="DirectionsListView" ItemsSource="{Binding DirectionManeuvers}"
+            CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell ImageSource="{Binding ManeuverType}" Text="{Binding DirectionText}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

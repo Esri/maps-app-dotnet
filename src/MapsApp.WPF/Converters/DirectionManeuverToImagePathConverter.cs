@@ -23,6 +23,9 @@ using System.Windows.Data;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Converters
 {
+    /// <summary>
+    /// Returns image path by taking maneuver name and appending path to create corresponding image
+    /// </summary>
     class DirectionManeuverToImagePathConverter : IValueConverter
     {
         private const string baseImagePath = @"pack://application:,,,/MapsApp;component/Images/";

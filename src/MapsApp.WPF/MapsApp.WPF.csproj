@@ -176,7 +176,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\endpin.png">
+    <Content Include="Images\Stop.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -194,7 +194,7 @@
     <Resource Include="Images\Roundabout.png" />
     <Resource Include="Images\SharpLeft.png" />
     <Resource Include="Images\SharpRight.png" />
-    <Content Include="Images\startpin.png">
+    <Content Include="Images\Depart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

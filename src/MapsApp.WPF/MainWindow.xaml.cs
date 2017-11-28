@@ -53,7 +53,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                             }
 
                             // create map pin and add it to the map
-                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
+                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Stop.png")));
                             var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
 
@@ -150,8 +150,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                             graphicsOverlay?.Graphics.Add(routeGraphic);
 
                             // Add start and end locations to the map
-                            var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Start72.png")));
-                            var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
+                            var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Depart.png")));
+                            var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Stop.png")));
                             var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, fromMapPin);
                             var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, toMapPin);
                             graphicsOverlay?.Graphics.Add(fromGraphic);

@@ -32,6 +32,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
     {
         private BasemapsViewModel _basemapViewModel;
         private UserItemsViewModel _userItemsViewModel;
+        private RoutingViewModel _routingViewModel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StartPage"/> class.
@@ -45,7 +46,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             PictureMarkerSymbol startMapPin = CreateMapPin("start.png");
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
-            var routingViewModel = Resources["RoutingViewModel"] as RoutingViewModel;
+            _routingViewModel = Resources["RoutingViewModel"] as RoutingViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
                 switch (e.PropertyName)
@@ -75,18 +76,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                         }
                     case nameof(GeocodeViewModel.FromPlace):
                         {
-                            routingViewModel.FromPlace = geocodeViewModel.FromPlace;
+                            _routingViewModel.FromPlace = geocodeViewModel.FromPlace;
                             break;
                         }
                     case nameof(GeocodeViewModel.ToPlace):
                         {
-                            routingViewModel.ToPlace = geocodeViewModel.ToPlace;
+                            _routingViewModel.ToPlace = geocodeViewModel.ToPlace;
                             break;
                         }
                 }
             };
 
-            routingViewModel.PropertyChanged += (s, e) =>
+            _routingViewModel.PropertyChanged += (s, e) =>
             {
                 switch (e.PropertyName)
                 {
@@ -95,18 +96,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
                             graphicsOverlay?.Graphics?.Clear();
 
-                            if (routingViewModel.FromPlace == null || routingViewModel.ToPlace == null || routingViewModel.Route == null)
+                            if (_routingViewModel.FromPlace == null || _routingViewModel.ToPlace == null || _routingViewModel.Route == null)
                             {
                                 return;
                             }
 
                             // Add route to map
-                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
+                            var routeGraphic = new Graphic(_routingViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
                             graphicsOverlay?.Graphics.Add(routeGraphic);
 
                             // Add start and end locations to the map
-                            var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, startMapPin);
-                            var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, endMapPin);
+                            var fromGraphic = new Graphic(_routingViewModel.FromPlace.DisplayLocation, startMapPin);
+                            var toGraphic = new Graphic(_routingViewModel.ToPlace.DisplayLocation, endMapPin);
                             graphicsOverlay?.Graphics.Add(fromGraphic);
                             graphicsOverlay?.Graphics.Add(toGraphic);
 
@@ -212,6 +213,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         private async void LoadBasemapControl(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BasemapPage { BindingContext = _basemapViewModel });
+        }
+
+
+        // Load directions page
+        private async void LoadDirectionsControl(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TurnByTurnDirections { BindingContext = _routingViewModel });
         }
 
         /// <summary>

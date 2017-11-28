@@ -120,9 +120,18 @@
 
 
         <!-- Left panel -->
-        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+        <Grid Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Margin="15, 0, 0, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="470"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
             <!-- Search Result Panel -->
-            <StackPanel Orientation="Vertical" Width="450"  DataContext="{StaticResource GeocodeViewModel}"
+            <StackPanel Orientation="Vertical" Grid.Column="0" DataContext="{StaticResource GeocodeViewModel}" Grid.Row="0"
                     Margin="0,0,0,15" Visibility="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"></DropShadowEffect>
@@ -130,7 +139,7 @@
 
                 <StackPanel Orientation="Horizontal" Width="520" Background="#dfdfdf" Margin="0,15,0,0">
                     <Button Background="#dfdfdf" BorderThickness="0" Width="50" Height="50">
-                        <Image  Source="pack://application:,,,/MapsApp;component/Images/endpin.png"  />
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/Stop.png"  />
                     </Button>
                     <TextBlock x:Name="SearchResultTextBlock" Text="{Binding Place.Label}" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center"/>
                     <Button Background="#0079c1" BorderThickness="0" Width="60" Height="60" Click="ShowRoutingPanel">
@@ -143,23 +152,23 @@
             </StackPanel>
 
             <!-- Route Panel -->
-            <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Width="450"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RoutingViewModel}}" 
-                        Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}">
+            <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Grid.Column="0"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RoutingViewModel}}" 
+                        Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}" Grid.Row="1">
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"/>
                 </StackPanel.Effect>
 
                 <StackPanel Orientation="Horizontal"  >
-                    <StackPanel Orientation="Vertical" Margin="15,15,0,0">
+                    <StackPanel Orientation="Vertical" Margin="15,15,0,15">
                         <!-- From location text box -->
                         <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/startpin.png" Height="40" Margin="0,0,10,5"/>
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Depart.png" Height="40" Margin="0,0,10,5"/>
                             <TextBox x:Name="FromLocationTextBox" Text="{Binding FromSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" VerticalAlignment="Center" 
                                  Width="330" Margin="0,0,0,5" GotFocus="FromLocationTextBox_GotFocus" LostFocus="FromLocationTextBox_LostFocus" TextWrapping="Wrap"/>
                         </StackPanel>
                         <!-- To location text box -->
                         <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/endpin.png" Height="40" Margin="0,0,10,0"/>
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Stop.png" Height="40" Margin="0,0,10,0"/>
                             <TextBox x:Name="ToLocationTextBox" Text="{Binding ToSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" TextWrapping="Wrap" 
                                  VerticalAlignment="Center" Width="330" GotFocus="ToLocationTextBox_GotFocus" LostFocus="ToLocationTextBox_LostFocus"/>
                         </StackPanel>
@@ -201,18 +210,27 @@
             </StackPanel>
 
             <!-- Turn by turn directions panel -->
-            <Grid Width="450" MaxHeight="600" Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource RoutingViewModel}" 
-                        Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}}" >
-                <ListView ItemsSource="{Binding DirectionManeuvers}" Margin="5, 0, 5, 0" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <Grid Grid.Column="0" Margin="0,15,0,15" DataContext="{StaticResource RoutingViewModel}" 
+                        Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}}" Grid.Row="2" >
+                <ListView ItemsSource="{Binding DirectionManeuvers}" Padding="5" Margin="5, 0, 5, 0" ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" >
-                                <Image Stretch="UniformToFill" Source="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" />
-                                <TextBlock Margin="5,10,5,0" VerticalAlignment="Center" Text="{Binding DirectionText}"  FontSize="15" 
-                                              TextWrapping="Wrap"/>
+                                <Image Width="35" Height="35" Source="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" />
+                                <TextBlock Margin="5,5,5,5" Text="{Binding DirectionText}"  FontSize="15" 
+                                              TextWrapping="Wrap" Foreground="#444444" Width="370"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
+                    <ListView.Effect>
+                        <DropShadowEffect Opacity=".5"></DropShadowEffect>
+                    </ListView.Effect>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="BorderBrush" Value="LightGray" />
+                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
                 </ListView>
             </Grid>
 
@@ -272,7 +290,7 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </Grid>
 
         <!-- List of suggestions from geocoder -->
         <StackPanel  Grid.Row="1" Grid.Column="0">
@@ -328,5 +346,15 @@
             </Hyperlink>
             </TextBlock>
         </StackPanel>
+        
+        <!-- Progress bar -->
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="4" Visibility="{Binding IsBusy, Source={StaticResource RoutingViewModel}, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <StackPanel  Background="Gray" Opacity=".5"/>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#dfdfdf">
+                <TextBlock Text="Requesting Route" HorizontalAlignment="Center" Foreground="#444444" FontSize="25" Margin="10, 10, 10,0"/>
+                <ProgressBar Minimum="0" Maximum="100" Name="pbStatus" IsIndeterminate="True" Height="20" Width="300" Margin="15"
+                             Foreground="#0079c1"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
