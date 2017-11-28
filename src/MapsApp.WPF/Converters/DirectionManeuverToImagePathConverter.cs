@@ -13,33 +13,26 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
+
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-#if __ANDROID__ || __IOS__ || NETFX_CORE
-using IValueConverter = Xamarin.Forms.IValueConverter;
-#else
+using System.Threading.Tasks;
 using System.Windows.Data;
-using System.Windows;
-#endif
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Converters
 {
-    /// <summary>
-    /// Converts null to a text value. The value is being passed in the parameter of the function
-    /// Parameter type is text1|text2 where text1 is applied if value is null
-    /// </summary>
-    class NullToTextConverter : IValueConverter
+    class DirectionManeuverToImagePathConverter : IValueConverter
     {
+        private const string baseImagePath = @"pack://application:,,,/MapsApp;component/Images/";
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            // Handle null to text
-            if (parameter != null)
+            if (value != null)
             {
-                
-                //if value is null, the first text value is displayed
-                return (value == null) ? ((string)parameter).Split('|').ElementAtOrDefault(0) ?? "Invalid Parameter": ((string)parameter).Split('|').ElementAtOrDefault(1) ?? "Invalid Parameter";
+                return baseImagePath + value.ToString() + ".png";
             }
+
             return null;
         }
 

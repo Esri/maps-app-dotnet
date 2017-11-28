@@ -81,6 +81,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\DirectionManeuverToImagePathConverter.cs" />
     <Compile Include="Views\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
@@ -130,54 +131,70 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Straight.png" />
+    <Resource Include="Images\TurnLeft.png" />
+    <Resource Include="Images\TurnLeftLeft.png" />
+    <Resource Include="Images\TurnLeftRight.png" />
+    <Resource Include="Images\TurnRight.png" />
+    <Resource Include="Images\TurnRightLeft.png" />
+    <Resource Include="Images\TurnRightRight.png" />
+    <Resource Include="Images\Unknown.png" />
+    <Resource Include="Images\UTurn.png" />
     <Resource Include="icon.ico" />
-    <Resource Include="Images\Folder.png" />
-    <Content Include="Images\Basemap60.png">
+    <Resource Include="Images\chooseusermap.png" />
+    <Resource Include="Images\BearLeft.png" />
+    <Resource Include="Images\BearRight.png" />
+    <Content Include="Images\choosebasemap.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Images\search_32.png" />
+    <Resource Include="Images\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\BurgerButton60.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\cancel2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\Compass72.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\directions2.png">
+    <Resource Include="Images\ForkCenter.png" />
+    <Resource Include="Images\ForkLeft.png" />
+    <Resource Include="Images\ForkRight.png" />
+    <Resource Include="Images\HighwayChange.png" />
+    <Resource Include="Images\HighwayExit.png" />
+    <Resource Include="Images\HighwayMerge.png" />
+    <Content Include="Images\menu.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\End72.png">
+    <Content Include="Images\close.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\GPSon66.png">
+    <Content Include="Images\compass.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\iOS8_MapPin_BlueCircle72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\iOS8_MapPin_YellowCircle72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Images\SignIn.png">
+    <Content Include="Images\directions.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Start72.png">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\endpin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\currentlocation.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\login_logout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\RampLeft.png" />
+    <Resource Include="Images\RampRight.png" />
+    <Resource Include="Images\Roundabout.png" />
+    <Resource Include="Images\SharpLeft.png" />
+    <Resource Include="Images\SharpRight.png" />
+    <Content Include="Images\startpin.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

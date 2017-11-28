@@ -225,7 +225,7 @@
 
         <!-- Activity indicator for long running operations -->
         <StackLayout Opacity="0.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" IsVisible="{Binding IsBusy, Source={StaticResource RoutingViewModel}}">
-            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="LightGray" Opacity=".5">
                 <Label Text="Requesting Route" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Medium"/>
                 <ActivityIndicator x:Name="AppActivityIndicator" IsRunning="True">
                 </ActivityIndicator>

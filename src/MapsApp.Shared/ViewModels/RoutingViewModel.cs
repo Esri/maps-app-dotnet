@@ -21,6 +21,7 @@ using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,6 +36,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private GeocodeResult _toPlace;
         private RouteResult _route;
         private Viewpoint _areaOfInterest;
+        private IReadOnlyList<DirectionManeuver> _directionManeuvers;
         private ICommand _clearRouteCommand;
 
         /// <summary>
@@ -123,6 +125,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
+        public IReadOnlyList<DirectionManeuver> DirectionManeuvers
+        {
+            get
+            {
+                return _directionManeuvers;
+            }
+            set
+            {
+                if (_directionManeuvers != value)
+                {
+                    _directionManeuvers = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         /// <summary>
         /// Gets the command to cancel the location search and clear the pin off the map
         /// </summary>
@@ -179,6 +197,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     // Set viewpoint to the route's extent
                     AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault()?.RouteGeometry);
+
+                    // Set turn by turn directions
+                    DirectionManeuvers = Route.Routes.FirstOrDefault()?.DirectionManeuvers;
+                    var x = DirectionManeuvers[0].DirectionText;
+                    var y = DirectionManeuvers[0];
+                    var z = DirectionManeuvers[0].ManeuverType;
+
                 }
                 catch (Exception ex)
                 {
