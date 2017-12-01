@@ -166,19 +166,19 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Esri.ArcGISRuntime.UWP">
-      <Version>100.2.0-daily1878</Version>
+      <Version>100.2.0-daily1901</Version>
     </PackageReference>
     <PackageReference Include="Esri.ArcGISRuntime.Xamarin.Forms">
-      <Version>100.2.0-daily1878</Version>
+      <Version>100.2.0-daily1901</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>5.4.0</Version>
+      <Version>6.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Auth">
       <Version>1.5.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>2.4.0.280</Version>
+      <Version>2.5.0.91635</Version>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
