@@ -16,6 +16,7 @@
 
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
+using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
@@ -202,7 +203,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     Route = await Router.SolveRouteAsync(routeParams);
 
                     // Set viewpoint to the route's extent
-                    AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault()?.RouteGeometry);
+                    //AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault()?.RouteGeometry);
+
+                    // Set the AOI to an area slightly larger than the route's extent
+                    var aoiBuilder = new EnvelopeBuilder(Route.Routes.FirstOrDefault()?.RouteGeometry.Extent);
+                    aoiBuilder.Expand(1.2);
+                    AreaOfInterest = new Viewpoint(aoiBuilder.ToGeometry());
+
 
                     // Set turn by turn directions
                     DirectionManeuvers = Route.Routes.FirstOrDefault()?.DirectionManeuvers;

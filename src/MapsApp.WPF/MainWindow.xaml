@@ -8,7 +8,6 @@
         xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
         xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
-        xmlns:localconverters ="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Converters"
         mc:Ignorable="d"
         Title="Maps App">
     <Window.Resources>
@@ -23,7 +22,7 @@
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
             <converters:NullToTextConverter x:Key="NullToTextConverter"/>
-            <localconverters:DirectionManeuverToImagePathConverter x:Key="DirectionManeuverToImagePathConverter"/>
+            <converters:DirectionManeuverToImagePathConverter x:Key="DirectionManeuverToImagePathConverter"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>

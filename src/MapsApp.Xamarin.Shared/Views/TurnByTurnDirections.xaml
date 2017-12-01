@@ -2,14 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.TurnByTurnDirections"
+             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
              Title="Directions">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DirectionManeuverToImagePathConverter x:Key="DirectionManeuverToImagePathConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid>
         <!-- List of basemaps for the user to select from -->
         <ListView x:Name="DirectionsListView" ItemsSource="{Binding DirectionManeuvers}"
             CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding ManeuverType}" Text="{Binding DirectionText}" />
+                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" Text="{Binding DirectionText}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

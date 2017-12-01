@@ -15,13 +15,16 @@
 //  ******************************************************************************/
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Threading.Tasks;
+#if __ANDROID__ || __IOS__ || NETFX_CORE
+using IValueConverter = Xamarin.Forms.IValueConverter;
+#else
 using System.Windows.Data;
+using System.Windows;
+#endif
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Converters
+namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
 {
     /// <summary>
     /// Returns image path by taking maneuver name and appending path to create corresponding image
@@ -33,7 +36,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Converters
         {
             if (value != null)
             {
+#if __ANDROID__ || __IOS__ || NETFX_CORE
+                return value.ToString() + ".png";
+#else
                 return baseImagePath + value.ToString() + ".png";
+#endif
             }
 
             return null;
