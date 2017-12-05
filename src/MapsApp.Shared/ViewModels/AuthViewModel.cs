@@ -99,7 +99,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
-        // ChallengeHandler function that will be called whenever access to a secured resource is attempted
+        /// <summary>
+        /// ChallengeHandler function that will be called whenever access to a secured resource is attempted
+        /// </summary>
         public Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
         {
             return SignIntoPortal();

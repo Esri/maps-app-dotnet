@@ -48,7 +48,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
             if (_taskCompletionSource != null)
             {
                 // Allow only one authorization process at a time
-                throw new Exception();
+                return;
             }
 
             // Create a task completion source
@@ -108,7 +108,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
                     // Login canceled: dismiss the OAuth login
                     if (_taskCompletionSource != null)
                     {
-                        _taskCompletionSource.TrySetCanceled();
+                        _taskCompletionSource.SetCanceled();
                         activity.FinishActivity(99);
                     }
                 }
