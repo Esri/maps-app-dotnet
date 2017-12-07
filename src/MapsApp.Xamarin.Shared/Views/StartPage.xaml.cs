@@ -67,13 +67,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 
                             break;
                         }
-
-                    case nameof(GeocodeViewModel.ErrorMessage):
-                        {
-                            // display error message from viewmodel
-                            DisplayAlert("Error", geocodeViewModel.ErrorMessage, "OK");
-                            break;
-                        }
                     case nameof(GeocodeViewModel.FromPlace):
                         {
                             _routingViewModel.FromPlace = geocodeViewModel.FromPlace;
@@ -142,14 +135,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 // Otherwise map is being reset to the world view
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
                                 var currentViewpoint = mapViewModel.AreaOfInterest;
-                                var newMap = new Map(_basemapViewModel.SelectedBasemap)
-                                {
-                                    InitialViewpoint = currentViewpoint
-                                };
+
+                                mapViewModel.Map.Basemap = new Basemap(_basemapViewModel.SelectedBasemap);
 
                                 //Load new map
-                                await newMap.LoadAsync();
-                                mapViewModel.Map = newMap;
+                                //await mapViewModel.Map.RetryLoadAsync();
                                 break;
                             }
                     }
@@ -212,6 +202,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         // Load basemap page, reuse viewmodel so the initial loading happens only once
         private async void LoadBasemapControl(object sender, EventArgs e)
         {
+            SettingsPanel.IsVisible = false;
             await Navigation.PushAsync(new BasemapPage { BindingContext = _basemapViewModel });
         }
 
@@ -262,6 +253,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             }
                     }
                 };
+
+            SettingsPanel.IsVisible = false;
 
             // Load the AuthUserItemsPage
             await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });

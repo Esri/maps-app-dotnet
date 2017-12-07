@@ -184,7 +184,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.ToString());
+                    ErrorMessage= string.Format("Unable to load routing service. The routing functionality may not work. {0}, {1}", Environment.NewLine, ex.ToString());
+                    IsBusy = false;
                     return;
                 }
             }
@@ -202,21 +203,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                                                             new Stop(ToPlace.RouteLocation) });
                     Route = await Router.SolveRouteAsync(routeParams);
 
-                    // Set viewpoint to the route's extent
-                    //AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault()?.RouteGeometry);
-
                     // Set the AOI to an area slightly larger than the route's extent
                     var aoiBuilder = new EnvelopeBuilder(Route.Routes.FirstOrDefault()?.RouteGeometry.Extent);
                     aoiBuilder.Expand(1.2);
                     AreaOfInterest = new Viewpoint(aoiBuilder.ToGeometry());
-
 
                     // Set turn by turn directions
                     DirectionManeuvers = Route.Routes.FirstOrDefault()?.DirectionManeuvers;
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.ToString());
+                    ErrorMessage = string.Format("Something went wrong and the routing operation failed.", Environment.NewLine, ex.ToString());
                 }
             }
             IsBusy = false;

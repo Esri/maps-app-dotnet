@@ -40,7 +40,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _selectedSuggestion;
         private string _selectedFromSuggestion;
         private string _selectedToSuggestion;
-        private string _errorMessage;
         private MapPoint _reverseGeocodeInputLocation;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
@@ -48,7 +47,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private GeocodeResult _toPlace;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
-        private ICommand _setSelectedStartLocationCommand;
         private ObservableCollection<string> _suggestionsList;
 
         /// <summary>
@@ -71,7 +69,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = ex.ToString();
+                ErrorMessage = string.Format("Unable to load Geocoder. Searching may be affected. {0} {1}", Environment.NewLine, ex.ToString());
             }
         }
 
@@ -276,7 +274,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     // Set viewpoint to the feature's extent
                     AreaOfInterest = Place != null ? (Place.Extent != null ? new Viewpoint(Place.Extent) :
                         new Viewpoint(Place.DisplayLocation, DefaultZoomScale)) : AreaOfInterest;
-
                     OnPropertyChanged();
                 }
             }
@@ -349,22 +346,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_areaOfInterest != value)
                 {
                     _areaOfInterest = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the error message to be shown to the user
-        /// </summary>
-        public string ErrorMessage
-        {
-            get { return _errorMessage; }
-            set
-            {
-                if (_errorMessage != value && value != null)
-                {
-                    _errorMessage = value;
                     OnPropertyChanged();
                 }
             }
@@ -477,12 +458,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 }
                 else
                 {
-                    ErrorMessage = "Unable to load geocoder";
+                    ErrorMessage = "Geocoder is not available. Please reload the app. If you continue to receive this message, contact your GIS administrator.";
                 }
             }
             catch (Exception ex)
             {
-                ErrorMessage = ex.ToString();
+                ErrorMessage = string.Format("Your search request could not be completed. {0} {1}", Environment.NewLine, ex.ToString());
             }
         }
 
@@ -491,8 +472,15 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         private async Task GetReverseGeocodedLocationAsync(MapPoint location)
         {
-            var matches = await Locator.ReverseGeocodeAsync(location);
-            Place = matches.First();
+            try
+            {
+                var matches = await Locator.ReverseGeocodeAsync(location);
+                Place = matches.First();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = string.Format("Unable to perform reverse geocode request. {0} {1}", Environment.NewLine, ex.ToString());
+            }
         }
     }
 }

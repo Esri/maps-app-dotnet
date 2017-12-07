@@ -39,13 +39,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             new PortalItemType[] { PortalItemType.WebMap};
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserItemsViewModel"/> class.
-        /// </summary>
-        public UserItemsViewModel()
-        {
-        }
-
-        /// <summary>
         /// Gets or sets the user item the user selected
         /// </summary>
         public PortalItem SelectedUserItem

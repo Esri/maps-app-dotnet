@@ -74,28 +74,19 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 return _logInOutCommand ?? (_logInOutCommand = new DelegateCommand(
                     async (x) =>
                     {
-                        try
+                        if (AuthenticatedUser == null)
                         {
-                            if (AuthenticatedUser == null)
-                            {
-                                await SignIntoPortal();
-                            }
-                            else
-                            {
-                                foreach (var credential in AuthenticationManager.Current.Credentials)
-                                {
-                                    AuthenticationManager.Current.RemoveCredential(credential);
-                                }
-                                AuthenticatedUser = null;
-                            }
+                            await SignIntoPortal();
                         }
-                        catch
+                        else
                         {
-                            //TODO: do something if unable to login
+                            foreach (var credential in AuthenticationManager.Current.Credentials)
+                            {
+                                AuthenticationManager.Current.RemoveCredential(credential);
+                            }
                             AuthenticatedUser = null;
                         }
-
-                    }));
+                     }));
             }
         }
 
@@ -121,9 +112,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 AuthenticatedUser = portal.User;
                 return credential;
             }
+            catch(System.OperationCanceledException)
+            {
+                // User cancelled login 
+                return null;
+            }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.ToString());
+                ErrorMessage = string.Format("Authentication failed. {0}, {1}", Environment.NewLine, ex.ToString());
                 return null;
             }
         }
@@ -160,7 +156,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.ToString());
+                ErrorMessage = string.Format("Authentication failed. {0}, {1}", Environment.NewLine, ex.ToString());
             }
         }
     }

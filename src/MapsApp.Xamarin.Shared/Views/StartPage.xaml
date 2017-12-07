@@ -175,7 +175,7 @@
                         <TableRoot>
                             <TableSection Title="Settings">
                                 <ImageCell Text="Change Basemap" ImageSource="choosebasemap.png" Tapped="LoadBasemapControl" RelativeLayout.HeightConstraint="60" />
-                                <ImageCell Text="Open User Maps" ImageSource="chooseusermap.png" Tapped="LoadUserItems" RelativeLayout.HeightConstraint="60" 
+                                <ImageCell Text="Open User Maps" ImageSource="chooseusermap.png" Tapped="LoadUserItems" RelativeLayout.HeightConstraint="60"
                                     IsEnabled="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}"/>
                                 <ImageCell ImageSource="login_logout.png"  Command="{Binding LogInOutCommand}" RelativeLayout.HeightConstraint="60" 
                                     Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}"/>
@@ -233,5 +233,42 @@
                 </ActivityIndicator>
             </StackLayout>
         </StackLayout>
+        
+        <!-- Error message alert for Geocode operations-->
+        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"
+                     IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
+                <Label Text="{Binding ErrorMessage}" Margin="10"/>
+                <Button Text="OK" Command="{Binding ClearErrorMessageCommand}" Margin="10" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!--Error message alert for Map operations-->
+        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" BindingContext ="{Binding Source={StaticResource MapViewModel}}"
+                     IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
+                <Label Text="{Binding ErrorMessage}" Margin="10"/>
+                <Button Text="OK" Command="{Binding ClearErrorMessageCommand}" Margin="10" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!--Error message alert for Route operations-->
+        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" BindingContext ="{Binding Source={StaticResource RoutingViewModel}}"
+                     IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
+                <Label Text="{Binding ErrorMessage}" Margin="10"/>
+                <Button Text="OK" Command="{Binding ClearErrorMessageCommand}" Margin="10" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!--Error message alert for Auth operations-->
+        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" BindingContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}"
+                     IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
+                <Label Text="{Binding ErrorMessage}" Margin="10"/>
+                <Button Text="OK" Command="{Binding ClearErrorMessageCommand}" Margin="10" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+
     </Grid>
 </ContentPage>

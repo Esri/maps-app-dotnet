@@ -15,7 +15,8 @@
             CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" Text="{Binding DirectionText}" />
+                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" 
+                               Text="{Binding DirectionText}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

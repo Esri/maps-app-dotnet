@@ -104,8 +104,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     (x) =>
                     {
                         // Set viewpoint to the user's current location
-                        AreaOfInterest = _lastLocation?.Position?.Extent != null ? new Viewpoint(_lastLocation.Position.Extent) :
-                            new Viewpoint(_lastLocation.Position, DefaultZoomScale);
+                        AreaOfInterest = new Viewpoint(_lastLocation?.Position, DefaultZoomScale);
                     }));
             }
         }

@@ -115,15 +115,23 @@
     <None Include="MapsApp.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BearLeft.png" />
+    <Content Include="BearRight.png" />
+    <Content Include="choosebasemap.png" />
+    <Content Include="chooseusermap.png" />
     <Content Include="close.png" />
     <Content Include="compass.png" />
     <Content Include="currentlocation.png" />
+    <Content Include="Depart.png" />
     <Content Include="directions.png" />
-    <Content Include="endpin.png" />
+    <Content Include="ForkCenter.png" />
+    <Content Include="ForkLeft.png" />
+    <Content Include="ForkRight.png" />
+    <Content Include="HighwayChange.png" />
+    <Content Include="HighwayExit.png" />
+    <Content Include="HighwayMerge.png" />
+    <Content Include="login_logout.png" />
     <Content Include="menu.png" />
-    <Content Include="startpin.png" />
-    <Content Include="choosebasemap.png" />
-    <Content Include="chooseusermap.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />
@@ -152,7 +160,22 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="login_logout.png" />
+    <Content Include="RampLeft.png" />
+    <Content Include="RampRight.png" />
+    <Content Include="Roundabout.png" />
+    <Content Include="search.png" />
+    <Content Include="SharpLeft.png" />
+    <Content Include="SharpRight.png" />
+    <Content Include="Stop.png" />
+    <Content Include="Straight.png" />
+    <Content Include="TurnLeft.png" />
+    <Content Include="TurnLeftLeft.png" />
+    <Content Include="TurnLeftRight.png" />
+    <Content Include="TurnRight.png" />
+    <Content Include="TurnRightLeft.png" />
+    <Content Include="TurnRightRight.png" />
+    <Content Include="Unknown.png" />
+    <Content Include="UTurn.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

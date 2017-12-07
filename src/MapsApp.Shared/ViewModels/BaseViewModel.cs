@@ -13,8 +13,10 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
@@ -23,6 +25,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     /// </summary>
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
+        private ICommand _clearErrorMessageCommand;
+        private string _errorMessage;
+
+        public BaseViewModel()
+        {
+
+        }
+
         /// <summary>
         /// Raises the <see cref="MapViewModel.PropertyChanged" /> event
         /// </summary>
@@ -33,5 +43,36 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Gets or sets the error message to be shown to the user
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return _errorMessage; }
+            set
+            {
+                if (_errorMessage != value)
+                {
+                    _errorMessage = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the command to clear the ErrorMessage property 
+        /// </summary>
+        public ICommand ClearErrorMessageCommand
+        {
+            get
+            {
+                return _clearErrorMessageCommand ?? (_clearErrorMessageCommand = new DelegateCommand(
+                    (x) =>
+                    {
+                        ErrorMessage = null;
+                    }));
+            }
+        }
     }
 }
