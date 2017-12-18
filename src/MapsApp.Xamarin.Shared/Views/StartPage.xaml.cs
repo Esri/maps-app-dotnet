@@ -136,10 +136,15 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
                                 var currentViewpoint = mapViewModel.AreaOfInterest;
 
-                                mapViewModel.Map.Basemap = new Basemap(_basemapViewModel.SelectedBasemap);
+                                try
+                                {
+                                    mapViewModel.Map.Basemap = new Basemap(_basemapViewModel.SelectedBasemap);
+                                }
+                                catch (Exception ex)
+                                {
+                                    mapViewModel.ErrorMessage = string.Format("Unable to change basemaps. {0} {1}", Environment.NewLine, ex.ToString());
+                                }
 
-                                //Load new map
-                                //await mapViewModel.Map.RetryLoadAsync();
                                 break;
                             }
                     }
@@ -241,14 +246,23 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 // Otherwise map is being reset to the world view
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
                                 var currentViewpoint = mapViewModel.AreaOfInterest;
-                                var newMap = new Map(_userItemsViewModel.SelectedUserItem)
-                                {
-                                    InitialViewpoint = currentViewpoint
-                                };
 
-                                //Load new map
-                                await newMap.LoadAsync();
-                                mapViewModel.Map = newMap;
+                                try
+                                {
+                                    var newMap = new Map(_userItemsViewModel.SelectedUserItem)
+                                    {
+                                        InitialViewpoint = currentViewpoint
+                                    };
+
+                                    //Load new map
+                                    await newMap.LoadAsync();
+                                    mapViewModel.Map = newMap;
+                                }
+                                catch (Exception ex)
+                                {
+                                    mapViewModel.ErrorMessage = string.Format("Unable to change maps. {0} {1}", Environment.NewLine, ex.ToString());
+                                }
+
                                 break;
                             }
                     }

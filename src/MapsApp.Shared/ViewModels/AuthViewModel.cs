@@ -119,7 +119,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Authentication failed. {0}, {1}", Environment.NewLine, ex.ToString());
+                //ErrorMessage = string.Format("Authentication failed. {0}, {1}", Environment.NewLine, ex.ToString());
                 return null;
             }
         }

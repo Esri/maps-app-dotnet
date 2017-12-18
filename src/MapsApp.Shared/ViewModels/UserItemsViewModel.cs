@@ -114,7 +114,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Unable to connect to Portal. " + ex.ToString());
+                ErrorMessage = string.Format("Unable to connect to Portal. {0} {1}", Environment.NewLine, ex.ToString());
             }
         }
 
@@ -124,14 +124,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         public async Task LoadUserItems()
         {
             await LoadPortal();
-            var portalUser = AuthViewModel.Instance.AuthenticatedUser.Portal.User as PortalUser;
-            var userContent = await portalUser.GetContentAsync();
+            var portalUser = AuthViewModel.Instance.AuthenticatedUser?.Portal?.User as PortalUser;
 
-            UserItems = new ObservableCollection<PortalItem>();
-            foreach (var item in userContent.Items)
+            try
             {
-                if (validUserItemTypes.Contains(item.Type))
-                    UserItems.Add(item);
+                var userContent = await portalUser.GetContentAsync();
+
+                UserItems = new ObservableCollection<PortalItem>();
+                foreach (var item in userContent.Items)
+                {
+                    if (validUserItemTypes.Contains(item.Type))
+                        UserItems.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = string.Format("Unable to retrieve user maps. {0} {1}", Environment.NewLine, ex.ToString());
             }
         }
     }

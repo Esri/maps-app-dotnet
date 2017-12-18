@@ -17,13 +17,12 @@
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Http;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -174,17 +173,22 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         private async Task GetRouteAsync()
         {
+            if (FromPlace == null || ToPlace == null)
+            {
+                return;
+            }
+
             IsBusy = true;
 
             if (Router == null)
             {
                 try
                 {
-                    Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
+                    await CreateRouteTask();
                 }
                 catch (Exception ex)
                 {
-                    ErrorMessage= string.Format("Unable to load routing service. The routing functionality may not work. {0}, {1}", Environment.NewLine, ex.ToString());
+                    ErrorMessage = string.Format("Unable to load routing service. The routing functionality may not work. {0}, {1}", Environment.NewLine, ex.ToString());
                     IsBusy = false;
                     return;
                 }
@@ -195,28 +199,52 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             routeParams.ReturnRoutes = true;
 
             // add route stops as parameters
-            if (FromPlace != null && ToPlace != null)
+            try
             {
-                try
-                {
-                    routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
-                                                            new Stop(ToPlace.RouteLocation) });
-                    Route = await Router.SolveRouteAsync(routeParams);
+                routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
+                                                        new Stop(ToPlace.RouteLocation) });
+                Route = await Router.SolveRouteAsync(routeParams);
 
-                    // Set the AOI to an area slightly larger than the route's extent
-                    var aoiBuilder = new EnvelopeBuilder(Route.Routes.FirstOrDefault()?.RouteGeometry.Extent);
-                    aoiBuilder.Expand(1.2);
-                    AreaOfInterest = new Viewpoint(aoiBuilder.ToGeometry());
+                // Set the AOI to an area slightly larger than the route's extent
+                var aoiBuilder = new EnvelopeBuilder(Route.Routes.FirstOrDefault()?.RouteGeometry.Extent);
+                aoiBuilder.Expand(1.2);
+                AreaOfInterest = new Viewpoint(aoiBuilder.ToGeometry());
 
-                    // Set turn by turn directions
-                    DirectionManeuvers = Route.Routes.FirstOrDefault()?.DirectionManeuvers;
-                }
-                catch (Exception ex)
-                {
-                    ErrorMessage = string.Format("Something went wrong and the routing operation failed.", Environment.NewLine, ex.ToString());
-                }
+                // Set turn by turn directions
+                DirectionManeuvers = Route.Routes.FirstOrDefault()?.DirectionManeuvers;
             }
+            catch (ArcGISWebException e)
+            {
+                ErrorMessage = e.ToString();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = string.Format("Something went wrong and the routing operation failed.", Environment.NewLine, ex.ToString());
+            }
+            
             IsBusy = false;
+        }
+
+        private int exceptionCounter = 0;
+        private async Task CreateRouteTask()
+        {
+            try
+            {
+                Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
+            }
+            catch (Exception ex)
+            {
+#if __IOS__
+                exceptionCounter++;
+                if (ex.Message == "403 (Forbidden)" && exceptionCounter <= 3)
+                {
+                    await CreateRouteTask();
+                    return;
+                }
+#endif
+                exceptionCounter = 0;
+                throw ex;
+            }
         }
     }
 }

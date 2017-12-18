@@ -2,7 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.BasemapPage"
+             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
              Title="Switch Basemap">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid>
         <!-- List of basemaps for the user to select from -->
         <ListView x:Name="BasemapListView" ItemsSource="{Binding Basemaps}" SelectedItem="{Binding SelectedBasemap}"
@@ -15,5 +21,13 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <!--Error message alert -->
+        <StackLayout IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
+                <Label Text="{Binding ErrorMessage}" Margin="10"/>
+                <Button Text="OK" Command="{Binding ClearErrorMessageCommand}" Margin="10" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
     </Grid>
 </ContentPage>
