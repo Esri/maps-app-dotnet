@@ -77,9 +77,15 @@
 
         <!-- Search Panel -->
         <BoxView Grid.Column="1" Grid.Row="0" Color="White" HorizontalOptions="FillAndExpand" Margin="0, 10, 10, 0"/>
-        <SearchBar Placeholder="Address or Place" Text="{Binding SearchText, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+        <SearchBar x:Name="AddressSearchBar" Placeholder="Address or Place" Text="{Binding SearchText, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
                        Grid.Column="1" Grid.Row="0" BindingContext="{StaticResource GeocodeViewModel}" SearchCommand="{Binding SearchCommand}"
-                       Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Margin="0,10,10,0"/>
+                       Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Margin="0,10,10,0">
+            <SearchBar.BackgroundColor>
+                <OnPlatform x:TypeArguments="Color"                                                                               
+                            iOS="White">
+                </OnPlatform>
+            </SearchBar.BackgroundColor>
+        </SearchBar>
         <ListView x:Name="SearchSuggestionsList" BindingContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}"
                       HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0">
             <ListView.ItemTemplate>

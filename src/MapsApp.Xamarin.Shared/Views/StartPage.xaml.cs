@@ -114,6 +114,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
             MapView.LocationDisplay.IsEnabled = true;
+
+#if __IOS__
+            // This is necessary because on iOS the SearchBar doesn't get unfocused automatically when a geocode result is selected
+            SearchSuggestionsList.ItemSelected += (s, e) =>
+            {
+                AddressSearchBar.Unfocus();
+            };
+#endif
         }
 
         /// <summary>
