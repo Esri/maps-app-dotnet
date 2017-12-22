@@ -18,7 +18,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NullToTextConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NullToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NumberToVisibilityConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Converters\SomeConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Configuration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AuthViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BasemapsViewModel.cs" />

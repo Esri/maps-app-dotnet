@@ -19,7 +19,6 @@ using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.Portal;
 using Esri.ArcGISRuntime.Security;
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -119,7 +118,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                //ErrorMessage = string.Format("Authentication failed. {0}, {1}", Environment.NewLine, ex.ToString());
+                ErrorMessage = string.Format("Authentication failed");
+                StackTrace = ex.ToString();
                 return null;
             }
         }
@@ -156,7 +156,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Authentication failed. {0}, {1}", Environment.NewLine, ex.ToString());
+                ErrorMessage = string.Format("Authentication failed");
+                StackTrace = ex.ToString();
             }
         }
     }

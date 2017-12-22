@@ -108,7 +108,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
                     // Login canceled: dismiss the OAuth login
                     if (_taskCompletionSource != null)
                     {
-                        _taskCompletionSource.TrySetCanceled();
+                        _taskCompletionSource = null;
                         activity.FinishActivity(99);
                     }
                 }

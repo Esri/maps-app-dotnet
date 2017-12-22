@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
+             xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls"
              x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.AuthUserItemsPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -21,10 +22,8 @@
 
         <!--Error message alert -->
         <StackLayout IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}">
-            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White">
-                <Label Text="{Binding ErrorMessage}" Margin="10"/>
-                <Button Text="OK" Command="{Binding ClearErrorMessageCommand}" Margin="10" HorizontalOptions="Center"/>
-            </StackLayout>
+            <controls:ErrorDialog ErrorMessage="{Binding ErrorMessage}" StackTrace="{Binding StackTrace}" 
+                                  IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
         </StackLayout>
         
     </Grid>

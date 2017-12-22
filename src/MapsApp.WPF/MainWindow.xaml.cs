@@ -59,13 +59,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 
                             break;
                         }
-
-                    case nameof(GeocodeViewModel.ErrorMessage):
-                        {
-                            // display error message from viewmodel
-                            MessageBox.Show(geocodeViewModel.ErrorMessage, "Error", MessageBoxButton.OK);
-                            break;
-                        }
                     case nameof(GeocodeViewModel.FromPlace):
                         {
                             routingViewModel.FromPlace = geocodeViewModel.FromPlace;

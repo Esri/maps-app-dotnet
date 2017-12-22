@@ -293,6 +293,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         private void SearchBar_Focused(object sender, FocusEventArgs e)
         {
             SearchSuggestionsList.IsVisible = true;
+            SettingsPanel.IsVisible = false;
         }
 
         /// <summary>

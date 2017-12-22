@@ -25,8 +25,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     /// </summary>
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        private ICommand _clearErrorMessageCommand;
         private string _errorMessage;
+        private string _stackTrace;
 
         public BaseViewModel()
         {
@@ -61,17 +61,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets the command to clear the ErrorMessage property 
+        /// Gets or sets the stack trace to be shown to the user
         /// </summary>
-        public ICommand ClearErrorMessageCommand
+        public string StackTrace
         {
-            get
+            get { return _stackTrace; }
+            set
             {
-                return _clearErrorMessageCommand ?? (_clearErrorMessageCommand = new DelegateCommand(
-                    (x) =>
-                    {
-                        ErrorMessage = null;
-                    }));
+                if (_stackTrace != value)
+                {
+                    _stackTrace = value;
+                    OnPropertyChanged();
+                }
             }
         }
     }

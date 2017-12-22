@@ -8,6 +8,7 @@
         xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
         xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
+        xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Controls"
         mc:Ignorable="d"
         Title="Maps App">
     <Window.Resources>
@@ -23,6 +24,7 @@
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
             <converters:NullToTextConverter x:Key="NullToTextConverter"/>
             <converters:DirectionManeuverToImagePathConverter x:Key="DirectionManeuverToImagePathConverter"/>
+            <controls:ErrorDialog x:Key="ErrorDialog"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -355,5 +357,15 @@
                              Foreground="#0079c1"/>
             </StackPanel>
         </Grid>
+
+        <!--Error message alerts-->
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <controls:ErrorDialog ErrorMessage="{Binding ErrorMessage, Mode=TwoWay}" StackTrace="{Binding StackTrace, Mode=TwoWay}" 
+                                  DataContext ="{Binding Source={StaticResource RoutingViewModel}}" Visibility="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+            <controls:ErrorDialog ErrorMessage="{Binding ErrorMessage, Mode=TwoWay}" StackTrace="{Binding StackTrace, Mode=TwoWay}" 
+                                  DataContext ="{Binding Source={StaticResource GeocodeViewModel}}" Visibility="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+            <controls:ErrorDialog ErrorMessage="{Binding ErrorMessage, Mode=TwoWay}" StackTrace="{Binding StackTrace, Mode=TwoWay}" 
+                                  DataContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}" Visibility="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+        </StackPanel>
     </Grid>
 </Window>

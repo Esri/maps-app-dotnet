@@ -69,7 +69,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Unable to load Geocoder. Searching may be affected. {0} {1}", Environment.NewLine, ex.ToString());
+                ErrorMessage = string.Format("Unable to load Geocoder. Searching may be affected.");
+                StackTrace = ex.ToString();
             }
         }
 
@@ -190,7 +191,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
             set
             {
-                if (_selectedSuggestion != value && value != null)
+                if ( value != null)
                 {
                     _selectedSuggestion = value;
 
@@ -463,7 +464,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Your search request could not be completed. {0} {1}", Environment.NewLine, ex.ToString());
+                ErrorMessage = string.Format("Your search request could not be completed");
+                StackTrace = ex.ToString();
             }
         }
 
@@ -479,7 +481,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Unable to perform reverse geocode request. {0} {1}", Environment.NewLine, ex.ToString());
+                ErrorMessage = string.Format("Unable to perform reverse geocode request");
+                StackTrace = ex.ToString();
             }
         }
     }

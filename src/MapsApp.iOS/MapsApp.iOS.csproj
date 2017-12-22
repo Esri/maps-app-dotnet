@@ -76,7 +76,8 @@
     <CodeAnalysisRuleSet />
     <BuildIpa>false</BuildIpa>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignProvision>iOS Team Provisioning Profile: com.esri.*</CodesignProvision>
+    <CodesignProvision>
+    </CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>

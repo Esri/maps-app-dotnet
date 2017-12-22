@@ -101,29 +101,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Loads the user specified portal instance
-        /// </summary>
-        private async Task LoadPortal()
-        {
-            try
-            {
-                if (AuthViewModel.Instance.AuthenticatedUser == null)
-                {
-                    await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorMessage = string.Format("Unable to connect to Portal. {0} {1}", Environment.NewLine, ex.ToString());
-            }
-        }
-
-        /// <summary>
         /// Loads user maps from Portal
         /// </summary>
         public async Task LoadUserItems()
         {
-            await LoadPortal();
             var portalUser = AuthViewModel.Instance.AuthenticatedUser?.Portal?.User as PortalUser;
 
             try
@@ -139,7 +120,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Unable to retrieve user maps. {0} {1}", Environment.NewLine, ex.ToString());
+                ErrorMessage = string.Format("Unable to retrieve user maps");
+                StackTrace = ex.ToString();
             }
         }
     }

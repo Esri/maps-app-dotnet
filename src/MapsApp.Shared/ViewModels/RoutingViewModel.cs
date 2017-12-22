@@ -159,6 +159,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     (x) =>
                     {
                         Route = null;
+                        FromPlace = null;
+                        ToPlace = null;
                     }));
             }
         }
@@ -188,7 +190,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    ErrorMessage = string.Format("Unable to load routing service. The routing functionality may not work. {0}, {1}", Environment.NewLine, ex.ToString());
+                    ErrorMessage = "Unable to load routing service. The routing functionality may not work.";
+                    StackTrace = ex.ToString();
+
                     IsBusy = false;
                     return;
                 }
@@ -215,11 +219,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (ArcGISWebException e)
             {
-                ErrorMessage = e.ToString();
+                ErrorMessage = "A web exception occured. Are you connected to the internet?";
+                StackTrace = e.ToString();
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Something went wrong and the routing operation failed.", Environment.NewLine, ex.ToString());
+                ErrorMessage = "Something went wrong and the routing operation failed.";
+                StackTrace = ex.ToString();
             }
             
             IsBusy = false;
@@ -242,6 +248,15 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     return;
                 }
 #endif
+                if (ex.Message.Contains("Token Required"))
+                {
+                    ErrorMessage = "Routing requires authentication";
+                    FromPlace = null;
+                    ToPlace = null;
+                    IsBusy = false;
+                    return;
+                }
+
                 exceptionCounter = 0;
                 throw ex;
             }

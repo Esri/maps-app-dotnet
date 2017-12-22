@@ -82,7 +82,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Unable to connect to Portal. {0} {1}", Environment.NewLine, ex.ToString());
+                ErrorMessage = string.Format("Unable to connect to Portal");
+                StackTrace = ex.ToString();
             }           
         }
 
@@ -98,7 +99,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Unable to retrieve basemaps. {0} {1}", Environment.NewLine, ex.ToString());
+                ErrorMessage = string.Format("Unable to retrieve basemaps");
+                StackTrace = ex.ToString();
             }
         }
     }
