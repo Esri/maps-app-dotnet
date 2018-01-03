@@ -30,9 +30,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 {
     public class LoginPageRenderer : PageRenderer, IOAuthAuthorizeHandler
     {
-        // Use a TaskCompletionSource to track the completion of the authorization
-        private TaskCompletionSource<IDictionary<string, string>> _taskCompletionSource;
-
         // ctor
         public LoginPageRenderer()
         {
@@ -44,15 +41,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
         // IOAuthAuthorizeHandler.AuthorizeAsync implementation
         public Task<IDictionary<string, string>> AuthorizeAsync(Uri serviceUri, Uri authorizeUri, Uri callbackUri)
         {
-            // If the TaskCompletionSource is not null, authorization is in progress
-            if (_taskCompletionSource != null)
-            {
-                // Allow only one authorization process at a time
-                throw new Exception();
-            }
-
             // Create a task completion source
-            _taskCompletionSource = new TaskCompletionSource<IDictionary<string, string>>();
+            var taskCompletionSource = new TaskCompletionSource<IDictionary<string, string>>();
 
             // Get the current Android Activity
             var activity = this.Context as Activity;
@@ -67,51 +57,53 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
             // Allow the user to cancel the OAuth attempt
             authenticator.AllowCancel = true;
 
+            // Hide errors 
+            authenticator.ShowErrors = false;
+
             // Define a handler for the OAuth2Authenticator.Completed event
             authenticator.Completed += (sender, authArgs) =>
             {
                 try
                 {
-                    // Check if the user is authenticated
-                    if (authArgs.IsAuthenticated)
+                    // Throw an exception if the user could not be authenticated
+                    if (!authArgs.IsAuthenticated)
                     {
-                        // If authorization was successful, get the user's account
-                        Account authenticatedAccount = authArgs.Account;
-
-                        // Set the result (Credential) for the TaskCompletionSource
-                        _taskCompletionSource.SetResult(authenticatedAccount.Properties);
+                        throw new Exception("Unable to authenticate user.");
                     }
+
+                    // If authorization was successful, get the user's account
+                    Account authenticatedAccount = authArgs.Account;
+
+                    // Set the result (Credential) for the TaskCompletionSource
+                    taskCompletionSource.SetResult(authenticatedAccount.Properties);
+                    
                 }
                 catch (Exception ex)
                 {
                     // If authentication failed, set the exception on the TaskCompletionSource
-                    _taskCompletionSource.SetException(ex);
+                    taskCompletionSource.TrySetException(ex);
                 }
                 finally
                 {
                     // Dismiss the OAuth login
-                    activity.FinishActivity(99);
-                    
+                    activity.FinishActivity(99);                
                 }
             };
-
+            
             // If an error was encountered when authenticating, set the exception on the TaskCompletionSource
             authenticator.Error += (sndr, errArgs) =>
             {
-                // If the user cancels, the Error event is raised but there is no exception ... best to check first
+                // If the user cancels, the Error event is raised but there is no exception 
                 if (errArgs.Exception != null)
                 {
-                    _taskCompletionSource.SetException(errArgs.Exception);
+                    taskCompletionSource.TrySetException(errArgs.Exception);
                 }
-                else
+                else if (errArgs.Message == "OAuth Error = The user denied your request." && taskCompletionSource.Task.Status != TaskStatus.Faulted)
                 {
-                    // Login canceled: dismiss the OAuth login
-                    if (_taskCompletionSource != null)
-                    {
-                        _taskCompletionSource = null;
-                        activity.FinishActivity(99);
-                    }
+                    authenticator.OnCancelled();
                 }
+
+                activity.FinishActivity(99);               
             };
 
             // Present the OAuth UI so the user can enter user name and password
@@ -119,7 +111,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
             activity.StartActivityForResult(intent, 99);
 
             // Return completion source task so the caller can await completion
-            return _taskCompletionSource.Task;
+            return taskCompletionSource.Task;
         }
         #endregion
     }

@@ -79,6 +79,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                         }
                         else
                         {
+                            // clear credentials
                             foreach (var credential in AuthenticationManager.Current.Credentials)
                             {
                                 AuthenticationManager.Current.RemoveCredential(credential);
@@ -90,9 +91,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         // ChallengeHandler function that will be called whenever access to a secured resource is attempted
-        public Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
+        public async Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
         {
-            return SignIntoPortal();
+            foreach (var credential in AuthenticationManager.Current.Credentials)
+            {
+                if (credential.ServiceUri == new Uri(Configuration.ArcGISOnlineUrl))
+                {
+                    return credential;
+                }
+            }
+
+            return await SignIntoPortal();
         }
 
         /// <summary>

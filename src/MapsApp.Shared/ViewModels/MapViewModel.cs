@@ -42,6 +42,19 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                 _lastLocation = l;
             };
+
+            // reset map if user is logged out
+            AuthViewModel.Instance.PropertyChanged += (s, l) =>
+            {
+                if (l.PropertyName == nameof(AuthViewModel.AuthenticatedUser) && AuthViewModel.Instance.AuthenticatedUser == null)
+                {
+                    // capture map's current extent
+                    Map = new Map(Basemap.CreateTopographicVector())
+                    {
+                        InitialViewpoint = AreaOfInterest
+                    };
+                }
+            };
         }
 
         /// <summary>

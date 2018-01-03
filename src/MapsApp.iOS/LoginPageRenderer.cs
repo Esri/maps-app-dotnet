@@ -30,10 +30,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
 {
     public class LoginPageRenderer : PageRenderer, IOAuthAuthorizeHandler
     {
-        // Use a TaskCompletionSource to track the completion of the authorization
-        private TaskCompletionSource<IDictionary<string, string>> _taskCompletionSource;
-
-        // ctor
+       // ctor
         public LoginPageRenderer()
         {
             // Set the OAuth authorization handler to this class (Implements IOAuthAuthorize interface)
@@ -43,15 +40,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
         #region IOAuthAuthorizationHandler implementation
         public Task<IDictionary<string, string>> AuthorizeAsync(Uri serviceUri, Uri authorizeUri, Uri callbackUri)
         {
-            // If the TaskCompletionSource is not null, authorization is in progress
-            if (_taskCompletionSource != null)
-            {
-                // Allow only one authorization process at a time
-                throw new Exception();
-            }
-
             // Create a task completion source
-            _taskCompletionSource = new TaskCompletionSource<IDictionary<string, string>>();
+            var taskCompletionSource = new TaskCompletionSource<IDictionary<string, string>>();
 
             // Create a new Xamarin.Auth.OAuth2Authenticator using the information passed in
             var authenticator = new OAuth2Authenticator(
@@ -62,6 +52,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
 
             // Allow the user to cancel the OAuth attempt
             authenticator.AllowCancel = true;
+
+            // hide error messages (Xamarin bug)
+            authenticator.ShowErrors = false;
 
             // Define a handler for the OAuth2Authenticator.Completed event
             authenticator.Completed += (sender, authArgs) =>
@@ -81,26 +74,29 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
                     Account authenticatedAccount = authArgs.Account;
 
                     // Set the result (Credential) for the TaskCompletionSource
-                    _taskCompletionSource.SetResult(authenticatedAccount.Properties);
+                    taskCompletionSource.SetResult(authenticatedAccount.Properties);
                 }
                 catch (Exception ex)
                 {
                     // If authentication failed, set the exception on the TaskCompletionSource
-                    _taskCompletionSource.SetException(ex);
+                    taskCompletionSource.SetException(ex);
                 }
             };
 
             // If an error was encountered when authenticating, set the exception on the TaskCompletionSource
             authenticator.Error += (sndr, errArgs) =>
             {
+                // Dismiss the OAuth UI when complete
+                this.DismissViewController(true, null);
+
                 // If the user cancels, the Error event is raised but there is no exception ... best to check first
                 if (errArgs.Exception != null)
                 {
-                    _taskCompletionSource.TrySetException(errArgs.Exception);
+                    taskCompletionSource.TrySetException(errArgs.Exception);
                 }
-                else
+                else if (errArgs.Message == "OAuth Error = The user denied your request." && taskCompletionSource.Task.Status != TaskStatus.Faulted)
                 {
-                    _taskCompletionSource.TrySetException(new Exception(errArgs.Message));
+                    authenticator.OnCancelled();
                 }
             };
 
@@ -111,7 +107,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
             });
 
             // Return completion source task so the caller can await completion
-            return _taskCompletionSource.Task;
+            return taskCompletionSource.Task;
         }
         #endregion
     }

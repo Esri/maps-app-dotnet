@@ -19,6 +19,7 @@ using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Http;
 using Esri.ArcGISRuntime.Mapping;
+using Esri.ArcGISRuntime.Security;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
 using System;
@@ -219,15 +220,35 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (ArcGISWebException e)
             {
+                // This is returned when user hits the Cancel button in iOS or the back arrow in Android
+                // It does not get caught in the LoginRenderer and needs to be handled here
+                if (e.Message.Contains("Token Required"))
+                {
+                    FromPlace = null;
+                    ToPlace = null;
+                    IsBusy = false;
+                    return;
+                }
+
                 ErrorMessage = "A web exception occured. Are you connected to the internet?";
                 StackTrace = e.ToString();
             }
             catch (Exception ex)
             {
+                //TODO: Remove workaround when iOS bug is fixed
+#if __IOS__
+                exceptionCounter++;
+                if (ex.Message == "403 (Forbidden)" && exceptionCounter <= 3)
+                {
+                    await GetRouteAsync();
+                    return;
+                }
+#endif
                 ErrorMessage = "Something went wrong and the routing operation failed.";
                 StackTrace = ex.ToString();
             }
-            
+
+            exceptionCounter = 0;
             IsBusy = false;
         }
 
@@ -240,24 +261,27 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
+                //TODO: Remove workaround when iOS bug is fixed
 #if __IOS__
                 exceptionCounter++;
                 if (ex.Message == "403 (Forbidden)" && exceptionCounter <= 3)
                 {
+                    var credential = AuthenticationManager.Current.FindCredential(new Uri(Configuration.RouteUrl));
                     await CreateRouteTask();
                     return;
                 }
 #endif
+                // This is returned when user hits the Cancel button in iOS or the back arrow in Android
+                // It does not get caught in the LoginRenderer and needs to be handled here
                 if (ex.Message.Contains("Token Required"))
                 {
-                    ErrorMessage = "Routing requires authentication";
                     FromPlace = null;
                     ToPlace = null;
                     IsBusy = false;
                     return;
                 }
 
-                exceptionCounter = 0;
+            exceptionCounter = 0;
                 throw ex;
             }
         }
