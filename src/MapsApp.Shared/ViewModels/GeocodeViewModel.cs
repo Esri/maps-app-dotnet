@@ -22,7 +22,6 @@ using Esri.ArcGISRuntime.Tasks.Geocoding;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -42,6 +41,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _selectedToSuggestion;
         private string _errorMessage;
         private MapPoint _reverseGeocodeInputLocation;
+        private MapPoint _userCurrentLocation;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
         private GeocodeResult _fromPlace;
@@ -78,7 +78,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Gets the geocoder for the map
         /// </summary>
-        internal LocatorTask Locator { get; set; }
+        private LocatorTask Locator { get; set; }
 
         /// <summary>
         /// Gets or sets the search text the user has entered
@@ -99,11 +99,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     if (!string.IsNullOrEmpty(_searchText))
                     {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                         // Call method to get location suggestions
-                        // Disable unawaited async warning
                         GetLocationSuggestionsAsync(_searchText);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     }
                     else
                     {
@@ -132,11 +129,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     if (!string.IsNullOrEmpty(_fromSearchText))
                     {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                         // Call method to get location suggestions
-                        // Disable unawaited async warning
                         GetLocationSuggestionsAsync(_fromSearchText);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     }
                     else
                     {
@@ -166,11 +160,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     if (!string.IsNullOrEmpty(_toSearchText))
                     {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                         // Call method to get location suggestions
-                        // Disable unawaited async warning
                         GetLocationSuggestionsAsync(_toSearchText);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     }
                     else
                     {
@@ -196,13 +187,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 {
                     _selectedSuggestion = value;
 
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     // Call method to search location
-                    // Disable unawaited async warning
-                    GetSearchedLocationAsync(_selectedSuggestion, nameof(Place));
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    GetSearchedLocationAsync(_selectedSuggestion).ContinueWith((t) =>
+                    {
+                        Place = t.Result;
+                    });
                     OnPropertyChanged();
-
                 }
             }
         }
@@ -223,13 +213,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 {
                     _selectedFromSuggestion = value;
 
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     // Call method to search location
-                    // Disable unawaited async warning
-                    GetSearchedLocationAsync(_selectedFromSuggestion, nameof(FromPlace));
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    GetSearchedLocationAsync(_selectedFromSuggestion).ContinueWith((t) =>
+                    {
+                        Place = t.Result;
+                    });
                     OnPropertyChanged();
-
                 }
             }
         }
@@ -250,13 +239,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 {
                     _selectedToSuggestion = value;
 
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     // Call method to search location
-                    // Disable unawaited async warning
-                    GetSearchedLocationAsync(_selectedToSuggestion, nameof(ToPlace));
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    GetSearchedLocationAsync(_selectedToSuggestion).ContinueWith((t) =>
+                    {
+                        ToPlace = t.Result;
+                    });
                     OnPropertyChanged();
-
                 }
             }
         }
@@ -370,6 +358,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the map point used to reverse geocode user's location
+        /// </summary>
         public MapPoint ReverseGeocodeInputLocation
         {
             get { return _reverseGeocodeInputLocation; }
@@ -378,11 +369,24 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_reverseGeocodeInputLocation != value)
                 {
                     _reverseGeocodeInputLocation = value;
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-                    GetReverseGeocodedLocationAsync(_reverseGeocodeInputLocation);
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                    GetReverseGeocodedLocationAsync(_reverseGeocodeInputLocation, false);
                     OnPropertyChanged();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the user's current GPS location
+        /// This is not a live value and is passed from the view only when user wants to route
+        /// </summary>
+        public MapPoint UserCurrentLocation
+        {
+            get { return _userCurrentLocation; }
+            set
+            {
+                _userCurrentLocation = value;
+                GetReverseGeocodedLocationAsync(_userCurrentLocation, true);
+                OnPropertyChanged();
             }
         }
 
@@ -394,9 +398,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             get
             {
                 return _searchCommand ?? (_searchCommand = new DelegateCommand(
-                    async (x) =>
+                    (x) =>
                     {
-                        await GetSearchedLocationAsync((string)x, nameof(Place));
+                        GetSearchedLocationAsync((string)x).ContinueWith((t) =>
+                        {
+                            Place = t.Result;
+                        }) ;
                     }));
             }
         }
@@ -452,8 +459,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         /// <param name="_searchString">User input</param>
         /// <returns>Location that best matches the search string</returns>
-        public async Task GetSearchedLocationAsync(string geocodeAddress, string sender)
+        private async Task<GeocodeResult> GetSearchedLocationAsync(string geocodeAddress)
         {
+            // clear the text in the search box
             SearchText = string.Empty;
 
             try
@@ -466,33 +474,36 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                         MaxResults = 1,
                         PreferredSearchLocation = AreaOfInterest?.TargetGeometry as MapPoint,
                     };
-                    var matches = await Locator.GeocodeAsync(geocodeAddress, geocodeParameters);
 
-                    // set it into the appropriate property
-#if NETFX_CORE
-                    this.GetType().GetTypeInfo().GetDeclaredProperty(sender).SetValue(this, matches.FirstOrDefault());
-#else
-                    this.GetType().GetProperty(sender).SetValue(this, matches.FirstOrDefault());
-#endif
+                    // return the first match
+                    var matches = await Locator.GeocodeAsync(geocodeAddress, geocodeParameters);
+                    return matches.FirstOrDefault();
                 }
                 else
                 {
                     ErrorMessage = "Unable to load geocoder";
+                    return null;
                 }
             }
             catch (Exception ex)
             {
                 ErrorMessage = ex.ToString();
+                return null;
             }
         }
 
         /// <summary>
         /// Use the locator to perform a reverse geocode operation, returning the place that the user tapped on inside the map
+        /// If the user's current location is passed, then set that as the FromPlace used for routing instead
         /// </summary>
-        private async Task GetReverseGeocodedLocationAsync(MapPoint location)
+        private async Task GetReverseGeocodedLocationAsync(MapPoint location, bool isCurrentLocation)
         {
             var matches = await Locator.ReverseGeocodeAsync(location);
-            Place = matches.First();
+            if (isCurrentLocation)
+                FromPlace = matches.First();
+            else
+                Place = matches.First();
         }
+
     }
 }

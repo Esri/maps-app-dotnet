@@ -16,6 +16,7 @@
 
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
+using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
@@ -28,11 +29,11 @@ using System.Windows.Input;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
-    class RoutingViewModel : BaseViewModel
+    class RouteViewModel : BaseViewModel
     {
         private bool _isBusy;
-        private GeocodeResult _fromPlace;
-        private GeocodeResult _toPlace;
+        private MapPoint _fromPlace;
+        private MapPoint _toPlace;
         private RouteResult _route;
         private Viewpoint _areaOfInterest;
         private ICommand _clearRouteCommand;
@@ -54,9 +55,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the end location for the route
+        /// Gets or sets the start location for the route
         /// </summary>
-        public GeocodeResult FromPlace
+        public MapPoint FromPlace
         {
             get { return _fromPlace; }
             set
@@ -73,7 +74,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Gets or sets the end location for the route
         /// </summary>
-        public GeocodeResult ToPlace
+        public MapPoint ToPlace
         {
             get { return _toPlace; }
             set
@@ -124,7 +125,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets the command to cancel the location search and clear the pin off the map
+        /// Gets the command to cancel the route and clear the pins and route off the map
         /// </summary>
         public ICommand ClearRouteCommand
         {
@@ -172,8 +173,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                 try
                 {
-                    routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
-                                                            new Stop(ToPlace.RouteLocation) });
+                    routeParams.SetStops(new List<Stop>() { new Stop(FromPlace),
+                                                            new Stop(ToPlace) });
 
                     Route = await Router.SolveRouteAsync(routeParams);
 

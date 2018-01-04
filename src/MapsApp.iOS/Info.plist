@@ -26,7 +26,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>MapsApp</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.esri.MapsApp</string>
+	<string>com.esri.arcgisruntime-example-apps.MapsApp</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>

@@ -19,6 +19,7 @@ using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using System.Windows;
 using System.Linq;
+using System;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 {
@@ -35,27 +36,30 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             InitializeComponent();
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
-            var routingViewModel = Resources["RoutingViewModel"] as RoutingViewModel;
+            var routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
                 switch (e.PropertyName)
                 {
                     case nameof(GeocodeViewModel.Place):
                         {
-                            var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
-                            graphicsOverlay?.Graphics.Clear();
-
-                            var place = geocodeViewModel.Place;
-
-                            if (place == null)
+                            Application.Current.Dispatcher.Invoke(new Action(() =>
                             {
-                                return;
-                            }
+                                var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
+                                graphicsOverlay?.Graphics.Clear();
 
-                            // create map pin and add it to the map
-                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
-                            var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
-                            graphicsOverlay?.Graphics.Add(graphic);
+                                var place = geocodeViewModel.Place;
+
+                                if (place == null)
+                                {
+                                    return;
+                                }
+
+                                // create map pin and add it to the map
+                                var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
+                                var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
+                                graphicsOverlay?.Graphics.Add(graphic);
+                            }));
 
                             break;
                         }
@@ -68,12 +72,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                         }
                     case nameof(GeocodeViewModel.FromPlace):
                         {
-                            routingViewModel.FromPlace = geocodeViewModel.FromPlace;
+                            routeViewModel.FromPlace = geocodeViewModel.FromPlace.RouteLocation;
                             break;
                         }
                     case nameof(GeocodeViewModel.ToPlace):
                         {
-                            routingViewModel.ToPlace = geocodeViewModel.ToPlace;
+                            routeViewModel.ToPlace = geocodeViewModel.ToPlace.RouteLocation;
                             break;
                         }
                 }
@@ -97,7 +101,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 
                             // Set the viewpoint of the new map to be the same as the old map
                             // Otherwise map is being reset to the world view
-                            var currentViewpoint = mapViewModel.AreaOfInterest;
+                            var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
                             newMap.InitialViewpoint = currentViewpoint;
 
 							// Load the new map
@@ -119,8 +123,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                             var newMap = new Map(userItemsViewModel.SelectedUserItem);
 
                             // Set the viewpoint of the new map to be the same as the old map
-                            // Otherwise map is being reset to the world view
-                            var currentViewpoint = mapViewModel.AreaOfInterest;
+                            // Otherwise map is being reset to the default extent of the web map
+                            var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
                             newMap.InitialViewpoint = currentViewpoint;
 
                             // Load the new map
@@ -131,29 +135,32 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 }
             };
 
-            routingViewModel.PropertyChanged += async (s, e) =>
+            routeViewModel.PropertyChanged += async (s, e) =>
             {
                 switch (e.PropertyName)
                 {
-                    case nameof(RoutingViewModel.Route):
+                    case nameof(RouteViewModel.Route):
                         {
-                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
-                            graphicsOverlay?.Graphics?.Clear();
+                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];                           
 
-                            if (routingViewModel.FromPlace == null || routingViewModel.ToPlace == null || routingViewModel.Route == null)
+                            if (routeViewModel.FromPlace == null || routeViewModel.ToPlace == null || 
+                            routeViewModel.Route == null || graphicsOverlay == null)
                             {
                                 return;
                             }
 
+                            // clear existing graphics
+                            graphicsOverlay?.Graphics?.Clear();
+
                             // Add route to map
-                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
+                            var routeGraphic = new Graphic(routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
                             graphicsOverlay?.Graphics.Add(routeGraphic);
 
                             // Add start and end locations to the map
                             var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Start72.png")));
                             var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
-                            var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, fromMapPin);
-                            var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, toMapPin);
+                            var fromGraphic = new Graphic(routeViewModel.FromPlace, fromMapPin);
+                            var toGraphic = new Graphic(routeViewModel.ToPlace, toMapPin);
                             graphicsOverlay?.Graphics.Add(fromGraphic);
                             graphicsOverlay?.Graphics.Add(toGraphic);
 
@@ -172,112 +179,19 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         }
 
         /// <summary>
-        /// Turns on basemap switcher when button is pushed
+        /// Display the routing panel when user taps the Route button
         /// </summary>
-        private void OpenBasemapSwitcher(object sender, RoutedEventArgs e)
-        {
-            BasemapSwitcher.Visibility = Visibility.Visible;
-        }
-
-        /// <summary>
-        /// Turns off basemap switcher whwn user hits the X 
-        /// </summary>
-        private void HideBasemapSwitcher(object sender, RoutedEventArgs e)
-        {
-            BasemapSwitcher.Visibility = Visibility.Collapsed;
-        }
-
-        /// <summary>
-        /// Closes the settings panel when the user hits the x
-        /// </summary>
-        private void ExitSettings(object sender, RoutedEventArgs e)
-        {
-            SettingsPanel.Visibility = Visibility.Collapsed;
-        }
-
-        /// <summary>
-        /// Opens the settings panel when the user hits the menu button
-        /// </summary>
-        private void OpenSettings(object sender, RoutedEventArgs e)
-        {
-            SettingsPanel.Visibility = Visibility.Visible;
-        }
-
-        /// <summary>
-        /// Turns on user items switcher when button is pushed
-        /// </summary>
-        private void OpenUserItemSwitcher(object sender, RoutedEventArgs e)
-        {
-            UserItemsSwitcher.Visibility = Visibility.Visible;
-        }
-
-        /// <summary>
-        /// Turns off user items switcher whwn user hits the X 
-        /// </summary>
-        private void HideUserItemSwitcher(object sender, RoutedEventArgs e)
-        {
-            UserItemsSwitcher.Visibility = Visibility.Collapsed;
-        }
-
-        private async void ShowRoutingPanel(object sender, RoutedEventArgs e)
+        private void ShowRoutingPanel(object sender, RoutedEventArgs e)
         {
             var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
 
             // Set the to and from locations and text boxes
-            var matches = await geocodeViewModel.Locator.ReverseGeocodeAsync(MapView.LocationDisplay.Location.Position);
-            geocodeViewModel.FromPlace = matches.First();
+            // the from location will be the current user location 
+            geocodeViewModel.UserCurrentLocation = MapView.LocationDisplay.Location.Position;
             geocodeViewModel.ToPlace = geocodeViewModel.Place;
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;
-        }
-
-        /// <summary>
-        /// Display suggestions only when the text box is in focus
-        /// </summary>
-        private void FromLocationTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            FromLocationSuggestionsList.Visibility = Visibility.Visible;
-        }
-
-        /// <summary>
-        /// Hide suggestions when text box loses focus
-        /// </summary>
-        private void FromLocationTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            FromLocationSuggestionsList.Visibility = Visibility.Collapsed;
-        }
-
-        /// <summary>
-        /// Display suggestions only when the text box is in focus
-        /// </summary>
-        private void SearchTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            SearchSuggestionsList.Visibility = Visibility.Visible;
-        }
-
-        /// <summary>
-        /// Hide suggestions when text box loses focus
-        /// </summary>
-        private void SearchTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            SearchSuggestionsList.Visibility = Visibility.Collapsed;
-        }
-
-        /// <summary>
-        /// Display suggestions only when the text box is in focus
-        /// </summary>
-        private void ToLocationTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            ToLocationSuggestionsList.Visibility = Visibility.Visible;
-        }
-
-        /// <summary>
-        /// Hide suggestions when text box loses focus
-        /// </summary>
-        private void ToLocationTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            ToLocationSuggestionsList.Visibility = Visibility.Collapsed;
         }
     }
 }

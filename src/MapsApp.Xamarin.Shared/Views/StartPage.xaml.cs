@@ -45,7 +45,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             PictureMarkerSymbol startMapPin = CreateMapPin("start.png");
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
-            var routingViewModel = Resources["RoutingViewModel"] as RoutingViewModel;
+            var routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
                 switch (e.PropertyName)
@@ -75,38 +75,41 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                         }
                     case nameof(GeocodeViewModel.FromPlace):
                         {
-                            routingViewModel.FromPlace = geocodeViewModel.FromPlace;
+                            routeViewModel.FromPlace = geocodeViewModel.FromPlace.RouteLocation;
                             break;
                         }
                     case nameof(GeocodeViewModel.ToPlace):
                         {
-                            routingViewModel.ToPlace = geocodeViewModel.ToPlace;
+                            routeViewModel.ToPlace = geocodeViewModel.ToPlace.RouteLocation;
                             break;
                         }
                 }
             };
 
-            routingViewModel.PropertyChanged += (s, e) =>
+            routeViewModel.PropertyChanged += (s, e) =>
             {
                 switch (e.PropertyName)
                 {
-                    case nameof(RoutingViewModel.Route):
+                    case nameof(RouteViewModel.Route):
                         {
                             var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
-                            graphicsOverlay?.Graphics?.Clear();
 
-                            if (routingViewModel.FromPlace == null || routingViewModel.ToPlace == null || routingViewModel.Route == null)
+                            if (routeViewModel.FromPlace == null || routeViewModel.ToPlace == null ||
+                            routeViewModel.Route == null || graphicsOverlay == null)
                             {
                                 return;
                             }
 
+                            // clear existing graphics
+                            graphicsOverlay?.Graphics?.Clear();
+
                             // Add route to map
-                            var routeGraphic = new Graphic(routingViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
+                            var routeGraphic = new Graphic(routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
                             graphicsOverlay?.Graphics.Add(routeGraphic);
 
                             // Add start and end locations to the map
-                            var fromGraphic = new Graphic(routingViewModel.FromPlace.DisplayLocation, startMapPin);
-                            var toGraphic = new Graphic(routingViewModel.ToPlace.DisplayLocation, endMapPin);
+                            var fromGraphic = new Graphic(routeViewModel.FromPlace, startMapPin);
+                            var toGraphic = new Graphic(routeViewModel.ToPlace, endMapPin);
                             graphicsOverlay?.Graphics.Add(fromGraphic);
                             graphicsOverlay?.Graphics.Add(toGraphic);
 
@@ -140,7 +143,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 // Set the viewpoint of the new map to be the same as the old map
                                 // Otherwise map is being reset to the world view
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
-                                var currentViewpoint = mapViewModel.AreaOfInterest;
+                                var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
                                 var newMap = new Map(_basemapViewModel.SelectedBasemap)
                                 {
                                     InitialViewpoint = currentViewpoint
@@ -241,7 +244,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 // Set the viewpoint of the new map to be the same as the old map
                                 // Otherwise map is being reset to the world view
                                 var mapViewModel = Resources["MapViewModel"] as MapViewModel;
-                                var currentViewpoint = mapViewModel.AreaOfInterest;
+                                var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
                                 var newMap = new Map(_userItemsViewModel.SelectedUserItem)
                                 {
                                     InitialViewpoint = currentViewpoint
@@ -259,13 +262,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });
         }
 
-        private async void ShowRoutingPanel(object sender, EventArgs e)
+        /// <summary>
+        /// Display the routing panel when user taps the Route button
+        /// </summary>
+        private void ShowRoutingPanel(object sender, EventArgs e)
         {
             var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
 
             // Set the to and from locations and text boxes
-            var matches = await geocodeViewModel.Locator.ReverseGeocodeAsync(MapView.LocationDisplay.Location.Position);
-            geocodeViewModel.FromPlace = matches.First();
+            // the from location will be the current user location 
+            geocodeViewModel.UserCurrentLocation = MapView.LocationDisplay.Location.Position;
             geocodeViewModel.ToPlace = geocodeViewModel.Place;
 
             // clear the Place to hide the search result

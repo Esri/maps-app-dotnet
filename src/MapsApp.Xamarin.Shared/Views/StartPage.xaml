@@ -18,7 +18,7 @@
         <ResourceDictionary>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
-            <viewModels:RoutingViewModel x:Key="RoutingViewModel"/>
+            <viewModels:RouteViewModel x:Key="RouteViewModel"/>
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
@@ -59,7 +59,7 @@
                 <utils:ViewpointControllerCollection>
                     <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}"/>
                     <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
-                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource RoutingViewModel}}"/>
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource RouteViewModel}}"/>
                 </utils:ViewpointControllerCollection>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
             <utils:GeoViewExtensions.HoldingLocationController>
@@ -94,7 +94,7 @@
         </ListView>
 
         <!-- Routing Panel -->
-        <StackLayout Orientation="Vertical" IsVisible="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RoutingViewModel}}" 
+        <StackLayout Orientation="Vertical" IsVisible="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
                      BindingContext="{StaticResource GeocodeViewModel}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White" Margin="10, 10, 10, 0">
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
@@ -113,7 +113,7 @@
                 </StackLayout>
                 <Image Source="close.png" VerticalOptions="Start" HorizontalOptions="End" Margin="5">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClearRouteCommand, Source={StaticResource RoutingViewModel}}"/>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClearRouteCommand, Source={StaticResource RouteViewModel}}"/>
                     </Image.GestureRecognizers>
                 </Image>
             </StackLayout>
@@ -224,7 +224,7 @@
         </StackLayout>
 
         <!-- Activity indicator for long running operations -->
-        <StackLayout Opacity="0.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" IsVisible="{Binding IsBusy, Source={StaticResource RoutingViewModel}}">
+        <StackLayout Opacity="0.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" IsVisible="{Binding IsBusy, Source={StaticResource RouteViewModel}}">
             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                 <Label Text="Requesting Route" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Medium"/>
                 <ActivityIndicator x:Name="AppActivityIndicator" IsRunning="True">
