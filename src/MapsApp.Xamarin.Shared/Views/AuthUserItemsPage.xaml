@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.AuthUserItemsPage">
+    <Grid>
+        <!-- List of user items for the user to select from -->
+        <ListView x:Name="BasemapListView" ItemsSource="{Binding UserItems, Mode=TwoWay}" SelectedItem="{Binding SelectedUserItem}"
+            CachingStrategy="RecycleElement" ItemTapped="ListView_ItemTapped" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell ImageSource="{Binding ThumbnailUri}" Text="{Binding Title}" Detail="{Binding Snippet}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

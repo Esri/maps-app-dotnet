@@ -130,7 +130,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls
         /// <summary>
         /// The suggestion height request property.
         /// </summary>
-        public static readonly BindableProperty SuggestionsHeightRequestProperty = BindableProperty.Create<AutoCompleteView, double>(p => p.SuggestionsHeightRequest, 250, BindingMode.TwoWay, null, SuggestionHeightRequestChanged);
+        public static readonly BindableProperty SuggestionsHeightRequestProperty = BindableProperty.Create<AutoCompleteView, double>(p => p.SuggestionsHeightRequest, 400, BindingMode.TwoWay, null, SuggestionHeightRequestChanged);
 
         /// <summary>
         /// The suggestions property.
@@ -193,6 +193,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls
         {
             _availableSuggestions = new ObservableCollection<object>();
             _stkBase = new StackLayout();
+
             var innerLayout = new StackLayout();
             _entText = new SearchBar
             {
@@ -210,7 +211,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls
 
             _lstSuggestions = new ListView
             {
-                HeightRequest = SuggestionsHeightRequest,
+                HeightRequest = SuggestionsHeightRequest,               
                 HasUnevenRows = true
             };
 
@@ -250,6 +251,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls
                     SearchCommand.Execute(Text);
                 }
             };
+
             _lstSuggestions.ItemSelected += (s, e) =>
             {
                 // Hide and clear list of suggestions
@@ -862,7 +864,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls
         /// <param name="show">if set to <c>true</c> [show].</param>
         private void ShowHideListbox(bool show)
         {
-            _lstSuggestions.IsVisible = show;
+            if (show && !_entText.IsFocused)
+                _lstSuggestions.IsVisible = false;
+            else
+                _lstSuggestions.IsVisible = show;
         }
     }
 }

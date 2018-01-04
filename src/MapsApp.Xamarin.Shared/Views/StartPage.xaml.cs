@@ -24,12 +24,14 @@ using System.IO;
 using System.Reflection;
 using Xamarin.Forms;
 using Esri.ArcGISRuntime.Mapping;
+using System.Linq;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
     public partial class StartPage : ContentPage
     {
-        private BasemapsViewModel basemapViewModel;
+        private BasemapsViewModel _basemapViewModel;
+        private UserItemsViewModel _userItemsViewModel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StartPage"/> class.
@@ -39,9 +41,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             InitializeComponent();
             InitializeBasemapSwitcher();
 
-            PictureMarkerSymbol mapPin = CreateMapPin();
+            PictureMarkerSymbol endMapPin = CreateMapPin("end.png");
+            PictureMarkerSymbol startMapPin = CreateMapPin("start.png");
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            var routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
                 switch (e.PropertyName)
@@ -57,7 +61,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                                 return;
                             }
 
-                            var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
+                            var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, endMapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
 
                             break;
@@ -67,6 +71,48 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                         {
                             // display error message from viewmodel
                             DisplayAlert("Error", geocodeViewModel.ErrorMessage, "OK");
+                            break;
+                        }
+                    case nameof(GeocodeViewModel.FromPlace):
+                        {
+                            routeViewModel.FromPlace = geocodeViewModel.FromPlace.RouteLocation;
+                            break;
+                        }
+                    case nameof(GeocodeViewModel.ToPlace):
+                        {
+                            routeViewModel.ToPlace = geocodeViewModel.ToPlace.RouteLocation;
+                            break;
+                        }
+                }
+            };
+
+            routeViewModel.PropertyChanged += (s, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(RouteViewModel.Route):
+                        {
+                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
+
+                            if (routeViewModel.FromPlace == null || routeViewModel.ToPlace == null ||
+                            routeViewModel.Route == null || graphicsOverlay == null)
+                            {
+                                return;
+                            }
+
+                            // clear existing graphics
+                            graphicsOverlay?.Graphics?.Clear();
+
+                            // Add route to map
+                            var routeGraphic = new Graphic(routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
+                            graphicsOverlay?.Graphics.Add(routeGraphic);
+
+                            // Add start and end locations to the map
+                            var fromGraphic = new Graphic(routeViewModel.FromPlace, startMapPin);
+                            var toGraphic = new Graphic(routeViewModel.ToPlace, endMapPin);
+                            graphicsOverlay?.Graphics.Add(fromGraphic);
+                            graphicsOverlay?.Graphics.Add(toGraphic);
+
                             break;
                         }
                 }
@@ -79,21 +125,33 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             MapView.LocationDisplay.IsEnabled = true;
         }
 
+        /// <summary>
+        /// Initialize basemaps and basemap switching functionality
+        /// </summary>
         private void InitializeBasemapSwitcher()
         {
-            if (basemapViewModel == null)
+            if (_basemapViewModel == null)
             {
-                basemapViewModel = new BasemapsViewModel();
+                _basemapViewModel = new BasemapsViewModel();
                 // Change map when user selects a new basemap
-                basemapViewModel.PropertyChanged += async (s, ea) =>
+                _basemapViewModel.PropertyChanged += async (s, ea) =>
                 {
                     switch (ea.PropertyName)
                     {
                         case nameof(BasemapsViewModel.SelectedBasemap):
                             {
-                                var newMap = new Map(basemapViewModel.SelectedBasemap);
+                                // Set the viewpoint of the new map to be the same as the old map
+                                // Otherwise map is being reset to the world view
+                                var mapViewModel = Resources["MapViewModel"] as MapViewModel;
+                                var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
+                                var newMap = new Map(_basemapViewModel.SelectedBasemap)
+                                {
+                                    InitialViewpoint = currentViewpoint
+                                };
+
+                                //Load new map
                                 await newMap.LoadAsync();
-                                (Resources["MapViewModel"] as MapViewModel).Map = newMap;
+                                mapViewModel.Map = newMap;
                                 break;
                             }
                     }
@@ -106,13 +164,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         /// </summary>
         private async void ResetMapRotation(object sender, EventArgs e)
         {
-            await MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
+            await MapView.SetViewpointRotationAsync(0);
         }
 
         /// <summary>
         /// Create map pin based on platform
         /// </summary>
-        private PictureMarkerSymbol CreateMapPin()
+        private PictureMarkerSymbol CreateMapPin(string imageName)
         {
             try
             {
@@ -122,13 +180,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                 switch (Device.RuntimePlatform)
                 {
                     case Device.iOS:
-                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.End72.png";
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images." + imageName;
                         break;
                     case Device.Android:
-                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.End72.png";
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images." + imageName;
                         break;
-                    case Device.Windows:
-                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.End72.png";
+                    case Device.UWP:
+                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images." + imageName;
                         break;
                 }
 
@@ -156,7 +214,116 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         // Load basemap page, reuse viewmodel so the initial loading happens only once
         private async void LoadBasemapControl(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BasemapPage { BindingContext = basemapViewModel });
+            await Navigation.PushAsync(new BasemapPage { BindingContext = _basemapViewModel });
+        }
+
+        /// <summary>
+        /// Opens the settings panel when it is closed
+        /// Closes the settings panel when it is open
+        /// </summary>
+        private void OpenCloseSettings(object sender, EventArgs e)
+        {
+            SettingsPanel.IsVisible = (!SettingsPanel.IsVisible);
+        }
+
+        /// <summary>
+        /// Loads the AuthUserItemsPage and changes map when user selects an item
+        /// </summary>
+        private async void LoadUserItems(object sender, EventArgs e)
+        {
+            _userItemsViewModel = new UserItemsViewModel();
+            await _userItemsViewModel.LoadUserItems();
+
+                // Change map when user selects a new user item
+                _userItemsViewModel.PropertyChanged += async (s, ea) =>
+                {
+                    switch (ea.PropertyName)
+                    {
+                        case nameof(UserItemsViewModel.SelectedUserItem):
+                            {
+                                // Set the viewpoint of the new map to be the same as the old map
+                                // Otherwise map is being reset to the world view
+                                var mapViewModel = Resources["MapViewModel"] as MapViewModel;
+                                var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
+                                var newMap = new Map(_userItemsViewModel.SelectedUserItem)
+                                {
+                                    InitialViewpoint = currentViewpoint
+                                };
+
+                                //Load new map
+                                await newMap.LoadAsync();
+                                mapViewModel.Map = newMap;
+                                break;
+                            }
+                    }
+                };
+
+            // Load the AuthUserItemsPage
+            await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });
+        }
+
+        /// <summary>
+        /// Display the routing panel when user taps the Route button
+        /// </summary>
+        private void ShowRoutingPanel(object sender, EventArgs e)
+        {
+            var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
+
+            // Set the to and from locations and text boxes
+            // the from location will be the current user location 
+            geocodeViewModel.UserCurrentLocation = MapView.LocationDisplay.Location.Position;
+            geocodeViewModel.ToPlace = geocodeViewModel.Place;
+
+            // clear the Place to hide the search result
+            geocodeViewModel.Place = null;
+        }
+
+        /// <summary>
+        /// Handles showing the suggestions listview when control has focus
+        /// </summary>
+        private void SearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            SearchSuggestionsList.IsVisible = true;
+        }
+
+        /// <summary>
+        /// Handles hiding the suggestions listview when control loses focus
+        /// </summary>
+        private void SearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            SearchSuggestionsList.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Handles showing the suggestions listview when control has focus
+        /// </summary>
+        private void FromLocationSearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            FromLocationSuggestionsList.IsVisible = true;
+        }
+
+        /// <summary>
+        /// Handles hiding the suggestions listview when control loses focus
+        /// </summary>
+        private void FromLocationSearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            FromLocationSuggestionsList.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Handles showing the suggestions listview when control has focus
+        /// </summary>
+        private void ToLocationSearchBar_Focused(object sender, FocusEventArgs e)
+        {
+            ToLocationSuggestionsList.IsVisible = true;
+        }
+
+        /// <summary>
+        /// Handles hiding the suggestions listview when control loses focus
+        /// </summary>
+        private void ToLocationSearchBar_Unfocused(object sender, FocusEventArgs e)
+        {
+            ToLocationSuggestionsList.IsVisible = false;
         }
     }
 }

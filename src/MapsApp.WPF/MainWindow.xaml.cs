@@ -18,6 +18,8 @@ using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
 using System.Windows;
+using System.Linq;
+using System;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 {
@@ -26,7 +28,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
         /// </summary>
@@ -35,26 +36,30 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             InitializeComponent();
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            var routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
                 switch (e.PropertyName)
                 {
                     case nameof(GeocodeViewModel.Place):
                         {
-                            var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
-                            graphicsOverlay?.Graphics.Clear();
-
-                            var place = geocodeViewModel.Place;
-
-                            if (place == null)
+                            Application.Current.Dispatcher.Invoke(new Action(() =>
                             {
-                                return;
-                            }
+                                var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
+                                graphicsOverlay?.Graphics.Clear();
 
-                            // create map pin and add it to the map
-                            var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
-                            var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
-                            graphicsOverlay?.Graphics.Add(graphic);
+                                var place = geocodeViewModel.Place;
+
+                                if (place == null)
+                                {
+                                    return;
+                                }
+
+                                // create map pin and add it to the map
+                                var mapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
+                                var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, mapPin);
+                                graphicsOverlay?.Graphics.Add(graphic);
+                            }));
 
                             break;
                         }
@@ -63,6 +68,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                         {
                             // display error message from viewmodel
                             MessageBox.Show(geocodeViewModel.ErrorMessage, "Error", MessageBoxButton.OK);
+                            break;
+                        }
+                    case nameof(GeocodeViewModel.FromPlace):
+                        {
+                            routeViewModel.FromPlace = geocodeViewModel.FromPlace.RouteLocation;
+                            break;
+                        }
+                    case nameof(GeocodeViewModel.ToPlace):
+                        {
+                            routeViewModel.ToPlace = geocodeViewModel.ToPlace.RouteLocation;
                             break;
                         }
                 }
@@ -82,9 +97,73 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 {
                     case nameof(BasemapsViewModel.SelectedBasemap):
                         {
-                            var newMap = new Map(basemapViewModel.SelectedBasemap);
+							var newMap = new Map(basemapViewModel.SelectedBasemap);
+
+                            // Set the viewpoint of the new map to be the same as the old map
+                            // Otherwise map is being reset to the world view
+                            var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
+                            newMap.InitialViewpoint = currentViewpoint;
+
+							// Load the new map
                             await newMap.LoadAsync();
                             mapViewModel.Map = newMap;
+                            break;
+                        }
+                }
+            };
+
+            // Change user item when user selects a new one
+            var userItemsViewModel = Resources["UserItemsViewModel"] as UserItemsViewModel;
+            userItemsViewModel.PropertyChanged += async (s, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(UserItemsViewModel.SelectedUserItem):
+                        {
+                            var newMap = new Map(userItemsViewModel.SelectedUserItem);
+
+                            // Set the viewpoint of the new map to be the same as the old map
+                            // Otherwise map is being reset to the default extent of the web map
+                            var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
+                            newMap.InitialViewpoint = currentViewpoint;
+
+                            // Load the new map
+                            await newMap.LoadAsync();
+                            mapViewModel.Map = newMap;
+                            break;
+                        }
+                }
+            };
+
+            routeViewModel.PropertyChanged += async (s, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(RouteViewModel.Route):
+                        {
+                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];                           
+
+                            if (routeViewModel.FromPlace == null || routeViewModel.ToPlace == null || 
+                            routeViewModel.Route == null || graphicsOverlay == null)
+                            {
+                                return;
+                            }
+
+                            // clear existing graphics
+                            graphicsOverlay?.Graphics?.Clear();
+
+                            // Add route to map
+                            var routeGraphic = new Graphic(routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
+                            graphicsOverlay?.Graphics.Add(routeGraphic);
+
+                            // Add start and end locations to the map
+                            var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Start72.png")));
+                            var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/End72.png")));
+                            var fromGraphic = new Graphic(routeViewModel.FromPlace, fromMapPin);
+                            var toGraphic = new Graphic(routeViewModel.ToPlace, toMapPin);
+                            graphicsOverlay?.Graphics.Add(fromGraphic);
+                            graphicsOverlay?.Graphics.Add(toGraphic);
+
                             break;
                         }
                 }
@@ -96,23 +175,23 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         /// </summary>
         private async void ResetMapRotation(object sender, RoutedEventArgs e)
         {
-            await MapView.SetViewpointRotationAsync(0).ConfigureAwait(false);
+            await MapView.SetViewpointRotationAsync(0);
         }
 
         /// <summary>
-        /// Turns on basemap switcher when button is pushed
+        /// Display the routing panel when user taps the Route button
         /// </summary>
-        private void OpenBasemapSwitcher(object sender, RoutedEventArgs e)
+        private void ShowRoutingPanel(object sender, RoutedEventArgs e)
         {
-            BasemapSwitcher.Visibility = Visibility.Visible;
-        }
+            var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
 
-        /// <summary>
-        /// Turns off basemap switcher whwn user hits the X 
-        /// </summary>
-        private void HideBasemapSwitcher(object sender, RoutedEventArgs e)
-        {
-            BasemapSwitcher.Visibility = Visibility.Collapsed;
+            // Set the to and from locations and text boxes
+            // the from location will be the current user location 
+            geocodeViewModel.UserCurrentLocation = MapView.LocationDisplay.Location.Position;
+            geocodeViewModel.ToPlace = geocodeViewModel.Place;
+
+            // clear the Place to hide the search result
+            geocodeViewModel.Place = null;
         }
     }
 }

@@ -14,7 +14,6 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Portal;
 using System;
 using System.Collections.Generic;
@@ -28,16 +27,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     {
         private IEnumerable<PortalItem> _basemaps;
         private PortalItem _selectedBasemap;
-        private Map _map;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BasemapsViewModel"/> class.
         /// </summary>
         public BasemapsViewModel()
         {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             LoadPortal();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
         /// <summary>
@@ -85,7 +81,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine("Unable to connect to Portal. " + ex.ToString());
-            }           
+            }
         }
 
         /// <summary>
@@ -94,7 +90,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private async Task LoadMaps(ArcGISPortal portal)
         {
             var items = await portal.GetBasemapsAsync();
-            Basemaps = items?.Select(b => b.Item).OfType<PortalItem>();        
+            Basemaps = items?.Select(b => b.Item).OfType<PortalItem>();
         }
     }
 }

@@ -30,13 +30,25 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
     {
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-
-            //if value is null, control is not visible
+            // Handle null to visibility and not null (inverse) to visibility
+            if (parameter != null && parameter.ToString() == "Inverse")
+            {
+                //if value is null, control is visible
+#if __ANDROID__ || __IOS__ || NETFX_CORE
+            return (value == null) ? true : false;
+#else
+                return (value == null) ? Visibility.Visible : Visibility.Collapsed;
+#endif
+            }
+            else
+            {
+                //if value is null, control is not visible
 #if __ANDROID__ || __IOS__ || NETFX_CORE
             return (value == null) ? false : true;
 #else
-            return (value == null) ? Visibility.Collapsed : Visibility.Visible;
+                return (value == null) ? Visibility.Collapsed : Visibility.Visible;
 #endif
+            }
         }
 
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

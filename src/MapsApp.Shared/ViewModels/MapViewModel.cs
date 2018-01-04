@@ -33,7 +33,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private LocationDataSource _locationDataSource;
         private Location.Location _lastLocation;
         private ICommand _moveToCurrentLocationCommand;
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MapViewModel"/> class.
         /// </summary>

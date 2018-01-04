@@ -18,59 +18,21 @@
         <ResourceDictionary>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
+            <viewModels:RouteViewModel x:Key="RouteViewModel"/>
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
-            <OnPlatform x:Key="startImage"
-                      x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Start72.png}"
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Start72.png}"
-                      WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.Start72.png}" />
-            <OnPlatform x:Key="endImage"
-                      x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.End72.png}"
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.End72.png}"
-                      WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.End72.png}" />
-            <OnPlatform x:Key="getDirectionsImage"
-                      x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.directions2.png}"
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.directions2.png}"
-                      WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.directions2.png}" />
-            <OnPlatform x:Key="cancelImage"
-                      x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.cancel2.png}"
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.cancel2.png}"
-                      WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.cancel2.png}" />
-            <OnPlatform x:Key="compassImage"
-                      x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Compass72.png}"
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Compass72.png}"
-                      WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.Compass72.png}" />
-            <OnPlatform x:Key="gpsImage"
-                      x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.GPSon66.png}"
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.GPSon66.png}"
-                      WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.GPSon66.png}" />
-            <OnPlatform x:Key="basemapImage"
-                      x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.Basemap60.png}"
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.Basemap60.png}"
-                      WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.Basemap60.png}" />
-            <OnPlatform x:Key="menuImage"
-                      x:TypeArguments="ImageSource"
-                      iOS="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images.BurgerButton60.png}"
-                      Android="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images.BurgerButton60.png}"
-                      WinPhone="{ext:ImageResource Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images.BurgerButton60.png}" />
-
+            <converters:NullToTextConverter x:Key="NullToTextConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0"/>
     </ContentPage.Padding>
-    <Grid>
+
+    <Grid ColumnSpacing="0" RowSpacing="0" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -81,15 +43,23 @@
 
         <!-- MapView Control -->
         <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
-                        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" >
+                         Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" >
             <esri:MapView.GraphicsOverlays>
                 <esriUI:GraphicsOverlay Id="PlacesOverlay"/>
+                <esriUI:GraphicsOverlay Id="RouteOverlay">
+                    <esriUI:GraphicsOverlay.Renderer>
+                        <esriSymbols:SimpleRenderer>
+                            <esriSymbols:SimpleLineSymbol Color="#0079c1" Style="Solid" Width="5"/>
+                        </esriSymbols:SimpleRenderer>
+                    </esriUI:GraphicsOverlay.Renderer>
+                </esriUI:GraphicsOverlay>
             </esri:MapView.GraphicsOverlays>
             <utils:GeoViewExtensions.ViewpointControllerCollection>
                 <!--Viewpoint controller for synchronizing MapView's viewpoint with the view-model's AOI-->
                 <utils:ViewpointControllerCollection>
-                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}" />
-                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}" />
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource MapViewModel}}"/>
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource GeocodeViewModel}}"/>
+                    <utils:ViewpointController Viewpoint="{Binding AreaOfInterest, Mode=TwoWay, Source={StaticResource RouteViewModel}}"/>
                 </utils:ViewpointControllerCollection>
             </utils:GeoViewExtensions.ViewpointControllerCollection>
             <utils:GeoViewExtensions.HoldingLocationController>
@@ -97,32 +67,136 @@
             </utils:GeoViewExtensions.HoldingLocationController>
         </esri:MapView>
 
-        <!--Autocomplete Control-->
-        <controls:AutoCompleteView Placeholder="Address or Place"
-                                   Text="{Binding SearchText, Mode=TwoWay}"
-                                   Suggestions="{Binding SuggestionsList, Mode=TwoWay}"
-                                   SearchCommand ="{Binding SearchCommand}"
-                                   SelectedItem ="{Binding SelectedSearchItem, Mode=TwoWay}"
-                                   SearchBackgroundColor="White"
-                                   SuggestionBackgroundColor="White"
-                                   ShowSearchButton="false"
-                                   BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}"
-                                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                                   Margin="10">
-        </controls:AutoCompleteView>
+        <!--Menu Button-->
+        <BoxView Grid.Column="0" Grid.Row="0" Color="White" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="10, 10, 0, 0"/>
+        <Image Source="menu.png" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" Margin="10, 10, 0, 0">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
+            </Image.GestureRecognizers>
+        </Image>
+
+        <!-- Search Panel -->
+        <BoxView Grid.Column="1" Grid.Row="0" Color="White" HorizontalOptions="FillAndExpand" Margin="0, 10, 10, 0"/>
+        <SearchBar Placeholder="Address or Place" Text="{Binding SearchText, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
+                       Grid.Column="1" Grid.Row="0" BindingContext="{StaticResource GeocodeViewModel}" SearchCommand="{Binding SearchCommand}"
+                       Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Margin="0,10,10,0"/>
+        <ListView x:Name="SearchSuggestionsList" BindingContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}"
+                      HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid BackgroundColor="White">
+                            <Label Text="{Binding}" FontSize="Medium" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Routing Panel -->
+        <StackLayout Orientation="Vertical" IsVisible="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
+                     BindingContext="{StaticResource GeocodeViewModel}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White" Margin="10, 10, 10, 0">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="startpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5"/>
+                        <Entry x:Name="FromLocationTextBox" Text="{Binding FromSearchText, Mode=TwoWay}" Focused="FromLocationSearchBar_Focused"
+                                       Unfocused="FromLocationSearchBar_Unfocused" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="endpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5"/>
+                        <Entry x:Name="ToLocationTextBox" Text="{Binding ToSearchText, Mode=TwoWay}" Focused="ToLocationSearchBar_Focused"
+                                           Unfocused="ToLocationSearchBar_Unfocused" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+                <Image Source="close.png" VerticalOptions="Start" HorizontalOptions="End" Margin="5">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClearRouteCommand, Source={StaticResource RouteViewModel}}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+
+            <!-- Suggestions box for From location -->
+            <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedFromSuggestion}" 
+                       IsVisible="False" BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White">
+                                <Label Text="{Binding}" FontSize="Medium" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Suggestions box for To location -->
+            <ListView x:Name="ToLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedToSuggestion}" 
+                       IsVisible="False" BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White">
+                                <Label Text="{Binding}" FontSize="Medium" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+
+        <!-- Menu Items-->
+        <StackLayout x:Name="SettingsPanel" Orientation="Vertical" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="False"
+                         BindingContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}" BackgroundColor="Transparent">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout HorizontalOptions="Start" Grid.Column="0" BackgroundColor="White">
+                    <Image x:Name="CloseMenuImage" Source="close.png" VerticalOptions="Start" HorizontalOptions="End">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OpenCloseSettings"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <StackLayout Orientation="Vertical" IsVisible="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
+                        <Image Source="{Binding AuthenticatedUser.ThumbnailUri}" HorizontalOptions="Center"/>
+                        <Label Text="{Binding AuthenticatedUser.FullName}" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <TableView WidthRequest="300" VerticalOptions="Center">
+                        <TableRoot>
+                            <TableSection Title="Settings">
+                                <ImageCell Text="Change Basemap" ImageSource="choosebasemap.png" Tapped="LoadBasemapControl" RelativeLayout.HeightConstraint="60" />
+                                <ImageCell Text="Open User Maps" ImageSource="chooseusermap.png" Tapped="LoadUserItems" RelativeLayout.HeightConstraint="60" 
+                                    IsEnabled="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}"/>
+                                <ImageCell ImageSource="login_logout.png"  Command="{Binding LogInOutCommand}" RelativeLayout.HeightConstraint="60" 
+                                    Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}"/>
+                            </TableSection>
+                        </TableRoot>
+                    </TableView>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
 
         <!-- Search Result Banner -->
-        <StackLayout Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                     BackgroundColor="White" BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
+        <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="10, 0, 10, 10"
+                      BindingContext ="{Binding Source={StaticResource GeocodeViewModel}}" IsVisible="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}" BackgroundColor="White">
 
-            <Image x:Name="PinImage" Source="{StaticResource endImage}" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"/>
-
+            <Image x:Name="PinImage" Source="endpin.png" VerticalOptions="Center" HorizontalOptions="Start" Margin="5,5,0,5"/>
 
             <Label Text="{Binding Place.Label}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-            <Image x:Name="DirectionsImage" Source="{StaticResource getDirectionsImage}" VerticalOptions="Center" HorizontalOptions="End"/>
-
-
-            <Image x:Name="CloseImage" Source="{StaticResource cancelImage}" VerticalOptions="Center" HorizontalOptions="End">
+            <Image x:Name="DirectionsImage" Source="directions.png" VerticalOptions="Center" HorizontalOptions="End" BackgroundColor="#0079c1">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ShowRoutingPanel"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Image x:Name="CloseImage" Source="close.png" VerticalOptions="Center" HorizontalOptions="End">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding CancelLocationSearchCommand}"/>
                 </Image.GestureRecognizers>
@@ -130,7 +204,7 @@
         </StackLayout>
 
         <!--Compass Button-->
-        <Image x:Name="CompassImage" Source="{StaticResource compassImage}" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Margin="0,0,20,0"
+        <Image x:Name="CompassImage" Source="compass.png" VerticalOptions="End" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Margin="0,20,20,0"
                BindingContext="{x:Reference MapView}" IsVisible="{Binding MapRotation, Converter={StaticResource NumberToVisibilityConverter}}"
                Rotation="{Binding MapRotation, Converter={StaticResource SubtractFromConverter}}">
             <Image.GestureRecognizers>
@@ -140,28 +214,22 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100" BackgroundColor="White">
-
-            <!-- GPS Button -->
-            <Image HorizontalOptions="Center"  VerticalOptions="Center" Source="{StaticResource gpsImage}" BindingContext ="{Binding Source={StaticResource MapViewModel}}" Margin="5,5,5,0">
+        <!-- GPS Button -->
+        <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100">
+            <Image HorizontalOptions="Center"  VerticalOptions="Center" Source="currentlocation.png" BindingContext ="{Binding Source={StaticResource MapViewModel}}" Margin="5,5,5,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
-            <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
+        </StackLayout>
 
-            <!--Basemap Button-->
-            <Image Source="{StaticResource basemapImage}" HorizontalOptions="Center" VerticalOptions="Center">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer
-            Tapped="LoadBasemapControl"
-            NumberOfTapsRequired="1" />
-                </Image.GestureRecognizers>
-            </Image>
-            <BoxView Color="LightGray" HeightRequest="1" HorizontalOptions="FillAndExpand"></BoxView>
-
-            <!--Menu Button-->
-            <Image Source="{StaticResource menuImage}" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,5"/>
+        <!-- Activity indicator for long running operations -->
+        <StackLayout Opacity="0.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" IsVisible="{Binding IsBusy, Source={StaticResource RouteViewModel}}">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label Text="Requesting Route" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Medium"/>
+                <ActivityIndicator x:Name="AppActivityIndicator" IsRunning="True">
+                </ActivityIndicator>
+            </StackLayout>
         </StackLayout>
     </Grid>
 </ContentPage>
