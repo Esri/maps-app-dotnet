@@ -1,8 +1,6 @@
 ﻿using Esri.ArcGISRuntime.Security;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,11 +38,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Views
             var dispatcher = Application.Current.Dispatcher;
             if (dispatcher == null || dispatcher.CheckAccess())
             {
-                AuthorizeOnUIThread(_authorizeUrl);
+                Authorize(_authorizeUrl);
             }
             else
             {
-                var authorizeOnUIAction = new Action((() => AuthorizeOnUIThread(_authorizeUrl)));
+                var authorizeOnUIAction = new Action((() => Authorize(_authorizeUrl)));
                 dispatcher.BeginInvoke(authorizeOnUIAction);
             }
 
@@ -53,7 +51,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Views
         }
 
         // Challenge for OAuth credentials on the UI thread
-        private void AuthorizeOnUIThread(string authorizeUri)
+        private void Authorize(string authorizeUri)
         {
             // Create a WebBrowser control to display the authorize page
             var webBrowser = new WebBrowser();
@@ -61,7 +59,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Views
             // Handle the navigation event for the browser to check for a response to the redirect URL
             webBrowser.Navigating += WebBrowserOnNavigating;
 
-            // Display the web browser in a new window 
+            // Display the web browser in a new window
             _window = new Window
             {
                 Content = webBrowser,
@@ -123,7 +121,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Views
             if (isRedirected)
             {
                 // Browser was redirected to the callbackUrl (success!)
-                //    -close the window 
+                //    -close the window
                 //    -decode the parameters (returned as fragments or query)
                 //    -return these parameters as result of the Task
                 e.Cancel = true;

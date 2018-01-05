@@ -17,7 +17,6 @@
 using Esri.ArcGISRuntime.Portal;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,9 +32,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         public BasemapsViewModel()
         {
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             LoadPortal();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
         /// <summary>
@@ -84,7 +81,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                 ErrorMessage = string.Format("Unable to connect to Portal");
                 StackTrace = ex.ToString();
-            }           
+            }
         }
 
         /// <summary>

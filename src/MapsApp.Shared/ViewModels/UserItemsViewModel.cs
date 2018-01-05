@@ -15,13 +15,10 @@
 //  ******************************************************************************/
 
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.Portal;
-using Esri.ArcGISRuntime.Security;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -35,7 +32,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private ICommand _discardUserItemsCommand;
         // TODO: Figure out what are all the item types that should be supported
         // Portal item types that should be displayed
-        private static readonly ICollection<PortalItemType> validUserItemTypes = 
+        private static readonly ICollection<PortalItemType> _validUserItemTypes =
             new PortalItemType[] { PortalItemType.WebMap};
 
         /// <summary>
@@ -114,7 +111,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 UserItems = new ObservableCollection<PortalItem>();
                 foreach (var item in userContent.Items)
                 {
-                    if (validUserItemTypes.Contains(item.Type))
+                    if (_validUserItemTypes.Contains(item.Type))
                         UserItems.Add(item);
                 }
             }

@@ -36,7 +36,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
             // Handle null to text
             if (parameter != null)
             {
-                
                 //if value is null, the first text value is displayed
                 return (value == null) ? ((string)parameter).Split('|').ElementAtOrDefault(0) ?? "Invalid Parameter": ((string)parameter).Split('|').ElementAtOrDefault(1) ?? "Invalid Parameter";
             }

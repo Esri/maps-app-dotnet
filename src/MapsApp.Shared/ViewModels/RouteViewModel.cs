@@ -20,7 +20,6 @@ using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Http;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Security;
-using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
 using System;
 using System.Collections.Generic;
@@ -30,11 +29,11 @@ using System.Windows.Input;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
-    class RoutingViewModel : BaseViewModel
+    class RouteViewModel : BaseViewModel
     {
         private bool _isBusy;
-        private GeocodeResult _fromPlace;
-        private GeocodeResult _toPlace;
+        private MapPoint _fromPlace;
+        private MapPoint _toPlace;
         private RouteResult _route;
         private Viewpoint _areaOfInterest;
         private IReadOnlyList<DirectionManeuver> _directionManeuvers;
@@ -57,9 +56,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the end location for the route
+        /// Gets or sets the start location for the route
         /// </summary>
-        public GeocodeResult FromPlace
+        public MapPoint FromPlace
         {
             get { return _fromPlace; }
             set
@@ -67,9 +66,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_fromPlace != value)
                 {
                     _fromPlace = value;
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     GetRouteAsync();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     OnPropertyChanged();
                 }
             }
@@ -78,7 +75,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Gets or sets the end location for the route
         /// </summary>
-        public GeocodeResult ToPlace
+        public MapPoint ToPlace
         {
             get { return _toPlace; }
             set
@@ -86,9 +83,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_toPlace != value)
                 {
                     _toPlace = value;
-#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     GetRouteAsync();
-#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
                     OnPropertyChanged();
                 }
             }
@@ -150,7 +145,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets the command to cancel the location search and clear the pin off the map
+        /// Gets the command to cancel the route and clear the pins and route off the map
         /// </summary>
         public ICommand ClearRouteCommand
         {
@@ -206,8 +201,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             // add route stops as parameters
             try
             {
-                routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
-                                                        new Stop(ToPlace.RouteLocation) });
+                routeParams.SetStops(new List<Stop>() { new Stop(FromPlace),
+                                                            new Stop(ToPlace) });
                 Route = await Router.SolveRouteAsync(routeParams);
 
                 // Set the AOI to an area slightly larger than the route's extent
@@ -281,7 +276,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     return;
                 }
 
-            exceptionCounter = 0;
+                exceptionCounter = 0;
                 throw ex;
             }
         }

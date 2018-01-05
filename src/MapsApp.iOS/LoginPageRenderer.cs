@@ -30,7 +30,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
 {
     public class LoginPageRenderer : PageRenderer, IOAuthAuthorizeHandler
     {
-       // ctor
+        // ctor
         public LoginPageRenderer()
         {
             // Set the OAuth authorization handler to this class (Implements IOAuthAuthorize interface)
