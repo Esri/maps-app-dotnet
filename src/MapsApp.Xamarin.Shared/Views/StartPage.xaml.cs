@@ -125,6 +125,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             {
                 AddressSearchBar.Unfocus();
             };
+
+            FromLocationSuggestionsList.ItemSelected += (s, e) =>
+            {
+                FromLocationTextBox.Unfocus();
+            };
+
+            ToLocationSuggestionsList.ItemSelected += (s, e) =>
+            {
+                ToLocationTextBox.Unfocus();
+            };
 #endif
         }
 
@@ -302,55 +312,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;
-        }
-
-        /// <summary>
-        /// Handles showing the suggestions listview when control has focus
-        /// </summary>
-        private void SearchBar_Focused(object sender, FocusEventArgs e)
-        {
-            SearchSuggestionsList.IsVisible = true;
-            SettingsPanel.IsVisible = false;
-        }
-
-        /// <summary>
-        /// Handles hiding the suggestions listview when control loses focus
-        /// </summary>
-        private void SearchBar_Unfocused(object sender, FocusEventArgs e)
-        {
-            SearchSuggestionsList.IsVisible = false;
-        }
-
-        /// <summary>
-        /// Handles showing the suggestions listview when control has focus
-        /// </summary>
-        private void FromLocationSearchBar_Focused(object sender, FocusEventArgs e)
-        {
-            FromLocationSuggestionsList.IsVisible = true;
-        }
-
-        /// <summary>
-        /// Handles hiding the suggestions listview when control loses focus
-        /// </summary>
-        private void FromLocationSearchBar_Unfocused(object sender, FocusEventArgs e)
-        {
-            FromLocationSuggestionsList.IsVisible = false;
-        }
-
-        /// <summary>
-        /// Handles showing the suggestions listview when control has focus
-        /// </summary>
-        private void ToLocationSearchBar_Focused(object sender, FocusEventArgs e)
-        {
-            ToLocationSuggestionsList.IsVisible = true;
-        }
-
-        /// <summary>
-        /// Handles hiding the suggestions listview when control loses focus
-        /// </summary>
-        private void ToLocationSearchBar_Unfocused(object sender, FocusEventArgs e)
-        {
-            ToLocationSuggestionsList.IsVisible = false;
         }
     }
 }

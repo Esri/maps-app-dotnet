@@ -16,6 +16,7 @@
       <DependentUpon>ErrorDialog.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ChangeVisibilityAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AuthUserItemsPage.xaml.cs">
       <DependentUpon>AuthUserItemsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
