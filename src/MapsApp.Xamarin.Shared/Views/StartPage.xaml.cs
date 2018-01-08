@@ -89,14 +89,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                         {
                             var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
 
+                            // clear existing graphics
+                            graphicsOverlay?.Graphics?.Clear();
+
                             if (_routeViewModel.FromPlace == null || _routeViewModel.ToPlace == null ||
                             _routeViewModel.Route == null || graphicsOverlay == null)
                             {
                                 return;
                             }
-
-                            // clear existing graphics
-                            graphicsOverlay?.Graphics?.Clear();
 
                             // Add route to map
                             var routeGraphic = new Graphic(_routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);

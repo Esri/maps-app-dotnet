@@ -91,16 +91,21 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 {
                     case nameof(BasemapsViewModel.SelectedBasemap):
                         {
-							var newMap = new Map(basemapViewModel.SelectedBasemap);
 
                             // Set the viewpoint of the new map to be the same as the old map
                             // Otherwise map is being reset to the world view
-                            var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
-                            newMap.InitialViewpoint = currentViewpoint;
+                            var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.BoundingGeometry);
 
-							// Load the new map
-                            await newMap.LoadAsync();
-                            mapViewModel.Map = newMap;
+                            try
+                            {
+                                mapViewModel.Map.Basemap = new Basemap(basemapViewModel.SelectedBasemap);
+                            }
+                            catch (Exception ex)
+                            {
+                                mapViewModel.ErrorMessage = "Unable to change basemaps";
+                                mapViewModel.StackTrace = ex?.ToString();
+                            }
+
                             break;
                         }
                 }
@@ -114,16 +119,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 {
                     case nameof(UserItemsViewModel.SelectedUserItem):
                         {
-                            var newMap = new Map(userItemsViewModel.SelectedUserItem);
-
                             // Set the viewpoint of the new map to be the same as the old map
                             // Otherwise map is being reset to the default extent of the web map
-                            var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
-                            newMap.InitialViewpoint = currentViewpoint;
-
-                            // Load the new map
-                            await newMap.LoadAsync();
-                            mapViewModel.Map = newMap;
+                            try
+                            {
+                                var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
+                                mapViewModel.Map = new Map(userItemsViewModel.SelectedUserItem);
+                            }
+                            catch (Exception ex)
+                            {
+                                mapViewModel.ErrorMessage = "Unable to load user map";
+                                mapViewModel.StackTrace = ex?.ToString();
+                            }
                             break;
                         }
                 }
