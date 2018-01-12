@@ -14,6 +14,7 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
+using System;
 using Xamarin.Forms;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers
@@ -23,8 +24,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers
     /// </summary>
     class ChangeVisibilityAction: TriggerAction<Element>
     {
+        /// <summary>
+        /// Gets or sets the TargetName for the control to be modified
+        /// </summary>
         public string TargetName { get; set; }
 
+        /// <summary>
+        /// Trigger action 
+        /// </summary>
         protected override void Invoke(Element sender)
         {
             var topView = GetParent(sender);
@@ -35,17 +42,27 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers
             {
                 try
                 {
-                    control.IsVisible = !control.IsVisible;
+                    // assume the sender is SearchBar or Entry control
+                    // return if the control is not infocus
+                    if (sender is SearchBar)
+                    {
+                        var searchBar = sender as SearchBar;
+                        control.IsVisible = (searchBar.IsFocused == true && !string.IsNullOrEmpty(searchBar.Text)) ? true : false;
+                    }
+                    else if (sender is Entry)
+                    {
+                        control.IsVisible = !control.IsVisible;
+                    }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    // this shouls fail silently if control does not have a visibility property
+                    // Fail silently
                 }
             }
         }
 
         /// <summary>
-        /// Navigates recursively up the vidual tree to the top element
+        /// Navigates recursively up the visual tree to the top element
         /// </summary>
         private Element GetParent(Element visualElement)
         {

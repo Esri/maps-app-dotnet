@@ -69,7 +69,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Unable to load Geocoder. Searching may be affected.");
+                ErrorMessage = "Unable to load Geocoder. Searching may be affected.";
                 StackTrace = ex.ToString();
             }
         }
@@ -466,7 +466,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Your search request could not be completed");
+                ErrorMessage = "Your search request could not be completed";
                 StackTrace = ex.ToString();
                 return null;
             }

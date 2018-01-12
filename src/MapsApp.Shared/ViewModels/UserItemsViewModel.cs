@@ -117,7 +117,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = string.Format("Unable to retrieve user maps");
+                ErrorMessage = "Unable to retrieve user maps";
                 StackTrace = ex.ToString();
             }
         }

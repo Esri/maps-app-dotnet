@@ -28,11 +28,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _errorMessage;
         private string _stackTrace;
 
-        public BaseViewModel()
-        {
-
-        }
-
         /// <summary>
         /// Raises the <see cref="MapViewModel.PropertyChanged" /> event
         /// </summary>

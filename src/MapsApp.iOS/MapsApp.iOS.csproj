@@ -308,13 +308,13 @@
     <ImageAsset Include="Resources\Media.xcassets\currentlocation.png.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\currentlocation.png.imageset\iOS8_Toolbar_GPSon22.png">
+    <ImageAsset Include="Resources\Media.xcassets\currentlocation.png.imageset\currentlocatio30.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\currentlocation.png.imageset\iOS8_Toolbar_GPSon44_d.png">
+    <ImageAsset Include="Resources\Media.xcassets\currentlocation.png.imageset\currentlocatio60.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\currentlocation.png.imageset\iOS8_Toolbar_GPSon66.png">
+    <ImageAsset Include="Resources\Media.xcassets\currentlocation.png.imageset\currentlocatio90.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\Depart.imageset\Contents.json">
@@ -359,13 +359,13 @@
     <ImageAsset Include="Resources\Media.xcassets\endpin.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\endpin.imageset\pin_circle_red-1.png">
+    <ImageAsset Include="Resources\Media.xcassets\endpin.imageset\iOS8_Routing_List_End30.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\endpin.imageset\pin_circle_red-2.png">
+    <ImageAsset Include="Resources\Media.xcassets\endpin.imageset\iOS8_Routing_List_End60_d.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\endpin.imageset\pin_circle_red.png">
+    <ImageAsset Include="Resources\Media.xcassets\endpin.imageset\iOS8_Routing_List_End90.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\ForkCenter.imageset\Contents.json">
@@ -419,13 +419,13 @@
     <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails132.png">
+    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails30.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails44_D_d.png">
+    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails60.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails88.png">
+    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails90.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\menu.imageset\Contents.json">
@@ -503,13 +503,13 @@
     <ImageAsset Include="Resources\Media.xcassets\startpin.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\startpin.imageset\Start.png">
+    <ImageAsset Include="Resources\Media.xcassets\startpin.imageset\iOS8_Routing_List_Start30.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\startpin.imageset\Start@2x.png">
+    <ImageAsset Include="Resources\Media.xcassets\startpin.imageset\iOS8_Routing_List_Start60_d.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\startpin.imageset\Start@3x.png">
+    <ImageAsset Include="Resources\Media.xcassets\startpin.imageset\iOS8_Routing_List_Start90.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\Stop.imageset\Contents.json">

@@ -48,7 +48,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                 if (l.PropertyName == nameof(AuthViewModel.AuthenticatedUser) && AuthViewModel.Instance.AuthenticatedUser == null)
                 {
-                    // capture map's current extent
                     Map = new Map(Basemap.CreateTopographicVector())
                     {
                         InitialViewpoint = AreaOfInterest

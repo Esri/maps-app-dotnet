@@ -78,10 +78,10 @@
         <!-- Search Panel -->
         <BoxView Grid.Column="1" Grid.Row="0" Color="White" HorizontalOptions="FillAndExpand" Margin="0, 10, 10, 0"/>
         <SearchBar x:Name="AddressSearchBar" Placeholder="Address or Place" Text="{Binding SearchText, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
-                       Grid.Column="1" Grid.Row="0" BindingContext="{StaticResource GeocodeViewModel}" SearchCommand="{Binding SearchCommand}"
+                       Grid.Column="1" Grid.Row="0" BindingContext="{StaticResource GeocodeViewModel}" SearchCommand="{Binding SearchCommand}" 
                          Margin="0,10,10,0" >
             <SearchBar.Triggers>
-                <EventTrigger Event="Focused">
+                <EventTrigger Event="TextChanged">
                     <helpers:ChangeVisibilityAction TargetName="SearchSuggestionsList"/>
                 </EventTrigger>
                 <EventTrigger Event="Unfocused">
@@ -95,7 +95,7 @@
             </SearchBar.BackgroundColor>
         </SearchBar>
         <ListView x:Name="SearchSuggestionsList" BindingContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}"
-                      HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0">
+                      HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -274,14 +274,13 @@
         </Image>
 
         <!-- GPS Button -->
-        <StackLayout Orientation="Vertical"  VerticalOptions="End" HorizontalOptions="End" Grid.Row="3" Grid.Column="1" Margin="0,0,20,100">
-            <Image HorizontalOptions="Center"  VerticalOptions="Center" Source="currentlocation.png" BindingContext ="{Binding Source={StaticResource MapViewModel}}" Margin="5,5,5,0">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
-                </Image.GestureRecognizers>
-            </Image>
-        </StackLayout>
-
+        <Image VerticalOptions="End" Grid.Row="3" Grid.Column="1" HorizontalOptions="End" Source="currentlocation.png" Margin="0,0,20,100"
+                   BindingContext ="{Binding Source={StaticResource MapViewModel}}">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+        
         <!-- Activity indicator for long running operations -->
         <StackLayout Opacity="0.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" IsVisible="{Binding IsBusy, Source={StaticResource RouteViewModel}}" BackgroundColor="Gray">
             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Gray" >
