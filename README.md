@@ -1,6 +1,6 @@
 # Maps App .NET
 
-The Maps App for .NET shows how a suite of applications can be built around the ArcGIS Platform using the ArcGIS Runtime SDK for .NET and a combination of WPF and the cross-platform framework Xamarin Forms. It demonstrates best practices around some simple but key functionality of the ArcGIS Runtime. You can use the Maps App as is, or extend it to meet your specific needs. Detailed documentation about the app and its architecture can be found on the developers website (add link here). 
+The Maps App for .NET shows how a suite of applications can be built around the ArcGIS Platform using the ArcGIS Runtime SDK for .NET and a combination of WPF and the cross-platform framework Xamarin Forms. It demonstrates best practices around some simple but key functionality of the ArcGIS Runtime. You can use the Maps App as is, or extend it to meet your specific needs. Detailed documentation about the app and its architecture can be found on the [developers website](https://developers.arcgis.com/example-apps/maps-app-dotnet/).
 
 ## Features
 - Place Search
@@ -13,7 +13,7 @@ The Maps App for .NET shows how a suite of applications can be built around the 
 - OAuth2 authentication
 
 ## Get Started
-This Maps App repo is a Visual Studion 2017 Project that can be directly cloned and imported into Visual Studio 2017 or higher.
+This Maps App repo is a Visual Studio 2017 Project that can be directly cloned and imported into Visual Studio 2017 or higher.
 
 ### Fork the repo
 [Fork](https://github.com/Esri/maps-app-dotnet/fork) the Maps App repo
