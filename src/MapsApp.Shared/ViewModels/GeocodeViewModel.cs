@@ -39,7 +39,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _selectedSuggestion;
         private string _selectedFromSuggestion;
         private string _selectedToSuggestion;
-        private string _errorMessage;
         private MapPoint _reverseGeocodeInputLocation;
         private MapPoint _userCurrentLocation;
         private Viewpoint _areaOfInterest;
@@ -48,7 +47,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private GeocodeResult _toPlace;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
-        private ICommand _setSelectedStartLocationCommand;
         private ObservableCollection<string> _suggestionsList;
 
         /// <summary>
@@ -71,7 +69,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                ErrorMessage = ex.ToString();
+                ErrorMessage = "Unable to load Geocoder. Searching may be affected.";
+                StackTrace = ex.ToString();
             }
         }
 
@@ -183,7 +182,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
             set
             {
-                if (_selectedSuggestion != value && value != null)
+                if ( value != null)
                 {
                     _selectedSuggestion = value;
 
@@ -216,7 +215,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     // Call method to search location
                     GetSearchedLocationAsync(_selectedFromSuggestion).ContinueWith((t) =>
                     {
-                        Place = t.Result;
+                        FromPlace = t.Result;
                     });
                     OnPropertyChanged();
                 }
@@ -264,7 +263,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     // Set viewpoint to the feature's extent
                     AreaOfInterest = Place != null ? (Place.Extent != null ? new Viewpoint(Place.Extent) :
                         new Viewpoint(Place.DisplayLocation, DefaultZoomScale)) : AreaOfInterest;
-
                     OnPropertyChanged();
                 }
             }
@@ -342,25 +340,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
-        /// <summary>
-        /// Gets or sets the error message to be shown to the user
-        /// </summary>
-        public string ErrorMessage
-        {
-            get { return _errorMessage; }
-            set
-            {
-                if (_errorMessage != value && value != null)
-                {
-                    _errorMessage = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the map point used to reverse geocode user's location
-        /// </summary>
         public MapPoint ReverseGeocodeInputLocation
         {
             get { return _reverseGeocodeInputLocation; }
@@ -481,13 +460,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 }
                 else
                 {
-                    ErrorMessage = "Unable to load geocoder";
+                    ErrorMessage = "Geocoder is not available. Please reload the app. If you continue to receive this message, contact your GIS administrator.";
                     return null;
                 }
             }
             catch (Exception ex)
             {
-                ErrorMessage = ex.ToString();
+                ErrorMessage = "Your search request could not be completed";
+                StackTrace = ex.ToString();
                 return null;
             }
         }
@@ -498,12 +478,19 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         private async Task GetReverseGeocodedLocationAsync(MapPoint location, bool isCurrentLocation)
         {
-            var matches = await Locator.ReverseGeocodeAsync(location);
-            if (isCurrentLocation)
-                FromPlace = matches.First();
-            else
-                Place = matches.First();
+            try
+            {
+                var matches = await Locator.ReverseGeocodeAsync(location);
+                if (isCurrentLocation)
+                    FromPlace = matches.First();
+                else
+                    Place = matches.First();
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = string.Format("Unable to perform reverse geocode request");
+                StackTrace = ex.ToString();
+            }
         }
-
     }
 }

@@ -19,7 +19,6 @@ using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.Portal;
 using Esri.ArcGISRuntime.Security;
 using System;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -74,37 +73,37 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 return _logInOutCommand ?? (_logInOutCommand = new DelegateCommand(
                     async (x) =>
                     {
-                        try
+                        if (AuthenticatedUser == null)
                         {
-                            if (AuthenticatedUser == null)
-                            {
-                                await SignIntoPortal();
-                            }
-                            else
-                            {
-                                foreach (var credential in AuthenticationManager.Current.Credentials)
-                                {
-                                    AuthenticationManager.Current.RemoveCredential(credential);
-                                }
-                                AuthenticatedUser = null;
-                            }
+                            await SignIntoPortal();
                         }
-                        catch
+                        else
                         {
-                            //TODO: do something if unable to login
+                            // clear credentials
+                            foreach (var credential in AuthenticationManager.Current.Credentials)
+                            {
+                                AuthenticationManager.Current.RemoveCredential(credential);
+                            }
                             AuthenticatedUser = null;
                         }
-
-                    }));
+                     }));
             }
         }
 
         /// <summary>
         /// ChallengeHandler function that will be called whenever access to a secured resource is attempted
         /// </summary>
-        public Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
+        public async Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
         {
-            return SignIntoPortal();
+            foreach (var credential in AuthenticationManager.Current.Credentials)
+            {
+                if (credential.ServiceUri == new Uri(Configuration.ArcGISOnlineUrl))
+                {
+                    return credential;
+                }
+            }
+
+            return await SignIntoPortal();
         }
 
         /// <summary>
@@ -123,9 +122,15 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 AuthenticatedUser = portal.User;
                 return credential;
             }
+            catch(System.OperationCanceledException)
+            {
+                // User cancelled login 
+                return null;
+            }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.ToString());
+                ErrorMessage = string.Format("Authentication failed");
+                StackTrace = ex.ToString();
                 return null;
             }
         }
@@ -162,7 +167,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.ToString());
+                ErrorMessage = string.Format("Authentication failed");
+                StackTrace = ex.ToString();
             }
         }
     }

@@ -1,0 +1,29 @@
+{
+  "images": [
+    {
+      "scale": "1x",
+      "idiom": "universal",
+      "filename": "iOS8_SingleUserDetails30.png"
+    },
+    {
+      "scale": "2x",
+      "idiom": "universal",
+      "filename": "iOS8_SingleUserDetails60.png"
+    },
+    {
+      "scale": "3x",
+      "idiom": "universal",
+      "filename": "iOS8_SingleUserDetails90.png"
+    },
+    {
+      "idiom": "universal"
+    }
+  ],
+  "properties": {
+    "template-rendering-intent": ""
+  },
+  "info": {
+    "version": 1,
+    "author": ""
+  }
+}

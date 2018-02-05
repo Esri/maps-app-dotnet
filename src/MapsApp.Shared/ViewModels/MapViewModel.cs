@@ -13,11 +13,9 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.Location;
 using Esri.ArcGISRuntime.Mapping;
-using Esri.ArcGISRuntime.Portal;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
@@ -43,6 +41,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             LocationDataSource.LocationChanged += (s, l) =>
             {
                 _lastLocation = l;
+            };
+
+            // reset map if user is logged out
+            AuthViewModel.Instance.PropertyChanged += (s, l) =>
+            {
+                if (l.PropertyName == nameof(AuthViewModel.AuthenticatedUser) && AuthViewModel.Instance.AuthenticatedUser == null)
+                {
+                    Map = new Map(Basemap.CreateTopographicVector())
+                    {
+                        InitialViewpoint = AreaOfInterest
+                    };
+                }
             };
         }
 
@@ -106,8 +116,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     (x) =>
                     {
                         // Set viewpoint to the user's current location
-                        AreaOfInterest = _lastLocation?.Position?.Extent != null ? new Viewpoint(_lastLocation.Position.Extent) :
-                            new Viewpoint(_lastLocation.Position, DefaultZoomScale);
+                        AreaOfInterest = new Viewpoint(_lastLocation?.Position, DefaultZoomScale);
                     }));
             }
         }

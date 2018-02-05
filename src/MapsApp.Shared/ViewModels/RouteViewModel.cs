@@ -17,12 +17,12 @@
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.Geometry;
+using Esri.ArcGISRuntime.Http;
 using Esri.ArcGISRuntime.Mapping;
-using Esri.ArcGISRuntime.Tasks.Geocoding;
+using Esri.ArcGISRuntime.Security;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -36,6 +36,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private MapPoint _toPlace;
         private RouteResult _route;
         private Viewpoint _areaOfInterest;
+        private IReadOnlyList<DirectionManeuver> _directionManeuvers;
         private ICommand _clearRouteCommand;
 
         /// <summary>
@@ -125,6 +126,25 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
+        /// Gets or sets the turn by turn directions for the returned route
+        /// </summary>
+        public IReadOnlyList<DirectionManeuver> DirectionManeuvers
+        {
+            get
+            {
+                return _directionManeuvers;
+            }
+            set
+            {
+                if (_directionManeuvers != value)
+                {
+                    _directionManeuvers = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
         /// Gets the command to cancel the route and clear the pins and route off the map
         /// </summary>
         public ICommand ClearRouteCommand
@@ -135,6 +155,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     (x) =>
                     {
                         Route = null;
+                        FromPlace = null;
+                        ToPlace = null;
                     }));
             }
         }
@@ -149,17 +171,25 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         private async Task GetRouteAsync()
         {
+            if (FromPlace == null || ToPlace == null)
+            {
+                return;
+            }
+
             IsBusy = true;
 
             if (Router == null)
             {
                 try
                 {
-                    Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
+                    await CreateRouteTask();
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine(ex.ToString());
+                    ErrorMessage = "Unable to load routing service. The routing functionality may not work.";
+                    StackTrace = ex.ToString();
+
+                    IsBusy = false;
                     return;
                 }
             }
@@ -169,24 +199,86 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             routeParams.ReturnRoutes = true;
 
             // add route stops as parameters
-            if (FromPlace != null && ToPlace != null)
+            try
             {
-                try
-                {
-                    routeParams.SetStops(new List<Stop>() { new Stop(FromPlace),
+                routeParams.SetStops(new List<Stop>() { new Stop(FromPlace),
                                                             new Stop(ToPlace) });
+                Route = await Router.SolveRouteAsync(routeParams);
 
-                    Route = await Router.SolveRouteAsync(routeParams);
+                // Set the AOI to an area slightly larger than the route's extent
+                var aoiBuilder = new EnvelopeBuilder(Route.Routes.FirstOrDefault()?.RouteGeometry.Extent);
+                aoiBuilder.Expand(1.2);
+                AreaOfInterest = new Viewpoint(aoiBuilder.ToGeometry());
 
-                    // Set viewpoint to the route's extent
-                    AreaOfInterest = new Viewpoint(Route.Routes.FirstOrDefault()?.RouteGeometry);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.ToString());
-                }
+                // Set turn by turn directions
+                DirectionManeuvers = Route.Routes.FirstOrDefault()?.DirectionManeuvers;
             }
+            catch (ArcGISWebException e)
+            {
+                // This is returned when user hits the Cancel button in iOS or the back arrow in Android
+                // It does not get caught in the LoginRenderer and needs to be handled here
+                if (e.Message.Contains("Token Required"))
+                {
+                    FromPlace = null;
+                    ToPlace = null;
+                    IsBusy = false;
+                    return;
+                }
+
+                ErrorMessage = "A web exception occured. Are you connected to the internet?";
+                StackTrace = e.ToString();
+            }
+            catch (Exception ex)
+            {
+                //TODO: Remove workaround when iOS bug is fixed
+#if __IOS__
+                exceptionCounter++;
+                if (ex.Message == "403 (Forbidden)" && exceptionCounter <= 3)
+                {
+                    await GetRouteAsync();
+                    return;
+                }
+#endif
+                ErrorMessage = "Something went wrong and the routing operation failed.";
+                StackTrace = ex.ToString();
+            }
+
+            exceptionCounter = 0;
             IsBusy = false;
+        }
+
+        private int exceptionCounter = 0;
+        private async Task CreateRouteTask()
+        {
+            try
+            {
+                Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
+            }
+            catch (Exception ex)
+            {
+                //TODO: Remove workaround when iOS bug is fixed
+#if __IOS__
+                exceptionCounter++;
+                if (ex.Message == "403 (Forbidden)" && exceptionCounter <= 3)
+                {
+                    var credential = AuthenticationManager.Current.FindCredential(new Uri(Configuration.RouteUrl));
+                    await CreateRouteTask();
+                    return;
+                }
+#endif
+                // This is returned when user hits the Cancel button in iOS or the back arrow in Android
+                // It does not get caught in the LoginRenderer and needs to be handled here
+                if (ex.Message.Contains("Token Required"))
+                {
+                    FromPlace = null;
+                    ToPlace = null;
+                    IsBusy = false;
+                    return;
+                }
+
+                exceptionCounter = 0;
+                throw ex;
+            }
         }
     }
 }

@@ -15,13 +15,10 @@
 //  ******************************************************************************/
 
 using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.Portal;
-using Esri.ArcGISRuntime.Security;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -35,15 +32,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private ICommand _discardUserItemsCommand;
         // TODO: Figure out what are all the item types that should be supported
         // Portal item types that should be displayed
-        private static readonly ICollection<PortalItemType> _validUserItemTypes = 
+        private static readonly ICollection<PortalItemType> _validUserItemTypes =
             new PortalItemType[] { PortalItemType.WebMap};
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserItemsViewModel"/> class.
-        /// </summary>
-        public UserItemsViewModel()
-        {
-        }
 
         /// <summary>
         /// Gets or sets the user item the user selected
@@ -108,37 +98,27 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Loads the user specified portal instance
-        /// </summary>
-        private async Task LoadPortal()
-        {
-            try
-            {
-                if (AuthViewModel.Instance.AuthenticatedUser == null)
-                {
-                    await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.ArcGISOnlineUrl));
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Unable to connect to Portal. " + ex.ToString());
-            }
-        }
-
-        /// <summary>
         /// Loads user maps from Portal
         /// </summary>
         public async Task LoadUserItems()
         {
-            await LoadPortal();
-            var portalUser = AuthViewModel.Instance.AuthenticatedUser.Portal.User as PortalUser;
-            var userContent = await portalUser.GetContentAsync();
+            var portalUser = AuthViewModel.Instance.AuthenticatedUser?.Portal?.User as PortalUser;
 
-            UserItems = new ObservableCollection<PortalItem>();
-            foreach (var item in userContent.Items)
+            try
             {
-                if (_validUserItemTypes.Contains(item.Type))
-                    UserItems.Add(item);
+                var userContent = await portalUser.GetContentAsync();
+
+                UserItems = new ObservableCollection<PortalItem>();
+                foreach (var item in userContent.Items)
+                {
+                    if (_validUserItemTypes.Contains(item.Type))
+                        UserItems.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = "Unable to retrieve user maps";
+                StackTrace = ex.ToString();
             }
         }
     }

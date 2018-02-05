@@ -24,7 +24,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers
         // Client ID for the app registered with the server (Portal Maps)
         public const string AppClientID = "YourClientID";
 
-        // Redirect URL after a successful authorization (configured for the Portal Maps application)
+        // Redirect URL after a successful authorization (configured for the Maps App application)
         public const string RedirectURL = @"https://developers.arcgis.com";
 
         // Url used for the geocode service

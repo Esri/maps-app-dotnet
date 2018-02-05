@@ -57,7 +57,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
             // Allow the user to cancel the OAuth attempt
             authenticator.AllowCancel = true;
 
-            // Hide errors 
+            // Hide errors
             authenticator.ShowErrors = false;
 
             // Define a handler for the OAuth2Authenticator.Completed event
@@ -76,7 +76,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 
                     // Set the result (Credential) for the TaskCompletionSource
                     taskCompletionSource.SetResult(authenticatedAccount.Properties);
-
                 }
                 catch (Exception ex)
                 {
@@ -93,7 +92,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
             // If an error was encountered when authenticating, set the exception on the TaskCompletionSource
             authenticator.Error += (sndr, errArgs) =>
             {
-                // If the user cancels, the Error event is raised but there is no exception 
+                // If the user cancels, the Error event is raised but there is no exception
                 if (errArgs.Exception != null)
                 {
                     taskCompletionSource.TrySetException(errArgs.Exception);

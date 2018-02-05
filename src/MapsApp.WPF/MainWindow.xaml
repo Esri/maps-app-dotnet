@@ -8,6 +8,7 @@
         xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
         xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
+        xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Controls"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         mc:Ignorable="d"
@@ -24,6 +25,8 @@
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
             <converters:NullToTextConverter x:Key="NullToTextConverter"/>
+            <converters:DirectionManeuverToImagePathConverter x:Key="DirectionManeuverToImagePathConverter"/>
+            <controls:ErrorDialog x:Key="ErrorDialog"/>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
@@ -71,7 +74,7 @@
         <StackPanel Background="White" Orientation="Vertical" x:Name="BasemapSwitcher" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Visibility="Collapsed">
             <TextBlock HorizontalAlignment="Right">
                     <Hyperlink TextDecorations="{x:Null}">
-                        <Image Source="pack://application:,,,/MapsApp;component/Images/cancel2.png" Height="40" Width="40"/>
+                        <Image Source="pack://application:,,,/MapsApp;component/Images/close.png" Height="40" Width="40"/>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <ei:ChangePropertyAction TargetName="BasemapSwitcher" PropertyName="Visibility">
@@ -106,7 +109,7 @@
                     Visibility="{Binding UserItems, Converter={StaticResource NullToVisibilityConverter}}">
             <TextBlock HorizontalAlignment="Right">
                     <Hyperlink  TextDecorations="{x:Null}" Command="{Binding Source={StaticResource UserItemsViewModel}, Path=DiscardUserItemsCommand}">
-                        <Image Source="pack://application:,,,/MapsApp;component/Images/cancel2.png" Height="40" Width="40"/>
+                        <Image Source="pack://application:,,,/MapsApp;component/Images/close.png" Height="40" Width="40"/>
                     </Hyperlink>
             </TextBlock>
             <ListView  ItemsSource="{Binding UserItems}" SelectedItem="{Binding SelectedUserItem}">
@@ -129,9 +132,18 @@
 
 
         <!-- Left panel -->
-        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+        <Grid Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Margin="15, 0, 0, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="470"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
             <!-- Search Result Panel -->
-            <StackPanel Orientation="Vertical" Width="450"  DataContext="{StaticResource GeocodeViewModel}"
+            <StackPanel Orientation="Vertical" Grid.Column="0" DataContext="{StaticResource GeocodeViewModel}" Grid.Row="0"
                     Margin="0,0,0,15" Visibility="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}">
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"></DropShadowEffect>
@@ -139,30 +151,34 @@
 
                 <StackPanel Orientation="Horizontal" Width="520" Background="#dfdfdf" Margin="0,15,0,0">
                     <Button Background="#dfdfdf" BorderThickness="0" Width="50" Height="50">
-                        <Image  Source="pack://application:,,,/MapsApp;component/Images/End72.png"  />
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/Stop.png"  />
                     </Button>
                     <TextBlock x:Name="SearchResultTextBlock" Text="{Binding Place.Label}" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center"/>
                     <Button Background="#0079c1" BorderThickness="0" Width="60" Height="60" Click="ShowRoutingPanel">
-                        <Image  Source="pack://application:,,,/MapsApp;component/Images/directions2.png"  />
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/directions.png"  />
                     </Button>
                     <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding CancelLocationSearchCommand}">
-                        <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png"  />
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/close.png"  />
                     </Button>
                 </StackPanel>
             </StackPanel>
 
             <!-- Route Panel -->
+            <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Grid.Column="0"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
+                        Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}" Grid.Row="1">
+<!--=======
             <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Width="450"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
                         Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}">
+>>>>>>> origin/master-->
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"/>
                 </StackPanel.Effect>
 
                 <StackPanel Orientation="Horizontal"  >
-                    <StackPanel Orientation="Vertical" Margin="15,15,0,0">
+                    <StackPanel Orientation="Vertical" Margin="15,15,0,15">
                         <!-- From location text box -->
                         <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Start72.png" Height="40" Margin="0,0,10,5"/>
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Depart.png" Height="40" Margin="0,0,10,5"/>
                             <TextBox x:Name="FromLocationTextBox" Text="{Binding FromSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" VerticalAlignment="Center" 
                                  Width="330" Margin="0,0,0,5" TextWrapping="Wrap">
                                 <i:Interaction.Triggers>
@@ -185,7 +201,7 @@
                         </StackPanel>
                         <!-- To location text box -->
                         <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/End72.png" Height="40" Margin="0,0,10,0"/>
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Stop.png" Height="40" Margin="0,0,10,0"/>
                             <TextBox x:Name="ToLocationTextBox" Text="{Binding ToSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" TextWrapping="Wrap" 
                                  VerticalAlignment="Center" Width="330">
                                 <i:Interaction.Triggers>
@@ -208,12 +224,10 @@
                         </StackPanel>
                     </StackPanel>
                     <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding ClearRouteCommand, Source={StaticResource RouteViewModel}}" VerticalAlignment="Top" Margin="20,5,0,0">
-                        <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png"/>
-                    </Button>
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/close.png"/>
+                        </Button>
                 </StackPanel>
-                <StackPanel Width="240" Margin="0,10,0,10">
-                    <Button Content="Turn by Turn" FontSize="20" Background="#0079c1" HorizontalAlignment="Right" BorderThickness="0" Padding="10,5,10,5"/>
-                </StackPanel>
+
                 <!-- Suggestions box for From location -->
                 <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding Source={StaticResource GeocodeViewModel}, 
                     Path=SelectedFromSuggestion}" Margin="5, 0, 5, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
@@ -230,7 +244,7 @@
                 </ListView>
                 <!-- Suggestions box for To location -->
                 <ListView x:Name="ToLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding Source={StaticResource GeocodeViewModel}, 
-                    Path=SelectedToSuggestion}" 
+                    Path=SelectedToSuggestion}"
                           Margin="5, 0, 5, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
                     <ListView.Effect>
                         <DropShadowEffect Opacity=".5"></DropShadowEffect>
@@ -245,7 +259,32 @@
                 </ListView>
             </StackPanel>
 
-            <!-- Settings Panel -->
+            <!-- Turn by turn directions panel -->
+            <Grid Grid.Column="0" Margin="0,15,0,15" DataContext="{StaticResource RouteViewModel}" 
+                        Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}}" Grid.Row="2" >
+                <ListView ItemsSource="{Binding DirectionManeuvers}" Padding="5" Margin="5, 0, 5, 0" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" >
+                                <Image Width="35" Height="35" Source="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" />
+                                <TextBlock Margin="5,5,5,5" Text="{Binding DirectionText}"  FontSize="15" 
+                                              TextWrapping="Wrap" Foreground="#444444" Width="370"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Effect>
+                        <DropShadowEffect Opacity=".5"></DropShadowEffect>
+                    </ListView.Effect>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="BorderBrush" Value="LightGray" />
+                            <Setter Property="BorderThickness" Value="0,0,0,1" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Grid>
+
+                <!-- Settings Panel -->
             <StackPanel  Visibility="Collapsed" x:Name="SettingsPanel" Orientation="Vertical" Width="450" 
                      DataContext="{StaticResource GeocodeViewModel}" Margin="0,0,0,15" Background="White" >
                 <StackPanel.Effect>
@@ -255,7 +294,7 @@
                 <StackPanel Orientation="Horizontal" Width="450" Margin="10">
                     <TextBlock Text="Maps App Settings" FontSize="30" Width="390"/>
                     <Button Background="White" BorderThickness="0">
-                        <Image  Source="pack://application:,,,/MapsApp;component/Images/cancel2.png" />
+                        <Image  Source="pack://application:,,,/MapsApp;component/Images/close.png" />
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <ei:ChangePropertyAction TargetName="SettingsPanel" PropertyName="Visibility">
@@ -281,7 +320,7 @@
                 <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5">
                     <Button Background="White" BorderThickness="0" Height="50">
                         <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Basemap60.png"  />
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/choosebasemap.png"  />
                             <TextBlock Text="Change Basemap" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
                         </StackPanel>
                         <i:Interaction.Triggers>
@@ -301,7 +340,7 @@
                         Visibility="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}">
                     <Button Background="White" BorderThickness="0" Height="50" Command="{Binding Source={StaticResource UserItemsViewModel}, Path=LoadUserItemsCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/Folder.png"  Width="50" Height="50"/>
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/chooseusermap.png"  Width="50" Height="50"/>
                             <TextBlock Text="Open User Maps" Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
                         </StackPanel>
                     </Button>
@@ -312,14 +351,14 @@
                 <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}">
                     <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LogInOutCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/SignIn.png"  />
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/login_logout.png"  />
                             <TextBlock Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}" 
                                        Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </Grid>
 
         <!-- List of suggestions from geocoder -->
         <StackPanel  Grid.Row="1" Grid.Column="0">
@@ -344,7 +383,7 @@
                 <DropShadowEffect Opacity=".5"></DropShadowEffect>
             </StackPanel.Effect>
             <Button Background="White" Opacity=".7">
-                <Image Source="pack://application:,,,/MapsApp;component/Images/BurgerButton60.png" Height="60" Width="60"/>
+                <Image Source="pack://application:,,,/MapsApp;component/Images/menu.png" Height="60" Width="60"/>
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <ei:ChangePropertyAction TargetName="SettingsPanel" PropertyName="Visibility">
@@ -375,14 +414,14 @@
                 </i:Interaction.Triggers>
             </TextBox>
             <Button Width="40" Height="40" Background="White" BorderThickness="0" Command="{Binding SearchCommand}" CommandParameter="{Binding SearchText}" Margin="0,0,15,0">
-                <Image  Source="pack://application:,,,/MapsApp;component/Images/search_32.png"  />
+                <Image  Source="pack://application:,,,/MapsApp;component/Images/search.png"  />
             </Button>
         </StackPanel>
 
         <!--Compass Button-->
         <TextBlock Grid.Row="1" Grid.Column="2" Margin="0,100,20,0" DataContext="{Binding ElementName=MapView}" Visibility="{Binding MapRotation, Converter={StaticResource NumberToVisibilityConverter}}">
             <Hyperlink Click="ResetMapRotation"  TextDecorations="{x:Null}">
-                <Image x:Name="CompassImage" Source="pack://application:,,,/MapsApp;component/Images/Compass72.png" Height="60" Width="60">
+                <Image x:Name="CompassImage" Source="pack://application:,,,/MapsApp;component/Images/compass.png" Height="60" Width="60">
                     <Image.RenderTransform>
                         <RotateTransform  Angle="{Binding MapRotation,
                                  ElementName=MapView,
@@ -397,9 +436,29 @@
         <StackPanel Orientation="Vertical" Grid.Row="2" Grid.Column="2" Margin="0,0,20,100" VerticalAlignment="Bottom">
             <TextBlock>
             <Hyperlink Command="{Binding MoveToCurrentLocationCommand, Source={StaticResource MapViewModel}}" TextDecorations="{x:Null}">
-                <Image Source="pack://application:,,,/MapsApp;component/Images/GPSon66.png" Height="60" Width="60"/>
+                <Image Source="pack://application:,,,/MapsApp;component/Images/currentlocation.png" Height="60" Width="60"/>
             </Hyperlink>
             </TextBlock>
+        </StackPanel>
+
+        <!-- Progress bar -->
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="4" Visibility="{Binding IsBusy, Source={StaticResource RouteViewModel}, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <StackPanel  Background="Gray" Opacity=".5"/>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Background="#dfdfdf">
+                <TextBlock Text="Requesting Route" HorizontalAlignment="Center" Foreground="#444444" FontSize="25" Margin="10, 10, 10,0"/>
+                <ProgressBar Minimum="0" Maximum="100" Name="pbStatus" IsIndeterminate="True" Height="20" Width="300" Margin="15"
+                             Foreground="#0079c1"/>
+            </StackPanel>
+        </Grid>
+
+        <!--Error message alerts-->
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <controls:ErrorDialog ErrorMessage="{Binding ErrorMessage, Mode=TwoWay}" StackTrace="{Binding StackTrace, Mode=TwoWay}" 
+                                  DataContext ="{Binding Source={StaticResource RouteViewModel}}" Visibility="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+            <controls:ErrorDialog ErrorMessage="{Binding ErrorMessage, Mode=TwoWay}" StackTrace="{Binding StackTrace, Mode=TwoWay}" 
+                                  DataContext ="{Binding Source={StaticResource GeocodeViewModel}}" Visibility="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+            <controls:ErrorDialog ErrorMessage="{Binding ErrorMessage, Mode=TwoWay}" StackTrace="{Binding StackTrace, Mode=TwoWay}" 
+                                  DataContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}" Visibility="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
         </StackPanel>
     </Grid>
 </Window>
