@@ -87,11 +87,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
             (geoView as GeoView)?.SetValue(ViewpointControllerCollectionProperty, ViewpointControllerCollection);
         }
 
-
-
-
-
-
         /// <summary>
         /// Creates a HoldingLocationController property
         /// </summary>

@@ -67,14 +67,14 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Mara Stoica (F58D856548)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <MtouchFastDev>false</MtouchFastDev>
     <MtouchFloat32>false</MtouchFloat32>
     <CodeAnalysisRuleSet />
-    <BuildIpa>false</BuildIpa>
+    <BuildIpa>true</BuildIpa>
     <MtouchProfiling>true</MtouchProfiling>
     <CodesignProvision>
     </CodesignProvision>
@@ -87,11 +87,15 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Mara Stoica (F58D856548)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <BuildIpa>true</BuildIpa>
     <IpaPackageName>MapsApp.iOS</IpaPackageName>
     <CodeAnalysisRuleSet />
+    <IpaMetadata>
+    </IpaMetadata>
+    <CodesignProvision>
+    </CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -107,6 +111,8 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <IpaPackageName>MapsApp</IpaPackageName>
     <CodeAnalysisRuleSet />
+    <IpaIncludeArtwork>true</IpaIncludeArtwork>
+    <IpaMetadata>iTunesMetadata.plist</IpaMetadata>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
@@ -120,6 +126,7 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodeAnalysisRuleSet />
+    <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>ACD5E8481DFFDEE161BD5AF90517B26C1473948C</ManifestCertificateThumbprint>
@@ -620,6 +627,9 @@
     <ImageAsset Include="Resources\Media.xcassets\UTurn.imageset\UTurn@3x.png">
       <Visible>false</Visible>
     </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iTunesMetadata.plist" />
   </ItemGroup>
   <Import Project="..\MapsApp.Xamarin.Shared\MapsApp.projitems" Label="Shared" Condition="Exists('..\MapsApp.Xamarin.Shared\MapsApp.projitems')" />
   <Import Project="..\MapsApp.Shared\MapsApp.Shared.projitems" Label="Shared" />

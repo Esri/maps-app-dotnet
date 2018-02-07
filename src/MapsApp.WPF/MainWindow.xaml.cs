@@ -142,29 +142,32 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 {
                     case nameof(RouteViewModel.Route):
                         {
-                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
-
-                            if (routeViewModel.FromPlace == null || routeViewModel.ToPlace == null || 
-                            routeViewModel.Route == null || graphicsOverlay == null)
+                            Application.Current.Dispatcher.Invoke(new Action(() =>
                             {
-                                return;
-                            }
+                                var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
 
-                            // clear existing graphics
-                            graphicsOverlay?.Graphics?.Clear();
+                                // clear existing graphics
+                                graphicsOverlay?.Graphics?.Clear();
 
-                            // Add route to map
-                            var routeGraphic = new Graphic(routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
-                            graphicsOverlay?.Graphics.Add(routeGraphic);
+                                if (routeViewModel.FromPlace == null || routeViewModel.ToPlace == null ||
+                                routeViewModel.Route == null || graphicsOverlay == null)
+                                {
+                                    return;
+                                }
 
-                            // Add start and end locations to the map
-                            var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Depart.png")));
-                            var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Stop.png")));
-                            var fromGraphic = new Graphic(routeViewModel.FromPlace, fromMapPin);
-                            var toGraphic = new Graphic(routeViewModel.ToPlace, toMapPin);
+                                // Add route to map
+                                var routeGraphic = new Graphic(routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
+                                graphicsOverlay?.Graphics.Add(routeGraphic);
 
-                            graphicsOverlay?.Graphics.Add(fromGraphic);
-                            graphicsOverlay?.Graphics.Add(toGraphic);
+                                // Add start and end locations to the map
+                                var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Depart.png")));
+                                var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Stop.png")));
+                                var fromGraphic = new Graphic(routeViewModel.FromPlace, fromMapPin);
+                                var toGraphic = new Graphic(routeViewModel.ToPlace, toMapPin);
+
+                                graphicsOverlay?.Graphics.Add(fromGraphic);
+                                graphicsOverlay?.Graphics.Add(toGraphic);
+                            }));
 
                             break;
                         }

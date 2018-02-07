@@ -313,5 +313,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;
         }
+
+        private void SearchSuggestionsList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((ListView)sender).ClearValue(ListView.SelectedItemProperty);
+        }
     }
 }

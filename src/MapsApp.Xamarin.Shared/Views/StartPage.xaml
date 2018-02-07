@@ -94,7 +94,7 @@
                 </OnPlatform>
             </SearchBar.BackgroundColor>
         </SearchBar>
-        <ListView x:Name="SearchSuggestionsList" BindingContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}"
+        <ListView x:Name="SearchSuggestionsList" BindingContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" ItemSelected="SearchSuggestionsList_ItemSelected"
                       HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>

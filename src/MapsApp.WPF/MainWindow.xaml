@@ -166,14 +166,9 @@
             <!-- Route Panel -->
             <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Grid.Column="0"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
                         Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}" Grid.Row="1">
-<!--=======
-            <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Width="450"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
-                        Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}">
->>>>>>> origin/master-->
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"/>
                 </StackPanel.Effect>
-
                 <StackPanel Orientation="Horizontal"  >
                     <StackPanel Orientation="Vertical" Margin="15,15,0,15">
                         <!-- From location text box -->
