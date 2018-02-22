@@ -1,71 +1,81 @@
-# Description
+# Maps App .NET
 
-Get your organization's authoritative map data into the hands of your workers with this suite of ArcGIS Runtime apps for .NET. 
+The Maps App for .NET shows how a suite of applications can be built around the ArcGIS Platform using the ArcGIS Runtime SDK for .NET and a combination of WPF and the cross-platform framework Xamarin Forms. It demonstrates best practices around some simple but key functionality of the ArcGIS Runtime. You can use the Maps App as is, or extend it to meet your specific needs. Detailed documentation about the app and its architecture can be found on the [developers website](https://developers.arcgis.com/example-apps/maps-app-dotnet/).
 
-- iOS app for iPhone or iPad
-- Android app for Android phones and tablets
-- UWP app for devices running Windows 10 
-- WPF app for devices running Windows 7 and above 
+## Features
+- Place Search
+- Geocode addresses
+- Reverse Geocode
+- Turn-by-turn Directions
+- Dynamically switch basemaps
+- Open Web Maps
+- Work with ArcGIS Online or an on-premise ArcGIS Portal
+- OAuth2 authentication
 
-Make use of custom web maps from your ArcGIS Online organization or use free maps available from sources like the [Living Atlas](https://livingatlas.arcgis.com). Functionality included in the Maps App example app:
+## Get Started
+This Maps App repo is a Visual Studio 2017 Project that can be directly cloned and imported into Visual Studio 2017 or higher.
 
-- Basemap switching
-- Loading webmaps from an organization
-- Searching for an address or place (geocoding)
-- Searching for a location on the map (reverse geocoding)
-- Routing and turn by turn directions
+### Fork the repo
+[Fork](https://github.com/Esri/maps-app-dotnet/fork) the Maps App repo
 
-This example suite of applications is open sourced so grab the code at GitHub and either configure the apps for your organization, or just learn how to integrate similar capabilities into your own apps!
+### Clone the repo
+Once you have forked the repo, you can make a clone
 
-# Workflow
+#### Command line Git
+[Clone](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork) the Maps App
+cd into the maps-app-dotnet folder
+Make your changes and create a [pull request](https://help.github.com/articles/creating-a-pull-request)
 
-# Developer Patterns
+#### Configuring a Remote for a Fork
 
-# Architecture
+If you make changes in the fork and would like to [sync](https://help.github.com/articles/syncing-a-fork/) those changes with the upstream repository, you must first [configure the remote](https://help.github.com/articles/configuring-a-remote-for-a-fork/). This will be required when you have created local branches and would like to make a [pull request](https://help.github.com/articles/creating-a-pull-request) to your upstream branch.
 
-## Solution Overview
-The 4 applications that make the Maps App .NET suite are all contained inside one solution. The diagram below represents how the solution is structured to make best use of shared logic between the apps:
+1. In the Terminal (for Mac users) or command prompt (fow Windows and Linux users) type ```git remote -v``` to list the current configured remote repo for your fork.
+2. ```git remote add upstream https://github.com/Esri/maps-app-dotnet.git``` to specify new remote upstream repository that will be synced with the fork. You can type ```git remote -v``` to verify the new upstream.
 
-_insert diagram image here_
+If there are changes made in the Original repository, you can sync the fork to keep it updated with upstream repository.
 
-The `MapsApp.iOS`, `MapsApp.Android` and `MapsApp.UWP` projects belong to the Xamarin Forms part of the solution. The code contained inside the `MapsApp.Xamarin.Shared` is common to the 3 applications. The 3 apps share one UI defined in the `StartPage.xaml` and some Xamarin specific logic.
+1. In the terminal, change the current working directory to your local project
+2. Type ```git fetch upstream``` to fetch the commits from the upstream repository
+3. ```git checkout master``` to checkout your fork's local master branch.
+4. ```git merge upstream/master``` to sync your local master' branch withupstream/master. Note: Your local changes will be retained and your fork's master branch will be in sync with the upstream repository.
 
-The `MapsApp.WPF` project has its own UI defined in `MainWindow.xaml` which is independent of the Xamarin Forms UI. 
+### Requirements
 
-All 4 apps share the logic contained inside the `MapsApp.Shared` project. 
+- [Visual Studio 2017 or higher](https://www.visualstudio.com/downloads/)
+- [.NET Framework 4.5.2 or higher](https://www.microsoft.com/net/download)
+- [ArcGIS Runtime SDK for .NET 100.2 or higher](https://developers.arcgis.com/net/)
 
-## Xamarin Forms Apps
+### Resources
 
-The three individual apps contain the platform specific code associated with each platform. For the purposes of keeping the app as generic as possible, no changes have been made to the 3 apps, they are the same as when generated by the Xamarin Forms ArcGIS Template. 
+- [ArcGIS Runtime SDK for .NET Developers Site](https://developers.arcgis.com/net/)
+- [ArcGIS Developer Blog](http://blogs.esri.com/esri/arcgis/category/developer/)
+- [twitter@ArcGISRuntime](https://twitter.com/ArcGISRuntime)
+- [twitter@esri](http://twitter.com/esri)
 
-## Xamarin Forms Shared Code
+### Issues
 
-### Views
+Find a bug or want to request a new feature enhancement? Let us know by submitting an issue.
 
-The Xamarin Forms apps use [Hierarchical Navigation](https://developer.xamarin.com/guides/xamarin-forms/application-fundamentals/navigation/hierarchical/) to switch between screens. There is a `View` for every page the application displays:
+### Contributing
 
-### Controls
+Anyone and everyone is welcome to [contribute](https://github.com/Esri/maps-app-dotnet/blob/master/CONTRIBUTING.md). We do accept pull requests.
 
-### Helpers
+1. Get involved
+2. Report issues
+3. Contribute code
+4. Improve documentation
 
-### Extensions
+### Licensing
 
-## WPF App
+Copyright 2018 Esri
 
-## Shared Logic
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
-### ViewModels
+[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-### Converters
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-### Commands
+A copy of the license is available in the repository's [LICENSE](https://github.com/Esri/maps-app-dotnet/blob/master/LICENSE) file.
 
-### Behaviors
-
-### Binding Support
-
-- preference for properties over methods or events. Properties are declarative and allow you to more easily specify intent instead of action
-- 
-
-
-# Customization
+For information about licensing your deployed app, see [License your app](https://developers.arcgis.com/net/latest/wpf/guide/license-your-app.htm).
