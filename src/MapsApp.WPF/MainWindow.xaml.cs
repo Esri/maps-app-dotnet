@@ -64,16 +64,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 
                             break;
                         }
-                    case nameof(GeocodeViewModel.FromPlace):
-                        {
-                            routeViewModel.FromPlace = geocodeViewModel.FromPlace.RouteLocation;
-                            break;
-                        }
-                    case nameof(GeocodeViewModel.ToPlace):
-                        {
-                            routeViewModel.ToPlace = geocodeViewModel.ToPlace.RouteLocation;
-                            break;
-                        }
                 }
             };
 
@@ -162,8 +152,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                                 // Add start and end locations to the map
                                 var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Depart.png")));
                                 var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Stop.png")));
-                                var fromGraphic = new Graphic(routeViewModel.FromPlace, fromMapPin);
-                                var toGraphic = new Graphic(routeViewModel.ToPlace, toMapPin);
+                                var fromGraphic = new Graphic(routeViewModel.FromPlace.RouteLocation, fromMapPin);
+                                var toGraphic = new Graphic(routeViewModel.ToPlace.RouteLocation, toMapPin);
 
                                 graphicsOverlay?.Graphics.Add(fromGraphic);
                                 graphicsOverlay?.Graphics.Add(toGraphic);
@@ -186,14 +176,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         /// <summary>
         /// Display the routing panel when user taps the Route button
         /// </summary>
-        private void ShowRoutingPanel(object sender, RoutedEventArgs e)
+        private async void ShowRoutingPanel(object sender, RoutedEventArgs e)
         {
             var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
+            var routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
 
             // Set the to and from locations and text boxes
             // the from location will be the current user location 
-            geocodeViewModel.UserCurrentLocation = MapView.LocationDisplay.Location.Position;
-            geocodeViewModel.ToPlace = geocodeViewModel.Place;
+            if (MapView.LocationDisplay.IsEnabled)
+                routeViewModel.FromPlace = await geocodeViewModel.GetReverseGeocodedLocationAsync(MapView.LocationDisplay.Location.Position);
+            routeViewModel.ToPlace = geocodeViewModel.Place;
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;

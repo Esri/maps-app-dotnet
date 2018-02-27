@@ -34,13 +34,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     {
         private const int DefaultZoomScale = 4000;
         private string _searchText;
-        private string _fromSearchText;
-        private string _toSearchText;
         private string _selectedSuggestion;
-        private string _selectedFromSuggestion;
-        private string _selectedToSuggestion;
         private MapPoint _reverseGeocodeInputLocation;
-        private MapPoint _userCurrentLocation;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
         private GeocodeResult _fromPlace;
@@ -99,68 +94,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     if (!string.IsNullOrEmpty(_searchText))
                     {
                         // Call method to get location suggestions
-                        GetLocationSuggestionsAsync(_searchText);
-                    }
-                    else
-                    {
-                        SuggestionsList = null;
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the search text the user has entered
-        /// </summary>
-        public string FromSearchText
-        {
-            get
-            {
-                return _fromSearchText;
-            }
-
-            set
-            {
-                if (_fromSearchText != value)
-                {
-                    _fromSearchText = value;
-                    OnPropertyChanged();
-
-                    if (!string.IsNullOrEmpty(_fromSearchText))
-                    {
-                        // Call method to get location suggestions
-                        GetLocationSuggestionsAsync(_fromSearchText);
-                    }
-                    else
-                    {
-                        SuggestionsList = null;
-                    }
-                }
-            }
-        }
-
-
-        /// <summary>
-        /// Gets or sets the search text the user has entered
-        /// </summary>
-        public string ToSearchText
-        {
-            get
-            {
-                return _toSearchText;
-            }
-
-            set
-            {
-                if (_toSearchText != value)
-                {
-                    _toSearchText = value;
-                    OnPropertyChanged();
-
-                    if (!string.IsNullOrEmpty(_toSearchText))
-                    {
-                        // Call method to get location suggestions
-                        GetLocationSuggestionsAsync(_toSearchText);
+                        GetLocationSuggestionsAsync(_searchText).ContinueWith((t) =>
+                        {
+                            SuggestionsList = t.Result;
+                        });
                     }
                     else
                     {
@@ -197,58 +134,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the suggested from location that the user has selected
-        /// </summary>
-        public string SelectedFromSuggestion
-        {
-            get
-            {
-                return _selectedFromSuggestion;
-            }
-
-            set
-            {
-                if (_selectedFromSuggestion != value && value != null)
-                {
-                    _selectedFromSuggestion = value;
-
-                    // Call method to search location
-                    GetSearchedLocationAsync(_selectedFromSuggestion).ContinueWith((t) =>
-                    {
-                        FromPlace = t.Result;
-                    });
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the suggested to location that the user has selected
-        /// </summary>
-        public string SelectedToSuggestion
-        {
-            get
-            {
-                return _selectedToSuggestion;
-            }
-
-            set
-            {
-                if (_selectedToSuggestion != value && value != null)
-                {
-                    _selectedToSuggestion = value;
-
-                    // Call method to search location
-                    GetSearchedLocationAsync(_selectedToSuggestion).ContinueWith((t) =>
-                    {
-                        ToPlace = t.Result;
-                    });
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
         /// Gets or sets the result of the place selected by the user
         /// </summary>
         public GeocodeResult Place
@@ -263,41 +148,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     // Set viewpoint to the feature's extent
                     AreaOfInterest = Place != null ? (Place.Extent != null ? new Viewpoint(Place.Extent) :
                         new Viewpoint(Place.DisplayLocation, DefaultZoomScale)) : AreaOfInterest;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the result of the place where the routing will start
-        /// </summary>
-        public GeocodeResult FromPlace
-        {
-            get { return _fromPlace; }
-            set
-            {
-                if (_fromPlace != value)
-                {
-                    _fromPlace = value;
-                    FromSearchText = _fromPlace.Label;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-
-        /// <summary>
-        /// Gets or sets the result of the place where the routing will end
-        /// </summary>
-        public GeocodeResult ToPlace
-        {
-            get { return _toPlace; }
-            set
-            {
-                if (_toPlace != value)
-                {
-                    _toPlace = value;
-                    ToSearchText = _toPlace.Label;
                     OnPropertyChanged();
                 }
             }
@@ -340,6 +190,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the location to be reverse geocoded
+        /// </summary>
         public MapPoint ReverseGeocodeInputLocation
         {
             get { return _reverseGeocodeInputLocation; }
@@ -348,27 +201,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_reverseGeocodeInputLocation != value)
                 {
                     _reverseGeocodeInputLocation = value;
-                    GetReverseGeocodedLocationAsync(_reverseGeocodeInputLocation, false);
+
+                    GetReverseGeocodedLocationAsync(_reverseGeocodeInputLocation).ContinueWith((t) =>
+                    {
+                        Place = t.Result;
+                    });
+
                     OnPropertyChanged();
                 }
             }
         }
-
-        /// <summary>
-        /// Gets or sets the user's current GPS location
-        /// This is not a live value and is passed from the view only when user wants to route
-        /// </summary>
-        public MapPoint UserCurrentLocation
-        {
-            get { return _userCurrentLocation; }
-            set
-            {
-                _userCurrentLocation = value;
-                GetReverseGeocodedLocationAsync(_userCurrentLocation, true);
-                OnPropertyChanged();
-            }
-        }
-
+        
         /// <summary>
         /// Gets the command to search using the locator
         /// </summary>
@@ -408,7 +251,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         /// <param name="userInput">User input</param>
         /// <returns>List of suggestions</returns>
-        private async Task GetLocationSuggestionsAsync(string userInput)
+        internal async Task<ObservableCollection<string>> GetLocationSuggestionsAsync(string userInput)
         {
             if (Locator?.LocatorInfo?.SupportsSuggestions ?? false && !string.IsNullOrEmpty(userInput))
             {
@@ -424,13 +267,16 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     {
                         s.Add(suggestion.Label);
                     }
-                    SuggestionsList = s;
+                    return s;
                 }
                 catch
                 {
                     // If error happens, do not show suggestions
+                    return new ObservableCollection<string>();
                 }
             }
+            else
+                return new ObservableCollection<string>();
         }
 
         /// <summary>
@@ -438,7 +284,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         /// <param name="_searchString">User input</param>
         /// <returns>Location that best matches the search string</returns>
-        private async Task<GeocodeResult> GetSearchedLocationAsync(string geocodeAddress)
+        internal async Task<GeocodeResult> GetSearchedLocationAsync(string geocodeAddress)
         {
             // clear the text in the search box
             SearchText = string.Empty;
@@ -476,20 +322,18 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// Use the locator to perform a reverse geocode operation, returning the place that the user tapped on inside the map
         /// If the user's current location is passed, then set that as the FromPlace used for routing instead
         /// </summary>
-        private async Task GetReverseGeocodedLocationAsync(MapPoint location, bool isCurrentLocation)
+        internal async Task<GeocodeResult> GetReverseGeocodedLocationAsync(MapPoint location)
         {
             try
             {
-                var matches = await Locator.ReverseGeocodeAsync(location);
-                if (isCurrentLocation)
-                    FromPlace = matches.First();
-                else
-                    Place = matches.First();
+                var matches = await Locator.ReverseGeocodeAsync(location); 
+                return matches.First();
             }
             catch (Exception ex)
             {
                 ErrorMessage = string.Format("Unable to perform reverse geocode request");
                 StackTrace = ex.ToString();
+                return null;
             }
         }
     }

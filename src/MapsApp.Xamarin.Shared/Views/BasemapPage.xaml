@@ -13,12 +13,10 @@
     <Grid>
         <!-- List of basemaps for the user to select from -->
         <ListView x:Name="BasemapListView" ItemsSource="{Binding Basemaps}" SelectedItem="{Binding SelectedBasemap}"
-            CachingStrategy="RecycleElement" ItemTapped="ListView_ItemTapped" >
+             ItemTapped="ListView_ItemTapped" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding ThumbnailUri}" Text="{Binding Title}" Detail="{Binding Snippet}">
-                        
-                    </ImageCell>
+                    <ImageCell ImageSource="{Binding ThumbnailUri}" Text="{Binding Title}" Detail="{Binding Snippet}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

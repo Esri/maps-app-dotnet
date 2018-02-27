@@ -14,17 +14,17 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
+using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
 using Esri.ArcGISRuntime.Xamarin.Forms;
 using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Xamarin.Forms;
-using Esri.ArcGISRuntime.Mapping;
-using System.Linq;
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
@@ -68,16 +68,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 
                             break;
                         }
-                    case nameof(GeocodeViewModel.FromPlace):
-                        {
-                            _routeViewModel.FromPlace = geocodeViewModel.FromPlace.RouteLocation;
-                            break;
-                        }
-                    case nameof(GeocodeViewModel.ToPlace):
-                        {
-                            _routeViewModel.ToPlace = geocodeViewModel.ToPlace.RouteLocation;
-                            break;
-                        }
                 }
             };
 
@@ -103,8 +93,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             graphicsOverlay?.Graphics.Add(routeGraphic);
 
                             // Add start and end locations to the map
-                            var fromGraphic = new Graphic(_routeViewModel.FromPlace, startMapPin);
-                            var toGraphic = new Graphic(_routeViewModel.ToPlace, endMapPin);
+                            var fromGraphic = new Graphic(_routeViewModel.FromPlace.RouteLocation, startMapPin);
+                            var toGraphic = new Graphic(_routeViewModel.ToPlace.RouteLocation, endMapPin);
                             graphicsOverlay?.Graphics.Add(fromGraphic);
                             graphicsOverlay?.Graphics.Add(toGraphic);
 
@@ -301,14 +291,15 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         /// <summary>
         /// Display the routing panel when user taps the Route button
         /// </summary>
-        private void ShowRoutingPanel(object sender, EventArgs e)
+        private async void ShowRoutingPanel(object sender, EventArgs e)
         {
             var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
 
             // Set the to and from locations and text boxes
             // the from location will be the current user location 
-            geocodeViewModel.UserCurrentLocation = MapView.LocationDisplay.Location.Position;
-            geocodeViewModel.ToPlace = geocodeViewModel.Place;
+            if (MapView.LocationDisplay.IsEnabled)
+                _routeViewModel.FromPlace = await geocodeViewModel.GetReverseGeocodedLocationAsync(MapView.LocationDisplay.Location.Position);
+            _routeViewModel.ToPlace = geocodeViewModel.Place;
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;
@@ -316,7 +307,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 
         private void SearchSuggestionsList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+#if __iOS__
             ((ListView)sender).ClearValue(ListView.SelectedItemProperty);
+#endif
         }
     }
 }

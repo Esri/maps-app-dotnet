@@ -48,7 +48,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                 if (l.PropertyName == nameof(AuthViewModel.AuthenticatedUser) && AuthViewModel.Instance.AuthenticatedUser == null)
                 {
-                    Map = new Map(Basemap.CreateTopographicVector())
+                    Map = new Map(Basemap.CreateTopographic())
                     {
                         InitialViewpoint = AreaOfInterest
                     };
@@ -115,8 +115,15 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 return _moveToCurrentLocationCommand ?? (_moveToCurrentLocationCommand = new DelegateCommand(
                     (x) =>
                     {
-                        // Set viewpoint to the user's current location
-                        AreaOfInterest = new Viewpoint(_lastLocation?.Position, DefaultZoomScale);
+                        try
+                        {
+                            // Set viewpoint to the user's current location
+                            AreaOfInterest = new Viewpoint(_lastLocation?.Position, DefaultZoomScale);
+                        }
+                        catch
+                        {
+                            ErrorMessage = "You must enable location services to use this functionality";
+                        }
                     }));
             }
         }

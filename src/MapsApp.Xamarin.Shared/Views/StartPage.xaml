@@ -108,8 +108,8 @@
         </ListView>
 
         <!-- Routing Panel -->
-        <StackLayout Orientation="Vertical" IsVisible="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
-                     BindingContext="{StaticResource GeocodeViewModel}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White" Margin="10, 10, 10, 0">
+        <StackLayout Orientation="Vertical" IsVisible="{Binding ToPlace, Converter={StaticResource NullToVisibilityConverter}}" BindingContext="{StaticResource RouteViewModel}"
+                     Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White" Margin="10, 10, 10, 0">
             <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -118,7 +118,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="startpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5" Grid.Column="0"/>
-                    <Entry x:Name="FromLocationTextBox" Text="{Binding FromSearchText, Mode=TwoWay}" Grid.Column="1" MinimumHeightRequest="40" >
+                    <Entry x:Name="FromLocationTextBox" Text="{Binding FromPlaceText, Mode=TwoWay}" Grid.Column="1" MinimumHeightRequest="40" >
                         <Entry.Triggers>
                             <EventTrigger Event="Focused">
                                 <helpers:ChangeVisibilityAction  TargetName="FromLocationSuggestionsList"/>
@@ -130,7 +130,7 @@
                     </Entry>
                     <Image Source="close.png" VerticalOptions="Start" HorizontalOptions="End" Margin="5" Grid.Column="2">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClearRouteCommand, Source={StaticResource RouteViewModel}}"/>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ClearRouteCommand}"/>
                         </Image.GestureRecognizers>
                     </Image>
                 </Grid>
@@ -142,7 +142,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="endpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5" Grid.Column="0"/>
-                    <Entry x:Name="ToLocationTextBox" Text="{Binding ToSearchText, Mode=TwoWay}" Grid.Column="1" MinimumHeightRequest="40">
+                    <Entry x:Name="ToLocationTextBox" Text="{Binding ToPlaceText, Mode=TwoWay}" Grid.Column="1" MinimumHeightRequest="40">
                         <Entry.Triggers>
                             <EventTrigger Event="Focused">
                                 <helpers:ChangeVisibilityAction TargetName="ToLocationSuggestionsList"/>
