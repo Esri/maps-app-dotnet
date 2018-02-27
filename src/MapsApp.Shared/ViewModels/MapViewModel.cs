@@ -48,7 +48,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             {
                 if (l.PropertyName == nameof(AuthViewModel.AuthenticatedUser) && AuthViewModel.Instance.AuthenticatedUser == null)
                 {
-                    Map = new Map(Basemap.CreateTopographic())
+                    Map = new Map(Basemap.CreateTopographicVector())
                     {
                         InitialViewpoint = AreaOfInterest
                     };

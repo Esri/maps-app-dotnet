@@ -126,7 +126,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 }
             };
 
-            routeViewModel.PropertyChanged += async (s, e) =>
+            routeViewModel.PropertyChanged += (s, e) =>
             {
                 switch (e.PropertyName)
                 {

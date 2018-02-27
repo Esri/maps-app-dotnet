@@ -47,6 +47,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private string _fromPlaceText;
         private string _toPlaceText;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RouteViewModel"/> class.
+        /// </summary>
         public RouteViewModel()
         {
             _geocodeViewModel = new GeocodeViewModel();
@@ -68,25 +71,46 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the text property for the From address routing textbox
+        /// </summary>
         public string FromPlaceText
         {
             get { return _fromPlaceText; }
             set
             {
                 _fromPlaceText = value;
-                GetSuggestionsList(_fromPlaceText);
+
+                // get location suggestions if text input isn't empty
+                if (!string.IsNullOrEmpty(_fromPlaceText))
+                {
+                    _geocodeViewModel.GetLocationSuggestionsAsync(_fromPlaceText).ContinueWith((t) =>
+                    {
+                        SuggestionsList = t.Result;
+                    });
+                }
                 OnPropertyChanged();
             }
         }
 
-
+        /// <summary>
+        /// Gets or sets the text property for the To address routing textbox
+        /// </summary>
         public string ToPlaceText
         {
             get { return _toPlaceText; }
             set
             {
                 _toPlaceText = value;
-                GetSuggestionsList(_toPlaceText);
+
+                // get location suggestions if text input isn't empty
+                if (!string.IsNullOrEmpty(_toPlaceText))
+                {
+                    _geocodeViewModel.GetLocationSuggestionsAsync(_toPlaceText).ContinueWith((t) =>
+                    {
+                        SuggestionsList = t.Result;
+                    });
+                }
                 OnPropertyChanged();
             }
         }
@@ -128,7 +152,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the suggested from location that the user has selected
+        /// Gets or sets the suggested From location that the user has selected
         /// </summary>
         public string SelectedFromSuggestion
         {
@@ -154,7 +178,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the suggested to location that the user has selected
+        /// Gets or sets the suggested To location that the user has selected
         /// </summary>
         public string SelectedToSuggestion
         {
@@ -300,11 +324,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     return;
                 }
             }
+
             // set the route parameters
             var routeParams = await Router.CreateDefaultParametersAsync();
             routeParams.ReturnDirections = true;
             routeParams.ReturnRoutes = true;
-          
 
             // add route stops as parameters
             try
@@ -387,11 +411,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 exceptionCounter = 0;
                 throw ex;
             }
-        }
-
-        private async Task GetSuggestionsList(string userInput)
-        {
-            SuggestionsList = await _geocodeViewModel.GetLocationSuggestionsAsync(userInput);
         }
     }
 }

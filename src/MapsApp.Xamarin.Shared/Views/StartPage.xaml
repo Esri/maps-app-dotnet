@@ -280,7 +280,7 @@
                 <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding MoveToCurrentLocationCommand}"/>
             </Image.GestureRecognizers>
         </Image>
-        
+
         <!-- Activity indicator for long running operations -->
         <StackLayout Opacity="0.5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4" IsVisible="{Binding IsBusy, Source={StaticResource RouteViewModel}}" BackgroundColor="Gray">
             <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Gray" >
