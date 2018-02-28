@@ -12,7 +12,7 @@
     <Grid>
         <!-- List of user items for the user to select from -->
         <ListView x:Name="BasemapListView" ItemsSource="{Binding UserItems, Mode=TwoWay}" SelectedItem="{Binding SelectedUserItem}"
-            CachingStrategy="RecycleElement" ItemTapped="ListView_ItemTapped" >
+             ItemTapped="ListView_ItemTapped" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ImageCell ImageSource="{Binding ThumbnailUri}" Text="{Binding Title}" Detail="{Binding Snippet}"/>
@@ -25,6 +25,5 @@
             <controls:ErrorDialog ErrorMessage="{Binding ErrorMessage}" StackTrace="{Binding StackTrace}" 
                                   IsVisible="{Binding ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
         </StackLayout>
-        
     </Grid>
 </ContentPage>

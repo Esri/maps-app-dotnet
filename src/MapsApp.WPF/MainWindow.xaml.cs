@@ -37,6 +37,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             InitializeComponent();
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            var fromGeocodeViewModel = Resources["FromGeocodeViewModel"] as GeocodeViewModel;
+            var toGeocodeViewModel = Resources["ToGeocodeViewModel"] as GeocodeViewModel;
             var routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
@@ -64,14 +66,28 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
 
                             break;
                         }
-                    case nameof(GeocodeViewModel.FromPlace):
+                }
+            };
+
+            fromGeocodeViewModel.PropertyChanged += (o, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(GeocodeViewModel.Place):
                         {
-                            routeViewModel.FromPlace = geocodeViewModel.FromPlace.RouteLocation;
+                            routeViewModel.FromPlace = fromGeocodeViewModel.Place;
                             break;
                         }
-                    case nameof(GeocodeViewModel.ToPlace):
+                }
+            };
+
+            toGeocodeViewModel.PropertyChanged += (o, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(GeocodeViewModel.Place):
                         {
-                            routeViewModel.ToPlace = geocodeViewModel.ToPlace.RouteLocation;
+                            routeViewModel.ToPlace = toGeocodeViewModel.Place;
                             break;
                         }
                 }
@@ -136,35 +152,38 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                 }
             };
 
-            routeViewModel.PropertyChanged += async (s, e) =>
+            routeViewModel.PropertyChanged += (s, e) =>
             {
                 switch (e.PropertyName)
                 {
                     case nameof(RouteViewModel.Route):
                         {
-                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
-
-                            if (routeViewModel.FromPlace == null || routeViewModel.ToPlace == null || 
-                            routeViewModel.Route == null || graphicsOverlay == null)
+                            Application.Current.Dispatcher.Invoke(new Action(() =>
                             {
-                                return;
-                            }
+                                var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
 
-                            // clear existing graphics
-                            graphicsOverlay?.Graphics?.Clear();
+                                // clear existing graphics
+                                graphicsOverlay?.Graphics?.Clear();
 
-                            // Add route to map
-                            var routeGraphic = new Graphic(routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
-                            graphicsOverlay?.Graphics.Add(routeGraphic);
+                                if (routeViewModel.FromPlace == null || routeViewModel.ToPlace == null ||
+                                routeViewModel.Route == null || graphicsOverlay == null)
+                                {
+                                    return;
+                                }
 
-                            // Add start and end locations to the map
-                            var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Depart.png")));
-                            var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Stop.png")));
-                            var fromGraphic = new Graphic(routeViewModel.FromPlace, fromMapPin);
-                            var toGraphic = new Graphic(routeViewModel.ToPlace, toMapPin);
+                                // Add route to map
+                                var routeGraphic = new Graphic(routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
+                                graphicsOverlay?.Graphics.Add(routeGraphic);
 
-                            graphicsOverlay?.Graphics.Add(fromGraphic);
-                            graphicsOverlay?.Graphics.Add(toGraphic);
+                                // Add start and end locations to the map
+                                var fromMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Depart.png")));
+                                var toMapPin = new PictureMarkerSymbol(new RuntimeImage(new System.Uri("pack://application:,,,/MapsApp;component/Images/Stop.png")));
+                                var fromGraphic = new Graphic(routeViewModel.FromPlace.RouteLocation, fromMapPin);
+                                var toGraphic = new Graphic(routeViewModel.ToPlace.RouteLocation, toMapPin);
+
+                                graphicsOverlay?.Graphics.Add(fromGraphic);
+                                graphicsOverlay?.Graphics.Add(toGraphic);
+                            }));
 
                             break;
                         }
@@ -183,14 +202,20 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
         /// <summary>
         /// Display the routing panel when user taps the Route button
         /// </summary>
-        private void ShowRoutingPanel(object sender, RoutedEventArgs e)
+        private async void ShowRoutingPanel(object sender, RoutedEventArgs e)
         {
             var geocodeViewModel = (Resources["GeocodeViewModel"] as GeocodeViewModel);
+            var routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
 
             // Set the to and from locations and text boxes
             // the from location will be the current user location 
-            geocodeViewModel.UserCurrentLocation = MapView.LocationDisplay.Location.Position;
-            geocodeViewModel.ToPlace = geocodeViewModel.Place;
+            if (MapView.LocationDisplay.IsEnabled)
+            {
+                routeViewModel.FromPlace = await geocodeViewModel.GetReverseGeocodedLocationAsync(MapView.LocationDisplay.Location.Position);
+                FromLocationTextBox.Text = routeViewModel?.FromPlace?.Label ?? string.Empty;
+            }
+            routeViewModel.ToPlace = geocodeViewModel.Place;
+            ToLocationTextBox.Text = routeViewModel?.ToPlace?.Label ?? string.Empty;
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;

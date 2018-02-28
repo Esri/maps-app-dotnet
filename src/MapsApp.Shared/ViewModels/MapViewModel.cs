@@ -115,8 +115,15 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 return _moveToCurrentLocationCommand ?? (_moveToCurrentLocationCommand = new DelegateCommand(
                     (x) =>
                     {
-                        // Set viewpoint to the user's current location
-                        AreaOfInterest = new Viewpoint(_lastLocation?.Position, DefaultZoomScale);
+                        try
+                        {
+                            // Set viewpoint to the user's current location
+                            AreaOfInterest = new Viewpoint(_lastLocation?.Position, DefaultZoomScale);
+                        }
+                        catch
+                        {
+                            ErrorMessage = "You must enable location services to use this functionality";
+                        }
                     }));
             }
         }

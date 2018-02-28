@@ -26,6 +26,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 		
 		public static void UpdateIdValues()
 		{
+			global::ModernHttpClient.Resource.String.library_name = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.library_name;
 			global::PCLCrypto.Resource.String.ApplicationName = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.ApplicationName;
 			global::PCLCrypto.Resource.String.Hello = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.slide_in_right;
@@ -35,6 +36,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			global::Xamarin.Auth.Resource.Layout.activity_webview = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.activity_webview;
 			global::Xamarin.Auth.Resource.String.ApplicationName = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.ApplicationName;
 			global::Xamarin.Auth.Resource.String.Hello = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.Hello;
+			global::Xamarin.Auth.Resource.String.library_name = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.library_name;
 			global::Xamarin.Auth.Resource.String.title_activity_webview = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.title_activity_webview;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarSize;
 		}
@@ -4168,6 +4170,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			
 			// aapt resource value: 0x7f070039
 			public const int character_counter_pattern = 2131165241;
+			
+			// aapt resource value: 0x7f070041
+			public const int library_name = 2131165249;
 			
 			// aapt resource value: 0x7f070001
 			public const int mr_button_content_description = 2131165185;

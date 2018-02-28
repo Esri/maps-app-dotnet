@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MapsApp.Xamarin.Shared", "MapsApp.Xamarin.Shared\MapsApp.Xamarin.Shared.shproj", "{C0E5C9C0-53D2-4EED-B36E-D7A8DB55E1D1}"
 EndProject
@@ -292,5 +292,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85B96781-BD01-489E-9F9F-91FFECC94A17}
 	EndGlobalSection
 EndGlobal

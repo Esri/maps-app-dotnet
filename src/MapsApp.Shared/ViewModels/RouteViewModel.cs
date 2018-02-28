@@ -20,6 +20,7 @@ using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Http;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Security;
+using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
 using System;
 using System.Collections.Generic;
@@ -32,8 +33,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
     class RouteViewModel : BaseViewModel
     {
         private bool _isBusy;
-        private MapPoint _fromPlace;
-        private MapPoint _toPlace;
+        private GeocodeResult _fromPlace;
+        private GeocodeResult _toPlace;
         private RouteResult _route;
         private Viewpoint _areaOfInterest;
         private IReadOnlyList<DirectionManeuver> _directionManeuvers;
@@ -58,7 +59,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Gets or sets the start location for the route
         /// </summary>
-        public MapPoint FromPlace
+        public GeocodeResult FromPlace
         {
             get { return _fromPlace; }
             set
@@ -75,7 +76,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <summary>
         /// Gets or sets the end location for the route
         /// </summary>
-        public MapPoint ToPlace
+        public GeocodeResult ToPlace
         {
             get { return _toPlace; }
             set
@@ -193,6 +194,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     return;
                 }
             }
+
             // set the route parameters
             var routeParams = await Router.CreateDefaultParametersAsync();
             routeParams.ReturnDirections = true;
@@ -201,8 +203,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             // add route stops as parameters
             try
             {
-                routeParams.SetStops(new List<Stop>() { new Stop(FromPlace),
-                                                            new Stop(ToPlace) });
+                routeParams.SetStops(new List<Stop>() { new Stop(FromPlace.RouteLocation),
+                                                            new Stop(ToPlace.RouteLocation) });
                 Route = await Router.SolveRouteAsync(routeParams);
 
                 // Set the AOI to an area slightly larger than the route's extent

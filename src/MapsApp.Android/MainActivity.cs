@@ -9,13 +9,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
-			TabLayoutResource = Resource.Layout.Tabbar;
+            TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-			LoadApplication (new Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.App ());
+            System.Environment.SetEnvironmentVariable("XA_HTTP_CLIENT_HANDLER_TYPE", "ModernHttpClient.NativeMessageHandler");
+            LoadApplication (new Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.App ());
 		}
 	}
 }

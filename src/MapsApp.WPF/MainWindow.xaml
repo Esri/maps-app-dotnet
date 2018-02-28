@@ -17,6 +17,8 @@
         <ResourceDictionary>
             <viewModels:MapViewModel x:Key="MapViewModel"/>
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel"/>
+            <viewModels:GeocodeViewModel x:Key="FromGeocodeViewModel"/>
+            <viewModels:GeocodeViewModel x:Key="ToGeocodeViewModel"/>
             <viewModels:BasemapsViewModel x:Key="BasemapsViewModel"/>
             <viewModels:UserItemsViewModel x:Key="UserItemsViewModel"/>
             <viewModels:RouteViewModel x:Key="RouteViewModel"/>
@@ -43,7 +45,7 @@
         </Grid.RowDefinitions>
 
          <!--MapView Control-->
-        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"
+        <esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}" 
                           Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="4">
             <esri:MapView.GraphicsOverlays>
                 <esri:GraphicsOverlay Id="PlacesOverlay"/>
@@ -130,7 +132,6 @@
             </ListView>
         </StackPanel>
 
-
         <!-- Left panel -->
         <Grid Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Margin="15, 0, 0, 10">
             <Grid.ColumnDefinitions>
@@ -164,22 +165,18 @@
             </StackPanel>
 
             <!-- Route Panel -->
-            <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Grid.Column="0"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
-                        Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}" Grid.Row="1">
-<!--=======
-            <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Width="450"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}, Source={StaticResource RouteViewModel}}" 
-                        Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource GeocodeViewModel}">
->>>>>>> origin/master-->
+            <StackPanel x:Name="RoutingPanel" Orientation="Vertical" Grid.Column="0"  Visibility="{Binding Route, Converter={StaticResource NullToVisibilityConverter}}" 
+                        Background="#dfdfdf" Margin="0,15,0,15" DataContext="{StaticResource RouteViewModel}" Grid.Row="1">
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"/>
                 </StackPanel.Effect>
-
                 <StackPanel Orientation="Horizontal"  >
                     <StackPanel Orientation="Vertical" Margin="15,15,0,15">
                         <!-- From location text box -->
                         <StackPanel Orientation="Horizontal">
                             <Image  Source="pack://application:,,,/MapsApp;component/Images/Depart.png" Height="40" Margin="0,0,10,5"/>
-                            <TextBox x:Name="FromLocationTextBox" Text="{Binding FromSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" VerticalAlignment="Center" 
+                            <TextBox x:Name="FromLocationTextBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Source={StaticResource FromGeocodeViewModel}}" 
+                                     FontSize="20" Foreground="#444444" VerticalAlignment="Center" 
                                  Width="330" Margin="0,0,0,5" TextWrapping="Wrap">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="GotFocus">
@@ -202,7 +199,8 @@
                         <!-- To location text box -->
                         <StackPanel Orientation="Horizontal">
                             <Image  Source="pack://application:,,,/MapsApp;component/Images/Stop.png" Height="40" Margin="0,0,10,0"/>
-                            <TextBox x:Name="ToLocationTextBox" Text="{Binding ToSearchText, UpdateSourceTrigger=PropertyChanged}" FontSize="20" Foreground="#444444" TextWrapping="Wrap" 
+                            <TextBox x:Name="ToLocationTextBox" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged, Source={StaticResource ToGeocodeViewModel}}" 
+                                     FontSize="20" Foreground="#444444" TextWrapping="Wrap" 
                                  VerticalAlignment="Center" Width="330">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="GotFocus">
@@ -223,14 +221,14 @@
                             </TextBox>
                         </StackPanel>
                     </StackPanel>
-                    <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding ClearRouteCommand, Source={StaticResource RouteViewModel}}" VerticalAlignment="Top" Margin="20,5,0,0">
+                    <Button Background="#dfdfdf" BorderThickness="0" Command="{Binding ClearRouteCommand}" VerticalAlignment="Top" Margin="20,5,0,0">
                         <Image  Source="pack://application:,,,/MapsApp;component/Images/close.png"/>
                         </Button>
                 </StackPanel>
 
                 <!-- Suggestions box for From location -->
-                <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding Source={StaticResource GeocodeViewModel}, 
-                    Path=SelectedFromSuggestion}" Margin="5, 0, 5, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
+                <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" DataContext="{StaticResource FromGeocodeViewModel}" 
+                          Margin="5, 0, 5, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
                     <ListView.Effect>
                         <DropShadowEffect Opacity=".5"></DropShadowEffect>
                     </ListView.Effect>
@@ -242,9 +240,9 @@
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>
+
                 <!-- Suggestions box for To location -->
-                <ListView x:Name="ToLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding Source={StaticResource GeocodeViewModel}, 
-                    Path=SelectedToSuggestion}"
+                <ListView x:Name="ToLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" DataContext="{StaticResource ToGeocodeViewModel}"
                           Margin="5, 0, 5, 0"  FontSize="20" Width="465" HorizontalAlignment="Left" Visibility="Collapsed">
                     <ListView.Effect>
                         <DropShadowEffect Opacity=".5"></DropShadowEffect>
