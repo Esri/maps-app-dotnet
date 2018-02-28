@@ -256,7 +256,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         /// <param name="userInput">User input</param>
         /// <returns>List of suggestions</returns>
-        internal async Task<ObservableCollection<string>> GetLocationSuggestionsAsync(string userInput)
+        private async Task<ObservableCollection<string>> GetLocationSuggestionsAsync(string userInput)
         {
             if (Locator?.LocatorInfo?.SupportsSuggestions ?? false && !string.IsNullOrEmpty(userInput))
             {
@@ -289,7 +289,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         /// <param name="_searchString">User input</param>
         /// <returns>Location that best matches the search string</returns>
-        internal async Task<GeocodeResult> GetSearchedLocationAsync(string geocodeAddress)
+        private async Task<GeocodeResult> GetSearchedLocationAsync(string geocodeAddress)
         {
             try
             {
@@ -324,7 +324,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// Use the locator to perform a reverse geocode operation, returning the place that the user tapped on inside the map
         /// If the user's current location is passed, then set that as the FromPlace used for routing instead
         /// </summary>
-        internal async Task<GeocodeResult> GetReverseGeocodedLocationAsync(MapPoint location)
+        private async Task<GeocodeResult> GetReverseGeocodedLocationAsync(MapPoint location)
         {
             try
             {
