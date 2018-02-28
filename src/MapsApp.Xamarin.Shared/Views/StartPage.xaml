@@ -18,6 +18,8 @@
         <ResourceDictionary>
             <viewModels:MapViewModel x:Key="MapViewModel" />
             <viewModels:GeocodeViewModel x:Key="GeocodeViewModel" />
+            <viewModels:GeocodeViewModel x:Key="FromGeocodeViewModel"/>
+            <viewModels:GeocodeViewModel x:Key="ToGeocodeViewModel"/>
             <viewModels:RouteViewModel x:Key="RouteViewModel"/>
             <converters:NumberToVisibilityConverter x:Key="NumberToVisibilityConverter"/>
             <converters:SubtractFromConverter x:Key="SubtractFromConverter"/>
@@ -118,7 +120,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="startpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5" Grid.Column="0"/>
-                    <Entry x:Name="FromLocationTextBox" Text="{Binding FromPlaceText, Mode=TwoWay}" Grid.Column="1" MinimumHeightRequest="40" >
+                    <Entry x:Name="FromLocationTextBox" Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource FromGeocodeViewModel}}" Grid.Column="1" MinimumHeightRequest="40" >
                         <Entry.Triggers>
                             <EventTrigger Event="Focused">
                                 <helpers:ChangeVisibilityAction  TargetName="FromLocationSuggestionsList"/>
@@ -142,7 +144,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="endpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5" Grid.Column="0"/>
-                    <Entry x:Name="ToLocationTextBox" Text="{Binding ToPlaceText, Mode=TwoWay}" Grid.Column="1" MinimumHeightRequest="40">
+                    <Entry x:Name="ToLocationTextBox" Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource ToGeocodeViewModel}}" Grid.Column="1" MinimumHeightRequest="40">
                         <Entry.Triggers>
                             <EventTrigger Event="Focused">
                                 <helpers:ChangeVisibilityAction TargetName="ToLocationSuggestionsList"/>
@@ -161,8 +163,8 @@
             </StackLayout>
 
             <!-- Suggestions box for From location -->
-            <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedFromSuggestion}" 
-                       IsVisible="False" BackgroundColor="Transparent">
+            <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" 
+                       BindingContext="{StaticResource FromGeocodeViewModel}" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -175,8 +177,8 @@
             </ListView>
 
             <!-- Suggestions box for To location -->
-            <ListView x:Name="ToLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedToSuggestion}" 
-                       IsVisible="False" BackgroundColor="Transparent">
+            <ListView x:Name="ToLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" 
+                       BindingContext="{StaticResource ToGeocodeViewModel}" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

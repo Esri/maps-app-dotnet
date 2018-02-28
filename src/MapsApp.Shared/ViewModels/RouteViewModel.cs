@@ -24,7 +24,6 @@ using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.Tasks.NetworkAnalysis;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -36,24 +35,10 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         private bool _isBusy;
         private GeocodeResult _fromPlace;
         private GeocodeResult _toPlace;
-        private string _selectedFromSuggestion;
-        private string _selectedToSuggestion;
         private RouteResult _route;
         private Viewpoint _areaOfInterest;
         private IReadOnlyList<DirectionManeuver> _directionManeuvers;
         private ICommand _clearRouteCommand;
-        private ObservableCollection<string> _suggestionsList;
-        private GeocodeViewModel _geocodeViewModel;
-        private string _fromPlaceText;
-        private string _toPlaceText;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RouteViewModel"/> class.
-        /// </summary>
-        public RouteViewModel()
-        {
-            _geocodeViewModel = new GeocodeViewModel();
-        }
 
         /// <summary>
         /// Gets or sets the property indicating whether the app is busy processing
@@ -72,50 +57,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the text property for the From address routing textbox
-        /// </summary>
-        public string FromPlaceText
-        {
-            get { return _fromPlaceText; }
-            set
-            {
-                _fromPlaceText = value;
-
-                // get location suggestions if text input isn't empty
-                if (!string.IsNullOrEmpty(_fromPlaceText))
-                {
-                    _geocodeViewModel.GetLocationSuggestionsAsync(_fromPlaceText).ContinueWith((t) =>
-                    {
-                        SuggestionsList = t.Result;
-                    });
-                }
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the text property for the To address routing textbox
-        /// </summary>
-        public string ToPlaceText
-        {
-            get { return _toPlaceText; }
-            set
-            {
-                _toPlaceText = value;
-
-                // get location suggestions if text input isn't empty
-                if (!string.IsNullOrEmpty(_toPlaceText))
-                {
-                    _geocodeViewModel.GetLocationSuggestionsAsync(_toPlaceText).ContinueWith((t) =>
-                    {
-                        SuggestionsList = t.Result;
-                    });
-                }
-                OnPropertyChanged();
-            }
-        }
-
-        /// <summary>
         /// Gets or sets the start location for the route
         /// </summary>
         public GeocodeResult FromPlace
@@ -126,7 +67,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_fromPlace != value)
                 {
                     _fromPlace = value;
-                    FromPlaceText = _fromPlace?.Label ?? string.Empty;
                     GetRouteAsync();
                     OnPropertyChanged();
                 }
@@ -144,79 +84,9 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 if (_toPlace != value)
                 {
                     _toPlace = value;
-                    ToPlaceText = _toPlace?.Label ?? string.Empty;
                     GetRouteAsync();
                     OnPropertyChanged();
                 }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the suggested From location that the user has selected
-        /// </summary>
-        public string SelectedFromSuggestion
-        {
-            get
-            {
-                return _selectedFromSuggestion;
-            }
-
-            set
-            {
-                if (_selectedFromSuggestion != value && value != null)
-                {
-                    _selectedFromSuggestion = value;
-
-                    // Call method to search location
-                    _geocodeViewModel.GetSearchedLocationAsync(_selectedFromSuggestion).ContinueWith((t) =>
-                    {
-                        FromPlace = t.Result;
-                    });
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the suggested To location that the user has selected
-        /// </summary>
-        public string SelectedToSuggestion
-        {
-            get
-            {
-                return _selectedToSuggestion;
-            }
-
-            set
-            {
-                if (_selectedToSuggestion != value && value != null)
-                {
-                    _selectedToSuggestion = value;
-
-                    // Call method to search location
-                    _geocodeViewModel.GetSearchedLocationAsync(_selectedToSuggestion).ContinueWith((t) =>
-                    {
-                        ToPlace = t.Result;
-                    });
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the list of suggestions to be shown to the user
-        /// </summary>
-        public ObservableCollection<string> SuggestionsList
-        {
-            get
-            {
-                return _suggestionsList;
-            }
-
-            set
-            {
-                _suggestionsList = value;
-                OnPropertyChanged();
             }
         }
 

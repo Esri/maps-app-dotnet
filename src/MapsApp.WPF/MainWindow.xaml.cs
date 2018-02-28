@@ -37,6 +37,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             InitializeComponent();
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            var fromGeocodeViewModel = Resources["FromGeocodeViewModel"] as GeocodeViewModel;
+            var toGeocodeViewModel = Resources["ToGeocodeViewModel"] as GeocodeViewModel;
             var routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
             geocodeViewModel.PropertyChanged += (o, e) =>
             {
@@ -62,6 +64,30 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
                                 graphicsOverlay?.Graphics.Add(graphic);
                             }));
 
+                            break;
+                        }
+                }
+            };
+
+            fromGeocodeViewModel.PropertyChanged += (o, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(GeocodeViewModel.Place):
+                        {
+                            routeViewModel.FromPlace = fromGeocodeViewModel.Place;
+                            break;
+                        }
+                }
+            };
+
+            toGeocodeViewModel.PropertyChanged += (o, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(GeocodeViewModel.Place):
+                        {
+                            routeViewModel.ToPlace = toGeocodeViewModel.Place;
                             break;
                         }
                 }
@@ -184,8 +210,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
             // Set the to and from locations and text boxes
             // the from location will be the current user location 
             if (MapView.LocationDisplay.IsEnabled)
+            {
                 routeViewModel.FromPlace = await geocodeViewModel.GetReverseGeocodedLocationAsync(MapView.LocationDisplay.Location.Position);
+                FromLocationTextBox.Text = routeViewModel?.FromPlace?.Label ?? string.Empty;
+            }
             routeViewModel.ToPlace = geocodeViewModel.Place;
+            ToLocationTextBox.Text = routeViewModel?.ToPlace?.Label ?? string.Empty;
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;

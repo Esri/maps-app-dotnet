@@ -46,6 +46,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             PictureMarkerSymbol startMapPin = CreateMapPin("start.png");
 
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+            var fromGeocodeViewModel = Resources["FromGeocodeViewModel"] as GeocodeViewModel;
+            var toGeocodeViewModel = Resources["ToGeocodeViewModel"] as GeocodeViewModel;
             _routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
 
             geocodeViewModel.PropertyChanged += (o, e) =>
@@ -66,6 +68,30 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                             var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, endMapPin);
                             graphicsOverlay?.Graphics.Add(graphic);
 
+                            break;
+                        }
+                }
+            };
+
+            fromGeocodeViewModel.PropertyChanged += (o, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(GeocodeViewModel.Place):
+                        {
+                            _routeViewModel.FromPlace = fromGeocodeViewModel.Place;
+                            break;
+                        }
+                }
+            };
+
+            toGeocodeViewModel.PropertyChanged += (o, e) =>
+            {
+                switch (e.PropertyName)
+                {
+                    case nameof(GeocodeViewModel.Place):
+                        {
+                            _routeViewModel.ToPlace = toGeocodeViewModel.Place;
                             break;
                         }
                 }
@@ -298,8 +324,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             // Set the to and from locations and text boxes
             // the from location will be the current user location 
             if (MapView.LocationDisplay.IsEnabled)
+            {
                 _routeViewModel.FromPlace = await geocodeViewModel.GetReverseGeocodedLocationAsync(MapView.LocationDisplay.Location.Position);
+                FromLocationTextBox.Text = _routeViewModel?.FromPlace?.Label ?? string.Empty;
+            }
             _routeViewModel.ToPlace = geocodeViewModel.Place;
+            ToLocationTextBox.Text = _routeViewModel?.ToPlace?.Label ?? string.Empty;
 
             // clear the Place to hide the search result
             geocodeViewModel.Place = null;

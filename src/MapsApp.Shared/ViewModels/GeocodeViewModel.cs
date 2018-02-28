@@ -96,7 +96,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                         // Call method to get location suggestions
                         GetLocationSuggestionsAsync(_searchText).ContinueWith((t) =>
                         {
-                            SuggestionsList = t.Result;
+                            if (t.Status == TaskStatus.RanToCompletion)
+                                SuggestionsList = t.Result;
                         });
                     }
                     else
@@ -126,7 +127,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     // Call method to search location
                     GetSearchedLocationAsync(_selectedSuggestion).ContinueWith((t) =>
                     {
-                        Place = t.Result;
+                        if (t.Status == TaskStatus.RanToCompletion)
+                            Place = t.Result;
                     });
                     OnPropertyChanged();
                 }
@@ -148,6 +150,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     // Set viewpoint to the feature's extent
                     AreaOfInterest = Place != null ? (Place.Extent != null ? new Viewpoint(Place.Extent) :
                         new Viewpoint(Place.DisplayLocation, DefaultZoomScale)) : AreaOfInterest;
+                    SearchText = Place?.Label ?? string.Empty;
                     OnPropertyChanged();
                 }
             }
@@ -204,7 +207,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 
                     GetReverseGeocodedLocationAsync(_reverseGeocodeInputLocation).ContinueWith((t) =>
                     {
-                        Place = t.Result;
+                        if (t.Status == TaskStatus.RanToCompletion)
+                            Place = t.Result;
                     });
 
                     OnPropertyChanged();
@@ -224,7 +228,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                     {
                         GetSearchedLocationAsync((string)x).ContinueWith((t) =>
                         {
-                            Place = t.Result;
+                            if (t.Status == TaskStatus.RanToCompletion)
+                                Place = t.Result;
                         }) ;
                     }));
             }
@@ -286,9 +291,6 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// <returns>Location that best matches the search string</returns>
         internal async Task<GeocodeResult> GetSearchedLocationAsync(string geocodeAddress)
         {
-            // clear the text in the search box
-            SearchText = string.Empty;
-
             try
             {
                 // Locate the searched feature
