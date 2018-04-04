@@ -324,7 +324,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// Use the locator to perform a reverse geocode operation, returning the place that the user tapped on inside the map
         /// If the user's current location is passed, then set that as the FromPlace used for routing instead
         /// </summary>
-        private async Task<GeocodeResult> GetReverseGeocodedLocationAsync(MapPoint location)
+        internal async Task<GeocodeResult> GetReverseGeocodedLocationAsync(MapPoint location)
         {
             try
             {
