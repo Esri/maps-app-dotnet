@@ -1,6 +1,6 @@
 # Maps App .NET
 
-The Maps App for .NET shows how a suite of applications can be built around the ArcGIS Platform using the ArcGIS Runtime SDK for .NET and a combination of WPF and the cross-platform framework Xamarin Forms. It demonstrates best practices around some simple but key functionality of the ArcGIS Runtime. You can use the Maps App as is, or extend it to meet your specific needs. Detailed documentation about the app and its architecture can be found on the [developers website](https://developers.arcgis.com/example-apps/maps-app-dotnet/).
+The Maps App for .NET shows how a suite of applications can be built around the ArcGIS Platform using the ArcGIS Runtime SDK for .NET and a combination of WPF and the cross-platform framework Xamarin Forms. It demonstrates best practices around some simple but key functionality of the ArcGIS Runtime. You can use the Maps App as is, or extend it to meet your specific needs. Detailed documentation about the app and its architecture can be found on the [developers website](https://developers.arcgis.com/example-apps/maps-app-dotnet/?utm_source=github&utm_medium=web&utm_campaign=example_apps_maps_app_dotnet).
 
 ## Features
 - Place Search
