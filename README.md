@@ -45,6 +45,7 @@ If there are changes made in the Original repository, you can sync the fork to k
 - [Visual Studio 2017 or higher](https://www.visualstudio.com/downloads/)
 - [.NET Framework 4.5.2 or higher](https://www.microsoft.com/net/download)
 - [ArcGIS Runtime SDK for .NET 100.2.1 or higher](https://developers.arcgis.com/net/)
+- [Blend SDK 4.0 or higher](https://www.microsoft.com/en-us/download/details.aspx?id=10801)
 
 ### Resources
 
