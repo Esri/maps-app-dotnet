@@ -74,20 +74,18 @@
 
         <!-- Basemaps Picker -->
         <StackPanel Background="White" Orientation="Vertical" x:Name="BasemapSwitcher" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Visibility="Collapsed">
-            <TextBlock HorizontalAlignment="Right">
-                    <Hyperlink TextDecorations="{x:Null}">
-                        <Image Source="pack://application:,,,/MapsApp;component/Images/close.png" Height="40" Width="40"/>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Click">
-                                <ei:ChangePropertyAction TargetName="BasemapSwitcher" PropertyName="Visibility">
-                                    <ei:ChangePropertyAction.Value>
-                                        <Visibility>Collapsed</Visibility>
-                                    </ei:ChangePropertyAction.Value>
-                                </ei:ChangePropertyAction>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </Hyperlink>
-            </TextBlock>
+                <Button HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="pack://application:,,,/MapsApp;component/Images/close.png" Height="40" Width="40"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <ei:ChangePropertyAction TargetName="BasemapSwitcher" PropertyName="Visibility">
+                                <ei:ChangePropertyAction.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </ei:ChangePropertyAction.Value>
+                            </ei:ChangePropertyAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
             <ListView  DataContext="{StaticResource BasemapsViewModel}"  ItemsSource="{Binding Basemaps}" SelectedItem="{Binding SelectedBasemap}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -288,10 +286,13 @@
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"></DropShadowEffect>
                 </StackPanel.Effect>
-
-                <StackPanel Orientation="Horizontal" Width="450" Margin="10">
-                    <TextBlock Text="Maps App Settings" FontSize="30" Width="390"/>
-                    <Button Background="White" BorderThickness="0">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Maps App Settings" FontSize="30" Grid.Column="0"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Grid.Column="1"> 
                         <Image  Source="pack://application:,,,/MapsApp;component/Images/close.png" />
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
@@ -303,7 +304,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
-                </StackPanel>
+                </Grid>
 
                 <Separator/>
 
@@ -359,8 +360,8 @@
         </Grid>
 
         <!-- List of suggestions from geocoder -->
-        <StackPanel  Grid.Row="1" Grid.Column="0">
-            <ListView x:Name="SearchSuggestionsList" DataContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" 
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <ListView x:Name="SearchSuggestionsList" DataContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" Visibility="Collapsed"
                   Margin="15, 0, 0, 0"  FontSize="20" Width="465" HorizontalAlignment="Left">
                 <ListView.Effect>
                     <DropShadowEffect Opacity=".5"></DropShadowEffect>
@@ -380,7 +381,7 @@
             <StackPanel.Effect>
                 <DropShadowEffect Opacity=".5"></DropShadowEffect>
             </StackPanel.Effect>
-            <Button Background="White" Opacity=".7">
+            <Button Background="Transparent" BorderBrush="Transparent" Opacity=".7">
                 <Image Source="pack://application:,,,/MapsApp;component/Images/menu.png" Height="60" Width="60"/>
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">

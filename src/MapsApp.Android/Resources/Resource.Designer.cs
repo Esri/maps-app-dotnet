@@ -38,7 +38,1998 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			global::Xamarin.Auth.Resource.String.Hello = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.String.library_name = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.library_name;
 			global::Xamarin.Auth.Resource.String.title_activity_webview = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.title_activity_webview;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_fade_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_fade_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_popup_enter = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_popup_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_popup_exit = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_popup_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_shrink_fade_out_from_bottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_in_bottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_slide_in_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_in_top = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_slide_in_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_out_bottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_slide_out_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_out_top = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.abc_slide_out_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_in = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.design_bottom_sheet_slide_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_out = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.design_bottom_sheet_slide_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_in = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.design_snackbar_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_out = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.design_snackbar_out;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.EnterFromLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.EnterFromRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.ExitToLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.ExitToRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.tooltip_enter = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.tooltip_enter;
+			global::Xamarin.Forms.Platform.Android.Resource.Animation.tooltip_exit = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animation.tooltip_exit;
+			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_appbar_state_list_animator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Animator.design_appbar_state_list_animator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarDivider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarItemBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarPopupTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarPopupTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSplitStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarSplitStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarTabBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarTabStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTabTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarTabTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarWidgetTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionBarWidgetTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionDropDownStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionDropDownStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionMenuTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionMenuTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionMenuTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionMenuTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCloseButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeCloseButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCloseDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeCloseDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCopyDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeCopyDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeCutDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeCutDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeFindDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeFindDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModePasteDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModePasteDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModePopupWindowStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModePopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeSelectAllDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeSelectAllDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeShareDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeShareDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeSplitBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeSplitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionModeWebSearchDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionModeWebSearchDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionOverflowButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionOverflowButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionOverflowMenuStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionOverflowMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionProviderClass = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionProviderClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionViewClass = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.actionViewClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.activityChooserViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.activityChooserViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogButtonGroupStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogCenterButtons = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.alertDialogCenterButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.alertDialogStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alertDialogTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.alertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.allowStacking = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.allowStacking;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.alphabeticModifiers = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.alphabeticModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.arrowHeadLength = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.arrowHeadLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.arrowShaftLength = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.arrowShaftLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoCompleteTextViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.autoCompleteTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeMaxTextSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.autoSizeMaxTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeMinTextSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.autoSizeMinTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizePresetSizes = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.autoSizePresetSizes;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeStepGranularity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.autoSizeStepGranularity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.autoSizeTextType = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.autoSizeTextType;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.background;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundSplit = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundStacked = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.backgroundStacked;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.backgroundTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.barLength = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.barLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_autoHide = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.behavior_autoHide;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_hideable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.behavior_hideable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_overlapTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.behavior_overlapTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_peekHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.behavior_skipCollapsed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.behavior_skipCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.borderWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.borderWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.borderlessButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.borderlessButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.bottomSheetDialogTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.bottomSheetDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.bottomSheetStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.bottomSheetStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonBarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNegativeButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNeutralButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarPositiveButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonPanelSideLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonPanelSideLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonStyleSmall = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.buttonTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardBackgroundColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.cardBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardCornerRadius = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.cardCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardElevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.cardElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardMaxElevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.cardMaxElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardPreventCornerOverlap = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.cardPreventCornerOverlap;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.cardUseCompatPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.cardUseCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkboxStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.checkboxStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.checkedTextViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.checkedTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.closeIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.closeItemLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.closeItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapseContentDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.collapseContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapseIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.collapseIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapsedTitleGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.collapsedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.collapsedTitleTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.collapsedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.color;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorAccent = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorAccent;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorBackgroundFloating = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorBackgroundFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorButtonNormal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorButtonNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlActivated = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorControlActivated;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlHighlight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorControlHighlight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorControlNormal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorControlNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorError = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimary = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorPrimary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorPrimaryDark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.colorSwitchThumbNormal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.colorSwitchThumbNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.commitIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.commitIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetEndWithActions = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentInsetStartWithNavigation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentPaddingTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.contentScrim = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.contentScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.controlBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.controlBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.counterEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterMaxLength = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.counterMaxLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterOverflowTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.counterTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.counterTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.customNavigationLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.customNavigationLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.defaultQueryHint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.defaultQueryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogPreferredPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.dialogPreferredPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dialogTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.dialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.displayOptions = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.displayOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.divider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerHorizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.dividerHorizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.dividerPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerVertical = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.dividerVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.drawableSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawerArrowStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.drawerArrowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropDownListViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.dropDownListViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropdownListPreferredItemHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.editTextBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.editTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.editTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.editTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.errorEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.errorTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.errorTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandActivityOverflowButtonDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expanded = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expandedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMargin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expandedTitleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expandedTitleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expandedTitleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expandedTitleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleMarginTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expandedTitleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.expandedTitleTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.expandedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fabSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fabSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fastScrollEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollHorizontalThumbDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollHorizontalTrackDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollVerticalThumbDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fastScrollVerticalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fastScrollVerticalTrackDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fastScrollVerticalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.font = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.font;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontFamily = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderAuthority = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontProviderAuthority;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderCerts = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontProviderCerts;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderFetchStrategy = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontProviderFetchStrategy;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderFetchTimeout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontProviderFetchTimeout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderPackage = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontProviderPackage;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontProviderQuery = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontProviderQuery;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.fontWeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.foregroundInsidePadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.foregroundInsidePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.gapBetweenBars = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.gapBetweenBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.goIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.goIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.headerLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.headerLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.height;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hideOnContentScroll = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.hideOnContentScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintAnimationEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.hintAnimationEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.hintEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.hintTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.hintTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.homeAsUpIndicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.homeLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.homeLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.iconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.iconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.iconifiedByDefault = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.iconifiedByDefault;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.imageButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.imageButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.indeterminateProgressStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.indeterminateProgressStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.initialActivityCount = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.initialActivityCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.insetForeground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.insetForeground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.isLightTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.isLightTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemIconTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.itemPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.itemTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.keylines = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.keylines;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layoutManager = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layoutManager;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_anchor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_anchorGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_anchorGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_behavior = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_collapseMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_collapseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_collapseParallaxMultiplier = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_collapseParallaxMultiplier;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_dodgeInsetEdges = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_insetEdge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_insetEdge;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_keyline = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_keyline;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_scrollFlags = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_scrollFlags;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.layout_scrollInterpolator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.layout_scrollInterpolator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceBackgroundIndicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listDividerAlertDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listDividerAlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listItemLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listMenuViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listMenuViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPopupWindowStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listPopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightLarge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listPreferredItemHeightLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightSmall = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logo = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logoDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.logoDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxActionInlineWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.maxActionInlineWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.maxButtonHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.maxButtonHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.measureWithLargestChild = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.measureWithLargestChild;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.multiChoiceItemLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.multiChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationContentDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.navigationContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.navigationIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.navigationMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.navigationMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.numericModifiers = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.numericModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.overlapAnchor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.overlapAnchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingBottomNoButtons = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.paddingBottomNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.paddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.paddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.paddingTopNoTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.paddingTopNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.panelBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelMenuListTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.panelMenuListTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.panelMenuListWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.panelMenuListWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleContentDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.passwordToggleContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.passwordToggleDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.passwordToggleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.passwordToggleTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.passwordToggleTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupMenuStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.popupMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.popupWindowStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.popupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.preserveIconSpacing = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.preserveIconSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.pressedTranslationZ = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.pressedTranslationZ;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.progressBarPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.progressBarPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.progressBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.progressBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.queryBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.queryBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.queryHint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.queryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.radioButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.radioButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.ratingBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleIndicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.ratingBarStyleIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleSmall = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.ratingBarStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.reverseLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.reverseLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.rippleColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimAnimationDuration = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.scrimAnimationDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimVisibleHeightTrigger = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.scrimVisibleHeightTrigger;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchHintIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.searchHintIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.searchIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.searchViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.searchViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.seekBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.seekBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.selectableItemBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.selectableItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.selectableItemBackgroundBorderless = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showAsAction = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.showAsAction;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showDividers = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.showDividers;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.showText;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.showTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.singleChoiceItemLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.singleChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spanCount = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.spanCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinBars = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.spinBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinnerDropDownItemStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.spinnerDropDownItemStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.spinnerStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.spinnerStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.splitTrack = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.splitTrack;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.srcCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.srcCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.stackFromEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.stackFromEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_above_anchor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.state_above_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_collapsed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.state_collapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.state_collapsible = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.state_collapsible;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.statusBarBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.statusBarScrim = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.statusBarScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subMenuArrow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.subMenuArrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.submitBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.submitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.subtitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.subtitleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.subtitleTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.suggestionRowLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.suggestionRowLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchMinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.switchMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.switchPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.switchStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.switchTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.switchTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabContentStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabContentStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabIndicatorColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabIndicatorHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabIndicatorHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMaxWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabMaxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabPaddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabPaddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabPaddingTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabSelectedTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabSelectedTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tabTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tabTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAllCaps = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceLargePopupMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAppearanceListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItemSecondary = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAppearanceListItemSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceListItemSmall = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAppearanceListItemSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearancePopupMenuHeader = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSearchResultSubtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSearchResultTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textAppearanceSmallPopupMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorAlertDialogListItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textColorAlertDialogListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorError = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textColorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorSearchUrl = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.textColorSearchUrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.theme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thickness = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTextPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.thumbTextPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.thumbTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thumbTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.thumbTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tickMark;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMarkTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tickMarkTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tickMarkTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tickMarkTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.title;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMargin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMarginTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleMargins = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleMargins;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.titleTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarId = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.toolbarId;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarNavigationButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.toolbarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.toolbarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipForegroundColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tooltipForegroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipFrameBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tooltipFrameBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.tooltipText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.tooltipText;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.track = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.track;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.trackTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.trackTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.trackTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.trackTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.useCompatPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.useCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.voiceIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.voiceIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionBarOverlay = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowActionBarOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowActionModeOverlay = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowActionModeOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedHeightMajor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowFixedHeightMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedHeightMinor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowFixedHeightMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedWidthMajor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowFixedWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowFixedWidthMinor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowFixedWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowMinWidthMajor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowMinWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowMinWidthMinor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowMinWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Attribute.windowNoTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Attribute.windowNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_action_bar_embed_tabs = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_allow_stacked_button_bar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::Xamarin.Forms.Platform.Android.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_background_cache_hint_selector_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_background_cache_hint_selector_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_btn_colored_borderless_text_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_btn_colored_text_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_btn_colored_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_color_highlight_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_color_highlight_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_hint_foreground_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_hint_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_hint_foreground_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_hint_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_input_method_navigation_guard = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_input_method_navigation_guard;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_disable_only_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_disable_only_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_primary_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_primary_text_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_primary_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_search_url_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_normal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_search_url_text_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_pressed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_search_url_text_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_search_url_text_selected = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_search_url_text_selected;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_secondary_text_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_secondary_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_secondary_text_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_secondary_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_btn_checkable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_tint_btn_checkable;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_default = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_tint_default;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_edittext = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_tint_edittext;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_seek_thumb = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_tint_seek_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_tint_spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.abc_tint_switch_track = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.abc_tint_switch_track;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.accent_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.accent_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.accent_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.accent_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_floating_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.background_floating_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_floating_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.background_floating_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.background_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.background_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.background_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_disabled_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.bright_foreground_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_disabled_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.bright_foreground_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_inverse_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.bright_foreground_inverse_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_inverse_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.bright_foreground_inverse_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.bright_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.bright_foreground_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.bright_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.button_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.button_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.button_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.button_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_dark_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.cardview_dark_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_light_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.cardview_light_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_end_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.cardview_shadow_end_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.cardview_shadow_start_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.cardview_shadow_start_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_bottom_navigation_shadow_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_bottom_navigation_shadow_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_error = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_end_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_fab_shadow_end_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_mid_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_fab_shadow_mid_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_shadow_start_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_fab_shadow_start_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_end_inner_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_fab_stroke_end_inner_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_end_outer_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_fab_stroke_end_outer_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_top_inner_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_fab_stroke_top_inner_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_fab_stroke_top_outer_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_fab_stroke_top_outer_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_snackbar_background_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_snackbar_background_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.design_tint_password_toggle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.design_tint_password_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_disabled_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.dim_foreground_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_disabled_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.dim_foreground_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.dim_foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.dim_foreground_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.dim_foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.error_color_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.error_color_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.foreground_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.foreground_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.foreground_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.foreground_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.highlighted_text_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.highlighted_text_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.highlighted_text_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.highlighted_text_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_800 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_blue_grey_800;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_900 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_blue_grey_900;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_blue_grey_950 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_blue_grey_950;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_deep_teal_200 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_deep_teal_200;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_deep_teal_500 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_deep_teal_500;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_100 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_grey_100;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_300 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_grey_300;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_50 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_grey_50;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_600 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_grey_600;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_800 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_grey_800;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_850 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_grey_850;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.material_grey_900 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.material_grey_900;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_action_color_filter = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.notification_action_color_filter;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_icon_bg_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.notification_material_background_media_default_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.notification_material_background_media_default_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_dark_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.primary_dark_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_dark_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.primary_dark_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.primary_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.primary_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_default_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.primary_text_default_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_default_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.primary_text_default_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_disabled_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.primary_text_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.primary_text_disabled_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.primary_text_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.ripple_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.ripple_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.ripple_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.ripple_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_default_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.secondary_text_default_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_default_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.secondary_text_default_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_disabled_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.secondary_text_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.secondary_text_disabled_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.secondary_text_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_disabled_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.switch_thumb_disabled_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_disabled_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.switch_thumb_disabled_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.switch_thumb_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.switch_thumb_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.switch_thumb_normal_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.switch_thumb_normal_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.switch_thumb_normal_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.tooltip_background_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Color.tooltip_background_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Color.tooltip_background_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_height_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_default_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_padding_end_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_default_padding_start_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_elevation_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_elevation_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_progress_bar_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_stacked_max_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_height_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_button_min_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_width_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_button_min_width_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_action_button_min_width_overflow_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_alert_dialog_button_bar_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_inset_horizontal_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_inset_vertical_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_button_inset_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_padding_horizontal_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_button_padding_vertical_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_button_padding_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_config_prefDialogWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_config_prefDialogWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_corner_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_control_corner_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_inset_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_control_inset_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_control_padding_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_control_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_height_major = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_height_minor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_width_major = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_fixed_width_minor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_min_width_major = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_min_width_major;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_min_width_minor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_min_width_minor;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_padding_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_padding_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_padding_top_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_padding_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dialog_title_divider_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dialog_title_divider_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_disabled_alpha_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_disabled_alpha_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_icon_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_text_padding_left = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_dropdownitem_text_padding_right = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_bottom_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_top_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_floating_window_z = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_floating_window_z;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_padding_horizontal_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_panel_menu_list_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_panel_menu_list_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_progress_bar_height_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_progress_bar_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_search_view_preferred_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_search_view_preferred_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_search_view_preferred_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_search_view_preferred_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_seekbar_track_background_height_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_seekbar_track_progress_height_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_select_dialog_padding_start_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_switch_padding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_switch_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_body_1_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_body_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_body_2_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_body_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_button_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_button_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_caption_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_caption_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_1_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_display_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_2_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_display_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_3_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_display_3_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_display_4_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_display_4_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_headline_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_headline_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_large_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_large_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_medium_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_medium_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_menu_header_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_menu_header_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_menu_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_menu_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_small_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_small_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_subhead_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_subhead_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_text_size_title_material_toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_compat_inset_shadow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.cardview_compat_inset_shadow;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.cardview_default_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.cardview_default_radius = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.cardview_default_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_inset_horizontal_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_inset_vertical_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_padding_horizontal_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_button_padding_vertical_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.compat_control_corner_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.compat_control_corner_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_appbar_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_appbar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_item_max_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_active_item_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_active_text_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_active_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_item_max_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_item_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_item_min_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_item_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_margin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_shadow_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_shadow_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_navigation_text_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_navigation_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_modal_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_sheet_modal_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_bottom_sheet_peek_height_min = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_bottom_sheet_peek_height_min;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_border_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_fab_border_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_fab_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_image_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_fab_image_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_size_mini = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_fab_size_mini;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_size_normal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_fab_size_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_fab_translation_z_pressed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_fab_translation_z_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_navigation_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_icon_padding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_navigation_icon_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_icon_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_navigation_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_max_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_navigation_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_padding_bottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_navigation_padding_bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_navigation_separator_vertical_padding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_navigation_separator_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_action_inline_max_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_action_inline_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_background_corner_radius = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_background_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_extra_spacing_horizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_extra_spacing_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_max_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_min_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_horizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_padding_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_vertical = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_padding_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_padding_vertical_2lines = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_padding_vertical_2lines;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_snackbar_text_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_snackbar_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_max_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_tab_max_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_scrollable_min_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_tab_scrollable_min_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_text_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_tab_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.design_tab_text_size_2line = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.design_tab_text_size_2line;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.disabled_alpha_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.disabled_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.disabled_alpha_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.disabled_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_default_thickness = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.fastscroll_default_thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_margin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.fastscroll_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.fastscroll_minimum_range = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.fastscroll_minimum_range;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.highlight_alpha_material_colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.highlight_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.highlight_alpha_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.highlight_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_alpha_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.hint_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_alpha_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.hint_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_pressed_alpha_material_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.hint_pressed_alpha_material_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_action_icon_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_action_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_action_text_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_action_text_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_big_circle_margin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_big_circle_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_content_margin_start = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_content_margin_start;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_large_icon_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_large_icon_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_large_icon_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_large_icon_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_main_column_padding_top = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_main_column_padding_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_media_narrow_margin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_media_narrow_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_right_icon_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_right_icon_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_right_side_padding_top = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_right_side_padding_top;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_small_icon_background_padding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_small_icon_background_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_small_icon_size_as_large = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_subtext_size = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_subtext_size;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_top_pad;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.notification_top_pad_large_text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.notification_top_pad_large_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_corner_radius = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.tooltip_corner_radius;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_horizontal_padding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.tooltip_horizontal_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_margin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.tooltip_margin;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_precise_anchor_threshold = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_vertical_padding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.tooltip_vertical_padding;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_y_offset_non_touch = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::Xamarin.Forms.Platform.Android.Resource.Dimension.tooltip_y_offset_touch = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Dimension.tooltip_y_offset_touch;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_action_bar_item_background_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_action_bar_item_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_borderless_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_borderless_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_check_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_colored_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_colored_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_default_mtrl_shape = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_radio_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_internal_bg = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_cab_background_internal_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_top_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_cab_background_top_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_control_background_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_control_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_dialog_material_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_dialog_material_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_edit_text_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_edit_text_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_ab_back_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_ab_back_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_clear_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_clear_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_go_search_api_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_go_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_overflow_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_search_api_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_16dp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_star_black_16dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_36dp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_star_black_36dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_black_48dp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_star_black_48dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_16dp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_36dp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_star_half_black_48dp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ic_voice_search_api_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_item_background_holo_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_item_background_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_item_background_holo_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_item_background_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_divider_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_focused_holo = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_focused_holo;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_longpressed_holo = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_longpressed_holo;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_pressed_holo_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_pressed_holo_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_pressed_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_disabled_holo_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_holo_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_selector_holo_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_list_selector_holo_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_list_selector_holo_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_popup_background_mtrl_mult = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_indicator_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ratingbar_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_ratingbar_small_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_ratingbar_small_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_thumb_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_seekbar_thumb_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_tick_mark_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_seekbar_track_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_seekbar_track_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_spinner_textfield_background_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_switch_thumb_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_switch_thumb_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_switch_track_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_tab_indicator_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_tab_indicator_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_cursor_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_text_cursor_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_textfield_search_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_textfield_search_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_vector_test = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.abc_vector_test;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.avd_hide_password;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password_1 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.avd_hide_password_1;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password_2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.avd_hide_password_2;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password_3 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.avd_hide_password_3;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.avd_show_password;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password_1 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.avd_show_password_1;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password_2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.avd_show_password_2;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password_3 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.avd_show_password_3;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_bottom_navigation_item_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.design_bottom_navigation_item_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_fab_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.design_fab_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.design_ic_visibility;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility_off = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.design_ic_visibility_off;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_password_eye = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.design_password_eye;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_snackbar_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.design_snackbar_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.navigation_empty_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.navigation_empty_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_action_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_action_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_bg_low;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low_normal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_bg_low_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_low_pressed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_bg_low_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_normal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_bg_normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_bg_normal_pressed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_bg_normal_pressed;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_icon_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_icon_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_template_icon_bg = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_template_icon_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_template_icon_low_bg = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_template_icon_low_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notification_tile_bg = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notification_tile_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.tooltip_frame_dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Drawable.tooltip_frame_light;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ALT = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.ALT;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.CTRL = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.CTRL;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.FUNCTION = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.FUNCTION;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.META = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.META;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.SHIFT = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.SHIFT;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.SYM = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.SYM;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action0 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action0;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_activity_content = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_bar_activity_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_container = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_bar_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_root = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_bar_root;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_bar_spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_bar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar_title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_bar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_container = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_context_bar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_context_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_divider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_image = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_image;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_menu_divider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_menu_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_menu_presenter = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_menu_presenter;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_bar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_mode_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_bar_stub = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_mode_bar_stub;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_mode_close_button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_mode_close_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.action_text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.action_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.actions = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.activity_chooser_view_content = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.activity_chooser_view_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.add = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.add;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.alertTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.alertTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.all = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.all;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.always = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.always;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.async = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.async;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.auto = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.auto;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.beginning = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.beginning;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.blocking = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.blocking;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.bottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_navarea = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.bottomtab_navarea;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_tabbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.bottomtab_tabbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.buttonPanel = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.buttonPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.cancel_action = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.cancel_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.center;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center_horizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.center_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.center_vertical = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.center_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.checkbox = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.checkbox;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.chronometer = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.chronometer;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_horizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.clip_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_vertical = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.clip_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.collapseActionView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.collapseActionView;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.container = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.contentPanel = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.contentPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.coordinator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.coordinator;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.custom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.customPanel = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.customPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.decor_content_parent = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.decor_content_parent;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.default_activity_button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.default_activity_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_bottom_sheet = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.design_bottom_sheet;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_action_area = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.design_menu_item_action_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_action_area_stub = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.design_menu_item_action_area_stub;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.design_menu_item_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.design_navigation_view = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.design_navigation_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.disableHome = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.disableHome;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.edit_query = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.edit_query;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.end = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.end;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.end_padder = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.end_padder;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.enterAlways = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.enterAlways;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.enterAlwaysCollapsed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.enterAlwaysCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.exitUntilCollapsed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.exitUntilCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.expand_activities_button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.expand_activities_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.expanded_menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.expanded_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.fill;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_horizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.fill_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_vertical = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.fill_vertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.@fixed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.@fixed;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_appbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.flyoutcontent_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_recycler = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.flyoutcontent_recycler;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.forever = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.forever;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ghost_view = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.ghost_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.home = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.home;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.homeAsUp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.homeAsUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.icon_group = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.icon_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.ifRoom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.ifRoom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.image = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.image;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.info = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.info;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.italic = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.italic;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.item_touch_helper_previous_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.item_touch_helper_previous_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.largeLabel = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.largeLabel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.left = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.left;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.line1 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.line1;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.line3 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.line3;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.listMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.listMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.list_item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.list_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_appbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.main_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_scrollview = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.main_scrollview;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_tablayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.main_tablayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.main_toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.main_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.masked = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.masked;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.media_actions = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.media_actions;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.message = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.message;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.middle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.middle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.mini = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.mini;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.multiply = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.multiply;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.navigation_header_container = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.navigation_header_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.never = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.never;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.none = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.none;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.normal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.normal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.notification_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.notification_main_column;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column_container = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.notification_main_column_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parallax = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.parallax;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parentPanel = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.parentPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.parent_matrix = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.parent_matrix;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.pin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.pin;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_circular = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.progress_circular;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.progress_horizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.progress_horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.radio = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.radio;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.right;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.right_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.right_side = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.right_side;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_image_matrix = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.save_image_matrix;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_non_transition_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.save_non_transition_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.save_scale_type = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.save_scale_type;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.screen = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.screen;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scroll = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.scroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollIndicatorDown = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.scrollIndicatorDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollIndicatorUp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.scrollIndicatorUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.scrollView;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.scrollable;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_badge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_badge;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_bar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_close_btn = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_close_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_edit_frame = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_edit_frame;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_go_btn = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_go_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_mag_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_mag_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_plate = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_plate;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_src_text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_src_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.search_voice_btn = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.search_voice_btn;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.select_dialog_listview = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.select_dialog_listview;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_appbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.shellcontent_appbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_scrollview = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.shellcontent_scrollview;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.shellcontent_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.shortcut = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.shortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showCustom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.showCustom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showHome = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.showHome;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.showTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.smallLabel = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.smallLabel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_action = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.snackbar_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.snackbar_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.snap = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.snap;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.spacer = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.spacer;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.split_action_bar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.split_action_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_atop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.src_atop;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_in = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.src_in;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.src_over = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.src_over;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.start = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.start;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.status_bar_latest_event_content = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.status_bar_latest_event_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.submenuarrow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.submenuarrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.submit_area = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.submit_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tabMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_transition_group = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.tag_transition_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.text;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.text2;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textSpacerNoButtons = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.textSpacerNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textSpacerNoTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.textSpacerNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.text_input_password_toggle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.text_input_password_toggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_counter = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.textinput_counter;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.textinput_error = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.textinput_error;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.time = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.time;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.title;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.titleDividerNoCustom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.titleDividerNoCustom;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.title_template = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.title_template;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.top = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.top;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.topPanel = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.topPanel;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.touch_outside = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.touch_outside;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_current_scene = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.transition_current_scene;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_layout_save = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.transition_layout_save;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_position = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.transition_position;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_scene_layoutid_cache = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.transition_scene_layoutid_cache;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_transform = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.transition_transform;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.uniform = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.uniform;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.up = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.up;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.useLogo = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.useLogo;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.view_offset_helper = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.view_offset_helper;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.visible = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.withText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.withText;
+			global::Xamarin.Forms.Platform.Android.Resource.Id.wrap_content = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Id.wrap_content;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityDefaultDur = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.abc_config_activityDefaultDur;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.abc_config_activityShortDur = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.abc_config_activityShortDur;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.app_bar_elevation_anim_duration = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.app_bar_elevation_anim_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.bottom_sheet_slide_duration = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.bottom_sheet_slide_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.cancel_button_image_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.cancel_button_image_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.config_tooltipAnimTime = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.config_tooltipAnimTime;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.design_snackbar_text_max_lines = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.design_snackbar_text_max_lines;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.hide_password_duration = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.hide_password_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.show_password_duration = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.show_password_duration;
+			global::Xamarin.Forms.Platform.Android.Resource.Integer.status_bar_notification_info_maxnum = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_bar_title_item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_action_bar_title_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_bar_up_container = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_action_bar_up_container;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_menu_item_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_action_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_menu_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_action_menu_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_mode_bar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_action_mode_bar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_action_mode_close_item_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_action_mode_close_item_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_activity_chooser_view = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_activity_chooser_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_activity_chooser_view_list_item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_button_bar_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_alert_dialog_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_alert_dialog_title_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_alert_dialog_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_dialog_title_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_dialog_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_expanded_menu_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_expanded_menu_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_checkbox = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_list_menu_item_checkbox;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_list_menu_item_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_list_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_list_menu_item_radio = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_list_menu_item_radio;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_popup_menu_header_item_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_popup_menu_item_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_popup_menu_item_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_content_include = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_screen_content_include;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_simple = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_screen_simple;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_simple_overlay_action_mode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_screen_toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_screen_toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_search_dropdown_item_icons_2line = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_search_view = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_search_view;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_select_dialog_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.abc_select_dialog_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.BottomTabLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.BottomTabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_navigation_item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_bottom_navigation_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_sheet_dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_bottom_sheet_dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_layout_snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar_include = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_layout_snackbar_include;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_tab_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_layout_tab_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_tab_text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_layout_tab_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_menu_item_action_area = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_menu_item_action_area;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_navigation_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_header = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_navigation_item_header;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_separator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_navigation_item_separator;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_subheader = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_navigation_item_subheader;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_navigation_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu_item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_navigation_menu_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_text_input_password_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.design_text_input_password_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.FlyoutContent = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.FlyoutContent;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action_tombstone = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_action_tombstone;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_media_action = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_media_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_media_cancel_action = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_media_cancel_action;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_big_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_custom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_big_media_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_narrow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_big_media_narrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_big_media_narrow_custom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_custom_big = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_custom_big;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_icon_group = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_icon_group;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_lines_media = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_lines_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_media = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_media;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_media_custom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_media_custom;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_part_chronometer = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_part_chronometer;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_part_time = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.notification_template_part_time;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.RootLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.RootLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_item_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.select_dialog_item_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_multichoice_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.select_dialog_multichoice_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_singlechoice_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.select_dialog_singlechoice_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.ShellContent = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.ShellContent;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.tooltip = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Layout.tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_home_description = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_action_bar_home_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_up_description = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_action_bar_up_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_menu_overflow_description = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_action_menu_overflow_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_mode_done = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_action_mode_done;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_activity_chooser_view_see_all = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_activity_chooser_view_see_all;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_activitychooserview_choose_application = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_activitychooserview_choose_application;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_capital_off = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_capital_off;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_capital_on = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_capital_on;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_body_1_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_body_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_body_2_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_body_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_button_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_button_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_caption_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_caption_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_1_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_display_1_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_2_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_display_2_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_3_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_display_3_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_display_4_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_display_4_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_headline_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_headline_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_menu_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_menu_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_subhead_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_subhead_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_font_family_title_material = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_font_family_title_material;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_search_hint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_search_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_clear = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_searchview_description_clear;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_query = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_searchview_description_query;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_search = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_searchview_description_search;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_submit = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_searchview_description_submit;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_searchview_description_voice = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_searchview_description_voice;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_shareactionprovider_share_with = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_shareactionprovider_share_with;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_shareactionprovider_share_with_application = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_shareactionprovider_share_with_application;
+			global::Xamarin.Forms.Platform.Android.Resource.String.abc_toolbar_collapse_description = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.abc_toolbar_collapse_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.appbar_scrolling_view_behavior = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.appbar_scrolling_view_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.bottom_sheet_behavior = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.bottom_sheet_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.String.character_counter_pattern = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.character_counter_pattern;
+			global::Xamarin.Forms.Platform.Android.Resource.String.password_toggle_content_description = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.password_toggle_content_description;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.path_password_eye;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye_mask_strike_through = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.path_password_eye_mask_strike_through;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_eye_mask_visible = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.path_password_eye_mask_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.String.path_password_strike_through = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.path_password_strike_through;
+			global::Xamarin.Forms.Platform.Android.Resource.String.search_menu_title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.search_menu_title;
+			global::Xamarin.Forms.Platform.Android.Resource.String.status_bar_notification_info_overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.String.status_bar_notification_info_overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.AlertDialog_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.AlertDialog_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.AlertDialog_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.AlertDialog_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Animation_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_DropDownUp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_AppCompat_Tooltip = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Animation_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Animation_Design_BottomSheetDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Animation_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_AlertDialog_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_AlertDialog_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_AlertDialog_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Animation_AppCompat_Tooltip = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_CardView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_DialogWindowTitle_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Large = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V14_Widget_Design_AppBarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V14_Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V21_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V21_Widget_Design_AppBarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V21_Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V22_Theme_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V22_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V22_Theme_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V23_Theme_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V23_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V23_Theme_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Theme_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V26_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Theme_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V26_Widget_Design_AppBarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V26_Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V7_Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActionMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Button_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_EditText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ImageButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SearchView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SeekBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_Design_AppBarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_Design_TabLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Base_Widget_Design_TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.CardView_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.CardView_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.CardView_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V11_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_V11_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V11_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_V11_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V14_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_V14_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V14_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_V14_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V21_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_V21_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V21_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_V21_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V25_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_V25_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_V25_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_V25_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Platform_Widget_AppCompat_Spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body1 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Body2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Caption = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display1 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display3 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Display4 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Headline = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Large = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Medium = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Subhead = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Tooltip = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Info = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Media = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Time = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Design_CollapsingToolbar_Expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Counter = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Design_Counter;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Counter_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Design_Counter_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Error = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Design_Error;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Hint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Design_Hint;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Snackbar_Message = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Design_Snackbar_Message;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Design_Tab = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Design_Tab;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_CompactMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_DayNight;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog_Alert = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_AppCompat_NoActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_Design;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_BottomSheetDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_Design_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_Light_NoActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Theme_Design_NoActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Theme_Design_NoActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.ThemeOverlay_AppCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Light = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActionMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ActivityChooserView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Button;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Borderless = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Colored = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Button_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Button_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ButtonBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_EditText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_EditText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ImageButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ImageButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_SearchView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListMenuView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListPopupWindow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView_DropDown = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ListView_Menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_PopupWindow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ProgressBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_RatingBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_RatingBar_Small = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SearchView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SeekBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_SeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Compat_NotificationActionContainer = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Compat_NotificationActionText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_AppBarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_BottomNavigationView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_BottomNavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_BottomSheet_Modal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_BottomSheet_Modal;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_CollapsingToolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_CollapsingToolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_CoordinatorLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_CoordinatorLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_FloatingActionButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_NavigationView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_NavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_ScrimInsetsFrameLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_ScrimInsetsFrameLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_Snackbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_Snackbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_TabLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_Design_TextInputLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Style.Widget_Design_TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_backgroundSplit = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_backgroundStacked = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_backgroundStacked;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_customNavigationLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_displayOptions = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_displayOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_divider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_hideOnContentScroll = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_homeAsUpIndicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_homeLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_homeLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_itemPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_itemPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_logo = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_navigationMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_navigationMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_popupTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_progressBarPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_progressBarPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_progressBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_progressBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_subtitleTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBar_titleTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBar_titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuItemView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMenuItemView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuItemView_android_minWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMenuView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMode_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_backgroundSplit = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMode_backgroundSplit;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_closeItemLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMode_closeItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMode_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_subtitleTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActionMode_titleTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActionMode_titleTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActivityChooserView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ActivityChooserView_initialActivityCount = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_android_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AlertDialog_android_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_listItemLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AlertDialog_listItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_listLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AlertDialog_listLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_showTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AlertDialog_showTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_expanded = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout_expanded;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayoutStates;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatImageView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_android_src = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatImageView_android_src;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_srcCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_tint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatImageView_tint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatImageView_tintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatImageView_tintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatSeekBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_android_thumb = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextHelper;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_android_textAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontFamily = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_textAllCaps = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarDivider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_checkboxStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorAccent = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlActivated = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorControlNormal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorError = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorPrimary = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_controlBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dialogTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dividerVertical = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_editTextStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_searchViewStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_seekBarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_spinnerStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_switchStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_toolbarStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionBar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_windowNoTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomNavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomNavigationView_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomNavigationView_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemIconTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomNavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_itemTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomNavigationView_itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomNavigationView_menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomNavigationView_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomSheetBehavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_hideable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_peekHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.BottomSheetBehavior_Layout_behavior_skipCollapsed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ButtonBarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ButtonBarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ButtonBarLayout_allowStacking = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_android_minHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_android_minHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_android_minWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_android_minWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardBackgroundColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_cardBackgroundColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardCornerRadius = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_cardCornerRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardElevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_cardElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardMaxElevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_cardMaxElevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardPreventCornerOverlap = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_cardPreventCornerOverlap;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_cardUseCompatPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_cardUseCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_contentPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_contentPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_contentPaddingLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_contentPaddingRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CardView_contentPaddingTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CardView_contentPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_contentScrim = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_contentScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ColorStateListItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ColorStateListItem_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_alpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CompoundButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_android_button = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CompoundButton_android_button;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CompoundButton_buttonTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_keylines = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DesignTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme_bottomSheetStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DesignTheme_bottomSheetStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DesignTheme_textColorError = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DesignTheme_textColorError;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_barLength = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_color = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle_color;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_drawableSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_spinBars = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.DrawerArrowToggle_thickness = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_backgroundTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_borderWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_borderWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_fabSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_fabSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_pressedTranslationZ = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_pressedTranslationZ;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_rippleColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_rippleColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_useCompatPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderAuthority = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderCerts = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderPackage = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamily_fontProviderQuery = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamilyFont;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_font = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamilyFont_android_font;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_fontStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_android_fontWeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_font = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamilyFont_font;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_fontStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.FontFamilyFont_fontWeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ForegroundLinearLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ForegroundLinearLayout_android_foreground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_gravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_orientation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_divider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_divider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_showDividers = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ListPopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuGroup;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_checkableBehavior = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_enabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuGroup_android_enabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_id = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuGroup_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_menuCategory = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_orderInCategory = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuGroup_android_visible = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuGroup_android_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_actionLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionProviderClass = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_actionProviderClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_actionViewClass = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_actionViewClass;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_alphabeticModifiers = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_checkable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_checkable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_checked = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_checked;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_enabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_enabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_id = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_menuCategory = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_menuCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_numericShortcut = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_onClick = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_onClick;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_orderInCategory = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_titleCondensed = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_android_visible = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_android_visible;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_contentDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_contentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_iconTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_iconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_iconTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_iconTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_numericModifiers = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_numericModifiers;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_showAsAction = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_showAsAction;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuItem_tooltipText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuItem_tooltipText;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_headerBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_android_headerBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_horizontalDivider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_android_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_itemTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_verticalDivider = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_android_verticalDivider;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_android_windowAnimationStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_preserveIconSpacing = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.MenuView_subMenuArrow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.MenuView_subMenuArrow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_fitsSystemWindows = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_android_fitsSystemWindows;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_android_maxWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_headerLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_headerLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_itemBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemIconTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_itemIconTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_itemTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_itemTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_itemTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.NavigationView_menu = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.NavigationView_menu;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.PopupWindow;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_android_popupBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindow_overlapAnchor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindowBackgroundState = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.PopupWindowBackgroundState;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecycleListView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_descendantFocusability = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_android_descendantFocusability;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_orientation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_android_orientation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_fastScrollEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_fastScrollHorizontalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_fastScrollVerticalThumbDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_fastScrollVerticalTrackDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_layoutManager = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_layoutManager;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_reverseLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_reverseLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_spanCount = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_spanCount;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_stackFromEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.RecyclerView_stackFromEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrimInsetsFrameLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ScrimInsetsFrameLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ScrimInsetsFrameLayout_insetForeground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrollingViewBehavior_Layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ScrollingViewBehavior_Layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ScrollingViewBehavior_Layout_behavior_overlapTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_focusable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_android_focusable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_imeOptions = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_android_imeOptions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_inputType = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_android_inputType;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_android_maxWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_closeIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_closeIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_commitIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_commitIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_defaultQueryHint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_defaultQueryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_goIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_goIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_iconifiedByDefault = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_queryBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_queryBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_queryHint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_queryHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_searchHintIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_searchHintIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_searchIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_searchIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_submitBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_submitBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_suggestionRowLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SearchView_voiceIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SearchView_voiceIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SnackbarLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_android_maxWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SnackbarLayout_android_maxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_elevation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SnackbarLayout_elevation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Spinner;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_dropDownWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_entries = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Spinner_android_entries;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_popupBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Spinner_android_popupBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_android_prompt = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Spinner_android_prompt;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Spinner_popupTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Spinner_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_textOff = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_android_textOff;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_textOn = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_android_textOn;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_android_thumb = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_android_thumb;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_showText = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_showText;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_splitTrack = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_splitTrack;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchMinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_switchPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_switchTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTextPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_thumbTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_thumbTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_track = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_track;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_trackTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_trackTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.SwitchCompat_trackTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabItem;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_icon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabItem_android_icon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabItem_android_layout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabItem_android_text = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabItem_android_text;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabBackground = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabBackground;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabContentStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabContentStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabIndicatorColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabIndicatorHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabIndicatorHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMaxWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabMaxWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMinWidth = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabMinWidth;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPadding = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabPadding;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabPaddingBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabPaddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabPaddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabPaddingTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabPaddingTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabSelectedTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabSelectedTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TabLayout_tabTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TabLayout_tabTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_fontFamily = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowDx = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowDy = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_shadowRadius = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_textColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorHint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorLink = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textSize = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_textSize;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textStyle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_textStyle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_typeface = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_android_typeface;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_fontFamily = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_fontFamily;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_textAllCaps = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextAppearance_textAllCaps;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_hint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_android_hint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_textColorHint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_android_textColorHint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_counterEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterMaxLength = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_counterMaxLength;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_counterOverflowTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_counterTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_counterTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_errorEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_errorTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_errorTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintAnimationEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_hintAnimationEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_hintEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_hintTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_hintTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleContentDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_passwordToggleContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleDrawable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_passwordToggleDrawable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleEnabled = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_passwordToggleEnabled;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_passwordToggleTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_passwordToggleTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.TextInputLayout_passwordToggleTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_android_gravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_android_gravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_android_minHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_android_minHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_buttonGravity = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_buttonGravity;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_collapseContentDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_collapseIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_collapseIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetLeft = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetRight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_contentInsetRight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_contentInsetStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logo = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_logo;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logoDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_logoDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_maxButtonHeight = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationContentDescription = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationIcon = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_navigationIcon;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_popupTheme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_popupTheme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitle = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_subtitle;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitleTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_subtitleTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_title = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_title;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMargin = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_titleMargin;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginBottom = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_titleMarginStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMarginTop = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_titleMarginTop;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleMargins = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_titleMargins;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleTextAppearance = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_titleTextColor = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.Toolbar_titleTextColor;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.View;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_android_focusable = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.View_android_focusable;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_android_theme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.View_android_theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingEnd = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.View_paddingEnd;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_paddingStart = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.View_paddingStart;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.View_theme = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.View_theme;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ViewBackgroundHelper;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_android_background = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ViewStubCompat;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_id = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ViewStubCompat_android_id;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_inflatedId = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ViewStubCompat_android_layout = global::Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Resource.Styleable.ViewStubCompat_android_layout;
 		}
 		
 		public partial class Animation
@@ -87,16 +2078,28 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			public const int design_snackbar_out = 2130968589;
 			
 			// aapt resource value: 0x7f04000e
-			public const int slide_in_right = 2130968590;
+			public const int EnterFromLeft = 2130968590;
 			
 			// aapt resource value: 0x7f04000f
-			public const int slide_out_left = 2130968591;
+			public const int EnterFromRight = 2130968591;
 			
 			// aapt resource value: 0x7f040010
-			public const int tooltip_enter = 2130968592;
+			public const int ExitToLeft = 2130968592;
 			
 			// aapt resource value: 0x7f040011
-			public const int tooltip_exit = 2130968593;
+			public const int ExitToRight = 2130968593;
+			
+			// aapt resource value: 0x7f040012
+			public const int slide_in_right = 2130968594;
+			
+			// aapt resource value: 0x7f040013
+			public const int slide_out_left = 2130968595;
+			
+			// aapt resource value: 0x7f040014
+			public const int tooltip_enter = 2130968596;
+			
+			// aapt resource value: 0x7f040015
+			public const int tooltip_exit = 2130968597;
 			
 			static Animation()
 			{
@@ -3147,59 +5150,59 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090031
-			public const int ALT = 2131296305;
-			
 			// aapt resource value: 0x7f090032
-			public const int CTRL = 2131296306;
+			public const int ALT = 2131296306;
 			
 			// aapt resource value: 0x7f090033
-			public const int FUNCTION = 2131296307;
+			public const int CTRL = 2131296307;
 			
 			// aapt resource value: 0x7f090034
-			public const int META = 2131296308;
+			public const int FUNCTION = 2131296308;
 			
 			// aapt resource value: 0x7f090035
-			public const int SHIFT = 2131296309;
+			public const int META = 2131296309;
 			
 			// aapt resource value: 0x7f090036
-			public const int SYM = 2131296310;
+			public const int SHIFT = 2131296310;
 			
-			// aapt resource value: 0x7f0900b6
-			public const int action0 = 2131296438;
+			// aapt resource value: 0x7f090037
+			public const int SYM = 2131296311;
 			
-			// aapt resource value: 0x7f09007b
-			public const int action_bar = 2131296379;
+			// aapt resource value: 0x7f0900bb
+			public const int action0 = 2131296443;
+			
+			// aapt resource value: 0x7f09007c
+			public const int action_bar = 2131296380;
 			
 			// aapt resource value: 0x7f090001
 			public const int action_bar_activity_content = 2131296257;
 			
-			// aapt resource value: 0x7f09007a
-			public const int action_bar_container = 2131296378;
+			// aapt resource value: 0x7f09007b
+			public const int action_bar_container = 2131296379;
 			
-			// aapt resource value: 0x7f090076
-			public const int action_bar_root = 2131296374;
+			// aapt resource value: 0x7f090077
+			public const int action_bar_root = 2131296375;
 			
 			// aapt resource value: 0x7f090002
 			public const int action_bar_spinner = 2131296258;
 			
+			// aapt resource value: 0x7f09005b
+			public const int action_bar_subtitle = 2131296347;
+			
 			// aapt resource value: 0x7f09005a
-			public const int action_bar_subtitle = 2131296346;
+			public const int action_bar_title = 2131296346;
 			
-			// aapt resource value: 0x7f090059
-			public const int action_bar_title = 2131296345;
+			// aapt resource value: 0x7f0900b8
+			public const int action_container = 2131296440;
 			
-			// aapt resource value: 0x7f0900b3
-			public const int action_container = 2131296435;
+			// aapt resource value: 0x7f09007d
+			public const int action_context_bar = 2131296381;
 			
-			// aapt resource value: 0x7f09007c
-			public const int action_context_bar = 2131296380;
+			// aapt resource value: 0x7f0900bf
+			public const int action_divider = 2131296447;
 			
-			// aapt resource value: 0x7f0900ba
-			public const int action_divider = 2131296442;
-			
-			// aapt resource value: 0x7f0900b4
-			public const int action_image = 2131296436;
+			// aapt resource value: 0x7f0900b9
+			public const int action_image = 2131296441;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -3207,158 +5210,170 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f090004
 			public const int action_menu_presenter = 2131296260;
 			
+			// aapt resource value: 0x7f090079
+			public const int action_mode_bar = 2131296377;
+			
 			// aapt resource value: 0x7f090078
-			public const int action_mode_bar = 2131296376;
-			
-			// aapt resource value: 0x7f090077
-			public const int action_mode_bar_stub = 2131296375;
-			
-			// aapt resource value: 0x7f09005b
-			public const int action_mode_close_button = 2131296347;
-			
-			// aapt resource value: 0x7f0900b5
-			public const int action_text = 2131296437;
-			
-			// aapt resource value: 0x7f0900c3
-			public const int actions = 2131296451;
+			public const int action_mode_bar_stub = 2131296376;
 			
 			// aapt resource value: 0x7f09005c
-			public const int activity_chooser_view_content = 2131296348;
+			public const int action_mode_close_button = 2131296348;
 			
-			// aapt resource value: 0x7f09002b
-			public const int add = 2131296299;
+			// aapt resource value: 0x7f0900ba
+			public const int action_text = 2131296442;
 			
-			// aapt resource value: 0x7f09006f
-			public const int alertTitle = 2131296367;
-			
-			// aapt resource value: 0x7f090051
-			public const int all = 2131296337;
-			
-			// aapt resource value: 0x7f090037
-			public const int always = 2131296311;
-			
-			// aapt resource value: 0x7f090055
-			public const int async = 2131296341;
-			
-			// aapt resource value: 0x7f090043
-			public const int auto = 2131296323;
-			
-			// aapt resource value: 0x7f09002e
-			public const int beginning = 2131296302;
-			
-			// aapt resource value: 0x7f090056
-			public const int blocking = 2131296342;
-			
-			// aapt resource value: 0x7f09003c
-			public const int bottom = 2131296316;
-			
-			// aapt resource value: 0x7f090062
-			public const int buttonPanel = 2131296354;
-			
-			// aapt resource value: 0x7f0900b7
-			public const int cancel_action = 2131296439;
-			
-			// aapt resource value: 0x7f090044
-			public const int center = 2131296324;
-			
-			// aapt resource value: 0x7f090045
-			public const int center_horizontal = 2131296325;
-			
-			// aapt resource value: 0x7f090046
-			public const int center_vertical = 2131296326;
-			
-			// aapt resource value: 0x7f090072
-			public const int checkbox = 2131296370;
-			
-			// aapt resource value: 0x7f0900bf
-			public const int chronometer = 2131296447;
-			
-			// aapt resource value: 0x7f09004d
-			public const int clip_horizontal = 2131296333;
-			
-			// aapt resource value: 0x7f09004e
-			public const int clip_vertical = 2131296334;
-			
-			// aapt resource value: 0x7f090038
-			public const int collapseActionView = 2131296312;
-			
-			// aapt resource value: 0x7f09008d
-			public const int container = 2131296397;
-			
-			// aapt resource value: 0x7f090065
-			public const int contentPanel = 2131296357;
-			
-			// aapt resource value: 0x7f09008e
-			public const int coordinator = 2131296398;
-			
-			// aapt resource value: 0x7f09006c
-			public const int custom = 2131296364;
-			
-			// aapt resource value: 0x7f09006b
-			public const int customPanel = 2131296363;
-			
-			// aapt resource value: 0x7f090079
-			public const int decor_content_parent = 2131296377;
-			
-			// aapt resource value: 0x7f09005f
-			public const int default_activity_button = 2131296351;
-			
-			// aapt resource value: 0x7f090090
-			public const int design_bottom_sheet = 2131296400;
-			
-			// aapt resource value: 0x7f090097
-			public const int design_menu_item_action_area = 2131296407;
-			
-			// aapt resource value: 0x7f090096
-			public const int design_menu_item_action_area_stub = 2131296406;
-			
-			// aapt resource value: 0x7f090095
-			public const int design_menu_item_text = 2131296405;
-			
-			// aapt resource value: 0x7f090094
-			public const int design_navigation_view = 2131296404;
-			
-			// aapt resource value: 0x7f09001f
-			public const int disableHome = 2131296287;
-			
-			// aapt resource value: 0x7f09007d
-			public const int edit_query = 2131296381;
-			
-			// aapt resource value: 0x7f09002f
-			public const int end = 2131296303;
-			
-			// aapt resource value: 0x7f0900c5
-			public const int end_padder = 2131296453;
-			
-			// aapt resource value: 0x7f09003e
-			public const int enterAlways = 2131296318;
-			
-			// aapt resource value: 0x7f09003f
-			public const int enterAlwaysCollapsed = 2131296319;
-			
-			// aapt resource value: 0x7f090040
-			public const int exitUntilCollapsed = 2131296320;
+			// aapt resource value: 0x7f0900c8
+			public const int actions = 2131296456;
 			
 			// aapt resource value: 0x7f09005d
-			public const int expand_activities_button = 2131296349;
+			public const int activity_chooser_view_content = 2131296349;
 			
-			// aapt resource value: 0x7f090071
-			public const int expanded_menu = 2131296369;
+			// aapt resource value: 0x7f090027
+			public const int add = 2131296295;
 			
-			// aapt resource value: 0x7f09004f
-			public const int fill = 2131296335;
+			// aapt resource value: 0x7f090070
+			public const int alertTitle = 2131296368;
 			
-			// aapt resource value: 0x7f090050
-			public const int fill_horizontal = 2131296336;
+			// aapt resource value: 0x7f090052
+			public const int all = 2131296338;
 			
-			// aapt resource value: 0x7f090047
-			public const int fill_vertical = 2131296327;
+			// aapt resource value: 0x7f090038
+			public const int always = 2131296312;
 			
-			// aapt resource value: 0x7f090053
-			public const int @fixed = 2131296339;
+			// aapt resource value: 0x7f090056
+			public const int async = 2131296342;
+			
+			// aapt resource value: 0x7f090044
+			public const int auto = 2131296324;
+			
+			// aapt resource value: 0x7f09002f
+			public const int beginning = 2131296303;
 			
 			// aapt resource value: 0x7f090057
-			public const int forever = 2131296343;
+			public const int blocking = 2131296343;
+			
+			// aapt resource value: 0x7f09003d
+			public const int bottom = 2131296317;
+			
+			// aapt resource value: 0x7f09008c
+			public const int bottomtab_navarea = 2131296396;
+			
+			// aapt resource value: 0x7f09008d
+			public const int bottomtab_tabbar = 2131296397;
+			
+			// aapt resource value: 0x7f090063
+			public const int buttonPanel = 2131296355;
+			
+			// aapt resource value: 0x7f0900bc
+			public const int cancel_action = 2131296444;
+			
+			// aapt resource value: 0x7f090045
+			public const int center = 2131296325;
+			
+			// aapt resource value: 0x7f090046
+			public const int center_horizontal = 2131296326;
+			
+			// aapt resource value: 0x7f090047
+			public const int center_vertical = 2131296327;
+			
+			// aapt resource value: 0x7f090073
+			public const int checkbox = 2131296371;
+			
+			// aapt resource value: 0x7f0900c4
+			public const int chronometer = 2131296452;
+			
+			// aapt resource value: 0x7f09004e
+			public const int clip_horizontal = 2131296334;
+			
+			// aapt resource value: 0x7f09004f
+			public const int clip_vertical = 2131296335;
+			
+			// aapt resource value: 0x7f090039
+			public const int collapseActionView = 2131296313;
+			
+			// aapt resource value: 0x7f090090
+			public const int container = 2131296400;
+			
+			// aapt resource value: 0x7f090066
+			public const int contentPanel = 2131296358;
+			
+			// aapt resource value: 0x7f090091
+			public const int coordinator = 2131296401;
+			
+			// aapt resource value: 0x7f09006d
+			public const int custom = 2131296365;
+			
+			// aapt resource value: 0x7f09006c
+			public const int customPanel = 2131296364;
+			
+			// aapt resource value: 0x7f09007a
+			public const int decor_content_parent = 2131296378;
+			
+			// aapt resource value: 0x7f090060
+			public const int default_activity_button = 2131296352;
+			
+			// aapt resource value: 0x7f090093
+			public const int design_bottom_sheet = 2131296403;
+			
+			// aapt resource value: 0x7f09009a
+			public const int design_menu_item_action_area = 2131296410;
+			
+			// aapt resource value: 0x7f090099
+			public const int design_menu_item_action_area_stub = 2131296409;
+			
+			// aapt resource value: 0x7f090098
+			public const int design_menu_item_text = 2131296408;
+			
+			// aapt resource value: 0x7f090097
+			public const int design_navigation_view = 2131296407;
+			
+			// aapt resource value: 0x7f090020
+			public const int disableHome = 2131296288;
+			
+			// aapt resource value: 0x7f09007e
+			public const int edit_query = 2131296382;
+			
+			// aapt resource value: 0x7f090030
+			public const int end = 2131296304;
+			
+			// aapt resource value: 0x7f0900ca
+			public const int end_padder = 2131296458;
+			
+			// aapt resource value: 0x7f09003f
+			public const int enterAlways = 2131296319;
+			
+			// aapt resource value: 0x7f090040
+			public const int enterAlwaysCollapsed = 2131296320;
+			
+			// aapt resource value: 0x7f090041
+			public const int exitUntilCollapsed = 2131296321;
+			
+			// aapt resource value: 0x7f09005e
+			public const int expand_activities_button = 2131296350;
+			
+			// aapt resource value: 0x7f090072
+			public const int expanded_menu = 2131296370;
+			
+			// aapt resource value: 0x7f090050
+			public const int fill = 2131296336;
+			
+			// aapt resource value: 0x7f090051
+			public const int fill_horizontal = 2131296337;
+			
+			// aapt resource value: 0x7f090048
+			public const int fill_vertical = 2131296328;
+			
+			// aapt resource value: 0x7f090054
+			public const int @fixed = 2131296340;
+			
+			// aapt resource value: 0x7f09009c
+			public const int flyoutcontent_appbar = 2131296412;
+			
+			// aapt resource value: 0x7f09009d
+			public const int flyoutcontent_recycler = 2131296413;
+			
+			// aapt resource value: 0x7f090058
+			public const int forever = 2131296344;
 			
 			// aapt resource value: 0x7f09000a
 			public const int ghost_view = 2131296266;
@@ -3366,35 +5381,35 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f090005
 			public const int home = 2131296261;
 			
-			// aapt resource value: 0x7f090020
-			public const int homeAsUp = 2131296288;
+			// aapt resource value: 0x7f090021
+			public const int homeAsUp = 2131296289;
 			
-			// aapt resource value: 0x7f090061
-			public const int icon = 2131296353;
+			// aapt resource value: 0x7f090062
+			public const int icon = 2131296354;
 			
-			// aapt resource value: 0x7f0900c4
-			public const int icon_group = 2131296452;
+			// aapt resource value: 0x7f0900c9
+			public const int icon_group = 2131296457;
 			
-			// aapt resource value: 0x7f090039
-			public const int ifRoom = 2131296313;
+			// aapt resource value: 0x7f09003a
+			public const int ifRoom = 2131296314;
 			
-			// aapt resource value: 0x7f09005e
-			public const int image = 2131296350;
+			// aapt resource value: 0x7f09005f
+			public const int image = 2131296351;
 			
-			// aapt resource value: 0x7f0900c0
-			public const int info = 2131296448;
+			// aapt resource value: 0x7f0900c5
+			public const int info = 2131296453;
 			
-			// aapt resource value: 0x7f090058
-			public const int italic = 2131296344;
+			// aapt resource value: 0x7f090059
+			public const int italic = 2131296345;
 			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
 			
-			// aapt resource value: 0x7f09008c
-			public const int largeLabel = 2131296396;
+			// aapt resource value: 0x7f09008f
+			public const int largeLabel = 2131296399;
 			
-			// aapt resource value: 0x7f090048
-			public const int left = 2131296328;
+			// aapt resource value: 0x7f090049
+			public const int left = 2131296329;
 			
 			// aapt resource value: 0x7f090017
 			public const int line1 = 2131296279;
@@ -3402,137 +5417,149 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f090018
 			public const int line3 = 2131296280;
 			
-			// aapt resource value: 0x7f09001c
-			public const int listMode = 2131296284;
+			// aapt resource value: 0x7f09001d
+			public const int listMode = 2131296285;
 			
-			// aapt resource value: 0x7f090060
-			public const int list_item = 2131296352;
+			// aapt resource value: 0x7f090061
+			public const int list_item = 2131296353;
 			
-			// aapt resource value: 0x7f0900ca
-			public const int masked = 2131296458;
+			// aapt resource value: 0x7f0900cb
+			public const int main_appbar = 2131296459;
 			
-			// aapt resource value: 0x7f0900b9
-			public const int media_actions = 2131296441;
+			// aapt resource value: 0x7f0900ce
+			public const int main_scrollview = 2131296462;
 			
-			// aapt resource value: 0x7f0900c8
-			public const int message = 2131296456;
+			// aapt resource value: 0x7f0900cd
+			public const int main_tablayout = 2131296461;
 			
-			// aapt resource value: 0x7f090030
-			public const int middle = 2131296304;
+			// aapt resource value: 0x7f0900cc
+			public const int main_toolbar = 2131296460;
 			
-			// aapt resource value: 0x7f090052
-			public const int mini = 2131296338;
+			// aapt resource value: 0x7f0900d6
+			public const int masked = 2131296470;
 			
-			// aapt resource value: 0x7f0900a5
-			public const int mr_art = 2131296421;
+			// aapt resource value: 0x7f0900be
+			public const int media_actions = 2131296446;
 			
-			// aapt resource value: 0x7f09009a
-			public const int mr_chooser_list = 2131296410;
+			// aapt resource value: 0x7f0900d4
+			public const int message = 2131296468;
 			
-			// aapt resource value: 0x7f09009d
-			public const int mr_chooser_route_desc = 2131296413;
+			// aapt resource value: 0x7f090031
+			public const int middle = 2131296305;
 			
-			// aapt resource value: 0x7f09009b
-			public const int mr_chooser_route_icon = 2131296411;
-			
-			// aapt resource value: 0x7f09009c
-			public const int mr_chooser_route_name = 2131296412;
-			
-			// aapt resource value: 0x7f090099
-			public const int mr_chooser_title = 2131296409;
-			
-			// aapt resource value: 0x7f0900a2
-			public const int mr_close = 2131296418;
-			
-			// aapt resource value: 0x7f0900a8
-			public const int mr_control_divider = 2131296424;
-			
-			// aapt resource value: 0x7f0900ae
-			public const int mr_control_playback_ctrl = 2131296430;
-			
-			// aapt resource value: 0x7f0900b1
-			public const int mr_control_subtitle = 2131296433;
-			
-			// aapt resource value: 0x7f0900b0
-			public const int mr_control_title = 2131296432;
-			
-			// aapt resource value: 0x7f0900af
-			public const int mr_control_title_container = 2131296431;
-			
-			// aapt resource value: 0x7f0900a3
-			public const int mr_custom_control = 2131296419;
-			
-			// aapt resource value: 0x7f0900a4
-			public const int mr_default_control = 2131296420;
-			
-			// aapt resource value: 0x7f09009f
-			public const int mr_dialog_area = 2131296415;
-			
-			// aapt resource value: 0x7f09009e
-			public const int mr_expandable_area = 2131296414;
-			
-			// aapt resource value: 0x7f0900b2
-			public const int mr_group_expand_collapse = 2131296434;
-			
-			// aapt resource value: 0x7f0900a6
-			public const int mr_media_main_control = 2131296422;
-			
-			// aapt resource value: 0x7f0900a1
-			public const int mr_name = 2131296417;
-			
-			// aapt resource value: 0x7f0900a7
-			public const int mr_playback_control = 2131296423;
-			
-			// aapt resource value: 0x7f0900a0
-			public const int mr_title_bar = 2131296416;
-			
-			// aapt resource value: 0x7f0900a9
-			public const int mr_volume_control = 2131296425;
+			// aapt resource value: 0x7f090053
+			public const int mini = 2131296339;
 			
 			// aapt resource value: 0x7f0900aa
-			public const int mr_volume_group_list = 2131296426;
+			public const int mr_art = 2131296426;
 			
-			// aapt resource value: 0x7f0900ac
-			public const int mr_volume_item_icon = 2131296428;
+			// aapt resource value: 0x7f09009f
+			public const int mr_chooser_list = 2131296415;
+			
+			// aapt resource value: 0x7f0900a2
+			public const int mr_chooser_route_desc = 2131296418;
+			
+			// aapt resource value: 0x7f0900a0
+			public const int mr_chooser_route_icon = 2131296416;
+			
+			// aapt resource value: 0x7f0900a1
+			public const int mr_chooser_route_name = 2131296417;
+			
+			// aapt resource value: 0x7f09009e
+			public const int mr_chooser_title = 2131296414;
+			
+			// aapt resource value: 0x7f0900a7
+			public const int mr_close = 2131296423;
 			
 			// aapt resource value: 0x7f0900ad
-			public const int mr_volume_slider = 2131296429;
+			public const int mr_control_divider = 2131296429;
 			
-			// aapt resource value: 0x7f090026
-			public const int multiply = 2131296294;
+			// aapt resource value: 0x7f0900b3
+			public const int mr_control_playback_ctrl = 2131296435;
 			
-			// aapt resource value: 0x7f090093
-			public const int navigation_header_container = 2131296403;
+			// aapt resource value: 0x7f0900b6
+			public const int mr_control_subtitle = 2131296438;
 			
-			// aapt resource value: 0x7f09003a
-			public const int never = 2131296314;
+			// aapt resource value: 0x7f0900b5
+			public const int mr_control_title = 2131296437;
 			
-			// aapt resource value: 0x7f090021
-			public const int none = 2131296289;
+			// aapt resource value: 0x7f0900b4
+			public const int mr_control_title_container = 2131296436;
 			
-			// aapt resource value: 0x7f09001d
-			public const int normal = 2131296285;
+			// aapt resource value: 0x7f0900a8
+			public const int mr_custom_control = 2131296424;
 			
-			// aapt resource value: 0x7f0900c2
-			public const int notification_background = 2131296450;
+			// aapt resource value: 0x7f0900a9
+			public const int mr_default_control = 2131296425;
 			
-			// aapt resource value: 0x7f0900bc
-			public const int notification_main_column = 2131296444;
+			// aapt resource value: 0x7f0900a4
+			public const int mr_dialog_area = 2131296420;
 			
-			// aapt resource value: 0x7f0900bb
-			public const int notification_main_column_container = 2131296443;
+			// aapt resource value: 0x7f0900a3
+			public const int mr_expandable_area = 2131296419;
 			
-			// aapt resource value: 0x7f09004b
-			public const int parallax = 2131296331;
+			// aapt resource value: 0x7f0900b7
+			public const int mr_group_expand_collapse = 2131296439;
 			
-			// aapt resource value: 0x7f090064
-			public const int parentPanel = 2131296356;
+			// aapt resource value: 0x7f0900ab
+			public const int mr_media_main_control = 2131296427;
+			
+			// aapt resource value: 0x7f0900a6
+			public const int mr_name = 2131296422;
+			
+			// aapt resource value: 0x7f0900ac
+			public const int mr_playback_control = 2131296428;
+			
+			// aapt resource value: 0x7f0900a5
+			public const int mr_title_bar = 2131296421;
+			
+			// aapt resource value: 0x7f0900ae
+			public const int mr_volume_control = 2131296430;
+			
+			// aapt resource value: 0x7f0900af
+			public const int mr_volume_group_list = 2131296431;
+			
+			// aapt resource value: 0x7f0900b1
+			public const int mr_volume_item_icon = 2131296433;
+			
+			// aapt resource value: 0x7f0900b2
+			public const int mr_volume_slider = 2131296434;
+			
+			// aapt resource value: 0x7f090028
+			public const int multiply = 2131296296;
+			
+			// aapt resource value: 0x7f090096
+			public const int navigation_header_container = 2131296406;
+			
+			// aapt resource value: 0x7f09003b
+			public const int never = 2131296315;
+			
+			// aapt resource value: 0x7f090022
+			public const int none = 2131296290;
+			
+			// aapt resource value: 0x7f09001e
+			public const int normal = 2131296286;
+			
+			// aapt resource value: 0x7f0900c7
+			public const int notification_background = 2131296455;
+			
+			// aapt resource value: 0x7f0900c1
+			public const int notification_main_column = 2131296449;
+			
+			// aapt resource value: 0x7f0900c0
+			public const int notification_main_column_container = 2131296448;
+			
+			// aapt resource value: 0x7f09004c
+			public const int parallax = 2131296332;
+			
+			// aapt resource value: 0x7f090065
+			public const int parentPanel = 2131296357;
 			
 			// aapt resource value: 0x7f09000b
 			public const int parent_matrix = 2131296267;
 			
-			// aapt resource value: 0x7f09004c
-			public const int pin = 2131296332;
+			// aapt resource value: 0x7f09004d
+			public const int pin = 2131296333;
 			
 			// aapt resource value: 0x7f090006
 			public const int progress_circular = 2131296262;
@@ -3540,17 +5567,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f090007
 			public const int progress_horizontal = 2131296263;
 			
-			// aapt resource value: 0x7f090074
-			public const int radio = 2131296372;
+			// aapt resource value: 0x7f090075
+			public const int radio = 2131296373;
 			
-			// aapt resource value: 0x7f090049
-			public const int right = 2131296329;
+			// aapt resource value: 0x7f09004a
+			public const int right = 2131296330;
 			
-			// aapt resource value: 0x7f0900c1
-			public const int right_icon = 2131296449;
+			// aapt resource value: 0x7f0900c6
+			public const int right_icon = 2131296454;
 			
-			// aapt resource value: 0x7f0900bd
-			public const int right_side = 2131296445;
+			// aapt resource value: 0x7f0900c2
+			public const int right_side = 2131296450;
 			
 			// aapt resource value: 0x7f09000c
 			public const int save_image_matrix = 2131296268;
@@ -3561,128 +5588,140 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f09000e
 			public const int save_scale_type = 2131296270;
 			
-			// aapt resource value: 0x7f090027
-			public const int screen = 2131296295;
-			
-			// aapt resource value: 0x7f090041
-			public const int scroll = 2131296321;
-			
-			// aapt resource value: 0x7f09006a
-			public const int scrollIndicatorDown = 2131296362;
-			
-			// aapt resource value: 0x7f090066
-			public const int scrollIndicatorUp = 2131296358;
-			
-			// aapt resource value: 0x7f090067
-			public const int scrollView = 2131296359;
-			
-			// aapt resource value: 0x7f090054
-			public const int scrollable = 2131296340;
-			
-			// aapt resource value: 0x7f09007f
-			public const int search_badge = 2131296383;
-			
-			// aapt resource value: 0x7f09007e
-			public const int search_bar = 2131296382;
-			
-			// aapt resource value: 0x7f090080
-			public const int search_button = 2131296384;
-			
-			// aapt resource value: 0x7f090085
-			public const int search_close_btn = 2131296389;
-			
-			// aapt resource value: 0x7f090081
-			public const int search_edit_frame = 2131296385;
-			
-			// aapt resource value: 0x7f090087
-			public const int search_go_btn = 2131296391;
-			
-			// aapt resource value: 0x7f090082
-			public const int search_mag_icon = 2131296386;
-			
-			// aapt resource value: 0x7f090083
-			public const int search_plate = 2131296387;
-			
-			// aapt resource value: 0x7f090084
-			public const int search_src_text = 2131296388;
-			
-			// aapt resource value: 0x7f090088
-			public const int search_voice_btn = 2131296392;
-			
-			// aapt resource value: 0x7f090089
-			public const int select_dialog_listview = 2131296393;
-			
-			// aapt resource value: 0x7f090073
-			public const int shortcut = 2131296371;
-			
-			// aapt resource value: 0x7f090022
-			public const int showCustom = 2131296290;
-			
-			// aapt resource value: 0x7f090023
-			public const int showHome = 2131296291;
-			
-			// aapt resource value: 0x7f090024
-			public const int showTitle = 2131296292;
-			
-			// aapt resource value: 0x7f0900c6
-			public const int sliding_tabs = 2131296454;
-			
-			// aapt resource value: 0x7f09008b
-			public const int smallLabel = 2131296395;
-			
-			// aapt resource value: 0x7f090092
-			public const int snackbar_action = 2131296402;
-			
-			// aapt resource value: 0x7f090091
-			public const int snackbar_text = 2131296401;
+			// aapt resource value: 0x7f090029
+			public const int screen = 2131296297;
 			
 			// aapt resource value: 0x7f090042
-			public const int snap = 2131296322;
+			public const int scroll = 2131296322;
 			
-			// aapt resource value: 0x7f090063
-			public const int spacer = 2131296355;
+			// aapt resource value: 0x7f09006b
+			public const int scrollIndicatorDown = 2131296363;
+			
+			// aapt resource value: 0x7f090067
+			public const int scrollIndicatorUp = 2131296359;
+			
+			// aapt resource value: 0x7f090068
+			public const int scrollView = 2131296360;
+			
+			// aapt resource value: 0x7f090055
+			public const int scrollable = 2131296341;
+			
+			// aapt resource value: 0x7f090080
+			public const int search_badge = 2131296384;
+			
+			// aapt resource value: 0x7f09007f
+			public const int search_bar = 2131296383;
+			
+			// aapt resource value: 0x7f090081
+			public const int search_button = 2131296385;
+			
+			// aapt resource value: 0x7f090086
+			public const int search_close_btn = 2131296390;
+			
+			// aapt resource value: 0x7f090082
+			public const int search_edit_frame = 2131296386;
+			
+			// aapt resource value: 0x7f090088
+			public const int search_go_btn = 2131296392;
+			
+			// aapt resource value: 0x7f090083
+			public const int search_mag_icon = 2131296387;
+			
+			// aapt resource value: 0x7f090084
+			public const int search_plate = 2131296388;
+			
+			// aapt resource value: 0x7f090085
+			public const int search_src_text = 2131296389;
+			
+			// aapt resource value: 0x7f090089
+			public const int search_voice_btn = 2131296393;
+			
+			// aapt resource value: 0x7f09008a
+			public const int select_dialog_listview = 2131296394;
+			
+			// aapt resource value: 0x7f0900cf
+			public const int shellcontent_appbar = 2131296463;
+			
+			// aapt resource value: 0x7f0900d1
+			public const int shellcontent_scrollview = 2131296465;
+			
+			// aapt resource value: 0x7f0900d0
+			public const int shellcontent_toolbar = 2131296464;
+			
+			// aapt resource value: 0x7f090074
+			public const int shortcut = 2131296372;
+			
+			// aapt resource value: 0x7f090023
+			public const int showCustom = 2131296291;
+			
+			// aapt resource value: 0x7f090024
+			public const int showHome = 2131296292;
+			
+			// aapt resource value: 0x7f090025
+			public const int showTitle = 2131296293;
+			
+			// aapt resource value: 0x7f0900d2
+			public const int sliding_tabs = 2131296466;
+			
+			// aapt resource value: 0x7f09008e
+			public const int smallLabel = 2131296398;
+			
+			// aapt resource value: 0x7f090095
+			public const int snackbar_action = 2131296405;
+			
+			// aapt resource value: 0x7f090094
+			public const int snackbar_text = 2131296404;
+			
+			// aapt resource value: 0x7f090043
+			public const int snap = 2131296323;
+			
+			// aapt resource value: 0x7f090064
+			public const int spacer = 2131296356;
 			
 			// aapt resource value: 0x7f090008
 			public const int split_action_bar = 2131296264;
 			
-			// aapt resource value: 0x7f090028
-			public const int src_atop = 2131296296;
-			
-			// aapt resource value: 0x7f090029
-			public const int src_in = 2131296297;
-			
 			// aapt resource value: 0x7f09002a
-			public const int src_over = 2131296298;
+			public const int src_atop = 2131296298;
 			
-			// aapt resource value: 0x7f09004a
-			public const int start = 2131296330;
+			// aapt resource value: 0x7f09002b
+			public const int src_in = 2131296299;
 			
-			// aapt resource value: 0x7f0900b8
-			public const int status_bar_latest_event_content = 2131296440;
+			// aapt resource value: 0x7f09002c
+			public const int src_over = 2131296300;
 			
-			// aapt resource value: 0x7f090075
-			public const int submenuarrow = 2131296373;
+			// aapt resource value: 0x7f09004b
+			public const int start = 2131296331;
 			
-			// aapt resource value: 0x7f090086
-			public const int submit_area = 2131296390;
+			// aapt resource value: 0x7f0900bd
+			public const int status_bar_latest_event_content = 2131296445;
 			
-			// aapt resource value: 0x7f09001e
-			public const int tabMode = 2131296286;
+			// aapt resource value: 0x7f090076
+			public const int submenuarrow = 2131296374;
+			
+			// aapt resource value: 0x7f090087
+			public const int submit_area = 2131296391;
+			
+			// aapt resource value: 0x7f09001f
+			public const int tabMode = 2131296287;
 			
 			// aapt resource value: 0x7f090019
-			public const int text = 2131296281;
+			public const int tag_transition_group = 2131296281;
 			
 			// aapt resource value: 0x7f09001a
-			public const int text2 = 2131296282;
+			public const int text = 2131296282;
+			
+			// aapt resource value: 0x7f09001b
+			public const int text2 = 2131296283;
+			
+			// aapt resource value: 0x7f09006a
+			public const int textSpacerNoButtons = 2131296362;
 			
 			// aapt resource value: 0x7f090069
-			public const int textSpacerNoButtons = 2131296361;
+			public const int textSpacerNoTitle = 2131296361;
 			
-			// aapt resource value: 0x7f090068
-			public const int textSpacerNoTitle = 2131296360;
-			
-			// aapt resource value: 0x7f090098
-			public const int text_input_password_toggle = 2131296408;
+			// aapt resource value: 0x7f09009b
+			public const int text_input_password_toggle = 2131296411;
 			
 			// aapt resource value: 0x7f090014
 			public const int textinput_counter = 2131296276;
@@ -3690,29 +5729,29 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f090015
 			public const int textinput_error = 2131296277;
 			
-			// aapt resource value: 0x7f0900be
-			public const int time = 2131296446;
+			// aapt resource value: 0x7f0900c3
+			public const int time = 2131296451;
 			
-			// aapt resource value: 0x7f09001b
-			public const int title = 2131296283;
+			// aapt resource value: 0x7f09001c
+			public const int title = 2131296284;
 			
-			// aapt resource value: 0x7f090070
-			public const int titleDividerNoCustom = 2131296368;
+			// aapt resource value: 0x7f090071
+			public const int titleDividerNoCustom = 2131296369;
+			
+			// aapt resource value: 0x7f09006f
+			public const int title_template = 2131296367;
+			
+			// aapt resource value: 0x7f0900d3
+			public const int toolbar = 2131296467;
+			
+			// aapt resource value: 0x7f09003e
+			public const int top = 2131296318;
 			
 			// aapt resource value: 0x7f09006e
-			public const int title_template = 2131296366;
+			public const int topPanel = 2131296366;
 			
-			// aapt resource value: 0x7f0900c7
-			public const int toolbar = 2131296455;
-			
-			// aapt resource value: 0x7f09003d
-			public const int top = 2131296317;
-			
-			// aapt resource value: 0x7f09006d
-			public const int topPanel = 2131296365;
-			
-			// aapt resource value: 0x7f09008f
-			public const int touch_outside = 2131296399;
+			// aapt resource value: 0x7f090092
+			public const int touch_outside = 2131296402;
 			
 			// aapt resource value: 0x7f09000f
 			public const int transition_current_scene = 2131296271;
@@ -3729,32 +5768,32 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f090013
 			public const int transition_transform = 2131296275;
 			
-			// aapt resource value: 0x7f09002c
-			public const int uniform = 2131296300;
+			// aapt resource value: 0x7f09002d
+			public const int uniform = 2131296301;
 			
 			// aapt resource value: 0x7f090009
 			public const int up = 2131296265;
 			
-			// aapt resource value: 0x7f090025
-			public const int useLogo = 2131296293;
+			// aapt resource value: 0x7f090026
+			public const int useLogo = 2131296294;
 			
 			// aapt resource value: 0x7f090016
 			public const int view_offset_helper = 2131296278;
 			
-			// aapt resource value: 0x7f0900c9
-			public const int visible = 2131296457;
+			// aapt resource value: 0x7f0900d5
+			public const int visible = 2131296469;
 			
-			// aapt resource value: 0x7f0900ab
-			public const int volume_item_container = 2131296427;
+			// aapt resource value: 0x7f0900b0
+			public const int volume_item_container = 2131296432;
 			
-			// aapt resource value: 0x7f09008a
-			public const int webview = 2131296394;
+			// aapt resource value: 0x7f09008b
+			public const int webview = 2131296395;
 			
-			// aapt resource value: 0x7f09003b
-			public const int withText = 2131296315;
+			// aapt resource value: 0x7f09003c
+			public const int withText = 2131296316;
 			
-			// aapt resource value: 0x7f09002d
-			public const int wrap_content = 2131296301;
+			// aapt resource value: 0x7f09002e
+			public const int wrap_content = 2131296302;
 			
 			static Id()
 			{
@@ -3847,82 +5886,82 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			public const int abc_action_bar_up_container = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int abc_action_bar_view_list_nav_layout = 2130903042;
+			public const int abc_action_menu_item_layout = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int abc_action_menu_item_layout = 2130903043;
+			public const int abc_action_menu_layout = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int abc_action_menu_layout = 2130903044;
+			public const int abc_action_mode_bar = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int abc_action_mode_bar = 2130903045;
+			public const int abc_action_mode_close_item_material = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int abc_action_mode_close_item_material = 2130903046;
+			public const int abc_activity_chooser_view = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int abc_activity_chooser_view = 2130903047;
+			public const int abc_activity_chooser_view_list_item = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int abc_activity_chooser_view_list_item = 2130903048;
+			public const int abc_alert_dialog_button_bar_material = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int abc_alert_dialog_button_bar_material = 2130903049;
+			public const int abc_alert_dialog_material = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int abc_alert_dialog_material = 2130903050;
+			public const int abc_alert_dialog_title_material = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int abc_alert_dialog_title_material = 2130903051;
+			public const int abc_dialog_title_material = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int abc_dialog_title_material = 2130903052;
+			public const int abc_expanded_menu_layout = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int abc_expanded_menu_layout = 2130903053;
+			public const int abc_list_menu_item_checkbox = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int abc_list_menu_item_checkbox = 2130903054;
+			public const int abc_list_menu_item_icon = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int abc_list_menu_item_icon = 2130903055;
+			public const int abc_list_menu_item_layout = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int abc_list_menu_item_layout = 2130903056;
+			public const int abc_list_menu_item_radio = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int abc_list_menu_item_radio = 2130903057;
+			public const int abc_popup_menu_header_item_layout = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int abc_popup_menu_header_item_layout = 2130903058;
+			public const int abc_popup_menu_item_layout = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int abc_popup_menu_item_layout = 2130903059;
+			public const int abc_screen_content_include = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int abc_screen_content_include = 2130903060;
+			public const int abc_screen_simple = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int abc_screen_simple = 2130903061;
+			public const int abc_screen_simple_overlay_action_mode = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int abc_screen_simple_overlay_action_mode = 2130903062;
+			public const int abc_screen_toolbar = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int abc_screen_toolbar = 2130903063;
+			public const int abc_search_dropdown_item_icons_2line = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int abc_search_dropdown_item_icons_2line = 2130903064;
+			public const int abc_search_view = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int abc_search_view = 2130903065;
+			public const int abc_select_dialog_material = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int abc_select_dialog_material = 2130903066;
+			public const int activity_webview = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int activity_webview = 2130903067;
+			public const int BottomTabLayout = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
 			public const int design_bottom_navigation_item = 2130903068;
@@ -3967,88 +6006,97 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			public const int design_text_input_password_icon = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int mr_chooser_dialog = 2130903082;
+			public const int FlyoutContent = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int mr_chooser_list_item = 2130903083;
+			public const int mr_chooser_dialog = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int mr_controller_material_dialog_b = 2130903084;
+			public const int mr_chooser_list_item = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int mr_controller_volume_item = 2130903085;
+			public const int mr_controller_material_dialog_b = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int mr_playback_control = 2130903086;
+			public const int mr_controller_volume_item = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int mr_volume_control = 2130903087;
+			public const int mr_playback_control = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int notification_action = 2130903088;
+			public const int mr_volume_control = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int notification_action_tombstone = 2130903089;
+			public const int notification_action = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int notification_media_action = 2130903090;
+			public const int notification_action_tombstone = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int notification_media_cancel_action = 2130903091;
+			public const int notification_media_action = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int notification_template_big_media = 2130903092;
+			public const int notification_media_cancel_action = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int notification_template_big_media_custom = 2130903093;
+			public const int notification_template_big_media = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int notification_template_big_media_narrow = 2130903094;
+			public const int notification_template_big_media_custom = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int notification_template_big_media_narrow_custom = 2130903095;
+			public const int notification_template_big_media_narrow = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_template_custom_big = 2130903096;
+			public const int notification_template_big_media_narrow_custom = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int notification_template_icon_group = 2130903097;
+			public const int notification_template_custom_big = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int notification_template_lines_media = 2130903098;
+			public const int notification_template_icon_group = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int notification_template_media = 2130903099;
+			public const int notification_template_lines_media = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int notification_template_media_custom = 2130903100;
+			public const int notification_template_media = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int notification_template_part_chronometer = 2130903101;
+			public const int notification_template_media_custom = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int notification_template_part_time = 2130903102;
+			public const int notification_template_part_chronometer = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int select_dialog_item_material = 2130903103;
+			public const int notification_template_part_time = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int select_dialog_multichoice_material = 2130903104;
+			public const int RootLayout = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int select_dialog_singlechoice_material = 2130903105;
+			public const int select_dialog_item_material = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int support_simple_spinner_dropdown_item = 2130903106;
+			public const int select_dialog_multichoice_material = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int Tabbar = 2130903107;
+			public const int select_dialog_singlechoice_material = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int Toolbar = 2130903108;
+			public const int ShellContent = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int tooltip = 2130903109;
+			public const int support_simple_spinner_dropdown_item = 2130903109;
+			
+			// aapt resource value: 0x7f030046
+			public const int Tabbar = 2130903110;
+			
+			// aapt resource value: 0x7f030047
+			public const int Toolbar = 2130903111;
+			
+			// aapt resource value: 0x7f030048
+			public const int tooltip = 2130903112;
 			
 			static Layout()
 			{
@@ -4063,116 +6111,110 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f070040
-			public const int ApplicationName = 2131165248;
+			// aapt resource value: 0x7f07003e
+			public const int ApplicationName = 2131165246;
 			
-			// aapt resource value: 0x7f07003f
-			public const int Hello = 2131165247;
+			// aapt resource value: 0x7f07003d
+			public const int Hello = 2131165245;
 			
 			// aapt resource value: 0x7f070016
 			public const int abc_action_bar_home_description = 2131165206;
 			
 			// aapt resource value: 0x7f070017
-			public const int abc_action_bar_home_description_format = 2131165207;
+			public const int abc_action_bar_up_description = 2131165207;
 			
 			// aapt resource value: 0x7f070018
-			public const int abc_action_bar_home_subtitle_description_format = 2131165208;
+			public const int abc_action_menu_overflow_description = 2131165208;
 			
 			// aapt resource value: 0x7f070019
-			public const int abc_action_bar_up_description = 2131165209;
+			public const int abc_action_mode_done = 2131165209;
 			
 			// aapt resource value: 0x7f07001a
-			public const int abc_action_menu_overflow_description = 2131165210;
+			public const int abc_activity_chooser_view_see_all = 2131165210;
 			
 			// aapt resource value: 0x7f07001b
-			public const int abc_action_mode_done = 2131165211;
+			public const int abc_activitychooserview_choose_application = 2131165211;
 			
 			// aapt resource value: 0x7f07001c
-			public const int abc_activity_chooser_view_see_all = 2131165212;
+			public const int abc_capital_off = 2131165212;
 			
 			// aapt resource value: 0x7f07001d
-			public const int abc_activitychooserview_choose_application = 2131165213;
-			
-			// aapt resource value: 0x7f07001e
-			public const int abc_capital_off = 2131165214;
-			
-			// aapt resource value: 0x7f07001f
-			public const int abc_capital_on = 2131165215;
-			
-			// aapt resource value: 0x7f07002b
-			public const int abc_font_family_body_1_material = 2131165227;
-			
-			// aapt resource value: 0x7f07002c
-			public const int abc_font_family_body_2_material = 2131165228;
-			
-			// aapt resource value: 0x7f07002d
-			public const int abc_font_family_button_material = 2131165229;
-			
-			// aapt resource value: 0x7f07002e
-			public const int abc_font_family_caption_material = 2131165230;
-			
-			// aapt resource value: 0x7f07002f
-			public const int abc_font_family_display_1_material = 2131165231;
-			
-			// aapt resource value: 0x7f070030
-			public const int abc_font_family_display_2_material = 2131165232;
-			
-			// aapt resource value: 0x7f070031
-			public const int abc_font_family_display_3_material = 2131165233;
-			
-			// aapt resource value: 0x7f070032
-			public const int abc_font_family_display_4_material = 2131165234;
-			
-			// aapt resource value: 0x7f070033
-			public const int abc_font_family_headline_material = 2131165235;
-			
-			// aapt resource value: 0x7f070034
-			public const int abc_font_family_menu_material = 2131165236;
-			
-			// aapt resource value: 0x7f070035
-			public const int abc_font_family_subhead_material = 2131165237;
-			
-			// aapt resource value: 0x7f070036
-			public const int abc_font_family_title_material = 2131165238;
-			
-			// aapt resource value: 0x7f070020
-			public const int abc_search_hint = 2131165216;
-			
-			// aapt resource value: 0x7f070021
-			public const int abc_searchview_description_clear = 2131165217;
-			
-			// aapt resource value: 0x7f070022
-			public const int abc_searchview_description_query = 2131165218;
-			
-			// aapt resource value: 0x7f070023
-			public const int abc_searchview_description_search = 2131165219;
-			
-			// aapt resource value: 0x7f070024
-			public const int abc_searchview_description_submit = 2131165220;
-			
-			// aapt resource value: 0x7f070025
-			public const int abc_searchview_description_voice = 2131165221;
-			
-			// aapt resource value: 0x7f070026
-			public const int abc_shareactionprovider_share_with = 2131165222;
-			
-			// aapt resource value: 0x7f070027
-			public const int abc_shareactionprovider_share_with_application = 2131165223;
+			public const int abc_capital_on = 2131165213;
 			
 			// aapt resource value: 0x7f070028
-			public const int abc_toolbar_collapse_description = 2131165224;
+			public const int abc_font_family_body_1_material = 2131165224;
 			
-			// aapt resource value: 0x7f070037
-			public const int appbar_scrolling_view_behavior = 2131165239;
+			// aapt resource value: 0x7f070029
+			public const int abc_font_family_body_2_material = 2131165225;
 			
-			// aapt resource value: 0x7f070038
-			public const int bottom_sheet_behavior = 2131165240;
+			// aapt resource value: 0x7f07002a
+			public const int abc_font_family_button_material = 2131165226;
 			
-			// aapt resource value: 0x7f070039
-			public const int character_counter_pattern = 2131165241;
+			// aapt resource value: 0x7f07002b
+			public const int abc_font_family_caption_material = 2131165227;
 			
-			// aapt resource value: 0x7f070041
-			public const int library_name = 2131165249;
+			// aapt resource value: 0x7f07002c
+			public const int abc_font_family_display_1_material = 2131165228;
+			
+			// aapt resource value: 0x7f07002d
+			public const int abc_font_family_display_2_material = 2131165229;
+			
+			// aapt resource value: 0x7f07002e
+			public const int abc_font_family_display_3_material = 2131165230;
+			
+			// aapt resource value: 0x7f07002f
+			public const int abc_font_family_display_4_material = 2131165231;
+			
+			// aapt resource value: 0x7f070030
+			public const int abc_font_family_headline_material = 2131165232;
+			
+			// aapt resource value: 0x7f070031
+			public const int abc_font_family_menu_material = 2131165233;
+			
+			// aapt resource value: 0x7f070032
+			public const int abc_font_family_subhead_material = 2131165234;
+			
+			// aapt resource value: 0x7f070033
+			public const int abc_font_family_title_material = 2131165235;
+			
+			// aapt resource value: 0x7f07001e
+			public const int abc_search_hint = 2131165214;
+			
+			// aapt resource value: 0x7f07001f
+			public const int abc_searchview_description_clear = 2131165215;
+			
+			// aapt resource value: 0x7f070020
+			public const int abc_searchview_description_query = 2131165216;
+			
+			// aapt resource value: 0x7f070021
+			public const int abc_searchview_description_search = 2131165217;
+			
+			// aapt resource value: 0x7f070022
+			public const int abc_searchview_description_submit = 2131165218;
+			
+			// aapt resource value: 0x7f070023
+			public const int abc_searchview_description_voice = 2131165219;
+			
+			// aapt resource value: 0x7f070024
+			public const int abc_shareactionprovider_share_with = 2131165220;
+			
+			// aapt resource value: 0x7f070025
+			public const int abc_shareactionprovider_share_with_application = 2131165221;
+			
+			// aapt resource value: 0x7f070026
+			public const int abc_toolbar_collapse_description = 2131165222;
+			
+			// aapt resource value: 0x7f070034
+			public const int appbar_scrolling_view_behavior = 2131165236;
+			
+			// aapt resource value: 0x7f070035
+			public const int bottom_sheet_behavior = 2131165237;
+			
+			// aapt resource value: 0x7f070036
+			public const int character_counter_pattern = 2131165238;
+			
+			// aapt resource value: 0x7f07003f
+			public const int library_name = 2131165247;
 			
 			// aapt resource value: 0x7f070001
 			public const int mr_button_content_description = 2131165185;
@@ -4237,26 +6279,26 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f070015
 			public const int mr_user_route_category_name = 2131165205;
 			
+			// aapt resource value: 0x7f070037
+			public const int password_toggle_content_description = 2131165239;
+			
+			// aapt resource value: 0x7f070038
+			public const int path_password_eye = 2131165240;
+			
+			// aapt resource value: 0x7f070039
+			public const int path_password_eye_mask_strike_through = 2131165241;
+			
 			// aapt resource value: 0x7f07003a
-			public const int password_toggle_content_description = 2131165242;
+			public const int path_password_eye_mask_visible = 2131165242;
 			
 			// aapt resource value: 0x7f07003b
-			public const int path_password_eye = 2131165243;
+			public const int path_password_strike_through = 2131165243;
+			
+			// aapt resource value: 0x7f070027
+			public const int search_menu_title = 2131165223;
 			
 			// aapt resource value: 0x7f07003c
-			public const int path_password_eye_mask_strike_through = 2131165244;
-			
-			// aapt resource value: 0x7f07003d
-			public const int path_password_eye_mask_visible = 2131165245;
-			
-			// aapt resource value: 0x7f07003e
-			public const int path_password_strike_through = 2131165246;
-			
-			// aapt resource value: 0x7f070029
-			public const int search_menu_title = 2131165225;
-			
-			// aapt resource value: 0x7f07002a
-			public const int status_bar_notification_info_overflow = 2131165226;
+			public const int status_bar_notification_info_overflow = 2131165244;
 			
 			// aapt resource value: 0x7f070000
 			public const int title_activity_webview = 2131165184;
@@ -4274,50 +6316,50 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 		public partial class Style
 		{
 			
+			// aapt resource value: 0x7f0b00a4
+			public const int AlertDialog_AppCompat = 2131427492;
+			
+			// aapt resource value: 0x7f0b00a5
+			public const int AlertDialog_AppCompat_Light = 2131427493;
+			
+			// aapt resource value: 0x7f0b00a6
+			public const int Animation_AppCompat_Dialog = 2131427494;
+			
+			// aapt resource value: 0x7f0b00a7
+			public const int Animation_AppCompat_DropDownUp = 2131427495;
+			
+			// aapt resource value: 0x7f0b00a8
+			public const int Animation_AppCompat_Tooltip = 2131427496;
+			
+			// aapt resource value: 0x7f0b016e
+			public const int Animation_Design_BottomSheetDialog = 2131427694;
+			
+			// aapt resource value: 0x7f0b0191
+			public const int AppCompatDialogStyle = 2131427729;
+			
+			// aapt resource value: 0x7f0b00a9
+			public const int Base_AlertDialog_AppCompat = 2131427497;
+			
+			// aapt resource value: 0x7f0b00aa
+			public const int Base_AlertDialog_AppCompat_Light = 2131427498;
+			
+			// aapt resource value: 0x7f0b00ab
+			public const int Base_Animation_AppCompat_Dialog = 2131427499;
+			
 			// aapt resource value: 0x7f0b00ac
-			public const int AlertDialog_AppCompat = 2131427500;
+			public const int Base_Animation_AppCompat_DropDownUp = 2131427500;
 			
 			// aapt resource value: 0x7f0b00ad
-			public const int AlertDialog_AppCompat_Light = 2131427501;
-			
-			// aapt resource value: 0x7f0b00ae
-			public const int Animation_AppCompat_Dialog = 2131427502;
-			
-			// aapt resource value: 0x7f0b00af
-			public const int Animation_AppCompat_DropDownUp = 2131427503;
-			
-			// aapt resource value: 0x7f0b00b0
-			public const int Animation_AppCompat_Tooltip = 2131427504;
-			
-			// aapt resource value: 0x7f0b0178
-			public const int Animation_Design_BottomSheetDialog = 2131427704;
-			
-			// aapt resource value: 0x7f0b019b
-			public const int AppCompatDialogStyle = 2131427739;
-			
-			// aapt resource value: 0x7f0b00b1
-			public const int Base_AlertDialog_AppCompat = 2131427505;
-			
-			// aapt resource value: 0x7f0b00b2
-			public const int Base_AlertDialog_AppCompat_Light = 2131427506;
-			
-			// aapt resource value: 0x7f0b00b3
-			public const int Base_Animation_AppCompat_Dialog = 2131427507;
-			
-			// aapt resource value: 0x7f0b00b4
-			public const int Base_Animation_AppCompat_DropDownUp = 2131427508;
-			
-			// aapt resource value: 0x7f0b00b5
-			public const int Base_Animation_AppCompat_Tooltip = 2131427509;
+			public const int Base_Animation_AppCompat_Tooltip = 2131427501;
 			
 			// aapt resource value: 0x7f0b000c
 			public const int Base_CardView = 2131427340;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int Base_DialogWindowTitle_AppCompat = 2131427510;
+			// aapt resource value: 0x7f0b00ae
+			public const int Base_DialogWindowTitle_AppCompat = 2131427502;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int Base_DialogWindowTitleBackground_AppCompat = 2131427511;
+			// aapt resource value: 0x7f0b00af
+			public const int Base_DialogWindowTitleBackground_AppCompat = 2131427503;
 			
 			// aapt resource value: 0x7f0b0048
 			public const int Base_TextAppearance_AppCompat = 2131427400;
@@ -4373,8 +6415,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0055
 			public const int Base_TextAppearance_AppCompat_Menu = 2131427413;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int Base_TextAppearance_AppCompat_SearchResult = 2131427512;
+			// aapt resource value: 0x7f0b00b0
+			public const int Base_TextAppearance_AppCompat_SearchResult = 2131427504;
 			
 			// aapt resource value: 0x7f0b0056
 			public const int Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131427414;
@@ -4400,11 +6442,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b001f
 			public const int Base_TextAppearance_AppCompat_Title_Inverse = 2131427359;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int Base_TextAppearance_AppCompat_Tooltip = 2131427513;
+			// aapt resource value: 0x7f0b00b1
+			public const int Base_TextAppearance_AppCompat_Tooltip = 2131427505;
 			
-			// aapt resource value: 0x7f0b009d
-			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131427485;
+			// aapt resource value: 0x7f0b0095
+			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131427477;
 			
 			// aapt resource value: 0x7f0b005b
 			public const int Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131427419;
@@ -4427,17 +6469,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0061
 			public const int Base_TextAppearance_AppCompat_Widget_Button = 2131427425;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131427492;
+			// aapt resource value: 0x7f0b009c
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131427484;
 			
-			// aapt resource value: 0x7f0b00a5
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131427493;
+			// aapt resource value: 0x7f0b009d
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131427485;
 			
-			// aapt resource value: 0x7f0b009e
-			public const int Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131427486;
+			// aapt resource value: 0x7f0b0096
+			public const int Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131427478;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131427514;
+			// aapt resource value: 0x7f0b00b2
+			public const int Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131427506;
 			
 			// aapt resource value: 0x7f0b0062
 			public const int Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131427426;
@@ -4454,8 +6496,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0066
 			public const int Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131427430;
 			
-			// aapt resource value: 0x7f0b00bb
-			public const int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131427515;
+			// aapt resource value: 0x7f0b00b3
+			public const int Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131427507;
 			
 			// aapt resource value: 0x7f0b0067
 			public const int Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131427431;
@@ -4466,8 +6508,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0069
 			public const int Base_Theme_AppCompat = 2131427433;
 			
-			// aapt resource value: 0x7f0b00bc
-			public const int Base_Theme_AppCompat_CompactMenu = 2131427516;
+			// aapt resource value: 0x7f0b00b4
+			public const int Base_Theme_AppCompat_CompactMenu = 2131427508;
 			
 			// aapt resource value: 0x7f0b0020
 			public const int Base_Theme_AppCompat_Dialog = 2131427360;
@@ -4475,8 +6517,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0021
 			public const int Base_Theme_AppCompat_Dialog_Alert = 2131427361;
 			
-			// aapt resource value: 0x7f0b00bd
-			public const int Base_Theme_AppCompat_Dialog_FixedSize = 2131427517;
+			// aapt resource value: 0x7f0b00b5
+			public const int Base_Theme_AppCompat_Dialog_FixedSize = 2131427509;
 			
 			// aapt resource value: 0x7f0b0022
 			public const int Base_Theme_AppCompat_Dialog_MinWidth = 2131427362;
@@ -4487,8 +6529,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b006a
 			public const int Base_Theme_AppCompat_Light = 2131427434;
 			
-			// aapt resource value: 0x7f0b00be
-			public const int Base_Theme_AppCompat_Light_DarkActionBar = 2131427518;
+			// aapt resource value: 0x7f0b00b6
+			public const int Base_Theme_AppCompat_Light_DarkActionBar = 2131427510;
 			
 			// aapt resource value: 0x7f0b0023
 			public const int Base_Theme_AppCompat_Light_Dialog = 2131427363;
@@ -4496,8 +6538,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0024
 			public const int Base_Theme_AppCompat_Light_Dialog_Alert = 2131427364;
 			
-			// aapt resource value: 0x7f0b00bf
-			public const int Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131427519;
+			// aapt resource value: 0x7f0b00b7
+			public const int Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131427511;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131427365;
@@ -4505,17 +6547,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0011
 			public const int Base_Theme_AppCompat_Light_DialogWhenLarge = 2131427345;
 			
-			// aapt resource value: 0x7f0b00c0
-			public const int Base_ThemeOverlay_AppCompat = 2131427520;
+			// aapt resource value: 0x7f0b00b8
+			public const int Base_ThemeOverlay_AppCompat = 2131427512;
 			
-			// aapt resource value: 0x7f0b00c1
-			public const int Base_ThemeOverlay_AppCompat_ActionBar = 2131427521;
+			// aapt resource value: 0x7f0b00b9
+			public const int Base_ThemeOverlay_AppCompat_ActionBar = 2131427513;
 			
-			// aapt resource value: 0x7f0b00c2
-			public const int Base_ThemeOverlay_AppCompat_Dark = 2131427522;
+			// aapt resource value: 0x7f0b00ba
+			public const int Base_ThemeOverlay_AppCompat_Dark = 2131427514;
 			
-			// aapt resource value: 0x7f0b00c3
-			public const int Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131427523;
+			// aapt resource value: 0x7f0b00bb
+			public const int Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131427515;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int Base_ThemeOverlay_AppCompat_Dialog = 2131427366;
@@ -4523,8 +6565,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0027
 			public const int Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131427367;
 			
-			// aapt resource value: 0x7f0b00c4
-			public const int Base_ThemeOverlay_AppCompat_Light = 2131427524;
+			// aapt resource value: 0x7f0b00bc
+			public const int Base_ThemeOverlay_AppCompat_Light = 2131427516;
 			
 			// aapt resource value: 0x7f0b0028
 			public const int Base_V11_Theme_AppCompat_Dialog = 2131427368;
@@ -4541,8 +6583,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0033
 			public const int Base_V12_Widget_AppCompat_EditText = 2131427379;
 			
-			// aapt resource value: 0x7f0b0179
-			public const int Base_V14_Widget_Design_AppBarLayout = 2131427705;
+			// aapt resource value: 0x7f0b016f
+			public const int Base_V14_Widget_Design_AppBarLayout = 2131427695;
 			
 			// aapt resource value: 0x7f0b006b
 			public const int Base_V21_Theme_AppCompat = 2131427435;
@@ -4559,65 +6601,65 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b006f
 			public const int Base_V21_ThemeOverlay_AppCompat_Dialog = 2131427439;
 			
-			// aapt resource value: 0x7f0b0175
-			public const int Base_V21_Widget_Design_AppBarLayout = 2131427701;
+			// aapt resource value: 0x7f0b016b
+			public const int Base_V21_Widget_Design_AppBarLayout = 2131427691;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int Base_V22_Theme_AppCompat = 2131427483;
+			// aapt resource value: 0x7f0b0093
+			public const int Base_V22_Theme_AppCompat = 2131427475;
 			
-			// aapt resource value: 0x7f0b009c
-			public const int Base_V22_Theme_AppCompat_Light = 2131427484;
+			// aapt resource value: 0x7f0b0094
+			public const int Base_V22_Theme_AppCompat_Light = 2131427476;
 			
-			// aapt resource value: 0x7f0b009f
-			public const int Base_V23_Theme_AppCompat = 2131427487;
+			// aapt resource value: 0x7f0b0097
+			public const int Base_V23_Theme_AppCompat = 2131427479;
+			
+			// aapt resource value: 0x7f0b0098
+			public const int Base_V23_Theme_AppCompat_Light = 2131427480;
 			
 			// aapt resource value: 0x7f0b00a0
-			public const int Base_V23_Theme_AppCompat_Light = 2131427488;
+			public const int Base_V26_Theme_AppCompat = 2131427488;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int Base_V26_Theme_AppCompat = 2131427496;
+			// aapt resource value: 0x7f0b00a1
+			public const int Base_V26_Theme_AppCompat_Light = 2131427489;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int Base_V26_Theme_AppCompat_Light = 2131427497;
+			// aapt resource value: 0x7f0b00a2
+			public const int Base_V26_Widget_AppCompat_Toolbar = 2131427490;
 			
-			// aapt resource value: 0x7f0b00aa
-			public const int Base_V26_Widget_AppCompat_Toolbar = 2131427498;
+			// aapt resource value: 0x7f0b016d
+			public const int Base_V26_Widget_Design_AppBarLayout = 2131427693;
 			
-			// aapt resource value: 0x7f0b0177
-			public const int Base_V26_Widget_Design_AppBarLayout = 2131427703;
+			// aapt resource value: 0x7f0b00bd
+			public const int Base_V7_Theme_AppCompat = 2131427517;
+			
+			// aapt resource value: 0x7f0b00be
+			public const int Base_V7_Theme_AppCompat_Dialog = 2131427518;
+			
+			// aapt resource value: 0x7f0b00bf
+			public const int Base_V7_Theme_AppCompat_Light = 2131427519;
+			
+			// aapt resource value: 0x7f0b00c0
+			public const int Base_V7_Theme_AppCompat_Light_Dialog = 2131427520;
+			
+			// aapt resource value: 0x7f0b00c1
+			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131427521;
+			
+			// aapt resource value: 0x7f0b00c2
+			public const int Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131427522;
+			
+			// aapt resource value: 0x7f0b00c3
+			public const int Base_V7_Widget_AppCompat_EditText = 2131427523;
+			
+			// aapt resource value: 0x7f0b00c4
+			public const int Base_V7_Widget_AppCompat_Toolbar = 2131427524;
 			
 			// aapt resource value: 0x7f0b00c5
-			public const int Base_V7_Theme_AppCompat = 2131427525;
+			public const int Base_Widget_AppCompat_ActionBar = 2131427525;
 			
 			// aapt resource value: 0x7f0b00c6
-			public const int Base_V7_Theme_AppCompat_Dialog = 2131427526;
+			public const int Base_Widget_AppCompat_ActionBar_Solid = 2131427526;
 			
 			// aapt resource value: 0x7f0b00c7
-			public const int Base_V7_Theme_AppCompat_Light = 2131427527;
-			
-			// aapt resource value: 0x7f0b00c8
-			public const int Base_V7_Theme_AppCompat_Light_Dialog = 2131427528;
-			
-			// aapt resource value: 0x7f0b00c9
-			public const int Base_V7_ThemeOverlay_AppCompat_Dialog = 2131427529;
-			
-			// aapt resource value: 0x7f0b00ca
-			public const int Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131427530;
-			
-			// aapt resource value: 0x7f0b00cb
-			public const int Base_V7_Widget_AppCompat_EditText = 2131427531;
-			
-			// aapt resource value: 0x7f0b00cc
-			public const int Base_V7_Widget_AppCompat_Toolbar = 2131427532;
-			
-			// aapt resource value: 0x7f0b00cd
-			public const int Base_Widget_AppCompat_ActionBar = 2131427533;
-			
-			// aapt resource value: 0x7f0b00ce
-			public const int Base_Widget_AppCompat_ActionBar_Solid = 2131427534;
-			
-			// aapt resource value: 0x7f0b00cf
-			public const int Base_Widget_AppCompat_ActionBar_TabBar = 2131427535;
+			public const int Base_Widget_AppCompat_ActionBar_TabBar = 2131427527;
 			
 			// aapt resource value: 0x7f0b0070
 			public const int Base_Widget_AppCompat_ActionBar_TabText = 2131427440;
@@ -4634,11 +6676,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0074
 			public const int Base_Widget_AppCompat_ActionButton_Overflow = 2131427444;
 			
-			// aapt resource value: 0x7f0b00d0
-			public const int Base_Widget_AppCompat_ActionMode = 2131427536;
+			// aapt resource value: 0x7f0b00c8
+			public const int Base_Widget_AppCompat_ActionMode = 2131427528;
 			
-			// aapt resource value: 0x7f0b00d1
-			public const int Base_Widget_AppCompat_ActivityChooserView = 2131427537;
+			// aapt resource value: 0x7f0b00c9
+			public const int Base_Widget_AppCompat_ActivityChooserView = 2131427529;
 			
 			// aapt resource value: 0x7f0b0034
 			public const int Base_Widget_AppCompat_AutoCompleteTextView = 2131427380;
@@ -4652,11 +6694,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0077
 			public const int Base_Widget_AppCompat_Button_Borderless_Colored = 2131427447;
 			
-			// aapt resource value: 0x7f0b00d2
-			public const int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131427538;
+			// aapt resource value: 0x7f0b00ca
+			public const int Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131427530;
 			
-			// aapt resource value: 0x7f0b00a1
-			public const int Base_Widget_AppCompat_Button_Colored = 2131427489;
+			// aapt resource value: 0x7f0b0099
+			public const int Base_Widget_AppCompat_Button_Colored = 2131427481;
 			
 			// aapt resource value: 0x7f0b0078
 			public const int Base_Widget_AppCompat_Button_Small = 2131427448;
@@ -4664,8 +6706,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0079
 			public const int Base_Widget_AppCompat_ButtonBar = 2131427449;
 			
-			// aapt resource value: 0x7f0b00d3
-			public const int Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131427539;
+			// aapt resource value: 0x7f0b00cb
+			public const int Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131427531;
 			
 			// aapt resource value: 0x7f0b007a
 			public const int Base_Widget_AppCompat_CompoundButton_CheckBox = 2131427450;
@@ -4673,14 +6715,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b007b
 			public const int Base_Widget_AppCompat_CompoundButton_RadioButton = 2131427451;
 			
-			// aapt resource value: 0x7f0b00d4
-			public const int Base_Widget_AppCompat_CompoundButton_Switch = 2131427540;
+			// aapt resource value: 0x7f0b00cc
+			public const int Base_Widget_AppCompat_CompoundButton_Switch = 2131427532;
 			
 			// aapt resource value: 0x7f0b000f
 			public const int Base_Widget_AppCompat_DrawerArrowToggle = 2131427343;
 			
-			// aapt resource value: 0x7f0b00d5
-			public const int Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131427541;
+			// aapt resource value: 0x7f0b00cd
+			public const int Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131427533;
 			
 			// aapt resource value: 0x7f0b007c
 			public const int Base_Widget_AppCompat_DropDownItem_Spinner = 2131427452;
@@ -4691,14 +6733,14 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b007d
 			public const int Base_Widget_AppCompat_ImageButton = 2131427453;
 			
-			// aapt resource value: 0x7f0b00d6
-			public const int Base_Widget_AppCompat_Light_ActionBar = 2131427542;
+			// aapt resource value: 0x7f0b00ce
+			public const int Base_Widget_AppCompat_Light_ActionBar = 2131427534;
 			
-			// aapt resource value: 0x7f0b00d7
-			public const int Base_Widget_AppCompat_Light_ActionBar_Solid = 2131427543;
+			// aapt resource value: 0x7f0b00cf
+			public const int Base_Widget_AppCompat_Light_ActionBar_Solid = 2131427535;
 			
-			// aapt resource value: 0x7f0b00d8
-			public const int Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131427544;
+			// aapt resource value: 0x7f0b00d0
+			public const int Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131427536;
 			
 			// aapt resource value: 0x7f0b007e
 			public const int Base_Widget_AppCompat_Light_ActionBar_TabText = 2131427454;
@@ -4715,8 +6757,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0082
 			public const int Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131427458;
 			
-			// aapt resource value: 0x7f0b00d9
-			public const int Base_Widget_AppCompat_ListMenuView = 2131427545;
+			// aapt resource value: 0x7f0b00d1
+			public const int Base_Widget_AppCompat_ListMenuView = 2131427537;
 			
 			// aapt resource value: 0x7f0b0083
 			public const int Base_Widget_AppCompat_ListPopupWindow = 2131427459;
@@ -4736,8 +6778,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0088
 			public const int Base_Widget_AppCompat_PopupMenu_Overflow = 2131427464;
 			
-			// aapt resource value: 0x7f0b00da
-			public const int Base_Widget_AppCompat_PopupWindow = 2131427546;
+			// aapt resource value: 0x7f0b00d2
+			public const int Base_Widget_AppCompat_PopupWindow = 2131427538;
 			
 			// aapt resource value: 0x7f0b002b
 			public const int Base_Widget_AppCompat_ProgressBar = 2131427371;
@@ -4748,23 +6790,23 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0089
 			public const int Base_Widget_AppCompat_RatingBar = 2131427465;
 			
-			// aapt resource value: 0x7f0b00a2
-			public const int Base_Widget_AppCompat_RatingBar_Indicator = 2131427490;
+			// aapt resource value: 0x7f0b009a
+			public const int Base_Widget_AppCompat_RatingBar_Indicator = 2131427482;
 			
-			// aapt resource value: 0x7f0b00a3
-			public const int Base_Widget_AppCompat_RatingBar_Small = 2131427491;
+			// aapt resource value: 0x7f0b009b
+			public const int Base_Widget_AppCompat_RatingBar_Small = 2131427483;
 			
-			// aapt resource value: 0x7f0b00db
-			public const int Base_Widget_AppCompat_SearchView = 2131427547;
+			// aapt resource value: 0x7f0b00d3
+			public const int Base_Widget_AppCompat_SearchView = 2131427539;
 			
-			// aapt resource value: 0x7f0b00dc
-			public const int Base_Widget_AppCompat_SearchView_ActionBar = 2131427548;
+			// aapt resource value: 0x7f0b00d4
+			public const int Base_Widget_AppCompat_SearchView_ActionBar = 2131427540;
 			
 			// aapt resource value: 0x7f0b008a
 			public const int Base_Widget_AppCompat_SeekBar = 2131427466;
 			
-			// aapt resource value: 0x7f0b00dd
-			public const int Base_Widget_AppCompat_SeekBar_Discrete = 2131427549;
+			// aapt resource value: 0x7f0b00d5
+			public const int Base_Widget_AppCompat_SeekBar_Discrete = 2131427541;
 			
 			// aapt resource value: 0x7f0b008b
 			public const int Base_Widget_AppCompat_Spinner = 2131427467;
@@ -4775,17 +6817,17 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b008c
 			public const int Base_Widget_AppCompat_TextView_SpinnerItem = 2131427468;
 			
-			// aapt resource value: 0x7f0b00ab
-			public const int Base_Widget_AppCompat_Toolbar = 2131427499;
+			// aapt resource value: 0x7f0b00a3
+			public const int Base_Widget_AppCompat_Toolbar = 2131427491;
 			
 			// aapt resource value: 0x7f0b008d
 			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131427469;
 			
-			// aapt resource value: 0x7f0b0176
-			public const int Base_Widget_Design_AppBarLayout = 2131427702;
+			// aapt resource value: 0x7f0b016c
+			public const int Base_Widget_Design_AppBarLayout = 2131427692;
 			
-			// aapt resource value: 0x7f0b017a
-			public const int Base_Widget_Design_TabLayout = 2131427706;
+			// aapt resource value: 0x7f0b0170
+			public const int Base_Widget_Design_TabLayout = 2131427696;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int CardView = 2131427339;
@@ -4796,11 +6838,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b000e
 			public const int CardView_Light = 2131427342;
 			
-			// aapt resource value: 0x7f0b0199
-			public const int MainTheme = 2131427737;
+			// aapt resource value: 0x7f0b018f
+			public const int MainTheme = 2131427727;
 			
-			// aapt resource value: 0x7f0b019a
-			public const int MainTheme_Base = 2131427738;
+			// aapt resource value: 0x7f0b0190
+			public const int MainTheme_Base = 2131427728;
 			
 			// aapt resource value: 0x7f0b002d
 			public const int Platform_AppCompat = 2131427373;
@@ -4835,11 +6877,11 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0092
 			public const int Platform_V21_AppCompat_Light = 2131427474;
 			
-			// aapt resource value: 0x7f0b00a6
-			public const int Platform_V25_AppCompat = 2131427494;
+			// aapt resource value: 0x7f0b009e
+			public const int Platform_V25_AppCompat = 2131427486;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int Platform_V25_AppCompat_Light = 2131427495;
+			// aapt resource value: 0x7f0b009f
+			public const int Platform_V25_AppCompat_Light = 2131427487;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int Platform_Widget_AppCompat_Spinner = 2131427377;
@@ -4886,230 +6928,200 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0047
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131427399;
 			
+			// aapt resource value: 0x7f0b00d6
+			public const int TextAppearance_AppCompat = 2131427542;
+			
+			// aapt resource value: 0x7f0b00d7
+			public const int TextAppearance_AppCompat_Body1 = 2131427543;
+			
+			// aapt resource value: 0x7f0b00d8
+			public const int TextAppearance_AppCompat_Body2 = 2131427544;
+			
+			// aapt resource value: 0x7f0b00d9
+			public const int TextAppearance_AppCompat_Button = 2131427545;
+			
+			// aapt resource value: 0x7f0b00da
+			public const int TextAppearance_AppCompat_Caption = 2131427546;
+			
+			// aapt resource value: 0x7f0b00db
+			public const int TextAppearance_AppCompat_Display1 = 2131427547;
+			
+			// aapt resource value: 0x7f0b00dc
+			public const int TextAppearance_AppCompat_Display2 = 2131427548;
+			
+			// aapt resource value: 0x7f0b00dd
+			public const int TextAppearance_AppCompat_Display3 = 2131427549;
+			
 			// aapt resource value: 0x7f0b00de
-			public const int TextAppearance_AppCompat = 2131427550;
+			public const int TextAppearance_AppCompat_Display4 = 2131427550;
 			
 			// aapt resource value: 0x7f0b00df
-			public const int TextAppearance_AppCompat_Body1 = 2131427551;
+			public const int TextAppearance_AppCompat_Headline = 2131427551;
 			
 			// aapt resource value: 0x7f0b00e0
-			public const int TextAppearance_AppCompat_Body2 = 2131427552;
+			public const int TextAppearance_AppCompat_Inverse = 2131427552;
 			
 			// aapt resource value: 0x7f0b00e1
-			public const int TextAppearance_AppCompat_Button = 2131427553;
+			public const int TextAppearance_AppCompat_Large = 2131427553;
 			
 			// aapt resource value: 0x7f0b00e2
-			public const int TextAppearance_AppCompat_Caption = 2131427554;
+			public const int TextAppearance_AppCompat_Large_Inverse = 2131427554;
 			
 			// aapt resource value: 0x7f0b00e3
-			public const int TextAppearance_AppCompat_Display1 = 2131427555;
+			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131427555;
 			
 			// aapt resource value: 0x7f0b00e4
-			public const int TextAppearance_AppCompat_Display2 = 2131427556;
+			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131427556;
 			
 			// aapt resource value: 0x7f0b00e5
-			public const int TextAppearance_AppCompat_Display3 = 2131427557;
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131427557;
 			
 			// aapt resource value: 0x7f0b00e6
-			public const int TextAppearance_AppCompat_Display4 = 2131427558;
+			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131427558;
 			
 			// aapt resource value: 0x7f0b00e7
-			public const int TextAppearance_AppCompat_Headline = 2131427559;
+			public const int TextAppearance_AppCompat_Medium = 2131427559;
 			
 			// aapt resource value: 0x7f0b00e8
-			public const int TextAppearance_AppCompat_Inverse = 2131427560;
+			public const int TextAppearance_AppCompat_Medium_Inverse = 2131427560;
 			
 			// aapt resource value: 0x7f0b00e9
-			public const int TextAppearance_AppCompat_Large = 2131427561;
+			public const int TextAppearance_AppCompat_Menu = 2131427561;
 			
 			// aapt resource value: 0x7f0b00ea
-			public const int TextAppearance_AppCompat_Large_Inverse = 2131427562;
+			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131427562;
 			
 			// aapt resource value: 0x7f0b00eb
-			public const int TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131427563;
+			public const int TextAppearance_AppCompat_SearchResult_Title = 2131427563;
 			
 			// aapt resource value: 0x7f0b00ec
-			public const int TextAppearance_AppCompat_Light_SearchResult_Title = 2131427564;
+			public const int TextAppearance_AppCompat_Small = 2131427564;
 			
 			// aapt resource value: 0x7f0b00ed
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131427565;
+			public const int TextAppearance_AppCompat_Small_Inverse = 2131427565;
 			
 			// aapt resource value: 0x7f0b00ee
-			public const int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131427566;
+			public const int TextAppearance_AppCompat_Subhead = 2131427566;
 			
 			// aapt resource value: 0x7f0b00ef
-			public const int TextAppearance_AppCompat_Medium = 2131427567;
+			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131427567;
 			
 			// aapt resource value: 0x7f0b00f0
-			public const int TextAppearance_AppCompat_Medium_Inverse = 2131427568;
+			public const int TextAppearance_AppCompat_Title = 2131427568;
 			
 			// aapt resource value: 0x7f0b00f1
-			public const int TextAppearance_AppCompat_Menu = 2131427569;
-			
-			// aapt resource value: 0x7f0b0093
-			public const int TextAppearance_AppCompat_Notification = 2131427475;
-			
-			// aapt resource value: 0x7f0b0094
-			public const int TextAppearance_AppCompat_Notification_Info = 2131427476;
-			
-			// aapt resource value: 0x7f0b0095
-			public const int TextAppearance_AppCompat_Notification_Info_Media = 2131427477;
-			
-			// aapt resource value: 0x7f0b00f2
-			public const int TextAppearance_AppCompat_Notification_Line2 = 2131427570;
-			
-			// aapt resource value: 0x7f0b00f3
-			public const int TextAppearance_AppCompat_Notification_Line2_Media = 2131427571;
-			
-			// aapt resource value: 0x7f0b0096
-			public const int TextAppearance_AppCompat_Notification_Media = 2131427478;
-			
-			// aapt resource value: 0x7f0b0097
-			public const int TextAppearance_AppCompat_Notification_Time = 2131427479;
-			
-			// aapt resource value: 0x7f0b0098
-			public const int TextAppearance_AppCompat_Notification_Time_Media = 2131427480;
-			
-			// aapt resource value: 0x7f0b0099
-			public const int TextAppearance_AppCompat_Notification_Title = 2131427481;
-			
-			// aapt resource value: 0x7f0b009a
-			public const int TextAppearance_AppCompat_Notification_Title_Media = 2131427482;
-			
-			// aapt resource value: 0x7f0b00f4
-			public const int TextAppearance_AppCompat_SearchResult_Subtitle = 2131427572;
-			
-			// aapt resource value: 0x7f0b00f5
-			public const int TextAppearance_AppCompat_SearchResult_Title = 2131427573;
-			
-			// aapt resource value: 0x7f0b00f6
-			public const int TextAppearance_AppCompat_Small = 2131427574;
-			
-			// aapt resource value: 0x7f0b00f7
-			public const int TextAppearance_AppCompat_Small_Inverse = 2131427575;
-			
-			// aapt resource value: 0x7f0b00f8
-			public const int TextAppearance_AppCompat_Subhead = 2131427576;
-			
-			// aapt resource value: 0x7f0b00f9
-			public const int TextAppearance_AppCompat_Subhead_Inverse = 2131427577;
-			
-			// aapt resource value: 0x7f0b00fa
-			public const int TextAppearance_AppCompat_Title = 2131427578;
-			
-			// aapt resource value: 0x7f0b00fb
-			public const int TextAppearance_AppCompat_Title_Inverse = 2131427579;
+			public const int TextAppearance_AppCompat_Title_Inverse = 2131427569;
 			
 			// aapt resource value: 0x7f0b0039
 			public const int TextAppearance_AppCompat_Tooltip = 2131427385;
 			
+			// aapt resource value: 0x7f0b00f2
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131427570;
+			
+			// aapt resource value: 0x7f0b00f3
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131427571;
+			
+			// aapt resource value: 0x7f0b00f4
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131427572;
+			
+			// aapt resource value: 0x7f0b00f5
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131427573;
+			
+			// aapt resource value: 0x7f0b00f6
+			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131427574;
+			
+			// aapt resource value: 0x7f0b00f7
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131427575;
+			
+			// aapt resource value: 0x7f0b00f8
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131427576;
+			
+			// aapt resource value: 0x7f0b00f9
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131427577;
+			
+			// aapt resource value: 0x7f0b00fa
+			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131427578;
+			
+			// aapt resource value: 0x7f0b00fb
+			public const int TextAppearance_AppCompat_Widget_Button = 2131427579;
+			
 			// aapt resource value: 0x7f0b00fc
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131427580;
+			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131427580;
 			
 			// aapt resource value: 0x7f0b00fd
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131427581;
+			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131427581;
 			
 			// aapt resource value: 0x7f0b00fe
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131427582;
+			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131427582;
 			
 			// aapt resource value: 0x7f0b00ff
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title = 2131427583;
+			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131427583;
 			
 			// aapt resource value: 0x7f0b0100
-			public const int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131427584;
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131427584;
 			
 			// aapt resource value: 0x7f0b0101
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131427585;
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131427585;
 			
 			// aapt resource value: 0x7f0b0102
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131427586;
+			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131427586;
 			
 			// aapt resource value: 0x7f0b0103
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title = 2131427587;
+			public const int TextAppearance_AppCompat_Widget_Switch = 2131427587;
 			
 			// aapt resource value: 0x7f0b0104
-			public const int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131427588;
+			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131427588;
 			
-			// aapt resource value: 0x7f0b0105
-			public const int TextAppearance_AppCompat_Widget_Button = 2131427589;
+			// aapt resource value: 0x7f0b0188
+			public const int TextAppearance_Compat_Notification = 2131427720;
 			
-			// aapt resource value: 0x7f0b0106
-			public const int TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131427590;
+			// aapt resource value: 0x7f0b0189
+			public const int TextAppearance_Compat_Notification_Info = 2131427721;
 			
-			// aapt resource value: 0x7f0b0107
-			public const int TextAppearance_AppCompat_Widget_Button_Colored = 2131427591;
+			// aapt resource value: 0x7f0b0165
+			public const int TextAppearance_Compat_Notification_Info_Media = 2131427685;
 			
-			// aapt resource value: 0x7f0b0108
-			public const int TextAppearance_AppCompat_Widget_Button_Inverse = 2131427592;
+			// aapt resource value: 0x7f0b018e
+			public const int TextAppearance_Compat_Notification_Line2 = 2131427726;
 			
-			// aapt resource value: 0x7f0b0109
-			public const int TextAppearance_AppCompat_Widget_DropDownItem = 2131427593;
+			// aapt resource value: 0x7f0b0169
+			public const int TextAppearance_Compat_Notification_Line2_Media = 2131427689;
 			
-			// aapt resource value: 0x7f0b010a
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131427594;
+			// aapt resource value: 0x7f0b0166
+			public const int TextAppearance_Compat_Notification_Media = 2131427686;
 			
-			// aapt resource value: 0x7f0b010b
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131427595;
+			// aapt resource value: 0x7f0b018a
+			public const int TextAppearance_Compat_Notification_Time = 2131427722;
 			
-			// aapt resource value: 0x7f0b010c
-			public const int TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131427596;
+			// aapt resource value: 0x7f0b0167
+			public const int TextAppearance_Compat_Notification_Time_Media = 2131427687;
 			
-			// aapt resource value: 0x7f0b010d
-			public const int TextAppearance_AppCompat_Widget_Switch = 2131427597;
+			// aapt resource value: 0x7f0b018b
+			public const int TextAppearance_Compat_Notification_Title = 2131427723;
 			
-			// aapt resource value: 0x7f0b010e
-			public const int TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131427598;
-			
-			// aapt resource value: 0x7f0b0192
-			public const int TextAppearance_Compat_Notification = 2131427730;
-			
-			// aapt resource value: 0x7f0b0193
-			public const int TextAppearance_Compat_Notification_Info = 2131427731;
-			
-			// aapt resource value: 0x7f0b016f
-			public const int TextAppearance_Compat_Notification_Info_Media = 2131427695;
-			
-			// aapt resource value: 0x7f0b0198
-			public const int TextAppearance_Compat_Notification_Line2 = 2131427736;
-			
-			// aapt resource value: 0x7f0b0173
-			public const int TextAppearance_Compat_Notification_Line2_Media = 2131427699;
-			
-			// aapt resource value: 0x7f0b0170
-			public const int TextAppearance_Compat_Notification_Media = 2131427696;
-			
-			// aapt resource value: 0x7f0b0194
-			public const int TextAppearance_Compat_Notification_Time = 2131427732;
+			// aapt resource value: 0x7f0b0168
+			public const int TextAppearance_Compat_Notification_Title_Media = 2131427688;
 			
 			// aapt resource value: 0x7f0b0171
-			public const int TextAppearance_Compat_Notification_Time_Media = 2131427697;
-			
-			// aapt resource value: 0x7f0b0195
-			public const int TextAppearance_Compat_Notification_Title = 2131427733;
+			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131427697;
 			
 			// aapt resource value: 0x7f0b0172
-			public const int TextAppearance_Compat_Notification_Title_Media = 2131427698;
+			public const int TextAppearance_Design_Counter = 2131427698;
 			
-			// aapt resource value: 0x7f0b017b
-			public const int TextAppearance_Design_CollapsingToolbar_Expanded = 2131427707;
+			// aapt resource value: 0x7f0b0173
+			public const int TextAppearance_Design_Counter_Overflow = 2131427699;
 			
-			// aapt resource value: 0x7f0b017c
-			public const int TextAppearance_Design_Counter = 2131427708;
+			// aapt resource value: 0x7f0b0174
+			public const int TextAppearance_Design_Error = 2131427700;
 			
-			// aapt resource value: 0x7f0b017d
-			public const int TextAppearance_Design_Counter_Overflow = 2131427709;
+			// aapt resource value: 0x7f0b0175
+			public const int TextAppearance_Design_Hint = 2131427701;
 			
-			// aapt resource value: 0x7f0b017e
-			public const int TextAppearance_Design_Error = 2131427710;
+			// aapt resource value: 0x7f0b0176
+			public const int TextAppearance_Design_Snackbar_Message = 2131427702;
 			
-			// aapt resource value: 0x7f0b017f
-			public const int TextAppearance_Design_Hint = 2131427711;
-			
-			// aapt resource value: 0x7f0b0180
-			public const int TextAppearance_Design_Snackbar_Message = 2131427712;
-			
-			// aapt resource value: 0x7f0b0181
-			public const int TextAppearance_Design_Tab = 2131427713;
+			// aapt resource value: 0x7f0b0177
+			public const int TextAppearance_Design_Tab = 2131427703;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int TextAppearance_MediaRouter_PrimaryText = 2131427328;
@@ -5120,20 +7132,20 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0002
 			public const int TextAppearance_MediaRouter_Title = 2131427330;
 			
-			// aapt resource value: 0x7f0b010f
-			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131427599;
+			// aapt resource value: 0x7f0b0105
+			public const int TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131427589;
 			
-			// aapt resource value: 0x7f0b0110
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131427600;
+			// aapt resource value: 0x7f0b0106
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131427590;
 			
-			// aapt resource value: 0x7f0b0111
-			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131427601;
+			// aapt resource value: 0x7f0b0107
+			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131427591;
 			
-			// aapt resource value: 0x7f0b0112
-			public const int Theme_AppCompat = 2131427602;
+			// aapt resource value: 0x7f0b0108
+			public const int Theme_AppCompat = 2131427592;
 			
-			// aapt resource value: 0x7f0b0113
-			public const int Theme_AppCompat_CompactMenu = 2131427603;
+			// aapt resource value: 0x7f0b0109
+			public const int Theme_AppCompat_CompactMenu = 2131427593;
 			
 			// aapt resource value: 0x7f0b0013
 			public const int Theme_AppCompat_DayNight = 2131427347;
@@ -5156,59 +7168,59 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0019
 			public const int Theme_AppCompat_DayNight_NoActionBar = 2131427353;
 			
+			// aapt resource value: 0x7f0b010a
+			public const int Theme_AppCompat_Dialog = 2131427594;
+			
+			// aapt resource value: 0x7f0b010b
+			public const int Theme_AppCompat_Dialog_Alert = 2131427595;
+			
+			// aapt resource value: 0x7f0b010c
+			public const int Theme_AppCompat_Dialog_MinWidth = 2131427596;
+			
+			// aapt resource value: 0x7f0b010d
+			public const int Theme_AppCompat_DialogWhenLarge = 2131427597;
+			
+			// aapt resource value: 0x7f0b010e
+			public const int Theme_AppCompat_Light = 2131427598;
+			
+			// aapt resource value: 0x7f0b010f
+			public const int Theme_AppCompat_Light_DarkActionBar = 2131427599;
+			
+			// aapt resource value: 0x7f0b0110
+			public const int Theme_AppCompat_Light_Dialog = 2131427600;
+			
+			// aapt resource value: 0x7f0b0111
+			public const int Theme_AppCompat_Light_Dialog_Alert = 2131427601;
+			
+			// aapt resource value: 0x7f0b0112
+			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131427602;
+			
+			// aapt resource value: 0x7f0b0113
+			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131427603;
+			
 			// aapt resource value: 0x7f0b0114
-			public const int Theme_AppCompat_Dialog = 2131427604;
+			public const int Theme_AppCompat_Light_NoActionBar = 2131427604;
 			
 			// aapt resource value: 0x7f0b0115
-			public const int Theme_AppCompat_Dialog_Alert = 2131427605;
+			public const int Theme_AppCompat_NoActionBar = 2131427605;
 			
-			// aapt resource value: 0x7f0b0116
-			public const int Theme_AppCompat_Dialog_MinWidth = 2131427606;
+			// aapt resource value: 0x7f0b0178
+			public const int Theme_Design = 2131427704;
 			
-			// aapt resource value: 0x7f0b0117
-			public const int Theme_AppCompat_DialogWhenLarge = 2131427607;
+			// aapt resource value: 0x7f0b0179
+			public const int Theme_Design_BottomSheetDialog = 2131427705;
 			
-			// aapt resource value: 0x7f0b0118
-			public const int Theme_AppCompat_Light = 2131427608;
+			// aapt resource value: 0x7f0b017a
+			public const int Theme_Design_Light = 2131427706;
 			
-			// aapt resource value: 0x7f0b0119
-			public const int Theme_AppCompat_Light_DarkActionBar = 2131427609;
+			// aapt resource value: 0x7f0b017b
+			public const int Theme_Design_Light_BottomSheetDialog = 2131427707;
 			
-			// aapt resource value: 0x7f0b011a
-			public const int Theme_AppCompat_Light_Dialog = 2131427610;
+			// aapt resource value: 0x7f0b017c
+			public const int Theme_Design_Light_NoActionBar = 2131427708;
 			
-			// aapt resource value: 0x7f0b011b
-			public const int Theme_AppCompat_Light_Dialog_Alert = 2131427611;
-			
-			// aapt resource value: 0x7f0b011c
-			public const int Theme_AppCompat_Light_Dialog_MinWidth = 2131427612;
-			
-			// aapt resource value: 0x7f0b011d
-			public const int Theme_AppCompat_Light_DialogWhenLarge = 2131427613;
-			
-			// aapt resource value: 0x7f0b011e
-			public const int Theme_AppCompat_Light_NoActionBar = 2131427614;
-			
-			// aapt resource value: 0x7f0b011f
-			public const int Theme_AppCompat_NoActionBar = 2131427615;
-			
-			// aapt resource value: 0x7f0b0182
-			public const int Theme_Design = 2131427714;
-			
-			// aapt resource value: 0x7f0b0183
-			public const int Theme_Design_BottomSheetDialog = 2131427715;
-			
-			// aapt resource value: 0x7f0b0184
-			public const int Theme_Design_Light = 2131427716;
-			
-			// aapt resource value: 0x7f0b0185
-			public const int Theme_Design_Light_BottomSheetDialog = 2131427717;
-			
-			// aapt resource value: 0x7f0b0186
-			public const int Theme_Design_Light_NoActionBar = 2131427718;
-			
-			// aapt resource value: 0x7f0b0187
-			public const int Theme_Design_NoActionBar = 2131427719;
+			// aapt resource value: 0x7f0b017d
+			public const int Theme_Design_NoActionBar = 2131427709;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int Theme_MediaRouter = 2131427331;
@@ -5222,26 +7234,26 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0006
 			public const int Theme_MediaRouter_LightControlPanel = 2131427334;
 			
-			// aapt resource value: 0x7f0b0120
-			public const int ThemeOverlay_AppCompat = 2131427616;
+			// aapt resource value: 0x7f0b0116
+			public const int ThemeOverlay_AppCompat = 2131427606;
 			
-			// aapt resource value: 0x7f0b0121
-			public const int ThemeOverlay_AppCompat_ActionBar = 2131427617;
+			// aapt resource value: 0x7f0b0117
+			public const int ThemeOverlay_AppCompat_ActionBar = 2131427607;
 			
-			// aapt resource value: 0x7f0b0122
-			public const int ThemeOverlay_AppCompat_Dark = 2131427618;
+			// aapt resource value: 0x7f0b0118
+			public const int ThemeOverlay_AppCompat_Dark = 2131427608;
 			
-			// aapt resource value: 0x7f0b0123
-			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131427619;
+			// aapt resource value: 0x7f0b0119
+			public const int ThemeOverlay_AppCompat_Dark_ActionBar = 2131427609;
 			
-			// aapt resource value: 0x7f0b0124
-			public const int ThemeOverlay_AppCompat_Dialog = 2131427620;
+			// aapt resource value: 0x7f0b011a
+			public const int ThemeOverlay_AppCompat_Dialog = 2131427610;
 			
-			// aapt resource value: 0x7f0b0125
-			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131427621;
+			// aapt resource value: 0x7f0b011b
+			public const int ThemeOverlay_AppCompat_Dialog_Alert = 2131427611;
 			
-			// aapt resource value: 0x7f0b0126
-			public const int ThemeOverlay_AppCompat_Light = 2131427622;
+			// aapt resource value: 0x7f0b011c
+			public const int ThemeOverlay_AppCompat_Light = 2131427612;
 			
 			// aapt resource value: 0x7f0b0007
 			public const int ThemeOverlay_MediaRouter_Dark = 2131427335;
@@ -5249,260 +7261,260 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			// aapt resource value: 0x7f0b0008
 			public const int ThemeOverlay_MediaRouter_Light = 2131427336;
 			
+			// aapt resource value: 0x7f0b011d
+			public const int Widget_AppCompat_ActionBar = 2131427613;
+			
+			// aapt resource value: 0x7f0b011e
+			public const int Widget_AppCompat_ActionBar_Solid = 2131427614;
+			
+			// aapt resource value: 0x7f0b011f
+			public const int Widget_AppCompat_ActionBar_TabBar = 2131427615;
+			
+			// aapt resource value: 0x7f0b0120
+			public const int Widget_AppCompat_ActionBar_TabText = 2131427616;
+			
+			// aapt resource value: 0x7f0b0121
+			public const int Widget_AppCompat_ActionBar_TabView = 2131427617;
+			
+			// aapt resource value: 0x7f0b0122
+			public const int Widget_AppCompat_ActionButton = 2131427618;
+			
+			// aapt resource value: 0x7f0b0123
+			public const int Widget_AppCompat_ActionButton_CloseMode = 2131427619;
+			
+			// aapt resource value: 0x7f0b0124
+			public const int Widget_AppCompat_ActionButton_Overflow = 2131427620;
+			
+			// aapt resource value: 0x7f0b0125
+			public const int Widget_AppCompat_ActionMode = 2131427621;
+			
+			// aapt resource value: 0x7f0b0126
+			public const int Widget_AppCompat_ActivityChooserView = 2131427622;
+			
 			// aapt resource value: 0x7f0b0127
-			public const int Widget_AppCompat_ActionBar = 2131427623;
+			public const int Widget_AppCompat_AutoCompleteTextView = 2131427623;
 			
 			// aapt resource value: 0x7f0b0128
-			public const int Widget_AppCompat_ActionBar_Solid = 2131427624;
+			public const int Widget_AppCompat_Button = 2131427624;
 			
 			// aapt resource value: 0x7f0b0129
-			public const int Widget_AppCompat_ActionBar_TabBar = 2131427625;
+			public const int Widget_AppCompat_Button_Borderless = 2131427625;
 			
 			// aapt resource value: 0x7f0b012a
-			public const int Widget_AppCompat_ActionBar_TabText = 2131427626;
+			public const int Widget_AppCompat_Button_Borderless_Colored = 2131427626;
 			
 			// aapt resource value: 0x7f0b012b
-			public const int Widget_AppCompat_ActionBar_TabView = 2131427627;
+			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131427627;
 			
 			// aapt resource value: 0x7f0b012c
-			public const int Widget_AppCompat_ActionButton = 2131427628;
+			public const int Widget_AppCompat_Button_Colored = 2131427628;
 			
 			// aapt resource value: 0x7f0b012d
-			public const int Widget_AppCompat_ActionButton_CloseMode = 2131427629;
+			public const int Widget_AppCompat_Button_Small = 2131427629;
 			
 			// aapt resource value: 0x7f0b012e
-			public const int Widget_AppCompat_ActionButton_Overflow = 2131427630;
+			public const int Widget_AppCompat_ButtonBar = 2131427630;
 			
 			// aapt resource value: 0x7f0b012f
-			public const int Widget_AppCompat_ActionMode = 2131427631;
+			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131427631;
 			
 			// aapt resource value: 0x7f0b0130
-			public const int Widget_AppCompat_ActivityChooserView = 2131427632;
+			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131427632;
 			
 			// aapt resource value: 0x7f0b0131
-			public const int Widget_AppCompat_AutoCompleteTextView = 2131427633;
+			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131427633;
 			
 			// aapt resource value: 0x7f0b0132
-			public const int Widget_AppCompat_Button = 2131427634;
+			public const int Widget_AppCompat_CompoundButton_Switch = 2131427634;
 			
 			// aapt resource value: 0x7f0b0133
-			public const int Widget_AppCompat_Button_Borderless = 2131427635;
+			public const int Widget_AppCompat_DrawerArrowToggle = 2131427635;
 			
 			// aapt resource value: 0x7f0b0134
-			public const int Widget_AppCompat_Button_Borderless_Colored = 2131427636;
+			public const int Widget_AppCompat_DropDownItem_Spinner = 2131427636;
 			
 			// aapt resource value: 0x7f0b0135
-			public const int Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131427637;
+			public const int Widget_AppCompat_EditText = 2131427637;
 			
 			// aapt resource value: 0x7f0b0136
-			public const int Widget_AppCompat_Button_Colored = 2131427638;
+			public const int Widget_AppCompat_ImageButton = 2131427638;
 			
 			// aapt resource value: 0x7f0b0137
-			public const int Widget_AppCompat_Button_Small = 2131427639;
+			public const int Widget_AppCompat_Light_ActionBar = 2131427639;
 			
 			// aapt resource value: 0x7f0b0138
-			public const int Widget_AppCompat_ButtonBar = 2131427640;
+			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131427640;
 			
 			// aapt resource value: 0x7f0b0139
-			public const int Widget_AppCompat_ButtonBar_AlertDialog = 2131427641;
+			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131427641;
 			
 			// aapt resource value: 0x7f0b013a
-			public const int Widget_AppCompat_CompoundButton_CheckBox = 2131427642;
+			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131427642;
 			
 			// aapt resource value: 0x7f0b013b
-			public const int Widget_AppCompat_CompoundButton_RadioButton = 2131427643;
+			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131427643;
 			
 			// aapt resource value: 0x7f0b013c
-			public const int Widget_AppCompat_CompoundButton_Switch = 2131427644;
+			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131427644;
 			
 			// aapt resource value: 0x7f0b013d
-			public const int Widget_AppCompat_DrawerArrowToggle = 2131427645;
+			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131427645;
 			
 			// aapt resource value: 0x7f0b013e
-			public const int Widget_AppCompat_DropDownItem_Spinner = 2131427646;
+			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131427646;
 			
 			// aapt resource value: 0x7f0b013f
-			public const int Widget_AppCompat_EditText = 2131427647;
+			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131427647;
 			
 			// aapt resource value: 0x7f0b0140
-			public const int Widget_AppCompat_ImageButton = 2131427648;
+			public const int Widget_AppCompat_Light_ActionButton = 2131427648;
 			
 			// aapt resource value: 0x7f0b0141
-			public const int Widget_AppCompat_Light_ActionBar = 2131427649;
+			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131427649;
 			
 			// aapt resource value: 0x7f0b0142
-			public const int Widget_AppCompat_Light_ActionBar_Solid = 2131427650;
+			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131427650;
 			
 			// aapt resource value: 0x7f0b0143
-			public const int Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131427651;
+			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131427651;
 			
 			// aapt resource value: 0x7f0b0144
-			public const int Widget_AppCompat_Light_ActionBar_TabBar = 2131427652;
+			public const int Widget_AppCompat_Light_ActivityChooserView = 2131427652;
 			
 			// aapt resource value: 0x7f0b0145
-			public const int Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131427653;
+			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131427653;
 			
 			// aapt resource value: 0x7f0b0146
-			public const int Widget_AppCompat_Light_ActionBar_TabText = 2131427654;
+			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131427654;
 			
 			// aapt resource value: 0x7f0b0147
-			public const int Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131427655;
+			public const int Widget_AppCompat_Light_ListPopupWindow = 2131427655;
 			
 			// aapt resource value: 0x7f0b0148
-			public const int Widget_AppCompat_Light_ActionBar_TabView = 2131427656;
+			public const int Widget_AppCompat_Light_ListView_DropDown = 2131427656;
 			
 			// aapt resource value: 0x7f0b0149
-			public const int Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131427657;
+			public const int Widget_AppCompat_Light_PopupMenu = 2131427657;
 			
 			// aapt resource value: 0x7f0b014a
-			public const int Widget_AppCompat_Light_ActionButton = 2131427658;
+			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131427658;
 			
 			// aapt resource value: 0x7f0b014b
-			public const int Widget_AppCompat_Light_ActionButton_CloseMode = 2131427659;
+			public const int Widget_AppCompat_Light_SearchView = 2131427659;
 			
 			// aapt resource value: 0x7f0b014c
-			public const int Widget_AppCompat_Light_ActionButton_Overflow = 2131427660;
+			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131427660;
 			
 			// aapt resource value: 0x7f0b014d
-			public const int Widget_AppCompat_Light_ActionMode_Inverse = 2131427661;
+			public const int Widget_AppCompat_ListMenuView = 2131427661;
 			
 			// aapt resource value: 0x7f0b014e
-			public const int Widget_AppCompat_Light_ActivityChooserView = 2131427662;
+			public const int Widget_AppCompat_ListPopupWindow = 2131427662;
 			
 			// aapt resource value: 0x7f0b014f
-			public const int Widget_AppCompat_Light_AutoCompleteTextView = 2131427663;
+			public const int Widget_AppCompat_ListView = 2131427663;
 			
 			// aapt resource value: 0x7f0b0150
-			public const int Widget_AppCompat_Light_DropDownItem_Spinner = 2131427664;
+			public const int Widget_AppCompat_ListView_DropDown = 2131427664;
 			
 			// aapt resource value: 0x7f0b0151
-			public const int Widget_AppCompat_Light_ListPopupWindow = 2131427665;
+			public const int Widget_AppCompat_ListView_Menu = 2131427665;
 			
 			// aapt resource value: 0x7f0b0152
-			public const int Widget_AppCompat_Light_ListView_DropDown = 2131427666;
+			public const int Widget_AppCompat_PopupMenu = 2131427666;
 			
 			// aapt resource value: 0x7f0b0153
-			public const int Widget_AppCompat_Light_PopupMenu = 2131427667;
+			public const int Widget_AppCompat_PopupMenu_Overflow = 2131427667;
 			
 			// aapt resource value: 0x7f0b0154
-			public const int Widget_AppCompat_Light_PopupMenu_Overflow = 2131427668;
+			public const int Widget_AppCompat_PopupWindow = 2131427668;
 			
 			// aapt resource value: 0x7f0b0155
-			public const int Widget_AppCompat_Light_SearchView = 2131427669;
+			public const int Widget_AppCompat_ProgressBar = 2131427669;
 			
 			// aapt resource value: 0x7f0b0156
-			public const int Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131427670;
+			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131427670;
 			
 			// aapt resource value: 0x7f0b0157
-			public const int Widget_AppCompat_ListMenuView = 2131427671;
+			public const int Widget_AppCompat_RatingBar = 2131427671;
 			
 			// aapt resource value: 0x7f0b0158
-			public const int Widget_AppCompat_ListPopupWindow = 2131427672;
+			public const int Widget_AppCompat_RatingBar_Indicator = 2131427672;
 			
 			// aapt resource value: 0x7f0b0159
-			public const int Widget_AppCompat_ListView = 2131427673;
+			public const int Widget_AppCompat_RatingBar_Small = 2131427673;
 			
 			// aapt resource value: 0x7f0b015a
-			public const int Widget_AppCompat_ListView_DropDown = 2131427674;
+			public const int Widget_AppCompat_SearchView = 2131427674;
 			
 			// aapt resource value: 0x7f0b015b
-			public const int Widget_AppCompat_ListView_Menu = 2131427675;
+			public const int Widget_AppCompat_SearchView_ActionBar = 2131427675;
 			
 			// aapt resource value: 0x7f0b015c
-			public const int Widget_AppCompat_PopupMenu = 2131427676;
+			public const int Widget_AppCompat_SeekBar = 2131427676;
 			
 			// aapt resource value: 0x7f0b015d
-			public const int Widget_AppCompat_PopupMenu_Overflow = 2131427677;
+			public const int Widget_AppCompat_SeekBar_Discrete = 2131427677;
 			
 			// aapt resource value: 0x7f0b015e
-			public const int Widget_AppCompat_PopupWindow = 2131427678;
+			public const int Widget_AppCompat_Spinner = 2131427678;
 			
 			// aapt resource value: 0x7f0b015f
-			public const int Widget_AppCompat_ProgressBar = 2131427679;
+			public const int Widget_AppCompat_Spinner_DropDown = 2131427679;
 			
 			// aapt resource value: 0x7f0b0160
-			public const int Widget_AppCompat_ProgressBar_Horizontal = 2131427680;
+			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131427680;
 			
 			// aapt resource value: 0x7f0b0161
-			public const int Widget_AppCompat_RatingBar = 2131427681;
+			public const int Widget_AppCompat_Spinner_Underlined = 2131427681;
 			
 			// aapt resource value: 0x7f0b0162
-			public const int Widget_AppCompat_RatingBar_Indicator = 2131427682;
+			public const int Widget_AppCompat_TextView_SpinnerItem = 2131427682;
 			
 			// aapt resource value: 0x7f0b0163
-			public const int Widget_AppCompat_RatingBar_Small = 2131427683;
+			public const int Widget_AppCompat_Toolbar = 2131427683;
 			
 			// aapt resource value: 0x7f0b0164
-			public const int Widget_AppCompat_SearchView = 2131427684;
-			
-			// aapt resource value: 0x7f0b0165
-			public const int Widget_AppCompat_SearchView_ActionBar = 2131427685;
-			
-			// aapt resource value: 0x7f0b0166
-			public const int Widget_AppCompat_SeekBar = 2131427686;
-			
-			// aapt resource value: 0x7f0b0167
-			public const int Widget_AppCompat_SeekBar_Discrete = 2131427687;
-			
-			// aapt resource value: 0x7f0b0168
-			public const int Widget_AppCompat_Spinner = 2131427688;
-			
-			// aapt resource value: 0x7f0b0169
-			public const int Widget_AppCompat_Spinner_DropDown = 2131427689;
-			
-			// aapt resource value: 0x7f0b016a
-			public const int Widget_AppCompat_Spinner_DropDown_ActionBar = 2131427690;
-			
-			// aapt resource value: 0x7f0b016b
-			public const int Widget_AppCompat_Spinner_Underlined = 2131427691;
-			
-			// aapt resource value: 0x7f0b016c
-			public const int Widget_AppCompat_TextView_SpinnerItem = 2131427692;
-			
-			// aapt resource value: 0x7f0b016d
-			public const int Widget_AppCompat_Toolbar = 2131427693;
-			
-			// aapt resource value: 0x7f0b016e
-			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131427694;
-			
-			// aapt resource value: 0x7f0b0196
-			public const int Widget_Compat_NotificationActionContainer = 2131427734;
-			
-			// aapt resource value: 0x7f0b0197
-			public const int Widget_Compat_NotificationActionText = 2131427735;
-			
-			// aapt resource value: 0x7f0b0188
-			public const int Widget_Design_AppBarLayout = 2131427720;
-			
-			// aapt resource value: 0x7f0b0189
-			public const int Widget_Design_BottomNavigationView = 2131427721;
-			
-			// aapt resource value: 0x7f0b018a
-			public const int Widget_Design_BottomSheet_Modal = 2131427722;
-			
-			// aapt resource value: 0x7f0b018b
-			public const int Widget_Design_CollapsingToolbar = 2131427723;
+			public const int Widget_AppCompat_Toolbar_Button_Navigation = 2131427684;
 			
 			// aapt resource value: 0x7f0b018c
-			public const int Widget_Design_CoordinatorLayout = 2131427724;
+			public const int Widget_Compat_NotificationActionContainer = 2131427724;
 			
 			// aapt resource value: 0x7f0b018d
-			public const int Widget_Design_FloatingActionButton = 2131427725;
+			public const int Widget_Compat_NotificationActionText = 2131427725;
 			
-			// aapt resource value: 0x7f0b018e
-			public const int Widget_Design_NavigationView = 2131427726;
+			// aapt resource value: 0x7f0b017e
+			public const int Widget_Design_AppBarLayout = 2131427710;
 			
-			// aapt resource value: 0x7f0b018f
-			public const int Widget_Design_ScrimInsetsFrameLayout = 2131427727;
+			// aapt resource value: 0x7f0b017f
+			public const int Widget_Design_BottomNavigationView = 2131427711;
 			
-			// aapt resource value: 0x7f0b0190
-			public const int Widget_Design_Snackbar = 2131427728;
+			// aapt resource value: 0x7f0b0180
+			public const int Widget_Design_BottomSheet_Modal = 2131427712;
 			
-			// aapt resource value: 0x7f0b0174
-			public const int Widget_Design_TabLayout = 2131427700;
+			// aapt resource value: 0x7f0b0181
+			public const int Widget_Design_CollapsingToolbar = 2131427713;
 			
-			// aapt resource value: 0x7f0b0191
-			public const int Widget_Design_TextInputLayout = 2131427729;
+			// aapt resource value: 0x7f0b0182
+			public const int Widget_Design_CoordinatorLayout = 2131427714;
+			
+			// aapt resource value: 0x7f0b0183
+			public const int Widget_Design_FloatingActionButton = 2131427715;
+			
+			// aapt resource value: 0x7f0b0184
+			public const int Widget_Design_NavigationView = 2131427716;
+			
+			// aapt resource value: 0x7f0b0185
+			public const int Widget_Design_ScrimInsetsFrameLayout = 2131427717;
+			
+			// aapt resource value: 0x7f0b0186
+			public const int Widget_Design_Snackbar = 2131427718;
+			
+			// aapt resource value: 0x7f0b016a
+			public const int Widget_Design_TabLayout = 2131427690;
+			
+			// aapt resource value: 0x7f0b0187
+			public const int Widget_Design_TextInputLayout = 2131427719;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int Widget_MediaRouter_Light_MediaRouteButton = 2131427337;
@@ -6696,18 +8708,30 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			public const int FontFamily_fontProviderQuery = 2;
 			
 			public static int[] FontFamilyFont = new int[] {
+					16844082,
+					16844083,
+					16844095,
 					2130772336,
 					2130772337,
 					2130772338};
 			
-			// aapt resource value: 1
-			public const int FontFamilyFont_font = 1;
-			
 			// aapt resource value: 0
-			public const int FontFamilyFont_fontStyle = 0;
+			public const int FontFamilyFont_android_font = 0;
 			
 			// aapt resource value: 2
-			public const int FontFamilyFont_fontWeight = 2;
+			public const int FontFamilyFont_android_fontStyle = 2;
+			
+			// aapt resource value: 1
+			public const int FontFamilyFont_android_fontWeight = 1;
+			
+			// aapt resource value: 4
+			public const int FontFamilyFont_font = 4;
+			
+			// aapt resource value: 3
+			public const int FontFamilyFont_fontStyle = 3;
+			
+			// aapt resource value: 5
+			public const int FontFamilyFont_fontWeight = 5;
 			
 			public static int[] ForegroundLinearLayout = new int[] {
 					16843017,
