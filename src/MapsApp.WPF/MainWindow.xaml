@@ -9,8 +9,7 @@
         xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
         xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
         xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Controls"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="Maps App">
     <Window.Resources>
@@ -74,20 +73,18 @@
 
         <!-- Basemaps Picker -->
         <StackPanel Background="White" Orientation="Vertical" x:Name="BasemapSwitcher" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Visibility="Collapsed">
-            <TextBlock HorizontalAlignment="Right">
-                    <Hyperlink TextDecorations="{x:Null}">
-                        <Image Source="pack://application:,,,/MapsApp;component/Images/close.png" Height="40" Width="40"/>
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Click">
-                                <ei:ChangePropertyAction TargetName="BasemapSwitcher" PropertyName="Visibility">
-                                    <ei:ChangePropertyAction.Value>
-                                        <Visibility>Collapsed</Visibility>
-                                    </ei:ChangePropertyAction.Value>
-                                </ei:ChangePropertyAction>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </Hyperlink>
-            </TextBlock>
+                <Button HorizontalAlignment="Right" Background="Transparent" BorderBrush="Transparent">
+                    <Image Source="pack://application:,,,/MapsApp;component/Images/close.png" Height="40" Width="40"/>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:ChangePropertyAction TargetName="BasemapSwitcher" PropertyName="Visibility">
+                                <i:ChangePropertyAction.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </i:ChangePropertyAction.Value>
+                            </i:ChangePropertyAction>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
             <ListView  DataContext="{StaticResource BasemapsViewModel}"  ItemsSource="{Binding Basemaps}" SelectedItem="{Binding SelectedBasemap}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -180,18 +177,18 @@
                                  Width="330" Margin="0,0,0,5" TextWrapping="Wrap">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="GotFocus">
-                                        <ei:ChangePropertyAction TargetName="FromLocationSuggestionsList" PropertyName="Visibility">
-                                            <ei:ChangePropertyAction.Value>
+                                        <i:ChangePropertyAction TargetName="FromLocationSuggestionsList" PropertyName="Visibility">
+                                            <i:ChangePropertyAction.Value>
                                                 <Visibility>Visible</Visibility>
-                                            </ei:ChangePropertyAction.Value>
-                                        </ei:ChangePropertyAction>
+                                            </i:ChangePropertyAction.Value>
+                                        </i:ChangePropertyAction>
                                     </i:EventTrigger>
                                     <i:EventTrigger EventName="LostFocus">
-                                        <ei:ChangePropertyAction TargetName="FromLocationSuggestionsList" PropertyName="Visibility">
-                                            <ei:ChangePropertyAction.Value>
+                                        <i:ChangePropertyAction TargetName="FromLocationSuggestionsList" PropertyName="Visibility">
+                                            <i:ChangePropertyAction.Value>
                                                 <Visibility>Collapsed</Visibility>
-                                            </ei:ChangePropertyAction.Value>
-                                        </ei:ChangePropertyAction>
+                                            </i:ChangePropertyAction.Value>
+                                        </i:ChangePropertyAction>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </TextBox>
@@ -204,18 +201,18 @@
                                  VerticalAlignment="Center" Width="330">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="GotFocus">
-                                        <ei:ChangePropertyAction TargetName="ToLocationSuggestionsList" PropertyName="Visibility">
-                                            <ei:ChangePropertyAction.Value>
+                                        <i:ChangePropertyAction TargetName="ToLocationSuggestionsList" PropertyName="Visibility">
+                                            <i:ChangePropertyAction.Value>
                                                 <Visibility>Visible</Visibility>
-                                            </ei:ChangePropertyAction.Value>
-                                        </ei:ChangePropertyAction>
+                                            </i:ChangePropertyAction.Value>
+                                        </i:ChangePropertyAction>
                                     </i:EventTrigger>
                                     <i:EventTrigger EventName="LostFocus">
-                                        <ei:ChangePropertyAction TargetName="ToLocationSuggestionsList" PropertyName="Visibility">
-                                            <ei:ChangePropertyAction.Value>
+                                        <i:ChangePropertyAction TargetName="ToLocationSuggestionsList" PropertyName="Visibility">
+                                            <i:ChangePropertyAction.Value>
                                                 <Visibility>Collapsed</Visibility>
-                                            </ei:ChangePropertyAction.Value>
-                                        </ei:ChangePropertyAction>
+                                            </i:ChangePropertyAction.Value>
+                                        </i:ChangePropertyAction>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </TextBox>
@@ -288,22 +285,25 @@
                 <StackPanel.Effect>
                     <DropShadowEffect Opacity=".5"></DropShadowEffect>
                 </StackPanel.Effect>
-
-                <StackPanel Orientation="Horizontal" Width="450" Margin="10">
-                    <TextBlock Text="Maps App Settings" FontSize="30" Width="390"/>
-                    <Button Background="White" BorderThickness="0">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Maps App Settings" FontSize="30" Grid.Column="0"/>
+                    <Button Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Grid.Column="1"> 
                         <Image  Source="pack://application:,,,/MapsApp;component/Images/close.png" />
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <ei:ChangePropertyAction TargetName="SettingsPanel" PropertyName="Visibility">
-                                    <ei:ChangePropertyAction.Value>
+                                <i:ChangePropertyAction TargetName="SettingsPanel" PropertyName="Visibility">
+                                    <i:ChangePropertyAction.Value>
                                         <Visibility>Collapsed</Visibility>
-                                    </ei:ChangePropertyAction.Value>
-                                </ei:ChangePropertyAction>
+                                    </i:ChangePropertyAction.Value>
+                                </i:ChangePropertyAction>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
-                </StackPanel>
+                </Grid>
 
                 <Separator/>
 
@@ -323,11 +323,11 @@
                         </StackPanel>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <ei:ChangePropertyAction TargetName="BasemapSwitcher" PropertyName="Visibility">
-                                    <ei:ChangePropertyAction.Value>
+                                <i:ChangePropertyAction TargetName="BasemapSwitcher" PropertyName="Visibility">
+                                    <i:ChangePropertyAction.Value>
                                         <Visibility>Visible</Visibility>
-                                    </ei:ChangePropertyAction.Value>
-                                </ei:ChangePropertyAction>
+                                    </i:ChangePropertyAction.Value>
+                                </i:ChangePropertyAction>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
@@ -359,8 +359,8 @@
         </Grid>
 
         <!-- List of suggestions from geocoder -->
-        <StackPanel  Grid.Row="1" Grid.Column="0">
-            <ListView x:Name="SearchSuggestionsList" DataContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" 
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <ListView x:Name="SearchSuggestionsList" DataContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" Visibility="Collapsed"
                   Margin="15, 0, 0, 0"  FontSize="20" Width="465" HorizontalAlignment="Left">
                 <ListView.Effect>
                     <DropShadowEffect Opacity=".5"></DropShadowEffect>
@@ -380,15 +380,15 @@
             <StackPanel.Effect>
                 <DropShadowEffect Opacity=".5"></DropShadowEffect>
             </StackPanel.Effect>
-            <Button Background="White" Opacity=".7">
+            <Button Background="Transparent" BorderBrush="Transparent" Opacity=".7">
                 <Image Source="pack://application:,,,/MapsApp;component/Images/menu.png" Height="60" Width="60"/>
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
-                        <ei:ChangePropertyAction TargetName="SettingsPanel" PropertyName="Visibility">
-                            <ei:ChangePropertyAction.Value>
+                        <i:ChangePropertyAction TargetName="SettingsPanel" PropertyName="Visibility">
+                            <i:ChangePropertyAction.Value>
                                 <Visibility>Visible</Visibility>
-                            </ei:ChangePropertyAction.Value>
-                        </ei:ChangePropertyAction>
+                            </i:ChangePropertyAction.Value>
+                        </i:ChangePropertyAction>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
@@ -396,18 +396,18 @@
                                 BorderThickness="0" FontSize="18" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="GotFocus">
-                        <ei:ChangePropertyAction TargetName="SearchSuggestionsList" PropertyName="Visibility">
-                            <ei:ChangePropertyAction.Value>
+                        <i:ChangePropertyAction TargetName="SearchSuggestionsList" PropertyName="Visibility">
+                            <i:ChangePropertyAction.Value>
                                 <Visibility>Visible</Visibility>
-                            </ei:ChangePropertyAction.Value>
-                        </ei:ChangePropertyAction>
+                            </i:ChangePropertyAction.Value>
+                        </i:ChangePropertyAction>
                     </i:EventTrigger>
                     <i:EventTrigger EventName="LostFocus">
-                        <ei:ChangePropertyAction TargetName="SearchSuggestionsList" PropertyName="Visibility">
-                            <ei:ChangePropertyAction.Value>
+                        <i:ChangePropertyAction TargetName="SearchSuggestionsList" PropertyName="Visibility">
+                            <i:ChangePropertyAction.Value>
                                 <Visibility>Collapsed</Visibility>
-                            </ei:ChangePropertyAction.Value>
-                        </ei:ChangePropertyAction>
+                            </i:ChangePropertyAction.Value>
+                        </i:ChangePropertyAction>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </TextBox>
