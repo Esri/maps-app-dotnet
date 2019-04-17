@@ -19,12 +19,14 @@ using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
 using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Xamarin.Forms;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using Xamarin.Forms;
+#if __ANDROID__
+using Esri.ArcGISRuntime.ExampleApps.MapsApp.Android;
+#endif
 
 namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
 {
@@ -133,7 +135,12 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
             var mapViewModel = Resources["MapViewModel"] as MapViewModel;
             MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
             MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
+
+            #if __ANDROID__
+            MainActivity.Instance.AskForLocationPermission(MapView);
+            #else
             MapView.LocationDisplay.IsEnabled = true;
+            #endif
 
 #if __IOS__
             // This is necessary because on iOS the SearchBar doesn't get unfocused automatically when a geocode result is selected

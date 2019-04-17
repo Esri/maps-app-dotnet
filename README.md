@@ -3,6 +3,7 @@
 The Maps App for .NET shows how a suite of applications can be built around the ArcGIS Platform using the ArcGIS Runtime SDK for .NET and a combination of WPF and the cross-platform framework Xamarin Forms. It demonstrates best practices around some simple but key functionality of the ArcGIS Runtime. You can use the Maps App as is, or extend it to meet your specific needs. Detailed documentation about the app and its architecture can be found on the [developers website](https://developers.arcgis.com/example-apps/maps-app-dotnet/?utm_source=github&utm_medium=web&utm_campaign=example_apps_maps_app_dotnet).
 
 ## Features
+
 - Place Search
 - Geocode addresses
 - Reverse Geocode
@@ -13,15 +14,19 @@ The Maps App for .NET shows how a suite of applications can be built around the 
 - OAuth2 authentication
 
 ## Get Started
+
 This Maps App repo is a Visual Studio 2017 Project that can be directly cloned and imported into Visual Studio 2017 or higher.
 
 ### Fork the repo
+
 [Fork](https://github.com/Esri/maps-app-dotnet/fork) the Maps App repo
 
 ### Clone the repo
+
 Once you have forked the repo, you can make a clone
 
 #### Command line Git
+
 [Clone](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork) the Maps App
 cd into the maps-app-dotnet folder
 Make your changes and create a [pull request](https://help.github.com/articles/creating-a-pull-request)
@@ -43,8 +48,8 @@ If there are changes made in the Original repository, you can sync the fork to k
 ### Requirements
 
 - [Visual Studio 2017 or higher](https://www.visualstudio.com/downloads/)
-- [.NET Framework 4.5.2 or higher](https://www.microsoft.com/net/download)
-- [ArcGIS Runtime SDK for .NET 100.2.1 or higher](https://developers.arcgis.com/net/)
+- [.NET Framework 4.6.1 or higher](https://www.microsoft.com/net/download)
+- [ArcGIS Runtime SDK for .NET 100.5 or higher](https://developers.arcgis.com/net/)
 
 ### Resources
 
@@ -68,7 +73,7 @@ Anyone and everyone is welcome to [contribute](https://github.com/Esri/maps-app-
 
 ### Licensing
 
-Copyright 2018 Esri
+Copyright 2019 Esri
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
