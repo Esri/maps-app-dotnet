@@ -10,7 +10,6 @@
              xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
              xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls"
              xmlns:ext="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Extensions"
-             xmlns:sysdraw="clr-namespace:System.Drawing;assembly=netstandard"
              xmlns:viewModels="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels"
              xmlns:helpers="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers"
              NavigationPage.HasNavigationBar="false">
