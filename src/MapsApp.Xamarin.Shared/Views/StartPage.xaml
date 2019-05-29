@@ -10,6 +10,7 @@
              xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
              xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls"
              xmlns:ext="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Extensions"
+             xmlns:sysdraw="clr-namespace:System.Drawing;assembly=netstandard"
              xmlns:viewModels="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels"
              xmlns:helpers="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers"
              NavigationPage.HasNavigationBar="false">
@@ -51,7 +52,7 @@
                 <esriUI:GraphicsOverlay Id="RouteOverlay">
                     <esriUI:GraphicsOverlay.Renderer>
                         <esriSymbols:SimpleRenderer>
-                            <esriSymbols:SimpleLineSymbol Color="#0079c1" Style="Solid" Width="5"/>
+                            <esriSymbols:SimpleLineSymbol x:Name="RouteStyle" Style="Solid" Width="5" />
                         </esriSymbols:SimpleRenderer>
                     </esriUI:GraphicsOverlay.Renderer>
                 </esriUI:GraphicsOverlay>
