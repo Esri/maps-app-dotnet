@@ -51,7 +51,7 @@
                 <esriUI:GraphicsOverlay Id="RouteOverlay">
                     <esriUI:GraphicsOverlay.Renderer>
                         <esriSymbols:SimpleRenderer>
-                            <esriSymbols:SimpleLineSymbol Color="#0079c1" Style="Solid" Width="5"/>
+                            <esriSymbols:SimpleLineSymbol x:Name="RouteStyle" Style="Solid" Width="5" />
                         </esriSymbols:SimpleRenderer>
                     </esriUI:GraphicsOverlay.Renderer>
                 </esriUI:GraphicsOverlay>

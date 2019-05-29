@@ -42,6 +42,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         public StartPage()
         {
             InitializeComponent();
+            RouteStyle.Color = System.Drawing.Color.FromArgb(0x00, 0x79, 0xc1);
             InitializeBasemapSwitcher();
 
             PictureMarkerSymbol endMapPin = CreateMapPin("end.png");
