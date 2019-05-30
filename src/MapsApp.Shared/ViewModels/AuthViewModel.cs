@@ -26,7 +26,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
 {
     class AuthViewModel : BaseViewModel
     {
-        private ICommand _logInOutCommand;
+        private ICommand _signInOutCommand;
         private PortalUser _authenticatedUser;
         private static AuthViewModel _instance;
 
@@ -35,7 +35,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         /// </summary>
         private AuthViewModel()
         {
-            // Set up authentication manager to handle logins
+            // Set up authentication manager to handle signing in
             UpdateAuthenticationManager();
         }
 
@@ -64,13 +64,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
         }
 
         /// <summary>
-        /// Gets the command to login or log out the user
+        /// Gets the command to sign the use in or out
         /// </summary>
-        public ICommand LogInOutCommand
+        public ICommand SignInOutCommand
         {
             get
             {
-                return _logInOutCommand ?? (_logInOutCommand = new DelegateCommand(
+                return _signInOutCommand ?? (_signInOutCommand = new DelegateCommand(
                     async (x) =>
                     {
                         if (AuthenticatedUser == null)
@@ -124,7 +124,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             }
             catch(System.OperationCanceledException)
             {
-                // User cancelled login 
+                // User cancelled sign in 
                 return null;
             }
             catch (Exception ex)
@@ -158,7 +158,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 AuthenticationManager.Current.RegisterServer(portalServerInfo);
 
 #if WPF
-                // In WPF, use the OAuthAuthorize class to create a new web view to show the login UI
+                // In WPF, use the OAuthAuthorize class to create a new web view to show the authentication UI
                 AuthenticationManager.Current.OAuthAuthorizeHandler = new WPF.Views.OAuthAuthorize();
 #endif
 

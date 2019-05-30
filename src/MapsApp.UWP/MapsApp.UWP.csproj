@@ -157,7 +157,7 @@
     <Content Include="HighwayExit.png" />
     <Content Include="HighwayMerge.png" />
     <Content Include="directionmaneuvers.png" />
-    <Content Include="login_logout.png" />
+    <Content Include="sign_in_out.png" />
     <Content Include="menu.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />

@@ -143,7 +143,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="LoginPageRenderer.cs" />
+    <Compile Include="SignInPageRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="app.config" />
@@ -366,16 +366,16 @@
     <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\Contents.json">
+    <ImageAsset Include="Resources\Media.xcassets\sign_in_out.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails30.png">
+    <ImageAsset Include="Resources\Media.xcassets\sign_in_out.imageset\iOS8_SingleUserDetails30.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails60.png">
+    <ImageAsset Include="Resources\Media.xcassets\sign_in_out.imageset\iOS8_SingleUserDetails60.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\login_logout.imageset\iOS8_SingleUserDetails90.png">
+    <ImageAsset Include="Resources\Media.xcassets\sign_in_out.imageset\iOS8_SingleUserDetails90.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Resources\Media.xcassets\menu.imageset\Contents.json">

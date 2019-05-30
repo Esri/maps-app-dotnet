@@ -179,14 +179,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\sign_in_out.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Stop.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\login_logout.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Images\RampLeft.png" />
     <Resource Include="Images\RampRight.png" />
     <Resource Include="Images\Roundabout.png" />

@@ -235,10 +235,10 @@
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Grid.Row="2" HeightRequest="60">
-                        <Image Source="login_logout.png"/>
+                        <Image Source="sign_in_out.png"/>
                         <Label Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}" VerticalOptions="Center"/>
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding LogInOutCommand}"/>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding SignInOutCommand}"/>
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </Grid>

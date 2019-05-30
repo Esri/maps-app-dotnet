@@ -43,7 +43,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 _lastLocation = l;
             };
 
-            // reset map if user is logged out
+            // reset map if user is signed out
             AuthViewModel.Instance.PropertyChanged += (s, l) =>
             {
                 if (l.PropertyName == nameof(AuthViewModel.AuthenticatedUser) && AuthViewModel.Instance.AuthenticatedUser == null)

@@ -218,7 +218,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
             catch (ArcGISWebException e)
             {
                 // This is returned when user hits the Cancel button in iOS or the back arrow in Android
-                // It does not get caught in the LoginRenderer and needs to be handled here
+                // It does not get caught in the SignInRenderer and needs to be handled here
                 if (e.Message.Contains("Token Required"))
                 {
                     FromPlace = null;
@@ -269,7 +269,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
                 }
 #endif
                 // This is returned when user hits the Cancel button in iOS or the back arrow in Android
-                // It does not get caught in the LoginRenderer and needs to be handled here
+                // It does not get caught in the SignInRenderer and needs to be handled here
                 if (ex.Message.Contains("Token Required"))
                 {
                     FromPlace = null;
