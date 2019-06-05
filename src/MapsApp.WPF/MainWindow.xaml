@@ -347,9 +347,9 @@
 
                 <!-- Sign In/Out button -->
                 <StackPanel Orientation="Horizontal" Width="520" Margin="15,10,15,5" DataContext="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}">
-                    <Button Background="White" BorderThickness="0" Height="50" Command="{Binding LogInOutCommand}">
+                    <Button Background="White" BorderThickness="0" Height="50" Command="{Binding SignInOutCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <Image  Source="pack://application:,,,/MapsApp;component/Images/login_logout.png"  />
+                            <Image  Source="pack://application:,,,/MapsApp;component/Images/sign_in_out.png"  />
                             <TextBlock Text ="{Binding AuthenticatedUser, Converter={StaticResource NullToTextConverter}, ConverterParameter=Sign In|Sign Out}" 
                                        Width="290" FontSize="20" Foreground="#444444" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10, 5, 10, 5"/>
                         </StackPanel>

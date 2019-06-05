@@ -34,7 +34,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Views
             _authorizeUrl = authorizeUri.AbsoluteUri;
             _callbackUrl = callbackUri.AbsoluteUri;
 
-            // Call a function to show the login controls, make sure it runs on the UI thread for this app
+            // Call a function to show the sign in controls, make sure it runs on the UI thread for this app
             var dispatcher = Application.Current.Dispatcher;
             if (dispatcher == null || dispatcher.CheckAccess())
             {
@@ -91,7 +91,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Views
                 _window.Owner.Focus();
             }
 
-            // If the task wasn't completed, the user must have closed the window without logging in
+            // If the task wasn't completed, the user must have closed the window without signing in
             if (!_tcs.Task.IsCompleted)
             {
                 // Set the task completion source exception to indicate a canceled operation
