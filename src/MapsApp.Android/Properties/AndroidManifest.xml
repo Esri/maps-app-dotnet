@@ -5,5 +5,5 @@
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-feature android:glEsVersion="0x00020000" android:required="true" />
-	<application android:label="MapsApp"></application>
+	<application android:label="MapsApp" android:icon="@drawable/Icon"></application>
 </manifest>
