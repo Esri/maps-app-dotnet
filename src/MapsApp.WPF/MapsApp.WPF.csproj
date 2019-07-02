@@ -54,7 +54,7 @@
     <CodeAnalysisRuleSet />
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>Images\ArcGIS_Open_Source_Apps.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -142,10 +142,10 @@
     <Resource Include="Images\TurnRightRight.png" />
     <Resource Include="Images\Unknown.png" />
     <Resource Include="Images\UTurn.png" />
-    <Resource Include="icon.ico" />
     <Resource Include="Images\chooseusermap.png" />
     <Resource Include="Images\BearLeft.png" />
     <Resource Include="Images\BearRight.png" />
+    <Resource Include="Images\ArcGIS_Open_Source_Apps.ico" />
     <Content Include="Images\choosebasemap.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

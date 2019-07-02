@@ -46,8 +46,6 @@
 		<string>Icon-Small@2x.png</string>
 		<string>Icon-Small@3x.png</string>
 	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen.storyboard</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
@@ -69,5 +67,11 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Show current location</string>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Media.xcassets/AppIcons.appiconset</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Resources/Media.xcassets/LaunchImages.launchimage</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>
