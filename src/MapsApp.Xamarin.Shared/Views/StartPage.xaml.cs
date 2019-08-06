@@ -42,7 +42,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         public StartPage()
         {
             InitializeComponent();
-            RouteStyle.Color = System.Drawing.Color.FromArgb(0x00, 0x79, 0xc1);
+            var routeStyle = new SimpleLineSymbol(SimpleLineSymbolStyle.Solid, System.Drawing.Color.FromArgb(0x00, 0x79, 0xc1), 5);
+            RouteRenderer.Symbol = routeStyle;
             InitializeBasemapSwitcher();
 
             PictureMarkerSymbol endMapPin = CreateMapPin("end.png");
