@@ -42,7 +42,8 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
         public StartPage()
         {
             InitializeComponent();
-            RouteStyle.Color = System.Drawing.Color.FromArgb(0x00, 0x79, 0xc1);
+            var routeStyle = new SimpleLineSymbol(SimpleLineSymbolStyle.Solid, System.Drawing.Color.FromArgb(0x00, 0x79, 0xc1), 5);
+            RouteRenderer.Symbol = routeStyle;
             InitializeBasemapSwitcher();
 
             PictureMarkerSymbol endMapPin = CreateMapPin("end.png");
@@ -132,16 +133,25 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                 }
             };
 
-            // start location services
-            var mapViewModel = Resources["MapViewModel"] as MapViewModel;
-            MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
-            MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
+            // start location services - only once MapView.LocationDisplay property is ready
+            MapView.PropertyChanged += (o, e) =>
+            {
+                if (e.PropertyName == nameof(MapView.LocationDisplay) && MapView.LocationDisplay != null)
+                {
+                    var mapViewModel = Resources["MapViewModel"] as MapViewModel;
+                    MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
+                    MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
 
-            #if __ANDROID__
+#if __ANDROID__
             MainActivity.Instance.AskForLocationPermission(MapView);
-            #else
-            MapView.LocationDisplay.IsEnabled = true;
-            #endif
+#else
+                    MapView.LocationDisplay.IsEnabled = true;
+#endif
+                }
+            };
+            
+
+            
 
 #if __IOS__
             // This is necessary because on iOS the SearchBar doesn't get unfocused automatically when a geocode result is selected
