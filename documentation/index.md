@@ -69,7 +69,7 @@ Inside the view (XAML), a `MapView` control is created and its `Map` property is
 
 At the top of the screen, there is a menu button and a search bar. The search bar provides the geocoding functionality. [Geocoding](https://developers.arcgis.com/net/latest/wpf/guide/search-for-places-geocoding-.htm) lets you transform an address or a place name to a specific geographic location. Reverse geocoding lets you use a geographic location to find a description of the location, like a postal address or place name. 
 
-In the solution, the logic for geocoding is contained inside the shared `GeocodeViewModel`. First, a `LocatorTask` is defined to use the [Esri World Geocoder](https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer). Before using the `LocatorTask`, it must be loaded. The loadable pattern is described [here](https://developers.arcgis.com/net/latest/wpf/guide/loadable-pattern.htm).
+In the solution, the logic for geocoding is contained inside the shared `GeocodeViewModel`. First, a `LocatorTask` is defined to use the [ArcGIS World Geocoding Service](https://developers.arcgis.com/features/geocoding/). Before using the `LocatorTask`, it must be loaded. The loadable pattern is described [here](https://developers.arcgis.com/net/latest/wpf/guide/loadable-pattern.htm).
 
 ```csharp
 /// <summary>
@@ -197,7 +197,7 @@ private async Task<GeocodeResult> GetSearchedLocationAsync(string geocodeAddress
 
 ## Routing
 
-Getting routing directions in the Maps App is easy with the [Runtime SDK](https://developers.arcgis.com/features/directions/) and the [Esri World Routing Service](https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World). Or you can [customize](https://doc.arcgis.com/en/arcgis-online/administer/configure-services.htm#ESRI_SECTION1_567C344D5DEE444988CA2FE5193F3CAD) your routing service for your organization.
+Getting routing directions in the Maps App is easy with the Runtime SDK and the [ArcGIS World Routing Service](https://developers.arcgis.com/features/directions/). You can also [customize](https://doc.arcgis.com/en/arcgis-online/administer/configure-services.htm#ESRI_SECTION1_567C344D5DEE444988CA2FE5193F3CAD) your routing service for your organization.
 
 Navigating from point to point in the Maps App is enabled by first geocoding or reverse geocoding a location. You can then get directions to that location from the current GPS location (or if GPS is disabled, from a location of your choice). In the Maps App, routing requires you to provide credentials to your Portal or ArcGIS Online organization. See the [Authentication](#authentication) section for more details.
 
