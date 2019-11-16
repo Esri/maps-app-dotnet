@@ -1,6 +1,6 @@
 ## Description
 
-The Maps App suite of applications is an example solution designed to showcase best practices in building cross platform applications around the ArcGIS Runtime SDK for .NET. The suite is built using Xamarin Forms and WPF and is comprised of four applications for four separate platforms with maximized code sharing.
+The Maps App suite showcases best practices in building cross platform applications with the ArcGIS Runtime SDK for .NET. The suite is built using Xamarin Forms and WPF. Comprised of four applications for four separate platforms, it is designed with maximized code sharing in mind.
 
 ### Platforms supported
 
