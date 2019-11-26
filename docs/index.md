@@ -28,13 +28,13 @@ Configure this app for your organization or use it to learn how to integrate sim
 
 *Disclaimer: For screen real estate purposes, only Android and WPF screenshots are posted. Since the app was built with Xamarin Forms, iOS and UWP user interfaces are very similar to the Android interface, with exception of the iconography and platform specific controls.*
 
-When the app starts, you will be presented with the default empty map. In the initial run of the app, you may be prompted to accept that the app wants to use your current location. 
+When the app starts, you will be presented with the default empty map. In the initial run of the app, you may be prompted to accept that the app wants to use your current location.
 
 | Android | WPF |
 |:-------:|:---:|
-|<img src="/documentation/images/start_screen_and.png" width="450"/>|<img src="/documentation/images/start_screen_wpf.png"/>|
+|<img src="/docs/images/start_screen_and.png" width="450"/>|<img src="/docs/images/start_screen_wpf.png"/>|
 
-The default map is created inside the `MapViewModel.cs` by initializing the `Map` with a new Topographic Vector basemap. 
+The default map is created inside the `MapViewModel.cs` by initializing the `Map` with a new Topographic Vector basemap.
 
 ```csharp
 private Map _map = new Map(Basemap.CreateTopographicVector());
@@ -62,12 +62,12 @@ Inside the view (XAML), a `MapView` control is created and its `Map` property is
 **Xamarin & WPF:**
 
 ```xml
-<esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"/> 
+<esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"/>
 ```
 
 ## Place search & geocoding
 
-At the top of the screen, there is a menu button and a search bar. The search bar provides the geocoding functionality. [Geocoding](https://developers.arcgis.com/net/latest/wpf/guide/search-for-places-geocoding-.htm) lets you transform an address or a place name to a specific geographic location. Reverse geocoding lets you use a geographic location to find a description of the location, like a postal address or place name. 
+At the top of the screen, there is a menu button and a search bar. The search bar provides the geocoding functionality. [Geocoding](https://developers.arcgis.com/net/latest/wpf/guide/search-for-places-geocoding-.htm) lets you transform an address or a place name to a specific geographic location. Reverse geocoding lets you use a geographic location to find a description of the location, like a postal address or place name.
 
 In the solution, the logic for geocoding is contained inside the shared `GeocodeViewModel`. First, a `LocatorTask` is defined to use the [ArcGIS World Geocoding Service](https://developers.arcgis.com/features/geocoding/). Before using the `LocatorTask`, it must be loaded. The loadable pattern is described [here](https://developers.arcgis.com/net/latest/wpf/guide/loadable-pattern.htm).
 
@@ -86,7 +86,7 @@ The search box is bound to the `SearchText` property inside the `GeocodeViewMode
 **Xamarin:**
 
 ```xml
-<SearchBar x:Name="AddressSearchBar" Placeholder="Address or Place" Text="{Binding SearchText, Mode=TwoWay}" 
+<SearchBar x:Name="AddressSearchBar" Placeholder="Address or Place" Text="{Binding SearchText, Mode=TwoWay}"
     BindingContext="{StaticResource GeocodeViewModel}" SearchCommand="{Binding SearchCommand}" />
 ```
 
@@ -139,7 +139,7 @@ Typing the first few letters of a place into the Maps App search box (e.g. “We
 
 | Android | WPF |
 |:-------:|:---:|
-|<img src="/documentation/images/suggestions_and.png" width="450"/>|<img src="/documentation/images/suggestions_wpf.png"/>|
+|<img src="/docs/images/suggestions_and.png" width="450"/>|<img src="/docs/images/suggestions_wpf.png"/>|
 
 This is handled inside the `GeocodeViewModel`. When the search text property is updated the `GetLocationSuggestionsAsync` method is called. A check is first performed to ensure the locator supports suggestions. When [creating your own locator](https://pro.arcgis.com/en/pro-app/tool-reference/geocoding/create-address-locator.htm), you can enable suggestions and thus be able to take advantage of this functionality.
 
@@ -193,7 +193,7 @@ private async Task<GeocodeResult> GetSearchedLocationAsync(string geocodeAddress
 
 | Android | WPF |
 |:-------:|:---:|
-|<img src="/documentation/images/geocode_and.png" width="450"/>|<img src="/documentation/images/geocode_wpf.png"/>|
+|<img src="/docs/images/geocode_and.png" width="450"/>|<img src="/docs/images/geocode_wpf.png"/>|
 
 ## Routing
 
@@ -240,7 +240,7 @@ private async Task GetRouteAsync()
 
 | Android | WPF |
 |:-------:|:---:|
-|<img src="/documentation/images/route_and.png" width="450"/>|<img src="/documentation/images/route_wpf.png"/>|
+|<img src="/docs/images/route_and.png" width="450"/>|<img src="/docs/images/route_wpf.png"/>|
 
 ## Turn-by-turn directions (direction maneuvers)
 
@@ -248,7 +248,7 @@ After a `RouteResult` has been retrieved, the list of direction maneuvers is ava
 
 | Android | WPF |
 |:-------:|:---:|
-|<img src="/documentation/images/turn_by_turn_and.png" width="450"/>|<img src="/documentation/images/route_wpf.png"/>|
+|<img src="/docs/images/turn_by_turn_and.png" width="450"/>|<img src="/docs/images/route_wpf.png"/>|
 
 ```csharp
 /// <summary>
@@ -279,7 +279,7 @@ private async Task GetRouteAsync()
 }
 ```
 
-Each of the items in the `DirectionManeuvers` property inside the `RouteViewModel` is shown as an item in a `ListView`. An `ItemTemplate` is defined to show the image and text of each direction maneuver. 
+Each of the items in the `DirectionManeuvers` property inside the `RouteViewModel` is shown as an item in a `ListView`. An `ItemTemplate` is defined to show the image and text of each direction maneuver.
 
 **Xamarin:**
 
@@ -314,7 +314,7 @@ The Maps App leverages the ArcGIS [identity](https://developers.arcgis.com/authe
 
 The process of accessing token secured services with a challenge handler is illustrated in the following diagram.
 
-<img src="/documentation/images/identity.png" />
+<img src="/docs/images/identity.png" />
 
 1. A request is made to a secured resource.
 2. The portal responds with an unauthorized access error.
@@ -327,7 +327,7 @@ For an application to use this pattern, follow these [guides](https://developers
 
 | Android | WPF |
 |:-------:|:---:|
-|<img src="/documentation/images/signin_and.png" width="450"/>|<img src="/documentation/images/signin_wpf.png"/>|
+|<img src="/docs/images/signin_and.png" width="450"/>|<img src="/docs/images/signin_wpf.png"/>|
 
 To set up the `AuthenticationManager` for the Maps App, we register the server info with the `AuthenticationManager` and set up the `ChallengeHandler`.
 
@@ -363,7 +363,7 @@ private void UpdateAuthenticationManager()
 
 ```
 
-When a challenge is issued, such as when the user has hit the Sign In button or is attempting a Route, `CreateCredentialsAsync` is called. The user is prompted to enter username and password, and if the authentication is successful, the credential is stored inside the `AuthenticationManager`. The `AuthenticatedUser` is then stored in a separate bindable property. 
+When a challenge is issued, such as when the user has hit the Sign In button or is attempting a Route, `CreateCredentialsAsync` is called. The user is prompted to enter username and password, and if the authentication is successful, the credential is stored inside the `AuthenticationManager`. The `AuthenticatedUser` is then stored in a separate bindable property.
 
 ```csharp
 /// <summary>
@@ -378,7 +378,7 @@ private async Task<Credential> CreateCredentialAsync(CredentialRequestInfo info)
     // Create connection to Portal and provide credential
     var portal = await ArcGISPortal.CreateAsync(new Uri(Configuration.ArcGISOnlineUrl), credential);
     AuthenticatedUser = portal.User;
-    return credential; 
+    return credential;
 }
 ```
 
@@ -388,7 +388,7 @@ _A note of caution on Authentication. The implementation used in this and other 
 
 As an administrator for your ArcGIS Online Organization, you can [create and publish basemaps](https://pro.arcgis.com/en/pro-app/help/mapping/map-authoring/author-a-basemap.htm) that your users can switch between. We retrieve the basemaps inside the shared `BasemapsViewModel` and then display them in the view.
 
-Due to sufficient screen real estate in WPF, the basemap and user map selector can be displayed in the same view. In the Xamarin apps, the basemap and user map selectors are on separate views. 
+Due to sufficient screen real estate in WPF, the basemap and user map selector can be displayed in the same view. In the Xamarin apps, the basemap and user map selectors are on separate views.
 
 
 ```csharp
@@ -431,7 +431,7 @@ Each of the items in the `Basemaps` property inside the `BasemapsViewModel` is s
 
 | Android | WPF |
 |:-------:|:---:|
-|<img src="/documentation/images/change_basemap_and.png" width="450"/>|<img src="/documentation/images/change_basemap_wpf.png"/>|
+|<img src="/docs/images/change_basemap_and.png" width="450"/>|<img src="/docs/images/change_basemap_wpf.png"/>|
 
 ## Using web maps
 
@@ -468,7 +468,7 @@ public async Task LoadUserItems()
 
 | Android | WPF |
 |:-------:|:---:|
-|<img src="/documentation/images/change_user_map_and.png" width="450"/>|<img src="/documentation/images/change_user_map_wpf.png"/>|
+|<img src="/docs/images/change_user_map_and.png" width="450"/>|<img src="/docs/images/change_user_map_wpf.png"/>|
 
 ## Architecture
 
@@ -476,7 +476,7 @@ public async Task LoadUserItems()
 
 The four applications that comprise the Maps App suite are all contained inside one solution. The diagram below represents how the solution is structured to make best use of shared logic between the apps:
 
-<img src="/documentation/images/xamarin_diagram.png" />
+<img src="/docs/images/xamarin_diagram.png" />
 
 The `MapsApp.iOS`, `MapsApp.Android` and `MapsApp.UWP` projects belong to the Xamarin Forms part of the solution. The code contained inside the `MapsApp.Xamarin.Shared` project is common to the three applications. The three apps share UI components and some Xamarin specific logic.
 
@@ -513,8 +513,8 @@ The map is bound to the Map property on the MapView control in XAML
 
 **Xamarin & WPF:**
 
-```xml 
-<esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"/> 
+```xml
+<esri:MapView x:Name="MapView" Map="{Binding Map, Source={StaticResource MapViewModel}}"/>
 ```
 
 There are cases however when the properties that need to be set are not bindable. A good example in the Maps App is the `Graphic` element. It has a `Geometry` and `Symbol`, but they are not bindable because they are not dependency properties. But they are UI elements, so setting them inside the view model would not be appropriate as it would cause the view logic to "bleed" into the view model. So setting these properties is done in the code behind of the view.
