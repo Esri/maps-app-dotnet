@@ -20,8 +20,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>MinimumOSVersion</key>
-	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>MapsApp</string>
 	<key>CFBundleIdentifier</key>
@@ -77,5 +75,7 @@
 	<string>MapsApp</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>MinimumOSVersion</key>
+	<string>11</string>
 </dict>
 </plist>
