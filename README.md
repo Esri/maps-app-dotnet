@@ -43,13 +43,13 @@ If there are changes made in the Original repository, you can sync the fork to k
 1. In the terminal, change the current working directory to your local project
 2. Type ```git fetch upstream``` to fetch the commits from the upstream repository
 3. ```git checkout master``` to checkout your fork's local master branch.
-4. ```git merge upstream/master``` to sync your local master' branch withupstream/master. Note: Your local changes will be retained and your fork's master branch will be in sync with the upstream repository.
+4. ```git merge upstream/master``` to sync your local master' branch with upstream/master. Note: Your local changes will be retained and your fork's master branch will be in sync with the upstream repository.
 
 ### Requirements
 
 - [Visual Studio 2017 or higher](https://www.visualstudio.com/downloads/)
 - [.NET Framework 4.6.1 or higher](https://www.microsoft.com/net/download)
-- [ArcGIS Runtime SDK for .NET 100.5 or higher](https://developers.arcgis.com/net/)
+- [ArcGIS Runtime SDK for .NET 100.7 or higher](https://developers.arcgis.com/net/)
 
 ### Resources
 
