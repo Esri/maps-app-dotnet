@@ -36,6 +36,8 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF
         {
             InitializeComponent();
 
+            RouteOverlaySymbol.Color = System.Drawing.Color.FromArgb(255, 0, 121, 193);
+
             var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
             var fromGeocodeViewModel = Resources["FromGeocodeViewModel"] as GeocodeViewModel;
             var toGeocodeViewModel = Resources["ToGeocodeViewModel"] as GeocodeViewModel;
