@@ -2,7 +2,7 @@
 using System.Reflection;
 using Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers
 {
     /// <summary>
     /// Provides members for registering BindableProperty instances

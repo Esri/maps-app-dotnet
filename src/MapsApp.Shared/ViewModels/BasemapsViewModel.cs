@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
 {
     public class BasemapsViewModel : BaseViewModel
     {

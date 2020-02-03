@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Views
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF.Views
 {
     class OAuthAuthorize : IOAuthAuthorizeHandler
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Properties {
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

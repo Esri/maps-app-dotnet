@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Controls
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF.Controls
 {
     /// <summary>
     /// Interaction logic for ErrorDialog.xaml

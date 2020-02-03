@@ -7,7 +7,7 @@
     <ProjectGuid>{CA6A13A6-3A29-4A34-AF46-27F120F676CF}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP</RootNamespace>
+    <RootNamespace>Esri.ArcGISRuntime.OpenSourceApps.MapsApp.UWP</RootNamespace>
     <AssemblyName>MapsApp</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>

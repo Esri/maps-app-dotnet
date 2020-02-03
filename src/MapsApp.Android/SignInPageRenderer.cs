@@ -22,11 +22,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Auth;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Helpers;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin;
 
-[assembly: ExportRenderer(typeof(StartPage), typeof(Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.SignInPageRenderer))]
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
+[assembly: ExportRenderer(typeof(StartPage), typeof(Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android.SignInPageRenderer))]
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
 {
     public class SignInPageRenderer : PageRenderer, IOAuthAuthorizeHandler
     {

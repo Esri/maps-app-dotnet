@@ -17,7 +17,7 @@
 using System;
 using Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers
 {
     /// <summary>
     /// Trigger Action changes the visibility of the TargetName element

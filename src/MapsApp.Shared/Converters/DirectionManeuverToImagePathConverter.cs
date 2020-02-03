@@ -24,7 +24,7 @@ using System.Windows.Data;
 using System.Windows;
 #endif
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Converters
 {
     /// <summary>
     /// Returns image path by taking maneuver name and appending path to create corresponding image
