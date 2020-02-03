@@ -3,7 +3,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ErrorDialog : ContentView

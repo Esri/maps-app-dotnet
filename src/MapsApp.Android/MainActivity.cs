@@ -5,7 +5,7 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Support.V4.Content;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
 {
     [Activity (Label = "MapsApp", Icon = "@drawable/icon", Theme="@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -23,7 +23,7 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Android
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-            LoadApplication (new Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.App ());
+            LoadApplication (new Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.App ());
 		}
 
         public async void AskForLocationPermission(Esri.ArcGISRuntime.Xamarin.Forms.MapView myMapView)

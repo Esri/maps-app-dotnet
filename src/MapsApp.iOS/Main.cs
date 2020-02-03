@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.iOS
 {
     public class Application
 	{

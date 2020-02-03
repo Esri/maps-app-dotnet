@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers
 {
     /// <summary>
     /// Arguments received by a PropertyChangedCallback delegate when the value of a BindableProperty has changed

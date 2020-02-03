@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml

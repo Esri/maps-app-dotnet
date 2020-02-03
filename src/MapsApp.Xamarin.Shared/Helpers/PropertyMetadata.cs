@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers
 {
     /// <summary>
     /// Defines the default value and property changed callback for a BindableProperty

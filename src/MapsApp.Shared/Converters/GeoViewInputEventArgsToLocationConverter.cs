@@ -24,7 +24,7 @@ using Esri.ArcGISRuntime.UI.Controls;
 using System.Windows.Data;
 #endif
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Converters
 {/// <summary>
  /// Converts event args from event to MapPoint
  /// </summary>

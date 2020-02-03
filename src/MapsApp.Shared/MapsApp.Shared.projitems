@@ -6,7 +6,7 @@
     <SharedGUID>2c2a9421-c9c7-4a51-aae3-216f7e05d8d8</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Esri.ArcGISRuntime.ExampleApps.MapsApp</Import_RootNamespace>
+    <Import_RootNamespace>Esri.ArcGISRuntime.OpenSourceApps.MapsApp</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Binding Support\GeoViewExtensions.cs" />
@@ -35,6 +35,6 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\end.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Esri.ArcGISRuntime.ExampleApps.ruleset" />
+    <None Include="$(MSBuildThisFileDirectory)Esri.ArcGISRuntime.OpenSourceApps.ruleset" />
   </ItemGroup>
 </Project>

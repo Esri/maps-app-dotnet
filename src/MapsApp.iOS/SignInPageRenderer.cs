@@ -14,9 +14,9 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Helpers;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.iOS;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin;
 using Esri.ArcGISRuntime.Security;
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(StartPage), typeof(SignInPageRenderer))]
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.iOS
 {
     public class SignInPageRenderer : PageRenderer, IOAuthAuthorizeHandler
     {

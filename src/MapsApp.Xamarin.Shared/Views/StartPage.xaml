@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.StartPage"
+<ContentPage x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.StartPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin"
-             xmlns:utils="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils"
+             xmlns:local="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin"
+             xmlns:utils="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Utils"
              xmlns:esri="clr-namespace:Esri.ArcGISRuntime.Xamarin.Forms;assembly=Esri.ArcGISRuntime.Xamarin.Forms"
              xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.UI;assembly=Esri.ArcGISRuntime"
              xmlns:esriSymbols="clr-namespace:Esri.ArcGISRuntime.Symbology;assembly=Esri.ArcGISRuntime"
-             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
-             xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls"
-             xmlns:viewModels="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels"
-             xmlns:helpers="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers"
+             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Converters"
+             xmlns:controls="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Controls"
+             xmlns:viewModels="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels"
+             xmlns:helpers="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers"
              NavigationPage.HasNavigationBar="false">
 
     <ContentPage.Resources>

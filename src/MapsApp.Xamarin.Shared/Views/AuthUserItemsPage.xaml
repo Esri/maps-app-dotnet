@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters"
-             xmlns:controls="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Controls"
-             x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.AuthUserItemsPage"
+             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Converters"
+             xmlns:controls="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Controls"
+             x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.AuthUserItemsPage"
              Title="Choose map">
     <ContentPage.Resources>
         <ResourceDictionary>

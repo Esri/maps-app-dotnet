@@ -1,9 +1,9 @@
-﻿<UserControl x:Class="Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Controls.ErrorDialog"
+﻿<UserControl x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF.Controls.ErrorDialog"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Controls"
+             xmlns:local="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="500">
     <UserControl.Resources>

@@ -16,7 +16,7 @@
 using System;
 using System.Windows.Input;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Commands
 {
     /// <summary>
     /// Generic delegate command

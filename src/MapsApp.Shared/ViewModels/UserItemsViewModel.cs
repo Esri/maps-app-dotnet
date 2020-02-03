@@ -14,7 +14,7 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.Portal;
 using System;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
 {
     class UserItemsViewModel : BaseViewModel
     {

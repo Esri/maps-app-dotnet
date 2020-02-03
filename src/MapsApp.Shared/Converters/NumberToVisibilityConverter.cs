@@ -25,7 +25,7 @@ using System.Windows.Data;
 using System.Windows;
 #endif
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Converters
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Converters
 {
     /// <summary>
     /// Converts number to control visibility

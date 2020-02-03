@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using XamarinForms = global::Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.UWP
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

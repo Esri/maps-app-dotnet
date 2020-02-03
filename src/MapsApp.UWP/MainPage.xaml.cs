@@ -1,4 +1,4 @@
-﻿namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP
+﻿namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.UWP
 {
     public sealed partial class MainPage
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF.Views
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF.Views
 {
     /// <summary>
     /// Interaction logic for AuthPage.xaml

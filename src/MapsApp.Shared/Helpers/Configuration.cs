@@ -14,7 +14,7 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Helpers
 {
     static class Configuration
     {

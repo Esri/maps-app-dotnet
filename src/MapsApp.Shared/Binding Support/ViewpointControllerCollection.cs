@@ -16,7 +16,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Utils
 {
     /// <summary>
     /// Provides members for creating a collection of ViewpointControllers

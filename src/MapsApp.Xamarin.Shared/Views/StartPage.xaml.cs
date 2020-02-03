@@ -14,7 +14,7 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.Tasks.Geocoding;
@@ -25,10 +25,10 @@ using System.Linq;
 using System.Reflection;
 using Xamarin.Forms;
 #if __ANDROID__
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Android;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android;
 #endif
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 {
     public partial class StartPage : ContentPage
     {
@@ -230,13 +230,13 @@ namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
                 switch (Device.RuntimePlatform)
                 {
                     case Device.iOS:
-                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.iOS.Images." + imageName;
+                        imagePath = "Esri.ArcGISRuntime.OpenSourceApps.MapsApp.iOS.Images." + imageName;
                         break;
                     case Device.Android:
-                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.Android.Images." + imageName;
+                        imagePath = "Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android.Images." + imageName;
                         break;
                     case Device.UWP:
-                        imagePath = "Esri.ArcGISRuntime.ExampleApps.MapsApp.UWP.Images." + imageName;
+                        imagePath = "Esri.ArcGISRuntime.OpenSourceApps.MapsApp.UWP.Images." + imageName;
                         break;
                 }
 

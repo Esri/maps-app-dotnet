@@ -17,7 +17,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AuthUserItemsPage : ContentPage

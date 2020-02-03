@@ -13,12 +13,12 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Commands;
 using Esri.ArcGISRuntime.Location;
 using Esri.ArcGISRuntime.Mapping;
 using System.Windows.Input;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
 {
     /// <summary>
     /// View Model handling logic for the Map

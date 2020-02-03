@@ -15,7 +15,7 @@
 //  ******************************************************************************/
 using Xamarin.Forms;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 {
     public partial class BasemapPage : ContentPage
     {

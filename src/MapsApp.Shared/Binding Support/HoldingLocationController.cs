@@ -20,7 +20,7 @@ using Esri.ArcGISRuntime.Geometry;
 #if __ANDROID__ || __IOS__ || NETFX_CORE
 using DependencyObject = Xamarin.Forms.BindableObject;
 using DependencyProperty = Xamarin.Forms.BindableProperty;
-using BindingFramework = Esri.ArcGISRuntime.ExampleApps.MapsApp.Xamarin.Helpers;
+using BindingFramework = Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers;
 using Esri.ArcGISRuntime.Xamarin.Forms;
 #else
     using System.Windows;
@@ -31,7 +31,7 @@ using Esri.ArcGISRuntime.Xamarin.Forms;
 /// <summary>
 /// Provides members for creating a HoldingLocation Controller
 /// </summary>
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.Utils
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Utils
 {
     public class HoldingLocationController : DependencyObject
     {

@@ -13,7 +13,7 @@
 //  *   See the License for the specific language governing permissions and
 //  *   limitations under the License.
 //  ******************************************************************************/
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels;
 using Esri.ArcGISRuntime.Mapping;
 using Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.UI;
@@ -22,7 +22,7 @@ using System.Linq;
 using System;
 using Esri.ArcGISRuntime.Geometry;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.WPF
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

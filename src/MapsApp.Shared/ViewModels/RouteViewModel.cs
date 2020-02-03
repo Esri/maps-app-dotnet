@@ -14,8 +14,8 @@
 //  *   limitations under the License.
 //  ******************************************************************************/
 
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Commands;
-using Esri.ArcGISRuntime.ExampleApps.MapsApp.Helpers;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Commands;
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.Http;
 using Esri.ArcGISRuntime.Mapping;
@@ -28,7 +28,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Esri.ArcGISRuntime.ExampleApps.MapsApp.ViewModels
+namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
 {
     class RouteViewModel : BaseViewModel
     {
