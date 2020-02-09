@@ -181,7 +181,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
             {
                 _basemapViewModel = new BasemapsViewModel();
                 // Change map when user selects a new basemap
-                _basemapViewModel.PropertyChanged += async (s, ea) =>
+                _basemapViewModel.PropertyChanged += (s, ea) =>
                 {
                     switch (ea.PropertyName)
                     {

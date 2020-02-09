@@ -279,7 +279,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
                 }
 
                 exceptionCounter = 0;
-                throw ex;
+                throw;
             }
         }
     }
