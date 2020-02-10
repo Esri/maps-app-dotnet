@@ -32,7 +32,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
         /// </summary>
         public BasemapsViewModel()
         {
-            LoadPortal();
+            _ = LoadPortal();
         }
 
         /// <summary>

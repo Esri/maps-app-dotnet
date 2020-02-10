@@ -30,7 +30,7 @@ using System.Windows.Input;
 
 namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
 {
-    class RouteViewModel : BaseViewModel
+    internal class RouteViewModel : BaseViewModel
     {
         private bool _isBusy;
         private GeocodeResult _fromPlace;
@@ -67,7 +67,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
                 if (_fromPlace != value)
                 {
                     _fromPlace = value;
-                    GetRouteAsync();
+                    _ = GetRouteAsync();
                     OnPropertyChanged();
                 }
             }
@@ -84,7 +84,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
                 if (_toPlace != value)
                 {
                     _toPlace = value;
-                    GetRouteAsync();
+                    _ = GetRouteAsync();
                     OnPropertyChanged();
                 }
             }
@@ -153,7 +153,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
             get
             {
                 return _clearRouteCommand ?? (_clearRouteCommand = new DelegateCommand(
-                    (x) =>
+                    (_) =>
                     {
                         Route = null;
                         FromPlace = null;
@@ -232,24 +232,13 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                //TODO: Remove workaround when iOS bug is fixed
-#if __IOS__
-                exceptionCounter++;
-                if (ex.Message == "403 (Forbidden)" && exceptionCounter <= 3)
-                {
-                    await GetRouteAsync();
-                    return;
-                }
-#endif
                 ErrorMessage = "Something went wrong and the routing operation failed.";
                 StackTrace = ex.ToString();
             }
 
-            exceptionCounter = 0;
             IsBusy = false;
         }
 
-        private int exceptionCounter = 0;
         private async Task CreateRouteTask()
         {
             try
@@ -258,16 +247,6 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
             }
             catch (Exception ex)
             {
-                //TODO: Remove workaround when iOS bug is fixed
-#if __IOS__
-                exceptionCounter++;
-                if (ex.Message == "403 (Forbidden)" && exceptionCounter <= 3)
-                {
-                    var credential = AuthenticationManager.Current.FindCredential(new Uri(Configuration.RouteUrl));
-                    await CreateRouteTask();
-                    return;
-                }
-#endif
                 // This is returned when user hits the Cancel button in iOS or the back arrow in Android
                 // It does not get caught in the SignInRenderer and needs to be handled here
                 if (ex.Message.Contains("Token Required"))
@@ -278,7 +257,6 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
                     return;
                 }
 
-                exceptionCounter = 0;
                 throw;
             }
         }
