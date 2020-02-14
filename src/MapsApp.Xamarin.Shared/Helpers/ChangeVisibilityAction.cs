@@ -54,7 +54,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers
                         control.IsVisible = !control.IsVisible;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     // Fail silently
                 }

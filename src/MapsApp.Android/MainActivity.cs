@@ -3,7 +3,7 @@ using Android;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Android.Support.V4.Content;
+using Android.Support.V4.App;
 
 namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
 {
@@ -32,11 +32,11 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
             _lastUsedMapView = myMapView;
 
             // Only check if permission hasn't been granted yet.
-            if (ContextCompat.CheckSelfPermission(this, LocationService) != Permission.Granted)
+            if (ActivityCompat.CheckSelfPermission(this, LocationService) != Permission.Granted)
             {
                 // Show the standard permission dialog.
                 // Once the user has accepted or denied, OnRequestPermissionsResult is called with the result.
-                RequestPermissions(new[] {Manifest.Permission.AccessFineLocation}, LocationPermissionRequestCode);
+                ActivityCompat.RequestPermissions(Instance, new[] {Manifest.Permission.AccessFineLocation}, LocationPermissionRequestCode);
             }
             else
             {

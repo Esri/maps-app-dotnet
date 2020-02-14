@@ -34,7 +34,4 @@
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Images\end.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Esri.ArcGISRuntime.OpenSourceApps.ruleset" />
-  </ItemGroup>
 </Project>

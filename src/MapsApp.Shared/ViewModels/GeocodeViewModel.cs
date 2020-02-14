@@ -38,8 +38,6 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
         private MapPoint _reverseGeocodeInputLocation;
         private Viewpoint _areaOfInterest;
         private GeocodeResult _place;
-        private GeocodeResult _fromPlace;
-        private GeocodeResult _toPlace;
         private ICommand _searchCommand;
         private ICommand _cancelLocationSearchCommand;
         private ObservableCollection<string> _suggestionsList;

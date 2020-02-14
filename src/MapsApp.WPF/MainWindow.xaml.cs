@@ -103,7 +103,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF
 
             // Change map when user selects a new basemap
             var basemapViewModel = Resources["BasemapsViewModel"] as BasemapsViewModel;
-            basemapViewModel.PropertyChanged += async (s, e) =>
+            basemapViewModel.PropertyChanged += (s, e) =>
             {
                 switch (e.PropertyName)
                 {
@@ -131,7 +131,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF
 
             // Change user item when user selects a new one
             var userItemsViewModel = Resources["UserItemsViewModel"] as UserItemsViewModel;
-            userItemsViewModel.PropertyChanged += async (s, e) =>
+            userItemsViewModel.PropertyChanged += (s, e) =>
             {
                 switch (e.PropertyName)
                 {

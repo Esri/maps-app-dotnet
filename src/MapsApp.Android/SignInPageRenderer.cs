@@ -24,6 +24,7 @@ using Xamarin.Forms.Platform.Android;
 using Xamarin.Auth;
 using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Helpers;
 using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin;
+using Android.Content;
 
 [assembly: ExportRenderer(typeof(StartPage), typeof(Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android.SignInPageRenderer))]
 namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
@@ -31,7 +32,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
     public class SignInPageRenderer : PageRenderer, IOAuthAuthorizeHandler
     {
         // ctor
-        public SignInPageRenderer()
+        public SignInPageRenderer(Context context) : base(context)
         {
             // Set the OAuth authorization handler to this class (Implements IOAuthAuthorize interface)
             AuthenticationManager.Current.OAuthAuthorizeHandler = this;

@@ -36,8 +36,6 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Utils
     public class HoldingLocationController : DependencyObject
     {
         private WeakReference<GeoView> _geoViewWeakRef;
-        bool _isGeoViewHoldingEventFiring = false;
-        bool _isOnHoldingLocationChangedExecuting = false;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HoldingLocationController"/> class.
@@ -82,13 +80,8 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Utils
         /// </summary>
         private void GeoView_GeoViewHolding(object sender, GeoViewInputEventArgs e)
         {
-            if (!_isOnHoldingLocationChangedExecuting)
-            {
-                _isGeoViewHoldingEventFiring = true;
-                // get the Location the user is holding from the event args
-                HoldingLocation = e.Location;
-                _isGeoViewHoldingEventFiring = false;
-            }
+            // get the Location the user is holding from the event args
+            HoldingLocation = e.Location;
         }
 
         /// <summary>
