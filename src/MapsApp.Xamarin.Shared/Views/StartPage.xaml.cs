@@ -386,6 +386,11 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
             SettingsPanel.IsVisible = (!SettingsPanel.IsVisible);
         }
 
+        private void Search_Changed(object sender, EventArgs e)
+        {
+            SettingsPanel.IsVisible = false;
+        }
+
         /// <summary>
         /// Display the routing panel when user taps the Route button
         /// </summary>

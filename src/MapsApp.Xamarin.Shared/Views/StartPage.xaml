@@ -79,7 +79,8 @@
         <!-- Search Panel -->
         <BoxView Grid.Column="1" Grid.Row="0" Color="White" HorizontalOptions="FillAndExpand" Margin="0, 10, 10, 0"/>
         <SearchBar x:Name="AddressSearchBar" Placeholder="Address or Place" Text="{Binding SearchText, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"
-                       Grid.Column="1" Grid.Row="0" BindingContext="{StaticResource GeocodeViewModel}" SearchCommand="{Binding SearchCommand}">
+                   Grid.Column="1" Grid.Row="0" BindingContext="{StaticResource GeocodeViewModel}" SearchCommand="{Binding SearchCommand}"
+                   TextChanged="Search_Changed">
             <SearchBar.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="iOS" Value="0, 10, 10, 0" />
@@ -101,8 +102,10 @@
                 </OnPlatform>
             </SearchBar.BackgroundColor>
         </SearchBar>
-        <ListView x:Name="SearchSuggestionsList" BindingContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" ItemSelected="SearchSuggestionsList_ItemSelected"
-                      HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
+        <ListView x:Name="SearchSuggestionsList" BindingContext="{StaticResource GeocodeViewModel}" ItemsSource="{Binding SuggestionsList}" 
+                  SelectedItem="{Binding SelectedSearchItem}" ItemSelected="SearchSuggestionsList_ItemSelected"
+                      HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" 
+                  IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -125,7 +128,9 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="startpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5" Grid.Column="0"/>
-                    <Entry x:Name="FromLocationTextBox" Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource FromGeocodeViewModel}}" Grid.Column="1" MinimumHeightRequest="40" >
+                    <Entry x:Name="FromLocationTextBox" 
+                           Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource FromGeocodeViewModel}}" Grid.Column="1" MinimumHeightRequest="40"
+                           TextChanged="Search_Changed">
                         <Entry.Triggers>
                             <EventTrigger Event="Focused">
                                 <helpers:ChangeVisibilityAction  TargetName="FromLocationSuggestionsList"/>
@@ -149,7 +154,8 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="endpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5" Grid.Column="0"/>
-                    <Entry x:Name="ToLocationTextBox" Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource ToGeocodeViewModel}}" Grid.Column="1" MinimumHeightRequest="40">
+                    <Entry x:Name="ToLocationTextBox" Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource ToGeocodeViewModel}}" Grid.Column="1" MinimumHeightRequest="40"
+                           TextChanged="Search_Changed">
                         <Entry.Triggers>
                             <EventTrigger Event="Focused">
                                 <helpers:ChangeVisibilityAction TargetName="ToLocationSuggestionsList"/>
@@ -169,7 +175,8 @@
 
             <!-- Suggestions box for From location -->
             <ListView x:Name="FromLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" 
-                       BindingContext="{StaticResource FromGeocodeViewModel}" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
+                       BindingContext="{StaticResource FromGeocodeViewModel}" 
+                      IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -183,7 +190,8 @@
 
             <!-- Suggestions box for To location -->
             <ListView x:Name="ToLocationSuggestionsList" ItemsSource="{Binding SuggestionsList}" SelectedItem="{Binding SelectedSearchItem}" 
-                       BindingContext="{StaticResource ToGeocodeViewModel}" IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
+                       BindingContext="{StaticResource ToGeocodeViewModel}" 
+                      IsVisible="False" BackgroundColor="Transparent" Margin="0,0,10,0" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -197,7 +205,10 @@
         </StackLayout>
 
         <!-- Menu Items-->
-        <Grid x:Name="SettingsPanel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="False" Margin="10, 0, 0, 0"  BindingContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}" BackgroundColor="Transparent">
+        <Grid x:Name="SettingsPanel" 
+              Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+              IsVisible="False" Margin="10, 0, 0, 0"  
+              BindingContext ="{Binding Source={x:Static viewModels:AuthViewModel.Instance}}" BackgroundColor="Transparent">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
