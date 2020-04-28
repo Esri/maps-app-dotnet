@@ -7,6 +7,8 @@
 - Updated UWP minimum platform version from 16299 to 17134.
 - Bug fixes and quality improvements:
     - Adds Y offset to pin symbols, so that they are anchored at the pin point, rather than the symbol's center. This fixes the appearance of pins 'floating' as you zoom in and out.
+    - Improves the layout of the basemap and map list pages.
+    - Adds margins around the search bar in the UWP version of the app, to match Android and iOS.
 
 ## 1.0.2
 

@@ -13,10 +13,35 @@
     <Grid>
         <!-- List of user items for the user to select from -->
         <ListView x:Name="BasemapListView" ItemsSource="{Binding UserItems, Mode=TwoWay}" SelectedItem="{Binding SelectedUserItem}"
-             ItemTapped="ListView_ItemTapped" >
+                  HasUnevenRows="True"
+                  ItemTapped="ListView_ItemTapped" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding ThumbnailUri}" Text="{Binding Title}" Detail="{Binding Snippet}"/>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Image Source="{Binding ThumbnailUri}"
+                                   Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                   VerticalOptions="Center"
+                                   Aspect="AspectFill"
+                                   Margin="5" />
+                            <Label Text="{Binding Title}" 
+                                   FontSize="16"
+                                   Margin="5,5,5,0"
+                                   Grid.Row="0" Grid.Column="1" />
+                            <Label Text="{Binding Snippet}" 
+                                   FontSize="14"
+                                   Margin="5" MaxLines="2" LineBreakMode="TailTruncation"
+                                   Grid.Row="1" Grid.Column="1" />
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
