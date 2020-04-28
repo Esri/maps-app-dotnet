@@ -5,6 +5,8 @@
 - Updated to ArcGIS Runtime 100.8.
 - Updated Xamarin.Forms dependency to 4.5 and UWP to 6.2.10.
 - Updated UWP minimum platform version from 16299 to 17134.
+- Bug fixes and quality improvements:
+    - Adds Y offset to pin symbols, so that they are anchored at the pin point, rather than the symbol's center. This fixes the appearance of pins 'floating' as you zoom in and out.
 
 ## 1.0.2
 

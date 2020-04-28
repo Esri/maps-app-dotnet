@@ -24,6 +24,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 #if __ANDROID__
 using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android;
 #endif
@@ -32,6 +33,8 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 {
     public partial class StartPage : ContentPage
     {
+        private const double PinImageScaleFactor = 0.5;
+
         private BasemapsViewModel _basemapViewModel;
         private UserItemsViewModel _userItemsViewModel;
         private RouteViewModel _routeViewModel;
@@ -42,116 +45,126 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
         public StartPage()
         {
             InitializeComponent();
-            var routeStyle = new SimpleLineSymbol(SimpleLineSymbolStyle.Solid, System.Drawing.Color.FromArgb(0x00, 0x79, 0xc1), 5);
-            RouteRenderer.Symbol = routeStyle;
-            InitializeBasemapSwitcher();
+            Initialize();
+        }
 
-            PictureMarkerSymbol endMapPin = CreateMapPin("end.png");
-            PictureMarkerSymbol startMapPin = CreateMapPin("start.png");
-
-            var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
-            var fromGeocodeViewModel = Resources["FromGeocodeViewModel"] as GeocodeViewModel;
-            var toGeocodeViewModel = Resources["ToGeocodeViewModel"] as GeocodeViewModel;
-            _routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
-
-            geocodeViewModel.PropertyChanged += (o, e) =>
+        /// <summary>
+        /// Performs initialization
+        /// </summary>
+        private async void Initialize()
+        {
+            try
             {
-                switch (e.PropertyName)
-                {
-                    case nameof(GeocodeViewModel.Place):
-                        {
-                            var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
-                            graphicsOverlay?.Graphics.Clear();
+                var routeStyle = new SimpleLineSymbol(SimpleLineSymbolStyle.Solid, System.Drawing.Color.FromArgb(0x00, 0x79, 0xc1), 5);
+                RouteRenderer.Symbol = routeStyle;
+                InitializeBasemapSwitcher();
 
-                            GeocodeResult place = geocodeViewModel.Place;
-                            if (place == null)
+                PictureMarkerSymbol endMapPin = await CreateMapPin("end.png");
+                PictureMarkerSymbol startMapPin = await CreateMapPin("start.png");
+
+                var geocodeViewModel = Resources["GeocodeViewModel"] as GeocodeViewModel;
+                var fromGeocodeViewModel = Resources["FromGeocodeViewModel"] as GeocodeViewModel;
+                var toGeocodeViewModel = Resources["ToGeocodeViewModel"] as GeocodeViewModel;
+                _routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
+
+                geocodeViewModel.PropertyChanged += (o, e) =>
+                {
+                    switch (e.PropertyName)
+                    {
+                        case nameof(GeocodeViewModel.Place):
                             {
-                                return;
+                                var graphicsOverlay = MapView.GraphicsOverlays["PlacesOverlay"];
+                                graphicsOverlay?.Graphics.Clear();
+
+                                GeocodeResult place = geocodeViewModel.Place;
+                                if (place == null)
+                                {
+                                    return;
+                                }
+
+                                var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, endMapPin);
+                                graphicsOverlay?.Graphics.Add(graphic);
+
+                                break;
                             }
+                    }
+                };
 
-                            var graphic = new Graphic(geocodeViewModel.Place.DisplayLocation, endMapPin);
-                            graphicsOverlay?.Graphics.Add(graphic);
-
-                            break;
-                        }
-                }
-            };
-
-            fromGeocodeViewModel.PropertyChanged += (o, e) =>
-            {
-                switch (e.PropertyName)
+                fromGeocodeViewModel.PropertyChanged += (o, e) =>
                 {
-                    case nameof(GeocodeViewModel.Place):
-                        {
-                            _routeViewModel.FromPlace = fromGeocodeViewModel.Place;
-                            break;
-                        }
-                }
-            };
-
-            toGeocodeViewModel.PropertyChanged += (o, e) =>
-            {
-                switch (e.PropertyName)
-                {
-                    case nameof(GeocodeViewModel.Place):
-                        {
-                            _routeViewModel.ToPlace = toGeocodeViewModel.Place;
-                            break;
-                        }
-                }
-            };
-
-            _routeViewModel.PropertyChanged += (s, e) =>
-            {
-                switch (e.PropertyName)
-                {
-                    case nameof(RouteViewModel.Route):
-                        {
-                            var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
-
-                            // clear existing graphics
-                            graphicsOverlay?.Graphics?.Clear();
-
-                            if (_routeViewModel.FromPlace == null || _routeViewModel.ToPlace == null ||
-                            _routeViewModel.Route == null || graphicsOverlay == null)
+                    switch (e.PropertyName)
+                    {
+                        case nameof(GeocodeViewModel.Place):
                             {
-                                return;
+                                _routeViewModel.FromPlace = fromGeocodeViewModel.Place;
+                                break;
                             }
+                    }
+                };
 
-                            // Add route to map
-                            var routeGraphic = new Graphic(_routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
-                            graphicsOverlay?.Graphics.Add(routeGraphic);
-
-                            // Add start and end locations to the map
-                            var fromGraphic = new Graphic(_routeViewModel.FromPlace.RouteLocation, startMapPin);
-                            var toGraphic = new Graphic(_routeViewModel.ToPlace.RouteLocation, endMapPin);
-                            graphicsOverlay?.Graphics.Add(fromGraphic);
-                            graphicsOverlay?.Graphics.Add(toGraphic);
-
-                            break;
-                        }
-                }
-            };
-
-            // start location services - only once MapView.LocationDisplay property is ready
-            MapView.PropertyChanged += (o, e) =>
-            {
-                if (e.PropertyName == nameof(MapView.LocationDisplay) && MapView.LocationDisplay != null)
+                toGeocodeViewModel.PropertyChanged += (o, e) =>
                 {
-                    var mapViewModel = Resources["MapViewModel"] as MapViewModel;
-                    MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
-                    MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
+                    switch (e.PropertyName)
+                    {
+                        case nameof(GeocodeViewModel.Place):
+                            {
+                                _routeViewModel.ToPlace = toGeocodeViewModel.Place;
+                                break;
+                            }
+                    }
+                };
+
+                _routeViewModel.PropertyChanged += (s, e) =>
+                {
+                    switch (e.PropertyName)
+                    {
+                        case nameof(RouteViewModel.Route):
+                            {
+                                var graphicsOverlay = MapView.GraphicsOverlays["RouteOverlay"];
+
+                                // clear existing graphics
+                                graphicsOverlay?.Graphics?.Clear();
+
+                                if (_routeViewModel.FromPlace == null || _routeViewModel.ToPlace == null ||
+                                _routeViewModel.Route == null || graphicsOverlay == null)
+                                {
+                                    return;
+                                }
+
+                                // Add route to map
+                                var routeGraphic = new Graphic(_routeViewModel.Route.Routes.FirstOrDefault()?.RouteGeometry);
+                                graphicsOverlay?.Graphics.Add(routeGraphic);
+
+                                // Add start and end locations to the map
+                                var fromGraphic = new Graphic(_routeViewModel.FromPlace.RouteLocation, startMapPin);
+                                var toGraphic = new Graphic(_routeViewModel.ToPlace.RouteLocation, endMapPin);
+                                graphicsOverlay?.Graphics.Add(fromGraphic);
+                                graphicsOverlay?.Graphics.Add(toGraphic);
+
+                                break;
+                            }
+                    }
+                };
+
+                // start location services - only once MapView.LocationDisplay property is ready
+                MapView.PropertyChanged += (o, e) =>
+                {
+                    if (e.PropertyName == nameof(MapView.LocationDisplay) && MapView.LocationDisplay != null)
+                    {
+                        var mapViewModel = Resources["MapViewModel"] as MapViewModel;
+                        MapView.LocationDisplay.DataSource = mapViewModel.LocationDataSource;
+                        MapView.LocationDisplay.AutoPanMode = LocationDisplayAutoPanMode.Recenter;
 
 #if __ANDROID__
-            MainActivity.Instance.AskForLocationPermission(MapView);
+                        MainActivity.Instance.AskForLocationPermission(MapView);
 #else
                     MapView.LocationDisplay.IsEnabled = true;
 #endif
-                }
-            };
-            
+                    }
+                };
 
-            
+
+
 
 #if __IOS__
             // This is necessary because on iOS the SearchBar doesn't get unfocused automatically when a geocode result is selected
@@ -170,6 +183,11 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
                 ToLocationTextBox.Unfocus();
             };
 #endif
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.ToString(), "OK");
+            }
         }
 
         /// <summary>
@@ -220,7 +238,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
         /// <summary>
         /// Create map pin based on platform
         /// </summary>
-        private PictureMarkerSymbol CreateMapPin(string imageName)
+        private async Task<PictureMarkerSymbol> CreateMapPin(string imageName)
         {
             try
             {
@@ -248,7 +266,13 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 
                     if (imageData != null)
                     {
-                        return new PictureMarkerSymbol(new RuntimeImage(imageData)); 
+                        var rtImage = new RuntimeImage(imageData);
+
+                        // Image must be loaded to ensure dimensions will be available
+                        await rtImage.LoadAsync();
+
+                        // OffsetY adjustment is specific to the pin marker symbol, to make sure it is anchored at the pin point, rather than center
+                        return new PictureMarkerSymbol(rtImage) { OffsetY = rtImage.Height * PinImageScaleFactor / 2, Height = rtImage.Height * PinImageScaleFactor, Width = rtImage.Width * PinImageScaleFactor }; 
                     }
                     return null;
                 }
@@ -256,7 +280,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
             catch (Exception ex)
             {
                 // Display error message 
-                DisplayAlert("Error", ex.ToString(), "OK");
+                await DisplayAlert("Error", ex.ToString(), "OK");
                 return null;
             }
         }
