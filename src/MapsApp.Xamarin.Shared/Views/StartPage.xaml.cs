@@ -25,6 +25,7 @@ using System.Linq;
 using System.Reflection;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.Diagnostics;
 #if __ANDROID__
 using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android;
 #endif
@@ -57,7 +58,6 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
             {
                 var routeStyle = new SimpleLineSymbol(SimpleLineSymbolStyle.Solid, System.Drawing.Color.FromArgb(0x00, 0x79, 0xc1), 5);
                 RouteRenderer.Symbol = routeStyle;
-                InitializeBasemapSwitcher();
 
                 PictureMarkerSymbol endMapPin = await CreateMapPin("end.png");
                 PictureMarkerSymbol startMapPin = await CreateMapPin("start.png");
@@ -66,6 +66,8 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
                 var fromGeocodeViewModel = Resources["FromGeocodeViewModel"] as GeocodeViewModel;
                 var toGeocodeViewModel = Resources["ToGeocodeViewModel"] as GeocodeViewModel;
                 _routeViewModel = Resources["RouteViewModel"] as RouteViewModel;
+                _basemapViewModel = Resources["BasemapsViewModel"] as BasemapsViewModel;
+                _userItemsViewModel = Resources["UserItemsViewModel"] as UserItemsViewModel;
 
                 geocodeViewModel.PropertyChanged += (o, e) =>
                 {
@@ -163,41 +165,6 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
                     }
                 };
 
-
-
-
-#if __IOS__
-            // This is necessary because on iOS the SearchBar doesn't get unfocused automatically when a geocode result is selected
-            SearchSuggestionsList.ItemSelected += (s, e) =>
-            {
-                AddressSearchBar.Unfocus();
-            };
-
-            FromLocationSuggestionsList.ItemSelected += (s, e) =>
-            {
-                FromLocationTextBox.Unfocus();
-            };
-
-            ToLocationSuggestionsList.ItemSelected += (s, e) =>
-            {
-                ToLocationTextBox.Unfocus();
-            };
-#endif
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Error", ex.ToString(), "OK");
-            }
-        }
-
-        /// <summary>
-        /// Initialize basemaps and basemap switching functionality
-        /// </summary>
-        private void InitializeBasemapSwitcher()
-        {
-            if (_basemapViewModel == null)
-            {
-                _basemapViewModel = new BasemapsViewModel();
                 // Change map when user selects a new basemap
                 _basemapViewModel.PropertyChanged += (s, ea) =>
                 {
@@ -224,6 +191,63 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
                             }
                     }
                 };
+
+                // Change map when user selects a new user item
+                _userItemsViewModel.PropertyChanged += async (s, ea) =>
+                {
+                    switch (ea.PropertyName)
+                    {
+                        case nameof(UserItemsViewModel.SelectedUserItem):
+                            {
+                                // Set the viewpoint of the new map to be the same as the old map
+                                // Otherwise map is being reset to the world view
+                                var mapViewModel = Resources["MapViewModel"] as MapViewModel;
+                                var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
+
+                                try
+                                {
+                                    var newMap = new Map(_userItemsViewModel.SelectedUserItem)
+                                    {
+                                        InitialViewpoint = currentViewpoint
+                                    };
+
+                                    //Load new map
+                                    await newMap.LoadAsync();
+                                    mapViewModel.Map = newMap;
+                                }
+                                catch (Exception ex)
+                                {
+                                    mapViewModel.ErrorMessage = "Unable to change maps";
+                                    mapViewModel.StackTrace = ex.ToString();
+                                }
+
+                                break;
+                            }
+                    }
+                };
+
+
+#if __IOS__
+            // This is necessary because on iOS the SearchBar doesn't get unfocused automatically when a geocode result is selected
+            SearchSuggestionsList.ItemSelected += (s, e) =>
+            {
+                AddressSearchBar.Unfocus();
+            };
+
+            FromLocationSuggestionsList.ItemSelected += (s, e) =>
+            {
+                FromLocationTextBox.Unfocus();
+            };
+
+            ToLocationSuggestionsList.ItemSelected += (s, e) =>
+            {
+                ToLocationTextBox.Unfocus();
+            };
+#endif
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.ToString(), "OK");
             }
         }
 
@@ -272,7 +296,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
                         await rtImage.LoadAsync();
 
                         // OffsetY adjustment is specific to the pin marker symbol, to make sure it is anchored at the pin point, rather than center
-                        return new PictureMarkerSymbol(rtImage) { OffsetY = rtImage.Height * PinImageScaleFactor / 2, Height = rtImage.Height * PinImageScaleFactor, Width = rtImage.Width * PinImageScaleFactor }; 
+                        return new PictureMarkerSymbol(rtImage) { OffsetY = rtImage.Height * PinImageScaleFactor / 2, Height = rtImage.Height * PinImageScaleFactor, Width = rtImage.Width * PinImageScaleFactor };
                     }
                     return null;
                 }
@@ -286,12 +310,66 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
         }
 
         // Load basemap page, reuse viewmodel so the initial loading happens only once
-        private async void LoadBasemapControl(object sender, EventArgs e)
+        private void LoadBasemapControl(object sender, EventArgs e)
         {
             SettingsPanel.IsVisible = false;
-            await Navigation.PushAsync(new BasemapPage { BindingContext = _basemapViewModel });
+            NavigationContainerGrid.IsVisible = true;
+            BasemapListView.IsVisible = true;
+            UserItemListView.IsVisible = false;
         }
 
+        /// <summary>
+        /// Loads the AuthUserItemsPage and changes map when user selects an item
+        /// </summary>
+        private async void LoadUserItems(object sender, EventArgs e)
+        {
+            SettingsPanel.IsVisible = false;
+            NavigationContainerGrid.IsVisible = true;
+            BasemapListView.IsVisible = false;
+            await _userItemsViewModel.LoadUserItems();
+            
+            UserItemListView.IsVisible = true;
+        }
+
+        /// <summary>
+        /// Hides the basemp and map lists when the user selects an item
+        /// </summary>
+        private void Basemap_ItemTapped(object sender, EventArgs e)
+        {
+            SettingsPanel.IsVisible = false;
+            NavigationContainerGrid.IsVisible = false;
+            BasemapListView.IsVisible = false;
+            UserItemListView.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Implements the close button behavior for the basemap and map picker views
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NavigatedView_CloseClicked(object sender, EventArgs e)
+        {
+            SettingsPanel.IsVisible = false;
+            NavigationContainerGrid.IsVisible = false;
+            BasemapListView.IsVisible = false;
+            UserItemListView.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Implement the back-navigation behavior when the back button is pressed on Android
+        /// </summary>
+        /// <returns>true if Xamarin.Forms should prevent the default back navigation (in this case, navigating to the user's home screen)</returns>
+        protected override bool OnBackButtonPressed()
+        {
+            if (NavigationContainerGrid.IsVisible)
+            {
+                NavigationContainerGrid.IsVisible = false;
+                BasemapListView.IsVisible = false;
+                UserItemListView.IsVisible = false;
+                return true;
+            }
+            return base.OnBackButtonPressed();
+        }
 
         // Load directions page
         private async void LoadDirectionsControl(object sender, EventArgs e)
@@ -306,54 +384,6 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
         private void OpenCloseSettings(object sender, EventArgs e)
         {
             SettingsPanel.IsVisible = (!SettingsPanel.IsVisible);
-        }
-
-        /// <summary>
-        /// Loads the AuthUserItemsPage and changes map when user selects an item
-        /// </summary>
-        private async void LoadUserItems(object sender, EventArgs e)
-        {
-            _userItemsViewModel = new UserItemsViewModel();
-            await _userItemsViewModel.LoadUserItems();
-
-                // Change map when user selects a new user item
-                _userItemsViewModel.PropertyChanged += async (s, ea) =>
-                {
-                    switch (ea.PropertyName)
-                    {
-                        case nameof(UserItemsViewModel.SelectedUserItem):
-                            {
-                                // Set the viewpoint of the new map to be the same as the old map
-                                // Otherwise map is being reset to the world view
-                                var mapViewModel = Resources["MapViewModel"] as MapViewModel;
-                                var currentViewpoint = MapView.GetCurrentViewpoint(ViewpointType.CenterAndScale);
-
-                                try
-                                {
-                                    var newMap = new Map(_userItemsViewModel.SelectedUserItem)
-                                    {
-                                        InitialViewpoint = currentViewpoint
-                                    };
-
-                                    //Load new map
-                                    await newMap.LoadAsync();
-                                    mapViewModel.Map = newMap;
-                                }
-                                catch (Exception ex)
-                                {
-                                    mapViewModel.ErrorMessage = "Unable to change maps";
-                                    mapViewModel.StackTrace = ex.ToString();
-                                }
-
-                                break;
-                            }
-                    }
-                };
-
-            SettingsPanel.IsVisible = false;
-
-            // Load the AuthUserItemsPage
-            await Navigation.PushAsync(new AuthUserItemsPage { BindingContext = _userItemsViewModel });
         }
 
         /// <summary>
