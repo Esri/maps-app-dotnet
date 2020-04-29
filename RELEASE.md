@@ -11,6 +11,7 @@
     - Adds margins around the search bar in the UWP version of the app, to match Android and iOS.
     - Fixes issue where the map would stop rendering after returning from the basemap picker and map picker pages on UWP.
     - Fixes issue where the menu fails to disappear when a search is started.
+    - Fixes issue where routing would sometimes fail to work on iOS, Android. Note that with the workaround, the user may occasionally need to authenticate twice.
 
 ## 1.0.2
 
