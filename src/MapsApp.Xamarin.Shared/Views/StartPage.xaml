@@ -123,13 +123,17 @@
             <StackLayout Orientation="Vertical" HorizontalOptions="Fill">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="40"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="40"/>
                     </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
                     <Image Source="startpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5" Grid.Column="0"/>
                     <Entry x:Name="FromLocationTextBox" 
-                           Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource FromGeocodeViewModel}}" Grid.Column="1" MinimumHeightRequest="40"
+                           Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource FromGeocodeViewModel}}" 
+                           Grid.Column="1"
                            TextChanged="Search_Changed">
                         <Entry.Triggers>
                             <EventTrigger Event="Focused">
@@ -149,12 +153,17 @@
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="40"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="40"/>
                     </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
                     <Image Source="endpin.png" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="Start" Margin="5" Grid.Column="0"/>
-                    <Entry x:Name="ToLocationTextBox" Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource ToGeocodeViewModel}}" Grid.Column="1" MinimumHeightRequest="40"
+                    <Entry x:Name="ToLocationTextBox" 
+                           Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource ToGeocodeViewModel}}" 
+                           Grid.Column="1"
                            TextChanged="Search_Changed">
                         <Entry.Triggers>
                             <EventTrigger Event="Focused">

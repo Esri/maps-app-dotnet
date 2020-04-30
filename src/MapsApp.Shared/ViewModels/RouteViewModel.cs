@@ -250,6 +250,8 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
                 // Try one more time, to work around a bug. dotnet-api/6024
                 try
                 {
+                    var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.RouteUrl));
+                    AuthenticationManager.Current.AddCredential(credential);
                     Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
                 }
                 catch (Exception exx)
