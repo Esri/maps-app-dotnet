@@ -13,6 +13,7 @@
     - Fixes issue where the menu fails to disappear when a search is started.
     - Fixes issue where routing would sometimes fail to work on iOS, Android.
     - Fixes an issue where the route start and end location text wasn't visible without user interaction on UWP.
+    - Fixes issue where basemaps occasionally fail to load on iOS.
 
 ## 1.0.2
 
