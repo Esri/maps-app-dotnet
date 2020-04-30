@@ -310,10 +310,22 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
         }
 
         // Load basemap page, reuse viewmodel so the initial loading happens only once
-        private void LoadBasemapControl(object sender, EventArgs e)
+        private async void LoadBasemapControl(object sender, EventArgs e)
         {
             SettingsPanel.IsVisible = false;
             NavigationContainerGrid.IsVisible = true;
+
+            if (!_basemapViewModel.Basemaps.Any())
+            {
+                try
+                {
+                    await _basemapViewModel.ReloadBasemaps();
+                }
+                catch
+                {
+                    // ignore
+                }
+            }
             BasemapListView.IsVisible = true;
             UserItemListView.IsVisible = false;
         }
