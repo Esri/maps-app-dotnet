@@ -19,6 +19,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MapsApp.Shared", "MapsApp.S
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MapsApp.Shared\MapsApp.Shared.projitems*{08b7ecd4-f5a2-45f7-b75d-1265e7075281}*SharedItemsImports = 5
 		MapsApp.Shared\MapsApp.Shared.projitems*{2c2a9421-c9c7-4a51-aae3-216f7e05d8d8}*SharedItemsImports = 13
 		MapsApp.Shared\MapsApp.Shared.projitems*{8f028d45-5444-45e1-9323-1cfd1bd66d6f}*SharedItemsImports = 4
 		MapsApp.Shared\MapsApp.Shared.projitems*{99424659-2878-48b9-a53c-0ae81a27628c}*SharedItemsImports = 4
@@ -149,6 +150,7 @@ Global
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhone.Deploy.0 = Debug|iPhone
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|x64.ActiveCfg = Debug|iPhone

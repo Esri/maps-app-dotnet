@@ -29,22 +29,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\BasemapPage.xaml.cs">
-      <DependentUpon>BasemapPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\BasemapPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AuthUserItemsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\AuthUserItemsPage.xaml.cs">
-      <DependentUpon>AuthUserItemsPage.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\TurnByTurnDirections.xaml.cs">
       <DependentUpon>TurnByTurnDirections.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -53,7 +37,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Controls\ErrorDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

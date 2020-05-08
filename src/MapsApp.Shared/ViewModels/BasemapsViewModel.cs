@@ -100,5 +100,14 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
                 StackTrace = ex.ToString();
             }
         }
+
+        /// <summary>
+        /// Attempt to reload basemaps if none were found
+        /// </summary>
+        /// <returns></returns>
+        public async Task ReloadBasemaps()
+        {
+            await LoadPortal();
+        }
     }
 }

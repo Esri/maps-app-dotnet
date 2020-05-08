@@ -245,19 +245,29 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
             {
                 Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // This is returned when user hits the Cancel button in iOS or the back arrow in Android
-                // It does not get caught in the SignInRenderer and needs to be handled here
-                if (ex.Message.Contains("Token Required"))
+                // Try one more time, to work around a bug. dotnet-api/6024
+                try
                 {
-                    FromPlace = null;
-                    ToPlace = null;
-                    IsBusy = false;
-                    return;
+                    var credential = await AuthenticationManager.Current.GenerateCredentialAsync(new Uri(Configuration.RouteUrl));
+                    AuthenticationManager.Current.AddCredential(credential);
+                    Router = await RouteTask.CreateAsync(new Uri(Configuration.RouteUrl));
                 }
+                catch (Exception exx)
+                {
+                    // This is returned when user hits the Cancel button in iOS or the back arrow in Android
+                    // It does not get caught in the SignInRenderer and needs to be handled here
+                    if (exx.Message.Contains("Token Required"))
+                    {
+                        FromPlace = null;
+                        ToPlace = null;
+                        IsBusy = false;
+                        return;
+                    }
 
-                throw;
+                    throw;
+                }
             }
         }
     }
