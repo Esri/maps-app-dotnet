@@ -1,3 +1,28 @@
+# Contents
+
+<!-- MDTOC maxdepth:6 firsth1:0 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+- [Description](#description)   
+   - [Platforms supported](#platforms-supported)   
+   - [Functionality showcased](#functionality-showcased)   
+- [Overview](#overview)   
+- [Place search & geocoding](#place-search-geocoding)   
+- [Place suggestions](#place-suggestions)   
+- [Searching from a suggestion](#searching-from-a-suggestion)   
+- [Routing](#routing)   
+- [Turn-by-turn directions (direction maneuvers)](#turn-by-turn-directions-direction-maneuvers)   
+- [Authentication](#authentication)   
+- [Switching basemaps](#switching-basemaps)   
+- [Using web maps](#using-web-maps)   
+- [Architecture](#architecture)   
+   - [Solution overview](#solution-overview)   
+   - [Model-View-ViewModel pattern](#model-view-viewmodel-pattern)   
+   - [Xamarin and WPF - platform differences](#xamarin-and-wpf-platform-differences)   
+- [Configuration and customization](#configuration-and-customization)   
+
+<!-- /MDTOC -->
+---
+
 ## Description
 
 The Maps App suite showcases best practices in building cross platform applications with the ArcGIS Runtime SDK for .NET. The suite is built using Xamarin Forms and WPF. Comprised of four applications for four separate platforms, it is designed with maximized code sharing in mind.
