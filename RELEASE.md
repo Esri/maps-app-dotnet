@@ -26,4 +26,4 @@
 
 ## 1.0.1
 
-- Comprehensive [app documentation](/documentation/index.md) from the ArcGIS for Developers site.
+- Comprehensive [app documentation](/docs/README.md) from the ArcGIS for Developers site.
