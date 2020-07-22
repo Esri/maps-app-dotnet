@@ -2,6 +2,25 @@
 
 The Maps App for .NET shows how a suite of applications can be built around the ArcGIS Platform using the ArcGIS Runtime SDK for .NET and a combination of WPF and the cross-platform framework Xamarin Forms. It demonstrates best practices around some simple but key functionality of the ArcGIS Runtime. You can use the Maps App as is, or extend it to meet your specific needs. Detailed documentation about the app and its architecture can be found on the [developers website](https://developers.arcgis.com/example-apps/maps-app-dotnet/?utm_source=github&utm_medium=web&utm_campaign=example_apps_maps_app_dotnet).
 
+<!-- MDTOC maxdepth:6 firsth1:0 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+- [Features](#features)   
+- [Detailed Documentation](#detailed-documentation)   
+- [Get Started](#get-started)   
+   - [Fork the repo](#fork-the-repo)   
+   - [Clone the repo](#clone-the-repo)   
+      - [Command line Git](#command-line-git)   
+      - [Configuring a Remote for a Fork](#configuring-a-remote-for-a-fork)   
+- [Requirements](#requirements)   
+- [Resources](#resources)   
+- [Issues](#issues)   
+- [Contributing](#contributing)   
+- [MDTOC](#mdtoc)   
+- [Licensing](#licensing)   
+
+<!-- /MDTOC -->
+---
+
 ## Features
 
 - Place Search
@@ -12,6 +31,10 @@ The Maps App for .NET shows how a suite of applications can be built around the 
 - Open Web Maps
 - Work with ArcGIS Online or an on-premise ArcGIS Portal
 - OAuth2 authentication
+
+## Detailed Documentation
+
+Read the [docs](./docs/README.md) for a detailed explanation of the application, including its architecture and how it leverages the ArcGIS platform, as well as how you can begin using the app right away.
 
 ## Get Started
 
@@ -45,25 +68,25 @@ If there are changes made in the Original repository, you can sync the fork to k
 3. ```git checkout master``` to checkout your fork's local master branch.
 4. ```git merge upstream/master``` to sync your local master' branch with upstream/master. Note: Your local changes will be retained and your fork's master branch will be in sync with the upstream repository.
 
-### Requirements
+## Requirements
 
 - [Visual Studio 2017 or higher](https://www.visualstudio.com/downloads/)
     - Visual Studio 2019 is required if you want to use the .NET Core version of the WPF app.
 - [.NET Framework 4.6.1 or higher](https://www.microsoft.com/net/download)
 - [ArcGIS Runtime SDK for .NET 100.8 or higher](https://developers.arcgis.com/net/)
 
-### Resources
+## Resources
 
 - [ArcGIS Runtime SDK for .NET Developers Site](https://developers.arcgis.com/net/)
 - [ArcGIS Developer Blog](http://blogs.esri.com/esri/arcgis/category/developer/)
 - [twitter@ArcGISRuntime](https://twitter.com/ArcGISRuntime)
 - [twitter@esri](http://twitter.com/esri)
 
-### Issues
+## Issues
 
 Find a bug or want to request a new feature enhancement? Let us know by submitting an issue.
 
-### Contributing
+## Contributing
 
 Anyone and everyone is welcome to [contribute](https://github.com/Esri/maps-app-dotnet/blob/master/CONTRIBUTING.md). We do accept pull requests.
 
@@ -72,7 +95,11 @@ Anyone and everyone is welcome to [contribute](https://github.com/Esri/maps-app-
 3. Contribute code
 4. Improve documentation
 
-### Licensing
+## MDTOC
+
+Generation of this and other document's table of contents in this repository was performed using the [MDTOC package for Atom](https://atom.io/packages/atom-mdtoc).
+
+## Licensing
 
 Copyright 2019 Esri
 
