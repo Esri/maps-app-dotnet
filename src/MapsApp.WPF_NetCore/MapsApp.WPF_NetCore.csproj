@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF</RootNamespace>
+    <AssemblyName>MapsApp</AssemblyName>
+    <UseWPF>true</UseWPF>
+    <DefineConstants>WPF;NET_CORE</DefineConstants>
+    <DefaultItemExcludes>$(DefaultItemExcludes);netframework\**;obj\**;netcore\**;out\**;bin\**</DefaultItemExcludes>
+    <ApplicationIcon>..\MapsApp.WPF_NetFramework\Images\ArcGIS_Open_Source_Apps.ico</ApplicationIcon>
+    <ReleaseVersion>1.0.5</ReleaseVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\MapsApp.WPF_NetFramework\**\*.cs" />
+    <Page Include="..\MapsApp.WPF_NetFramework\**\*.xaml" />
+    <Resource Include="..\MapsApp.WPF_NetFramework\**\*.png" />
+    <Compile Remove="..\MapsApp.WPF_NetFramework\obj\Debug\**" />
+    <Resource Remove="..\MapsApp.WPF_NetFramework\bin\Debug\Images\**" />
+    <Compile Remove="..\MapsApp.WPF_NetFramework\Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="..\MapsApp.WPF_NetFramework\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="..\MapsApp.WPF_NetFramework\App.xaml" />
+    <!-- Apparently needed for App.xaml to still appear in solution explorer; without it App.xaml is hidden. -->
+    <None Include="..\MapsApp.WPF_NetFramework\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Esri.ArcGISRuntime.WPF" Version="100.9.0">
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.19">
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="..\MapsApp.Shared\MapsApp.Shared.projitems" Label="Shared" />
+
+</Project>

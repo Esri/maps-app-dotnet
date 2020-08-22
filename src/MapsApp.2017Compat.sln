@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapsApp.iOS", "MapsApp.iOS\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapsApp.UWP", "MapsApp.UWP\MapsApp.UWP.csproj", "{CA6A13A6-3A29-4A34-AF46-27F120F676CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapsApp.WPF", "MapsApp.WPF\MapsApp.WPF.csproj", "{8F028D45-5444-45E1-9323-1CFD1BD66D6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapsApp.WPF (.NET Framework)", "MapsApp.WPF_NetFramework\MapsApp.WPF_NetFramework.csproj", "{8F028D45-5444-45E1-9323-1CFD1BD66D6F}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "MapsApp.Shared", "MapsApp.Shared\MapsApp.Shared.shproj", "{2C2A9421-C9C7-4A51-AAE3-216F7E05D8D8}"
 EndProject

@@ -3,6 +3,8 @@
 ## 1.0.5
 
 - Updated to ArcGIS Runtime 100.9.
+- Updated to Xamarin.Forms 4.8.0
+- Moved the WPF (.NET Core) project to a separate folder to prevent possible build issues
 
 ## 1.0.4
 
