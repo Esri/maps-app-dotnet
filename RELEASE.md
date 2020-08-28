@@ -1,9 +1,15 @@
 # Release notes
 
+## 1.0.5
+
+- Updated to ArcGIS Runtime 100.9.
+- Updated to Xamarin.Forms 4.8.0.
+- Moved the WPF (.NET Core) project to a separate folder to prevent possible build issues.
+
 ## 1.0.4
 
-- Adds doc table of contents to root README.md and docs/index.md
-- Renames docs/index.md to [docs/README.md](/docs/README.md)
+- Adds doc table of contents to root README.md and docs/index.md.
+- Renames docs/index.md to [docs/README.md](/docs/README.md).
 
 ## 1.0.3
 
