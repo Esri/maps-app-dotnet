@@ -1,5 +1,11 @@
 # Release notes
 
+## 1.0.6
+
+- Added support for dark mode for Xamarin.Forms.
+- Updated to latest Xamarin.Forms release.
+- Migrated the Android project to use AndroidX and build using the latest Android SDK.
+
 ## 1.0.5
 
 - Updated to ArcGIS Runtime 100.9.
