@@ -13,6 +13,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DependencyProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DependencyPropertyChangedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PropertyMetadata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Themes\ControlStyles.xaml.cs">
+      <DependentUpon>ControlStyles.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Themes\DarkTheme.xaml.cs">
+      <DependentUpon>DarkTheme.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Themes\LightTheme.xaml.cs">
+      <DependentUpon>LightTheme.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
@@ -45,5 +57,23 @@
       <DependentUpon>ErrorDialog.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Themes\LightTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Themes\DarkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Themes\ControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

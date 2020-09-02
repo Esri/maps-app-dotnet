@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Themes.ControlStyles"
+                    xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Style TargetType="SearchBar">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="PlaceholderColor" Value="{DynamicResource PlaceholderColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ForegroundColor}" />
+        <Setter Property="CancelButtonColor" Value="{DynamicResource AccentColor}" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+    <Style TargetType="BoxView">
+        <Setter Property="Color" Value="{DynamicResource BackgroundColor}" />
+    </Style>
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+    <Style TargetType="Entry">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="TextColor" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+    <Style TargetType="ListView">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+    </Style>
+    <Style TargetType="ImageCell">
+        <Setter Property="TextColor" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+    <Style TargetType="TextCell">
+        <Setter Property="TextColor" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+    <Style TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+    </Style>
+    <Style TargetType="StackLayout">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+    </Style>
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+    </Style>
+</ResourceDictionary>

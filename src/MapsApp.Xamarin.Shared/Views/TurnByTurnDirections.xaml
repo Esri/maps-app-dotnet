@@ -12,7 +12,7 @@
     <Grid>
         <!-- List of basemaps for the user to select from -->
         <ListView x:Name="DirectionsListView" ItemsSource="{Binding DirectionManeuvers}"
-            CachingStrategy="RecycleElement">
+                  CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" 
