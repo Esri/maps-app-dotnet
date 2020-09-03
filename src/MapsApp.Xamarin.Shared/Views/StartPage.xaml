@@ -312,7 +312,7 @@
                     TextColor="{DynamicResource AccentColor}" 
                     Clicked="NavigatedView_CloseClicked" />
             <!-- Loading indicator to show when other lists aren't ready yet -->
-            <ActivityIndicator Grid.Row="1" IsRunning="True" />
+            <ActivityIndicator Grid.Row="1" IsRunning="True" HorizontalOptions="Center" VerticalOptions="Center" />
             <!-- List of basemaps for the user to select from -->
             <ListView x:Name="BasemapListView" 
                       BindingContext="{StaticResource BasemapsViewModel}"
