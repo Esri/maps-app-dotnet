@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Support.V4.App;
+using Views = Android.Views;
 
 namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
 {
@@ -21,6 +22,11 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
 			ToolbarResource = Resource.Layout.Toolbar;
 
 			base.OnCreate (bundle);
+
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Kitkat)
+            {
+                Window.SetFlags(Views.WindowManagerFlags.LayoutNoLimits, Views.WindowManagerFlags.LayoutNoLimits);
+            }
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
             LoadApplication (new Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.App ());
