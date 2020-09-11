@@ -11,7 +11,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Label x:Name="ErrorMessageLabel" Grid.Row="0" Margin="5" FontSize="Default" FontAttributes="Bold"/>
-                <Button Text="OK" TextColor="{DynamicResource ForegroundColor}" Clicked="ClearErrorMessage" Grid.Row="1" Margin="15,5,15,5" BackgroundColor="{DynamicResource AccentColor}"/>
+                <Button Text="OK" TextColor="{DynamicResource AccentColor}" Clicked="ClearErrorMessage" Grid.Row="1" Margin="15,5,15,5" />
                 <Label Text="Show StackTrace" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="2" Margin="5,5,0,5"/>
                 <Switch x:Name="StackTraceVisibilitySwitch" IsToggled="False" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="2" Margin="0,5,5,5" OnColor="{DynamicResource AccentColor}"/>
             </Grid>
