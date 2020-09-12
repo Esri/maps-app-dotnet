@@ -448,6 +448,11 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
             this.SafeAreaBottom.Height = new GridLength(safeInsets.Bottom);
             this.SafeAreaLeft.Width = new GridLength(safeInsets.Left);
             this.SafeAreaRight.Width = new GridLength(safeInsets.Right);
+            
+            TopShade.Color = System.Drawing.Color.FromArgb(80, 0, 0, 0);
+
+            // Simulates extending the attribution into the unsafe area.
+            BottomShade.Color = System.Drawing.Color.FromArgb(166, 255, 255, 255);
 #elif __ANDROID__
             if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
             {
@@ -475,7 +480,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 
                     // Set the shade color
                     TopShade.Color = System.Drawing.Color.FromArgb(100, 0, 0, 0);
-                    BottomShade.Color = System.Drawing.Color.FromArgb(50, 0, 0, 0);
+                    BottomShade.Color = System.Drawing.Color.FromArgb(166, 255, 255, 255);
                 }
                 catch (NullReferenceException ex)
                 {
