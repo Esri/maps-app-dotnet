@@ -23,7 +23,8 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android
 
 			base.OnCreate (bundle);
 
-            if (Build.VERSION.SdkInt >= BuildVersionCodes.Kitkat)
+            // UI code needed to make cutouts, notches, etc. work is only available on P and greater.
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
             {
                 Window.SetFlags(Views.WindowManagerFlags.LayoutNoLimits, Views.WindowManagerFlags.LayoutNoLimits);
             }
