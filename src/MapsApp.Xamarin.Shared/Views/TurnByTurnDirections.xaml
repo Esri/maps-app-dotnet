@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.TurnByTurnDirections"
-             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Converters"
+             xmlns:formsConverters="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers"
              Title="Directions">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <converters:DirectionManeuverToImagePathConverter x:Key="DirectionManeuverToImagePathConverter"/>
+            <formsConverters:DirectionManeuverToFontIconImageSourceConverter x:Key="DirectionConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
@@ -15,7 +15,7 @@
                   CachingStrategy="RecycleElement">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" 
+                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionConverter}}" 
                                Text="{Binding DirectionText}" />
                 </DataTemplate>
             </ListView.ItemTemplate>

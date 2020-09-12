@@ -210,12 +210,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="BearLeft.png" />
     <Content Include="BearRight.png" />
-    <Content Include="choosebasemap.png" />
     <Content Include="chooseusermap.png" />
-    <Content Include="close.png" />
     <Content Include="compass.png" />
-    <Content Include="currentlocation.png" />
-    <Content Include="directions.png" />
     <Content Include="Depart.png" />
     <Content Include="Stop.png" />
     <Content Include="endpin.png" />
@@ -225,9 +221,7 @@
     <Content Include="HighwayChange.png" />
     <Content Include="HighwayExit.png" />
     <Content Include="HighwayMerge.png" />
-    <Content Include="directionmaneuvers.png" />
     <Content Include="sign_in_out.png" />
-    <Content Include="menu.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="RampLeft.png" />
     <Content Include="RampRight.png" />

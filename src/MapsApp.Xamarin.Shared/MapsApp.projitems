@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ChangeVisibilityAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DependencyProperty.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DependencyPropertyChangedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DirectionManeuverToFontIconImageSourceConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IconFont.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PropertyMetadata.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Themes\ControlStyles.xaml.cs">

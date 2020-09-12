@@ -1,21 +1,25 @@
 {
   "images": [
     {
+      "appearances": [],
       "scale": "1x",
       "idiom": "universal",
       "filename": "RoundAbout.png"
     },
     {
+      "appearances": [],
       "scale": "2x",
       "idiom": "universal",
       "filename": "RoundAbout@2x.png"
     },
     {
+      "appearances": [],
       "scale": "3x",
       "idiom": "universal",
       "filename": "RoundAbout@3x.png"
     },
     {
+      "appearances": [],
       "idiom": "universal"
     }
   ],
