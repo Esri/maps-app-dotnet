@@ -16,6 +16,10 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+#if __ANDROID__
+using AndroidOS = Android.OS;
+using AndroidViews = Android.Views;
+#endif
 
 namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 {
@@ -26,5 +30,30 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 		{
 			InitializeComponent ();
 		}
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            #if __ANDROID__
+            if (AndroidOS.Build.VERSION.SdkInt >= AndroidOS.BuildVersionCodes.P)
+            {
+                // Xamarin.Forms navigation page doesn't handle safe areas, so revert to default Window behavior
+                Android.MainActivity.Instance.Window.ClearFlags(AndroidViews.WindowManagerFlags.LayoutNoLimits);
+            }
+            #endif
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            #if __ANDROID__
+            if (AndroidOS.Build.VERSION.SdkInt >= AndroidOS.BuildVersionCodes.P)
+            {
+                // Restore window behavior
+                Android.MainActivity.Instance.Window.SetFlags(AndroidViews.WindowManagerFlags.LayoutNoLimits, AndroidViews.WindowManagerFlags.LayoutNoLimits);
+            }
+            #endif
+
+        }
+    }
 }

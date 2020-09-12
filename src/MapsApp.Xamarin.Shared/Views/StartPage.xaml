@@ -426,10 +426,10 @@
                      Grid.Row="4">
          <!--  GPS Button  -->
         <Button 
-                Margin="0,0,20,20"
+                Margin="0,0,20,25"
                 BindingContext="{Binding Source={StaticResource MapViewModel}}"
                 Command="{Binding MoveToCurrentLocationCommand}"
-                CornerRadius="30"
+                BackgroundColor="Transparent"
                 HorizontalOptions="End"
                 VerticalOptions="End">
             <Button.ImageSource>
@@ -441,7 +441,7 @@
         </Button>
         <!--  Search Result Banner  -->
         <StackLayout 
-                     Margin="10,0,10,20"
+                     Margin="10,0,10,25"
                      BindingContext="{Binding Source={StaticResource GeocodeViewModel}}"
                      HorizontalOptions="FillAndExpand"
                      IsVisible="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}"

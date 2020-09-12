@@ -33,9 +33,10 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers
                 valueString = valueString.Substring(4);
             }
 
+            // The icon font helpfully uses the same names as the direction manuever titles for navigation icons
             if(typeof(IconFont).GetFields().FirstOrDefault(field => field.Name == valueString) is FieldInfo fi)
             {
-                source.Glyph = fi.GetValue(null)?.ToString() ?? "";
+                source.Glyph = fi.GetValue(null).ToString();
             }
 
             if (source.Glyph != null)

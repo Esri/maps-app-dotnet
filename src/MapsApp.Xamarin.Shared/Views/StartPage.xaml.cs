@@ -465,8 +465,8 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
                     var density = MainActivity.Instance.Resources.DisplayMetrics.Density;
 
                     var top = Math.Max(gestures?.Top ?? 0, Math.Max(cutout?.SafeInsetTop ?? 0, topPlus)) / density;
-                    var left = cutout.SafeInsetLeft / density;
-                    var right = cutout.SafeInsetRight / density;
+                    var left = cutout?.SafeInsetLeft ?? 0 / density;
+                    var right = cutout?.SafeInsetRight ?? 0 / density;
                     var bottom = Math.Max(gestures?.Bottom ?? 0, Math.Max(cutout?.SafeInsetBottom ?? 0, bottomPlus)) / density;
 
                     // Status bar is 24 dips by default; doing this in absence of API to easily get status bar height.
@@ -482,7 +482,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
                     TopShade.Color = System.Drawing.Color.FromArgb(100, 0, 0, 0);
                     BottomShade.Color = System.Drawing.Color.FromArgb(166, 255, 255, 255);
                 }
-                catch (NullReferenceException ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.StackTrace);
                 }
