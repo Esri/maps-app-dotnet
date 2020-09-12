@@ -2,6 +2,7 @@
 using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Themes;
 using Xamarin.Forms;
 
+[assembly: ExportFont("calcite-ui-icons-24.ttf", Alias = "CalciteFontIcon")]
 namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 {
     public partial class App : Application

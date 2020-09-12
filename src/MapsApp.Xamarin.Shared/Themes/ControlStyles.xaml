@@ -42,4 +42,9 @@
         <Setter Property="HeightRequest" Value="50" />
         <Setter Property="WidthRequest" Value="50" />
     </Style>
+    <OnPlatform x:Key="IconFont" x:TypeArguments="x:String">
+        <On Platform="iOS" Value="CalciteFontIcon" />
+        <On Platform="Android" Value="CalciteFontIcon" />
+        <On Platform="UWP" Value="Assets/Fonts/calcite-ui-icons-24.ttf#calcite-ui-icons-24" />
+    </OnPlatform>
 </ResourceDictionary>
