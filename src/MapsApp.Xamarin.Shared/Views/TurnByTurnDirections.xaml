@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.TurnByTurnDirections"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.TurnByTurnDirections"
              xmlns:formsConverters="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers"
              Title="Directions">
     <ContentPage.Resources>
@@ -10,13 +10,15 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
-        <!-- List of basemaps for the user to select from -->
-        <ListView x:Name="DirectionsListView" ItemsSource="{Binding DirectionManeuvers}"
-                  CachingStrategy="RecycleElement">
+        <!--  List of basemaps for the user to select from  -->
+        <ListView x:Name="DirectionsListView"
+                  CachingStrategy="RecycleElement"
+                  ItemsSource="{Binding DirectionManeuvers}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionConverter}}" 
-                               Text="{Binding DirectionText}" />
+                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionConverter}}"
+                               Text="{Binding DirectionText}"
+                               TextColor="{DynamicResource ForegroundColor}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

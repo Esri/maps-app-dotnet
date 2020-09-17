@@ -82,7 +82,7 @@
         <BoxView x:Name="TopShade"
                  Grid.Row="0"
                  Grid.ColumnSpan="4"
-                 Color="Transparent" />
+                 Color="#64000000" />
 
         <!--  Activity indicator for long running operations  -->
         <StackLayout Grid.Row="0"
@@ -106,27 +106,25 @@
             </StackLayout>
         </StackLayout>
 
-        <!--  Menu Button  -->
+        <!--  Menu ImageButton  -->
         <BoxView Grid.Row="1"
                  Grid.Column="1"
                  Margin="10,10,0,0"
                  HorizontalOptions="FillAndExpand"
                  VerticalOptions="FillAndExpand" />
-        <Button Grid.Row="1"
-                Grid.Column="1"
-                Margin="10,10,0,0"
-                Clicked="OpenCloseSettings"
-                HorizontalOptions="Center"
-                VerticalOptions="Center">
-            <Button.ImageSource>
+        <ImageButton Grid.Row="1"
+                     Grid.Column="1"
+                     Margin="10,10,0,0"
+                     Clicked="OpenCloseSettings"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <ImageButton.Source>
                 <FontImageSource FontFamily="{StaticResource IconFont}"
                                  Glyph="{x:Static helpers:IconFont.Hamburger}"
                                  Size="30"
                                  Color="{DynamicResource AccentColor}" />
-            </Button.ImageSource>
-        </Button>
-
-        
+            </ImageButton.Source>
+        </ImageButton>
 
         <!--  Error message alerts  -->
         <StackLayout Grid.Row="1"
@@ -152,7 +150,8 @@
         <!--  Search Panel  -->
         <BoxView Grid.Row="1"
                  Grid.Column="2"
-                 Margin="0,10,10,0" BackgroundColor="Transparent"
+                 Margin="0,10,10,0"
+                 BackgroundColor="Transparent"
                  HorizontalOptions="FillAndExpand" />
         <SearchBar x:Name="AddressSearchBar"
                    Grid.Row="1"
@@ -181,8 +180,11 @@
             </SearchBar.Triggers>
         </SearchBar>
         <!--  Routing Panel  -->
-        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
-              Margin="10" BindingContext="{StaticResource RouteViewModel}"
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+              Grid.ColumnSpan="2"
+              Margin="10"
+              BindingContext="{StaticResource RouteViewModel}"
               IsVisible="{Binding ToPlace, Converter={StaticResource NullToVisibilityConverter}}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -194,15 +196,15 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Image Grid.Column="0"
-                           Margin="5"
-                           HeightRequest="40"
-                           HorizontalOptions="Start"
-                           Source="startpin.png"
-                           VerticalOptions="Center" />
+                   Margin="5"
+                   HeightRequest="40"
+                   HorizontalOptions="Start"
+                   Source="startpin.png"
+                   VerticalOptions="Center" />
             <Entry x:Name="FromLocationTextBox"
-                           Grid.Column="1"
-                           Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource FromGeocodeViewModel}}"
-                           TextChanged="Search_Changed">
+                   Grid.Column="1"
+                   Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource FromGeocodeViewModel}}"
+                   TextChanged="Search_Changed">
                 <Entry.Triggers>
                     <EventTrigger Event="Focused">
                         <helpers:ChangeVisibilityAction TargetName="FromLocationSuggestionsList" />
@@ -212,27 +214,29 @@
                     </EventTrigger>
                 </Entry.Triggers>
             </Entry>
-            <Button Grid.Column="2"
-                            Margin="5"
-                            Command="{Binding ClearRouteCommand}"
-                            HorizontalOptions="End"
-                            VerticalOptions="Start">
-                <Button.ImageSource>
+            <ImageButton Grid.Column="2"
+                         Margin="5"
+                         Command="{Binding ClearRouteCommand}"
+                         HorizontalOptions="End"
+                         VerticalOptions="Start">
+                <ImageButton.Source>
                     <FontImageSource FontFamily="{StaticResource IconFont}"
-                                             Glyph="{x:Static helpers:IconFont.x}"
-                                             Color="{DynamicResource AccentColor}" />
-                </Button.ImageSource>
-            </Button>
-            <Image Grid.Column="0" Grid.Row="1"
-                           Margin="5"
-                           HeightRequest="40"
-                           HorizontalOptions="Start"
-                           Source="endpin.png"
-                           VerticalOptions="Center" />
+                                     Glyph="{x:Static helpers:IconFont.x}"
+                                     Color="{DynamicResource AccentColor}" />
+                </ImageButton.Source>
+            </ImageButton>
+            <Image Grid.Row="1"
+                   Grid.Column="0"
+                   Margin="5"
+                   HeightRequest="40"
+                   HorizontalOptions="Start"
+                   Source="endpin.png"
+                   VerticalOptions="Center" />
             <Entry x:Name="ToLocationTextBox"
-                           Grid.Column="1" Grid.Row="1"
-                           Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource ToGeocodeViewModel}}"
-                           TextChanged="Search_Changed">
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Text="{Binding SearchText, Mode=TwoWay, Source={StaticResource ToGeocodeViewModel}}"
+                   TextChanged="Search_Changed">
                 <Entry.Triggers>
                     <EventTrigger Event="Focused">
                         <helpers:ChangeVisibilityAction TargetName="ToLocationSuggestionsList" />
@@ -242,47 +246,53 @@
                     </EventTrigger>
                 </Entry.Triggers>
             </Entry>
-            <Button Grid.Column="2" Grid.Row="1"
-                            Margin="5"
-                            Clicked="LoadDirectionsControl"
-                            HorizontalOptions="End"
-                            VerticalOptions="Start">
-                <Button.ImageSource>
+            <ImageButton Grid.Row="1"
+                         Grid.Column="2"
+                         Margin="5"
+                         Clicked="LoadDirectionsControl"
+                         HorizontalOptions="End"
+                         VerticalOptions="Start">
+                <ImageButton.Source>
                     <FontImageSource FontFamily="{StaticResource IconFont}"
-                                             Glyph="{x:Static helpers:IconFont.ForkLeft}"
-                                             Color="{DynamicResource AccentColor}" />
-                </Button.ImageSource>
-            </Button>
+                                     Glyph="{x:Static helpers:IconFont.ForkLeft}"
+                                     Color="{DynamicResource AccentColor}" />
+                </ImageButton.Source>
+            </ImageButton>
 
         </Grid>
 
         <!--  Suggestions box for From location  -->
         <ListView x:Name="FromLocationSuggestionsList"
-                      Margin="0,0,10,0" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1"
-                      BindingContext="{StaticResource FromGeocodeViewModel}"
-                      IsVisible="False"
-                      ItemsSource="{Binding SuggestionsList}"
-                      SelectedItem="{Binding SelectedSearchItem}"
-                      SeparatorVisibility="None">
+                  Grid.Row="2"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2"
+                  Margin="0,0,10,0"
+                  BindingContext="{StaticResource FromGeocodeViewModel}"
+                  IsVisible="False"
+                  ItemsSource="{Binding SuggestionsList}"
+                  SelectedItem="{Binding SelectedSearchItem}"
+                  SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding}" />
+                    <TextCell Text="{Binding}" TextColor="{DynamicResource ForegroundColor}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
         <!--  Suggestions box for To location  -->
         <ListView x:Name="ToLocationSuggestionsList"
-                      Margin="0,0,10,0"
-                      Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1"
-                      BindingContext="{StaticResource ToGeocodeViewModel}"
-                      IsVisible="False"
-                      ItemsSource="{Binding SuggestionsList}"
-                      SelectedItem="{Binding SelectedSearchItem}"
-                      SeparatorVisibility="None">
+                  Grid.Row="2"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="2"
+                  Margin="0,0,10,0"
+                  BindingContext="{StaticResource ToGeocodeViewModel}"
+                  IsVisible="False"
+                  ItemsSource="{Binding SuggestionsList}"
+                  SelectedItem="{Binding SelectedSearchItem}"
+                  SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding}" />
+                    <TextCell Text="{Binding}" TextColor="{DynamicResource ForegroundColor}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
@@ -305,17 +315,17 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0"
-                        Clicked="OpenCloseSettings"
-                        HorizontalOptions="End"
-                        VerticalOptions="Start">
-                    <Button.ImageSource>
+                <ImageButton Grid.Row="0"
+                             Clicked="OpenCloseSettings"
+                             HorizontalOptions="End"
+                             VerticalOptions="Start">
+                    <ImageButton.Source>
                         <FontImageSource FontFamily="{StaticResource IconFont}"
                                          Glyph="{x:Static helpers:IconFont.x}"
                                          Size="30"
                                          Color="{DynamicResource AccentColor}" />
-                    </Button.ImageSource>
-                </Button>
+                    </ImageButton.Source>
+                </ImageButton>
                 <StackLayout Grid.Row="1"
                              IsVisible="{Binding AuthenticatedUser, Converter={StaticResource NullToVisibilityConverter}}"
                              Orientation="Vertical">
@@ -398,16 +408,16 @@
                   VerticalOptions="Center">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding}" />
+                    <TextCell Text="{Binding}" TextColor="{DynamicResource ForegroundColor}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <!--  Compass Button  -->
+        <!--  Compass ImageButton  -->
         <Image x:Name="CompassImage"
                Grid.Row="2"
                Grid.Column="2"
-               Margin="0,20,20,0"
+               Margin="0,20,20,5"
                BindingContext="{x:Reference MapView}"
                HorizontalOptions="End"
                IsVisible="{Binding MapRotation, Converter={StaticResource NumberToVisibilityConverter}}"
@@ -418,71 +428,70 @@
                 <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ResetMapRotation" />
             </Image.GestureRecognizers>
         </Image>
-        
-        <!-- Bottom Content-->
-        <StackLayout Orientation="Vertical"
-                     Grid.Column="1" Grid.ColumnSpan="2"
+
+        <!--  Bottom Content  -->
+        <StackLayout Grid.Row="4"
+                     Grid.Column="1"
+                     Grid.ColumnSpan="2"
+                     Margin="0,0,0,20"
                      BackgroundColor="Transparent"
-                     Grid.Row="4">
-         <!--  GPS Button  -->
-        <Button 
-                Margin="0,0,20,25"
-                BindingContext="{Binding Source={StaticResource MapViewModel}}"
-                Command="{Binding MoveToCurrentLocationCommand}"
-                BackgroundColor="Transparent"
-                HorizontalOptions="End"
-                VerticalOptions="End">
-            <Button.ImageSource>
-                <FontImageSource FontFamily="{StaticResource IconFont}"
-                                 Glyph="{x:Static helpers:IconFont.GpsOnF}"
-                                 Size="30"
-                                 Color="{DynamicResource AccentColor}" />
-            </Button.ImageSource>
-        </Button>
-        <!--  Search Result Banner  -->
-        <StackLayout 
-                     Margin="10,0,10,25"
-                     BindingContext="{Binding Source={StaticResource GeocodeViewModel}}"
-                     HorizontalOptions="FillAndExpand"
-                     IsVisible="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}"
-                     Orientation="Horizontal"
-                     VerticalOptions="End">
-
-            <Image x:Name="PinImage"
-                   Margin="5,5,0,5"
-                   HorizontalOptions="Start"
-                   Source="endpin.png"
-                   VerticalOptions="Center" />
-
-            <Label FontSize="Medium"
-                   HorizontalOptions="FillAndExpand"
-                   Text="{Binding Place.Label}"
-                   VerticalOptions="Center" />
-            <Button Clicked="ShowRoutingPanel"
-                    HorizontalOptions="End"
-                    VerticalOptions="Center">
-                <Button.ImageSource>
+                     Orientation="Vertical">
+            <!--  GPS ImageButton  -->
+            <ImageButton Margin="0,0,20,5"
+                         BindingContext="{Binding Source={StaticResource MapViewModel}}"
+                         Command="{Binding MoveToCurrentLocationCommand}"
+                         HorizontalOptions="End"
+                         VerticalOptions="End">
+                <ImageButton.Source>
                     <FontImageSource FontFamily="{StaticResource IconFont}"
-                                     Glyph="{x:Static helpers:IconFont.RoadSign}"
+                                     Glyph="{x:Static helpers:IconFont.GpsOnF}"
                                      Size="30"
                                      Color="{DynamicResource AccentColor}" />
-                </Button.ImageSource>
-            </Button>
-            <Button Command="{Binding CancelLocationSearchCommand}"
-                    HorizontalOptions="End"
-                    VerticalOptions="Center">
-                <Button.ImageSource>
-                    <FontImageSource FontFamily="{StaticResource IconFont}"
-                                     Glyph="{x:Static helpers:IconFont.x}"
-                                     Size="30"
-                                     Color="{DynamicResource AccentColor}" />
-                </Button.ImageSource>
-            </Button>
+                </ImageButton.Source>
+            </ImageButton>
+            <!--  Search Result Banner  -->
+            <StackLayout Margin="10,15,10,5"
+                         BindingContext="{Binding Source={StaticResource GeocodeViewModel}}"
+                         HorizontalOptions="FillAndExpand"
+                         IsVisible="{Binding Place, Converter={StaticResource NullToVisibilityConverter}}"
+                         Orientation="Horizontal"
+                         VerticalOptions="End">
+
+                <Image x:Name="PinImage"
+                       Margin="5,5,0,5"
+                       HorizontalOptions="Start"
+                       Source="endpin.png"
+                       VerticalOptions="Center" />
+
+                <Label FontSize="Medium"
+                       HorizontalOptions="FillAndExpand"
+                       Text="{Binding Place.Label}"
+                       VerticalOptions="Center" />
+                <ImageButton Clicked="ShowRoutingPanel"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="{StaticResource IconFont}"
+                                         Glyph="{x:Static helpers:IconFont.RoadSign}"
+                                         Size="30"
+                                         Color="{DynamicResource AccentColor}" />
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton Command="{Binding CancelLocationSearchCommand}"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="{StaticResource IconFont}"
+                                         Glyph="{x:Static helpers:IconFont.x}"
+                                         Size="30"
+                                         Color="{DynamicResource AccentColor}" />
+                    </ImageButton.Source>
+                </ImageButton>
+            </StackLayout>
+
+
         </StackLayout>
 
-   
-        </StackLayout>
-        
         <Grid x:Name="NavigationContainerGrid"
               Grid.Row="1"
               Grid.RowSpan="4"
@@ -581,6 +590,6 @@
         <BoxView x:Name="BottomShade"
                  Grid.Row="5"
                  Grid.ColumnSpan="4"
-                 Color="Transparent" />
+                 Color="#64000000" />
     </Grid>
 </ContentPage>

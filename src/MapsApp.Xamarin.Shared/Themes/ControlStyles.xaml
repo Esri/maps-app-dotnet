@@ -23,12 +23,6 @@
     <Style TargetType="ListView">
         <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
     </Style>
-    <Style TargetType="ImageCell">
-        <Setter Property="TextColor" Value="{DynamicResource ForegroundColor}" />
-    </Style>
-    <Style TargetType="TextCell">
-        <Setter Property="TextColor" Value="{DynamicResource ForegroundColor}" />
-    </Style>
     <Style TargetType="Grid">
         <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
     </Style>
@@ -37,10 +31,16 @@
     </Style>
     <Style TargetType="Button">
         <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundColor}" />
+        <Setter Property="Padding" Value="0" />
     </Style>
     <Style TargetType="ActivityIndicator">
         <Setter Property="HeightRequest" Value="50" />
         <Setter Property="WidthRequest" Value="50" />
+    </Style>
+    <Style TargetType="ImageButton">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HeightRequest" Value="30" />
+        <Setter Property="WidthRequest" Value="30" />
     </Style>
     <OnPlatform x:Key="IconFont" x:TypeArguments="x:String">
         <On Platform="iOS" Value="CalciteFontIcon" />

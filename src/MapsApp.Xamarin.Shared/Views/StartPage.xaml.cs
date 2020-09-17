@@ -467,20 +467,17 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
                     var top = Math.Max(gestures?.Top ?? 0, Math.Max(cutout?.SafeInsetTop ?? 0, topPlus)) / density;
                     var left = cutout?.SafeInsetLeft ?? 0 / density;
                     var right = cutout?.SafeInsetRight ?? 0 / density;
-                    var bottom = Math.Max(gestures?.Bottom ?? 0, Math.Max(cutout?.SafeInsetBottom ?? 0, bottomPlus)) / density;
+                    var bottom = Math.Max(cutout?.SafeInsetBottom ?? 0, bottomPlus) / density;
 
                     // Status bar is 24 dips by default; doing this in absence of API to easily get status bar height.
                     top = Math.Max(top, 24);
 
-                    SafeAreaTop.Height = new GridLength(top);
-                    SafeAreaBottom.Height = new GridLength(bottom);
+                    // Need to include existing values because this method is called twice, with RootWindowInsets set to 0 on subsequent calls
+                    SafeAreaTop.Height = new GridLength(Math.Max(top, SafeAreaTop.Height.Value));
+                    SafeAreaBottom.Height = new GridLength(Math.Max(bottom, SafeAreaBottom.Height.Value));
                     SafeAreaLeft.Width = new GridLength(left);
                     SafeAreaRight.Width = new GridLength(right);
-                    MapView.ViewInsets = new Thickness(left, top, right, bottom);
-
-                    // Set the shade color
-                    TopShade.Color = System.Drawing.Color.FromArgb(100, 0, 0, 0);
-                    BottomShade.Color = System.Drawing.Color.FromArgb(166, 255, 255, 255);
+                    MapView.ViewInsets = new Thickness(left, SafeAreaTop.Height.Value, right, SafeAreaBottom.Height.Value);
                 }
                 catch (Exception ex)
                 {
