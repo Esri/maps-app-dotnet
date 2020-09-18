@@ -25,9 +25,14 @@ using System.Linq;
 using System.Reflection;
 using Xamarin.Forms;
 using System.Threading.Tasks;
-using System.Diagnostics;
-#if __ANDROID__
+#if __IOS__
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using Platforms = Xamarin.Forms.PlatformConfiguration;
+#elif __ANDROID__
 using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Android;
+using Views = Android.Views;
+using Android.OS;
+using AndroidA = Android;
 #endif
 
 namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
@@ -428,6 +433,57 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
         {
 #if __iOS__
             ((ListView)sender).ClearValue(ListView.SelectedItemProperty);
+#endif
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+#if __IOS__
+            On<Platforms.iOS>().SetUseSafeArea(false);
+            var safeInsets = On<Platforms.iOS>().SafeAreaInsets();
+            this.MapView.ViewInsets = safeInsets;
+            this.SafeAreaTop.Height = new GridLength(safeInsets.Top);
+            this.SafeAreaBottom.Height = new GridLength(safeInsets.Bottom);
+            this.SafeAreaLeft.Width = new GridLength(safeInsets.Left);
+            this.SafeAreaRight.Width = new GridLength(safeInsets.Right);
+            
+            TopShade.Color = System.Drawing.Color.FromArgb(80, 0, 0, 0);
+
+            // Simulates extending the attribution into the unsafe area.
+            BottomShade.Color = System.Drawing.Color.FromArgb(166, 255, 255, 255);
+#elif __ANDROID__
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
+            {
+                try
+                {
+                    var gestures = MainActivity.Instance.Window.DecorView.RootWindowInsets.MandatorySystemGestureInsets;
+                    var cutout = MainActivity.Instance.Window.DecorView.RootWindowInsets.DisplayCutout;
+                    var topPlus = MainActivity.Instance.Window.DecorView.RootWindowInsets.SystemWindowInsetTop;
+                    var bottomPlus = MainActivity.Instance.Window.DecorView.RootWindowInsets.SystemWindowInsetBottom;
+                    var density = MainActivity.Instance.Resources.DisplayMetrics.Density;
+
+                    var top = Math.Max(gestures?.Top ?? 0, Math.Max(cutout?.SafeInsetTop ?? 0, topPlus)) / density;
+                    var left = cutout?.SafeInsetLeft ?? 0 / density;
+                    var right = cutout?.SafeInsetRight ?? 0 / density;
+                    var bottom = Math.Max(cutout?.SafeInsetBottom ?? 0, bottomPlus) / density;
+
+                    // Status bar is 24 dips by default; doing this in absence of API to easily get status bar height.
+                    top = Math.Max(top, 24);
+
+                    // Need to include existing values because this method is called twice, with RootWindowInsets set to 0 on subsequent calls
+                    SafeAreaTop.Height = new GridLength(Math.Max(top, SafeAreaTop.Height.Value));
+                    SafeAreaBottom.Height = new GridLength(Math.Max(bottom, SafeAreaBottom.Height.Value));
+                    SafeAreaLeft.Width = new GridLength(left);
+                    SafeAreaRight.Width = new GridLength(right);
+                    MapView.ViewInsets = new Thickness(left, SafeAreaTop.Height.Value, right, SafeAreaBottom.Height.Value);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.StackTrace);
+                }
+            }
 #endif
         }
     }

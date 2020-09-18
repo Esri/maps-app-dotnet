@@ -1,5 +1,13 @@
 # Release notes
 
+## 1.0.6
+
+- Added support for dark mode for Xamarin.Forms.
+- Updated to latest Xamarin.Forms release.
+- Migrated the Android project to use AndroidX and build using the latest Android SDK.
+- Added robust support for devices with notches on Android and iOS.
+- Migrated from PNG icons to font-based icons for most graphics on UWP, Android, iOS.
+
 ## 1.0.5
 
 - Updated to ArcGIS Runtime 100.9.

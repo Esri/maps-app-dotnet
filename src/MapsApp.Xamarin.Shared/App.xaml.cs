@@ -1,17 +1,47 @@
 ﻿
+using Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Themes;
 using Xamarin.Forms;
 
+[assembly: ExportFont("calcite-ui-icons-24.ttf", Alias = "CalciteFontIcon")]
 namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin
 {
-
     public partial class App : Application
 	{
+        public static ResourceDictionary SelectedTheme = new ResourceDictionary();
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Xamarin.StartPage());
-            NavigationPage.SetHasNavigationBar(MainPage, false);
+            Resources.MergedDictionaries.Add(SelectedTheme);
+
+            SetAppTheme();
+
+            var navPage = new NavigationPage(new Xamarin.StartPage());
+            navPage.SetDynamicResource(NavigationPage.BarBackgroundColorProperty, "AccentColor");
+            NavigationPage.SetHasNavigationBar(navPage, false);
+
+            MainPage = navPage;
+
+            RequestedThemeChanged += (s, a) =>
+            {
+                SetAppTheme();
+            };
+        }
+
+        private void SetAppTheme()
+        {
+            SelectedTheme.MergedDictionaries.Clear();
+            switch (RequestedTheme)
+            {
+                case OSAppTheme.Dark:
+                    SelectedTheme.MergedDictionaries.Add(new DarkTheme());
+                    break;
+                case OSAppTheme.Light:
+                case OSAppTheme.Unspecified:
+                default:
+                    SelectedTheme.MergedDictionaries.Add(new LightTheme());
+                    break;
+            }
         }
 
 		protected override void OnStart ()

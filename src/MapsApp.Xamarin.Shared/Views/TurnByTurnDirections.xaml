@@ -1,22 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.TurnByTurnDirections"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.TurnByTurnDirections"
-             xmlns:converters="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Converters"
+             xmlns:formsConverters="clr-namespace:Esri.ArcGISRuntime.OpenSourceApps.MapsApp.Xamarin.Helpers"
              Title="Directions">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <converters:DirectionManeuverToImagePathConverter x:Key="DirectionManeuverToImagePathConverter"/>
+            <formsConverters:DirectionManeuverToFontIconImageSourceConverter x:Key="DirectionConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
-        <!-- List of basemaps for the user to select from -->
-        <ListView x:Name="DirectionsListView" ItemsSource="{Binding DirectionManeuvers}"
-            CachingStrategy="RecycleElement">
+        <!--  List of basemaps for the user to select from  -->
+        <ListView x:Name="DirectionsListView"
+                  CachingStrategy="RecycleElement"
+                  ItemsSource="{Binding DirectionManeuvers}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionManeuverToImagePathConverter}}" 
-                               Text="{Binding DirectionText}" />
+                    <ImageCell ImageSource="{Binding ManeuverType, Converter={StaticResource DirectionConverter}}"
+                               Text="{Binding DirectionText}"
+                               TextColor="{DynamicResource ForegroundColor}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

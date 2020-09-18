@@ -26,7 +26,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.esri.arcgisruntime.opensourceapps.maps-app-xamarin</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.5</string>
+	<string>1.0.6</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Icon-60@2x.png</string>
@@ -74,8 +74,6 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>MapsApp</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 </dict>

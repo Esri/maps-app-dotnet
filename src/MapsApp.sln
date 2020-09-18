@@ -149,6 +149,7 @@ Global
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhone.Deploy.0 = Debug|iPhone
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{99424659-2878-48B9-A53C-0AE81A27628C}.Debug|x64.ActiveCfg = Debug|iPhone
@@ -327,6 +328,6 @@ Global
 		SolutionGuid = {85B96781-BD01-489E-9F9F-91FFECC94A17}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		version = 1.0.5
+		version = 1.0.6
 	EndGlobalSection
 EndGlobal
