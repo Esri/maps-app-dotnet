@@ -1,5 +1,9 @@
 # Release notes
 
+## 1.0.7
+
+- Updates doc and many code comments to avoid all use of `http:`.
+
 ## 1.0.6
 
 - Added support for dark mode for Xamarin.Forms.
