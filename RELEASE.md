@@ -1,5 +1,9 @@
 # Release notes
 
+## 1.0.8
+
+- Updates doc to make requirements for getting started clearer.
+
 ## 1.0.7
 
 - Updates doc and many code comments to avoid all use of `http:`.
