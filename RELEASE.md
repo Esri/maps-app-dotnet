@@ -2,7 +2,7 @@
 
 ## 1.0.8
 
-- Updates doc to make requirements for getting started clearer.
+- Improves app configuration and setup instructions for clarity.
 
 ## 1.0.7
 
