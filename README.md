@@ -75,7 +75,7 @@ Maps app uses authenticated ArcGIS Online services for routing and geocoding. Yo
 
 1. Log in to [developers.arcgis.com](https://developers.arcgis.com).
 2. Create a [new application](https://developers.arcgis.com/applications/new).
-3. After creating the application, navigate to the 'Authentication' tab and add a redirect URI. Any URI should work, but try to choose something unique to your app, like `my-maps-app://auth`.
+3. After creating the application, navigate to the 'Authentication' tab and add a redirect URI. Any URI should work, but try to choose something unique to your app, like `my-maps-app://auth`. The default value in the app's code is `https://developers.arcgis.com`, so you can use that as an interim value while evaluating the app.
 4. While on the 'Authentication' page, note the **Client ID** and the **Redirect URI** you specified.
 5. In **Helpers\Configuration.cs** within the **MapsApp.Shared** project, replace the default **client ID** and **Redirect URI** with the values noted earlier.
 
