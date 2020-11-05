@@ -11,6 +11,7 @@ The Maps App for .NET shows how a suite of applications can be built around the 
    - [Clone the repo](#clone-the-repo)   
       - [Command line Git](#command-line-git)   
       - [Configuring a Remote for a Fork](#configuring-a-remote-for-a-fork)   
+   - [Configure the app](#configure-the-app)
 - [Requirements](#requirements)   
 - [Resources](#resources)   
 - [Issues](#issues)   
@@ -67,6 +68,16 @@ If there are changes made in the Original repository, you can sync the fork to k
 2. Type ```git fetch upstream``` to fetch the commits from the upstream repository
 3. ```git checkout master``` to checkout your fork's local master branch.
 4. ```git merge upstream/master``` to sync your local master' branch with upstream/master. Note: Your local changes will be retained and your fork's master branch will be in sync with the upstream repository.
+
+### Configure the app
+
+Maps app uses authenticated ArcGIS Online services for routing and geocoding. You need to configure the app for OAuth authentication.
+
+1. Log in to [developers.arcgis.com](https://developers.arcgis.com).
+2. Create a [new application](https://developers.arcgis.com/applications/new).
+3. After creating the application, navigate to the 'Authentication' tab and add a redirect URI. Any URI should work, but try to choose something unique to your app, like `my-maps-app://auth`. The default value in the app's code is `https://developers.arcgis.com`, so you can use that as an interim value while evaluating the app.
+4. While on the 'Authentication' tab, note the **Client ID** and the **Redirect URI** you specified.
+5. In [Helpers\Configuration.cs](src/MapsApp.Shared/Helpers/Configuration.cs) within the **MapsApp.Shared** project, replace the default **client ID** and **Redirect URI** with the values noted earlier.
 
 ## Requirements
 

@@ -1,5 +1,9 @@
 # Release notes
 
+## 1.0.8
+
+- Improves app configuration and setup instructions for clarity.
+
 ## 1.0.7
 
 - Updates doc and many code comments to avoid all use of `http:`.
