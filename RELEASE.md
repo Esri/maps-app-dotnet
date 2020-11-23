@@ -1,5 +1,9 @@
 # Release notes
 
+## 1.0.9
+
+- Removes support for iOS 12.
+
 ## 1.0.8
 
 - Improves app configuration and setup instructions for clarity.

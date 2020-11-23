@@ -24,7 +24,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <ReleaseVersion>1.0.8</ReleaseVersion>
+    <ReleaseVersion>1.0.9</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
