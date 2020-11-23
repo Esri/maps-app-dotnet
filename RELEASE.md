@@ -3,6 +3,7 @@
 ## 1.0.9
 
 - Removes support for iOS 12.
+- Updates Xamarin.Forms to add support for iOS 14.
 
 ## 1.0.8
 
