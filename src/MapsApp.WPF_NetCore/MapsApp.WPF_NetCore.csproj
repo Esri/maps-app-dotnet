@@ -9,7 +9,7 @@
     <DefineConstants>WPF;NET_CORE</DefineConstants>
     <DefaultItemExcludes>$(DefaultItemExcludes);netframework\**;obj\**;netcore\**;out\**;bin\**</DefaultItemExcludes>
     <ApplicationIcon>..\MapsApp.WPF_NetFramework\Images\ArcGIS_Open_Source_Apps.ico</ApplicationIcon>
-    <ReleaseVersion>1.0.8</ReleaseVersion>
+    <ReleaseVersion>1.0.9</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
