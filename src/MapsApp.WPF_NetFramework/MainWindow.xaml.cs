@@ -214,7 +214,7 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.WPF
                     }
                 };
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 geocodeViewModel.ErrorMessage = "Couldn't load images";
             }

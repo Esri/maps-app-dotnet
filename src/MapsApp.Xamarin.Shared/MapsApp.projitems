@@ -15,6 +15,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DirectionManeuverToFontIconImageSourceConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\IconFont.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PropertyMetadata.cs" />
+    
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Themes\ControlStyles.xaml.cs">
       <DependentUpon>ControlStyles.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -27,8 +30,6 @@
       <DependentUpon>LightTheme.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -59,20 +60,14 @@
       <DependentUpon>ErrorDialog.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Themes\LightTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Themes\DarkTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Themes\ControlStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
