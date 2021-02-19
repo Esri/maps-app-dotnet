@@ -92,9 +92,9 @@ Inside the view (XAML), a `MapView` control is created and its `Map` property is
 
 ## Place search & geocoding
 
-At the top of the screen, there is a menu button and a search bar. The search bar provides the geocoding functionality. [Geocoding](https://developers.arcgis.com/net/latest/wpf/guide/search-for-places-geocoding-.htm) lets you transform an address or a place name to a specific geographic location. Reverse geocoding lets you use a geographic location to find a description of the location, like a postal address or place name.
+At the top of the screen, there is a menu button and a search bar. The search bar provides the geocoding functionality. [Geocoding](https://developers.arcgis.com/net/geocode-and-search/) lets you transform an address or a place name to a specific geographic location. Reverse geocoding lets you use a geographic location to find a description of the location, like a postal address or place name.
 
-In the solution, the logic for geocoding is contained inside the shared `GeocodeViewModel`. First, a `LocatorTask` is defined to use the [ArcGIS World Geocoding Service](https://developers.arcgis.com/features/geocoding/). Before using the `LocatorTask`, it must be loaded. The loadable pattern is described [here](https://developers.arcgis.com/net/latest/wpf/guide/loadable-pattern.htm).
+In the solution, the logic for geocoding is contained inside the shared `GeocodeViewModel`. First, a `LocatorTask` is defined to use the [ArcGIS World Geocoding Service](https://developers.arcgis.com/features/geocoding/). Before using the `LocatorTask`, it must be loaded. The loadable pattern is described [here](https://developers.arcgis.com/net/programming-patterns/loadable/).
 
 ```csharp
 /// <summary>
@@ -348,7 +348,7 @@ The process of accessing token secured services with a challenge handler is illu
 5. If the user is successfully authenticated, a credential (token) is included in requests to the secured service.
 6. The authentication manager stores the credential for this portal and all requests for secured content include the token in the request.
 
-For an application to use this pattern, follow these [guides](https://developers.arcgis.com/documentation/core-concepts/security-and-authentication/signing-in-arcgis-online-users/) to register your app.. The `AuthenticationManager` provided by the ArcGIS Runtime SDK abstracts much of the authentication logic for you. In the Maps App, the `AuthenticationManager` is configured to prompt the user for credentials. [Go here](https://developers.arcgis.com/net/latest/wpf/guide/use-the-authentication-manager.htm) for details and other ways to configure the `AuthenticationManager`.
+For an application to use this pattern, follow these [guides](https://developers.arcgis.com/net/security-and-authentication/) to register your app. The `AuthenticationManager` provided by the ArcGIS Runtime SDK abstracts much of the authentication logic for you. In the Maps App, the `AuthenticationManager` is configured to prompt the user for credentials.
 
 | Android | WPF |
 |:-------:|:---:|
