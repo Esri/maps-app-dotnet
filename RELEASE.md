@@ -2,7 +2,7 @@
 
 ## 1.0.9
 
-- Removes support for iOS 12.
+- Deprecate support for iOS 12.
 - Updates Xamarin.Forms to add support for iOS 14.
 - Updates the minimum Android version to SDK 23 (Android 6).
 - Updates to ArcGIS Runtime 100.10.
