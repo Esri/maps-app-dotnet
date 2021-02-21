@@ -122,4 +122,4 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 A copy of the license is available in the repository's [LICENSE](https://github.com/Esri/maps-app-dotnet/blob/master/LICENSE) file.
 
-For information about licensing your deployed app, see [License your app](https://developers.arcgis.com/applications).
+For information about licensing your deployed app, see [License your app](https://developers.arcgis.com/ios/license-and-deployment/license/).
