@@ -26,11 +26,11 @@
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.8.0</ApplicationVersion>
+    <ApplicationVersion>1.0.9.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <ReleaseVersion>1.0.8</ReleaseVersion>
+    <ReleaseVersion>1.0.9</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -519,10 +519,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Esri.ArcGISRuntime.Xamarin.Forms">
-      <Version>100.9.0</Version>
+      <Version>100.10.0</Version>
     </PackageReference>
     <PackageReference Include="Esri.ArcGISRuntime.Xamarin.iOS">
-      <Version>100.9.0</Version>
+      <Version>100.10.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Bcl.Build">
       <Version>1.0.21</Version>
@@ -537,7 +537,7 @@
       <Version>1.7.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.8.0.1364</Version>
+      <Version>4.8.0.1687</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

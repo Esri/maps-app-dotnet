@@ -74,7 +74,7 @@ If there are changes made in the Original repository, you can sync the fork to k
 Maps app uses authenticated ArcGIS Online services for routing and geocoding. You need to configure the app for OAuth authentication.
 
 1. Log in to [developers.arcgis.com](https://developers.arcgis.com).
-2. Create a [new application](https://developers.arcgis.com/applications/new).
+2. Create a [new application](https://developers.arcgis.com/applications/).
 3. After creating the application, navigate to the 'Authentication' tab and add a redirect URI. Any URI should work, but try to choose something unique to your app, like `my-maps-app://auth`. The default value in the app's code is `https://developers.arcgis.com`, so you can use that as an interim value while evaluating the app.
 4. While on the 'Authentication' tab, note the **Client ID** and the **Redirect URI** you specified.
 5. In [Helpers\Configuration.cs](src/MapsApp.Shared/Helpers/Configuration.cs) within the **MapsApp.Shared** project, replace the default **client ID** and **Redirect URI** with the values noted earlier.
@@ -84,7 +84,7 @@ Maps app uses authenticated ArcGIS Online services for routing and geocoding. Yo
 - [Visual Studio 2017 or higher](https://www.visualstudio.com/downloads/)
     - Visual Studio 2019 is required if you want to use the .NET Core version of the WPF app.
 - [.NET Framework 4.6.1 or higher](https://www.microsoft.com/net/download)
-- [ArcGIS Runtime SDK for .NET 100.8 or higher](https://developers.arcgis.com/net/)
+- [ArcGIS Runtime SDK for .NET 100.10 or higher](https://developers.arcgis.com/net/)
 
 ## Resources
 
@@ -122,4 +122,4 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 A copy of the license is available in the repository's [LICENSE](https://github.com/Esri/maps-app-dotnet/blob/master/LICENSE) file.
 
-For information about licensing your deployed app, see [License your app](https://developers.arcgis.com/net/latest/wpf/guide/license-your-app.htm).
+For information about licensing your deployed app, see [License your app](https://developers.arcgis.com/ios/license-and-deployment/license/).

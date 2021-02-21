@@ -141,15 +141,10 @@ namespace Esri.ArcGISRuntime.OpenSourceApps.MapsApp.ViewModels
         private void UpdateAuthenticationManager()
         {
             // Define the server information for ArcGIS Online
-            var portalServerInfo = new ServerInfo
+            var portalServerInfo = new ServerInfo(new Uri(Configuration.ArcGISOnlineUrl))
             {
-                ServerUri = new Uri(Configuration.ArcGISOnlineUrl),
                 TokenAuthenticationType = TokenAuthenticationType.OAuthImplicit,
-                OAuthClientInfo = new OAuthClientInfo
-                {
-                    ClientId = Configuration.AppClientID,
-                    RedirectUri = new Uri(Configuration.RedirectURL)
-                },
+                OAuthClientInfo = new OAuthClientInfo(Configuration.AppClientID, new Uri(Configuration.RedirectURL))
             };
 
             try
