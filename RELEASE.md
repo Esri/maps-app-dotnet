@@ -1,5 +1,10 @@
 # Release notes
 
+## 1.0.10
+
+- Updates to ArcGIS Runtime 100.11.
+- Updates Xamarin.Forms and other packages to the latest available versions.
+
 ## 1.0.9
 
 - Deprecate support for iOS 12.
